@@ -1,0 +1,257 @@
+2020-08-07 12:41:32,212 - __main__ - INFO - 
+----------------- Options ---------------
+                        K: 8192                          
+              adapted_dim: 1024                          
+              adj_lr_func: none                          
+                annealing: none                          
+               batch_size: 16                            
+                 channels: 3                             
+              contrastive: False                         
+         cosine_classifer: False                         
+                data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/visda2017
+                  dataset: visda2017                     
+        domain_shift_type: convention                    
+                  dropout: False                         
+                     flip: False                         
+                   frozen: []                            
+                      gpu: [0]                           
+               image_size: 224                           
+                     lirr: False                         
+                load_path: None                          
+                     logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/visda2017/sourceonly/train_validation_visda2017_moco.txt
+         logger_file_name: visda2017_moco                
+                       lr: 0.0001                        
+                  lr_flip: 0.1                           
+              lr_quadrant: 0.1                           
+              lr_rotation: 0.1                           
+                  lw_flip: 0.1                           
+              lw_quadrant: 0.1                           
+              lw_rotation: 0.1                           
+                        m: 0.998                         
+                   method: moco                          
+                milestone: 100                           
+                      mim: False                         
+                    mixup: False                         
+            moco_finetune: False                         
+               model_name: resnet101                     
+                   nepoch: 100                           
+                 nthreads: 8                             
+                  num_cls: 12                            
+                     outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/train_validation_visda2017_moco_target
+                   quad_p: 2                             
+                 quadrant: False                         
+                 rotation: False                         
+                   source: ['train']                     
+                   target: validation                    
+                     temp: 0.07                          
+                trade_off: 0.1                           
+                      vib: False                         
+----------------- End -------------------
+2020-08-07 12:41:32,213 - __main__ - INFO - ==> Reasonableness checking..
+2020-08-07 12:41:32,213 - __main__ - INFO - ==> Building model..
+2020-08-07 12:41:38,794 - __main__ - INFO - ==> Building modules..
+2020-08-07 12:41:39,074 - __main__ - INFO - ==> Preparing datasets..
+2020-08-07 12:41:40,364 - __main__ - INFO - ==> Creating pretext tasks.
+2020-08-07 12:41:40,365 - __main__ - INFO - ==> No pretext task.
+2020-08-07 12:41:40,365 - __main__ - INFO - ==> Creating Optimizer.
+2020-08-07 12:41:40,367 - __main__ - INFO - ==> Running..
+2020-08-07 12:41:40,368 - __main__ - INFO - Source epoch 1/100 main_lr=0.000100
+2020-08-07 13:41:27,852 - __main__ - INFO - infonce_loss : 0.76058, cls_loss : 0.00000, 
+2020-08-07 13:41:28,645 - __main__ - INFO - Source epoch 2/100 main_lr=0.001000
+2020-08-07 14:41:16,035 - __main__ - INFO - infonce_loss : 0.16365, cls_loss : 0.00000, 
+2020-08-07 14:41:16,791 - __main__ - INFO - Source epoch 3/100 main_lr=0.001000
+2020-08-07 15:41:05,362 - __main__ - INFO - infonce_loss : 0.09801, cls_loss : 0.00000, 
+2020-08-07 15:41:06,235 - __main__ - INFO - Source epoch 4/100 main_lr=0.001000
+2020-08-07 16:41:00,221 - __main__ - INFO - infonce_loss : 0.07933, cls_loss : 0.00000, 
+2020-08-07 16:41:00,991 - __main__ - INFO - Source epoch 5/100 main_lr=0.001000
+2020-08-07 17:40:52,137 - __main__ - INFO - infonce_loss : 0.06993, cls_loss : 0.00000, 
+2020-08-07 17:40:52,966 - __main__ - INFO - Source epoch 6/100 main_lr=0.001000
+2020-08-07 18:40:47,141 - __main__ - INFO - infonce_loss : 0.06350, cls_loss : 0.00000, 
+2020-08-07 18:40:47,912 - __main__ - INFO - Source epoch 7/100 main_lr=0.001000
+2020-08-07 19:40:36,516 - __main__ - INFO - infonce_loss : 0.05924, cls_loss : 0.00000, 
+2020-08-07 19:40:37,329 - __main__ - INFO - Source epoch 8/100 main_lr=0.001000
+2020-08-07 20:40:25,636 - __main__ - INFO - infonce_loss : 0.05613, cls_loss : 0.00000, 
+2020-08-07 20:40:26,395 - __main__ - INFO - Source epoch 9/100 main_lr=0.001000
+2020-08-07 21:40:20,114 - __main__ - INFO - infonce_loss : 0.05327, cls_loss : 0.00000, 
+2020-08-07 21:40:20,882 - __main__ - INFO - Source epoch 10/100 main_lr=0.001000
+2020-08-07 22:40:10,959 - __main__ - INFO - infonce_loss : 0.05081, cls_loss : 0.00000, 
+2020-08-07 22:40:12,255 - __main__ - INFO - Source epoch 11/100 main_lr=0.001000
+2020-08-07 23:40:03,150 - __main__ - INFO - infonce_loss : 0.04934, cls_loss : 0.00000, 
+2020-08-07 23:40:03,963 - __main__ - INFO - Source epoch 12/100 main_lr=0.001000
+2020-08-08 00:39:56,525 - __main__ - INFO - infonce_loss : 0.04783, cls_loss : 0.00000, 
+2020-08-08 00:39:57,219 - __main__ - INFO - Source epoch 13/100 main_lr=0.001000
+2020-08-08 01:39:46,348 - __main__ - INFO - infonce_loss : 0.04652, cls_loss : 0.00000, 
+2020-08-08 01:39:47,173 - __main__ - INFO - Source epoch 14/100 main_lr=0.001000
+2020-08-08 02:39:43,422 - __main__ - INFO - infonce_loss : 0.04577, cls_loss : 0.00000, 
+2020-08-08 02:39:44,208 - __main__ - INFO - Source epoch 15/100 main_lr=0.001000
+2020-08-08 03:39:41,061 - __main__ - INFO - infonce_loss : 0.04467, cls_loss : 0.00000, 
+2020-08-08 03:39:41,923 - __main__ - INFO - Source epoch 16/100 main_lr=0.001000
+2020-08-08 04:39:37,119 - __main__ - INFO - infonce_loss : 0.04363, cls_loss : 0.00000, 
+2020-08-08 04:39:37,933 - __main__ - INFO - Source epoch 17/100 main_lr=0.001000
+2020-08-08 05:39:31,600 - __main__ - INFO - infonce_loss : 0.04282, cls_loss : 0.00000, 
+2020-08-08 05:39:32,351 - __main__ - INFO - Source epoch 18/100 main_lr=0.001000
+2020-08-08 06:39:22,779 - __main__ - INFO - infonce_loss : 0.04202, cls_loss : 0.00000, 
+2020-08-08 06:39:23,582 - __main__ - INFO - Source epoch 19/100 main_lr=0.001000
+2020-08-08 07:39:13,091 - __main__ - INFO - infonce_loss : 0.04123, cls_loss : 0.00000, 
+2020-08-08 07:39:13,825 - __main__ - INFO - Source epoch 20/100 main_lr=0.001000
+2020-08-08 08:39:06,051 - __main__ - INFO - infonce_loss : 0.04079, cls_loss : 0.00000, 
+2020-08-08 08:39:07,382 - __main__ - INFO - Source epoch 21/100 main_lr=0.001000
+2020-08-08 09:38:53,195 - __main__ - INFO - infonce_loss : 0.04009, cls_loss : 0.00000, 
+2020-08-08 09:38:54,019 - __main__ - INFO - Source epoch 22/100 main_lr=0.001000
+2020-08-08 10:38:43,260 - __main__ - INFO - infonce_loss : 0.03955, cls_loss : 0.00000, 
+2020-08-08 10:38:44,071 - __main__ - INFO - Source epoch 23/100 main_lr=0.001000
+2020-08-08 11:38:33,110 - __main__ - INFO - infonce_loss : 0.03927, cls_loss : 0.00000, 
+2020-08-08 11:38:33,912 - __main__ - INFO - Source epoch 24/100 main_lr=0.001000
+2020-08-08 12:38:23,636 - __main__ - INFO - infonce_loss : 0.03873, cls_loss : 0.00000, 
+2020-08-08 12:38:24,418 - __main__ - INFO - Source epoch 25/100 main_lr=0.001000
+2020-08-08 13:38:14,716 - __main__ - INFO - infonce_loss : 0.03856, cls_loss : 0.00000, 
+2020-08-08 13:38:15,545 - __main__ - INFO - Source epoch 26/100 main_lr=0.001000
+2020-08-08 14:38:05,795 - __main__ - INFO - infonce_loss : 0.03790, cls_loss : 0.00000, 
+2020-08-08 14:38:06,588 - __main__ - INFO - Source epoch 27/100 main_lr=0.001000
+2020-08-08 15:37:51,934 - __main__ - INFO - infonce_loss : 0.03760, cls_loss : 0.00000, 
+2020-08-08 15:37:52,746 - __main__ - INFO - Source epoch 28/100 main_lr=0.001000
+2020-08-08 16:37:41,284 - __main__ - INFO - infonce_loss : 0.03713, cls_loss : 0.00000, 
+2020-08-08 16:37:42,046 - __main__ - INFO - Source epoch 29/100 main_lr=0.001000
+2020-08-08 17:37:33,403 - __main__ - INFO - infonce_loss : 0.03675, cls_loss : 0.00000, 
+2020-08-08 17:37:34,270 - __main__ - INFO - Source epoch 30/100 main_lr=0.001000
+2020-08-08 18:37:24,794 - __main__ - INFO - infonce_loss : 0.03640, cls_loss : 0.00000, 
+2020-08-08 18:37:26,191 - __main__ - INFO - Source epoch 31/100 main_lr=0.001000
+2020-08-08 19:37:13,806 - __main__ - INFO - infonce_loss : 0.03611, cls_loss : 0.00000, 
+2020-08-08 19:37:14,621 - __main__ - INFO - Source epoch 32/100 main_lr=0.001000
+2020-08-08 20:37:04,389 - __main__ - INFO - infonce_loss : 0.03603, cls_loss : 0.00000, 
+2020-08-08 20:37:05,180 - __main__ - INFO - Source epoch 33/100 main_lr=0.001000
+2020-08-08 21:36:51,115 - __main__ - INFO - infonce_loss : 0.03535, cls_loss : 0.00000, 
+2020-08-08 21:36:51,959 - __main__ - INFO - Source epoch 34/100 main_lr=0.001000
+2020-08-08 22:36:42,792 - __main__ - INFO - infonce_loss : 0.03539, cls_loss : 0.00000, 
+2020-08-08 22:36:43,638 - __main__ - INFO - Source epoch 35/100 main_lr=0.001000
+2020-08-08 23:36:31,763 - __main__ - INFO - infonce_loss : 0.03504, cls_loss : 0.00000, 
+2020-08-08 23:36:32,511 - __main__ - INFO - Source epoch 36/100 main_lr=0.001000
+2020-08-09 00:36:20,536 - __main__ - INFO - infonce_loss : 0.03462, cls_loss : 0.00000, 
+2020-08-09 00:36:21,393 - __main__ - INFO - Source epoch 37/100 main_lr=0.001000
+2020-08-09 01:36:09,813 - __main__ - INFO - infonce_loss : 0.03449, cls_loss : 0.00000, 
+2020-08-09 01:36:10,624 - __main__ - INFO - Source epoch 38/100 main_lr=0.001000
+2020-08-09 02:35:59,071 - __main__ - INFO - infonce_loss : 0.03433, cls_loss : 0.00000, 
+2020-08-09 02:35:59,839 - __main__ - INFO - Source epoch 39/100 main_lr=0.001000
+2020-08-09 03:35:00,748 - __main__ - INFO - infonce_loss : 0.03404, cls_loss : 0.00000, 
+2020-08-09 03:35:01,540 - __main__ - INFO - Source epoch 40/100 main_lr=0.001000
+2020-08-09 04:32:56,553 - __main__ - INFO - infonce_loss : 0.03385, cls_loss : 0.00000, 
+2020-08-09 04:32:57,832 - __main__ - INFO - Source epoch 41/100 main_lr=0.001000
+2020-08-09 05:30:38,336 - __main__ - INFO - infonce_loss : 0.03372, cls_loss : 0.00000, 
+2020-08-09 05:30:39,171 - __main__ - INFO - Source epoch 42/100 main_lr=0.001000
+2020-08-09 06:28:18,118 - __main__ - INFO - infonce_loss : 0.03357, cls_loss : 0.00000, 
+2020-08-09 06:28:18,925 - __main__ - INFO - Source epoch 43/100 main_lr=0.001000
+2020-08-09 07:26:00,371 - __main__ - INFO - infonce_loss : 0.03322, cls_loss : 0.00000, 
+2020-08-09 07:26:01,160 - __main__ - INFO - Source epoch 44/100 main_lr=0.001000
+2020-08-09 08:23:43,701 - __main__ - INFO - infonce_loss : 0.03321, cls_loss : 0.00000, 
+2020-08-09 08:23:44,442 - __main__ - INFO - Source epoch 45/100 main_lr=0.001000
+2020-08-09 09:21:32,812 - __main__ - INFO - infonce_loss : 0.03289, cls_loss : 0.00000, 
+2020-08-09 09:21:33,561 - __main__ - INFO - Source epoch 46/100 main_lr=0.001000
+2020-08-09 10:20:54,914 - __main__ - INFO - infonce_loss : 0.03272, cls_loss : 0.00000, 
+2020-08-09 10:20:55,736 - __main__ - INFO - Source epoch 47/100 main_lr=0.001000
+2020-08-09 11:21:45,599 - __main__ - INFO - infonce_loss : 0.03259, cls_loss : 0.00000, 
+2020-08-09 11:21:46,406 - __main__ - INFO - Source epoch 48/100 main_lr=0.001000
+2020-08-09 12:20:07,638 - __main__ - INFO - infonce_loss : 0.03247, cls_loss : 0.00000, 
+2020-08-09 12:20:08,443 - __main__ - INFO - Source epoch 49/100 main_lr=0.001000
+2020-08-09 13:20:57,594 - __main__ - INFO - infonce_loss : 0.03224, cls_loss : 0.00000, 
+2020-08-09 13:20:58,421 - __main__ - INFO - Source epoch 50/100 main_lr=0.001000
+2020-08-09 14:22:05,127 - __main__ - INFO - infonce_loss : 0.03226, cls_loss : 0.00000, 
+2020-08-09 14:22:06,535 - __main__ - INFO - Source epoch 51/100 main_lr=0.001000
+2020-08-09 15:23:18,840 - __main__ - INFO - infonce_loss : 0.03200, cls_loss : 0.00000, 
+2020-08-09 15:23:19,605 - __main__ - INFO - Source epoch 52/100 main_lr=0.001000
+2020-08-09 16:24:19,116 - __main__ - INFO - infonce_loss : 0.03205, cls_loss : 0.00000, 
+2020-08-09 16:24:19,948 - __main__ - INFO - Source epoch 53/100 main_lr=0.001000
+2020-08-09 17:22:59,399 - __main__ - INFO - infonce_loss : 0.03201, cls_loss : 0.00000, 
+2020-08-09 17:23:00,193 - __main__ - INFO - Source epoch 54/100 main_lr=0.001000
+2020-08-09 18:22:40,225 - __main__ - INFO - infonce_loss : 0.03182, cls_loss : 0.00000, 
+2020-08-09 18:22:41,084 - __main__ - INFO - Source epoch 55/100 main_lr=0.001000
+2020-08-09 19:22:19,539 - __main__ - INFO - infonce_loss : 0.03164, cls_loss : 0.00000, 
+2020-08-09 19:22:20,399 - __main__ - INFO - Source epoch 56/100 main_lr=0.001000
+2020-08-09 20:21:42,077 - __main__ - INFO - infonce_loss : 0.03158, cls_loss : 0.00000, 
+2020-08-09 20:21:42,832 - __main__ - INFO - Source epoch 57/100 main_lr=0.001000
+2020-08-09 21:21:12,200 - __main__ - INFO - infonce_loss : 0.03145, cls_loss : 0.00000, 
+2020-08-09 21:21:13,057 - __main__ - INFO - Source epoch 58/100 main_lr=0.001000
+2020-08-09 22:21:02,183 - __main__ - INFO - infonce_loss : 0.03118, cls_loss : 0.00000, 
+2020-08-09 22:21:02,996 - __main__ - INFO - Source epoch 59/100 main_lr=0.001000
+2020-08-09 23:21:03,738 - __main__ - INFO - infonce_loss : 0.03120, cls_loss : 0.00000, 
+2020-08-09 23:21:04,614 - __main__ - INFO - Source epoch 60/100 main_lr=0.001000
+2020-08-10 00:21:18,710 - __main__ - INFO - infonce_loss : 0.03098, cls_loss : 0.00000, 
+2020-08-10 00:21:20,339 - __main__ - INFO - Source epoch 61/100 main_lr=0.001000
+2020-08-10 01:21:27,519 - __main__ - INFO - infonce_loss : 0.03111, cls_loss : 0.00000, 
+2020-08-10 01:21:28,355 - __main__ - INFO - Source epoch 62/100 main_lr=0.001000
+2020-08-10 02:21:35,796 - __main__ - INFO - infonce_loss : 0.03068, cls_loss : 0.00000, 
+2020-08-10 02:21:36,637 - __main__ - INFO - Source epoch 63/100 main_lr=0.001000
+2020-08-10 03:21:41,724 - __main__ - INFO - infonce_loss : 0.03072, cls_loss : 0.00000, 
+2020-08-10 03:21:42,581 - __main__ - INFO - Source epoch 64/100 main_lr=0.001000
+2020-08-10 04:21:56,222 - __main__ - INFO - infonce_loss : 0.03059, cls_loss : 0.00000, 
+2020-08-10 04:21:56,988 - __main__ - INFO - Source epoch 65/100 main_lr=0.001000
+2020-08-10 05:22:07,366 - __main__ - INFO - infonce_loss : 0.03054, cls_loss : 0.00000, 
+2020-08-10 05:22:08,196 - __main__ - INFO - Source epoch 66/100 main_lr=0.001000
+2020-08-10 06:22:24,605 - __main__ - INFO - infonce_loss : 0.03048, cls_loss : 0.00000, 
+2020-08-10 06:22:25,389 - __main__ - INFO - Source epoch 67/100 main_lr=0.001000
+2020-08-10 07:23:29,898 - __main__ - INFO - infonce_loss : 0.03026, cls_loss : 0.00000, 
+2020-08-10 07:23:30,701 - __main__ - INFO - Source epoch 68/100 main_lr=0.001000
+2020-08-10 08:23:45,698 - __main__ - INFO - infonce_loss : 0.03017, cls_loss : 0.00000, 
+2020-08-10 08:23:46,531 - __main__ - INFO - Source epoch 69/100 main_lr=0.001000
+2020-08-10 09:23:33,489 - __main__ - INFO - infonce_loss : 0.02989, cls_loss : 0.00000, 
+2020-08-10 09:23:34,344 - __main__ - INFO - Source epoch 70/100 main_lr=0.001000
+2020-08-10 10:26:09,056 - __main__ - INFO - infonce_loss : 0.03022, cls_loss : 0.00000, 
+2020-08-10 10:26:10,509 - __main__ - INFO - Source epoch 71/100 main_lr=0.001000
+2020-08-10 11:27:57,515 - __main__ - INFO - infonce_loss : 0.03000, cls_loss : 0.00000, 
+2020-08-10 11:27:58,438 - __main__ - INFO - Source epoch 72/100 main_lr=0.001000
+2020-08-10 12:29:52,493 - __main__ - INFO - infonce_loss : 0.02995, cls_loss : 0.00000, 
+2020-08-10 12:29:53,307 - __main__ - INFO - Source epoch 73/100 main_lr=0.001000
+2020-08-10 13:32:01,624 - __main__ - INFO - infonce_loss : 0.02976, cls_loss : 0.00000, 
+2020-08-10 13:32:03,007 - __main__ - INFO - Source epoch 74/100 main_lr=0.001000
+2020-08-10 14:42:17,817 - __main__ - INFO - infonce_loss : 0.02984, cls_loss : 0.00000, 
+2020-08-10 14:42:18,552 - __main__ - INFO - Source epoch 75/100 main_lr=0.001000
+2020-08-10 15:56:06,067 - __main__ - INFO - infonce_loss : 0.02974, cls_loss : 0.00000, 
+2020-08-10 15:56:06,861 - __main__ - INFO - Source epoch 76/100 main_lr=0.001000
+2020-08-10 17:07:12,468 - __main__ - INFO - infonce_loss : 0.02955, cls_loss : 0.00000, 
+2020-08-10 17:07:13,434 - __main__ - INFO - Source epoch 77/100 main_lr=0.001000
+2020-08-10 18:13:34,647 - __main__ - INFO - infonce_loss : 0.02945, cls_loss : 0.00000, 
+2020-08-10 18:13:35,464 - __main__ - INFO - Source epoch 78/100 main_lr=0.001000
+2020-08-10 19:14:55,327 - __main__ - INFO - infonce_loss : 0.02943, cls_loss : 0.00000, 
+2020-08-10 19:14:56,421 - __main__ - INFO - Source epoch 79/100 main_lr=0.001000
+2020-08-10 20:14:56,034 - __main__ - INFO - infonce_loss : 0.02946, cls_loss : 0.00000, 
+2020-08-10 20:14:56,908 - __main__ - INFO - Source epoch 80/100 main_lr=0.001000
+2020-08-10 21:16:40,526 - __main__ - INFO - infonce_loss : 0.02931, cls_loss : 0.00000, 
+2020-08-10 21:16:42,014 - __main__ - INFO - Source epoch 81/100 main_lr=0.001000
+2020-08-10 22:18:52,172 - __main__ - INFO - infonce_loss : 0.02907, cls_loss : 0.00000, 
+2020-08-10 22:18:53,030 - __main__ - INFO - Source epoch 82/100 main_lr=0.001000
+2020-08-10 23:19:52,376 - __main__ - INFO - infonce_loss : 0.02929, cls_loss : 0.00000, 
+2020-08-10 23:19:53,153 - __main__ - INFO - Source epoch 83/100 main_lr=0.001000
+2020-08-11 00:20:45,726 - __main__ - INFO - infonce_loss : 0.02925, cls_loss : 0.00000, 
+2020-08-11 00:20:46,587 - __main__ - INFO - Source epoch 84/100 main_lr=0.001000
+2020-08-11 01:21:14,124 - __main__ - INFO - infonce_loss : 0.02892, cls_loss : 0.00000, 
+2020-08-11 01:21:14,915 - __main__ - INFO - Source epoch 85/100 main_lr=0.001000
+2020-08-11 02:21:57,093 - __main__ - INFO - infonce_loss : 0.02898, cls_loss : 0.00000, 
+2020-08-11 02:21:57,906 - __main__ - INFO - Source epoch 86/100 main_lr=0.001000
+2020-08-11 03:22:48,574 - __main__ - INFO - infonce_loss : 0.02894, cls_loss : 0.00000, 
+2020-08-11 03:22:49,435 - __main__ - INFO - Source epoch 87/100 main_lr=0.001000
+2020-08-11 04:23:46,840 - __main__ - INFO - infonce_loss : 0.02897, cls_loss : 0.00000, 
+2020-08-11 04:23:47,553 - __main__ - INFO - Source epoch 88/100 main_lr=0.001000
+2020-08-11 05:24:49,527 - __main__ - INFO - infonce_loss : 0.02877, cls_loss : 0.00000, 
+2020-08-11 05:24:50,340 - __main__ - INFO - Source epoch 89/100 main_lr=0.001000
+2020-08-11 06:26:02,130 - __main__ - INFO - infonce_loss : 0.02855, cls_loss : 0.00000, 
+2020-08-11 06:26:03,059 - __main__ - INFO - Source epoch 90/100 main_lr=0.001000
+2020-08-11 07:26:36,433 - __main__ - INFO - infonce_loss : 0.02852, cls_loss : 0.00000, 
+2020-08-11 07:26:37,788 - __main__ - INFO - Source epoch 91/100 main_lr=0.001000
+2020-08-11 08:27:19,736 - __main__ - INFO - infonce_loss : 0.02846, cls_loss : 0.00000, 
+2020-08-11 08:27:20,527 - __main__ - INFO - Source epoch 92/100 main_lr=0.001000
+2020-08-11 09:28:11,195 - __main__ - INFO - infonce_loss : 0.02864, cls_loss : 0.00000, 
+2020-08-11 09:28:12,031 - __main__ - INFO - Source epoch 93/100 main_lr=0.001000
+2020-08-11 10:28:53,306 - __main__ - INFO - infonce_loss : 0.02861, cls_loss : 0.00000, 
+2020-08-11 10:28:54,115 - __main__ - INFO - Source epoch 94/100 main_lr=0.001000
+2020-08-11 11:27:55,831 - __main__ - INFO - infonce_loss : 0.02850, cls_loss : 0.00000, 
+2020-08-11 11:27:56,685 - __main__ - INFO - Source epoch 95/100 main_lr=0.001000
+2020-08-11 12:28:38,832 - __main__ - INFO - infonce_loss : 0.02852, cls_loss : 0.00000, 
+2020-08-11 12:28:39,690 - __main__ - INFO - Source epoch 96/100 main_lr=0.001000
+2020-08-11 13:29:15,130 - __main__ - INFO - infonce_loss : 0.02856, cls_loss : 0.00000, 
+2020-08-11 13:29:15,867 - __main__ - INFO - Source epoch 97/100 main_lr=0.001000
+2020-08-11 14:29:53,316 - __main__ - INFO - infonce_loss : 0.02849, cls_loss : 0.00000, 
+2020-08-11 14:29:54,220 - __main__ - INFO - Source epoch 98/100 main_lr=0.001000
+2020-08-11 15:30:31,410 - __main__ - INFO - infonce_loss : 0.02822, cls_loss : 0.00000, 
+2020-08-11 15:30:32,292 - __main__ - INFO - Source epoch 99/100 main_lr=0.001000
+2020-08-11 16:31:22,129 - __main__ - INFO - infonce_loss : 0.02817, cls_loss : 0.00000, 
+2020-08-11 16:31:22,950 - __main__ - INFO - Source epoch 100/100 main_lr=0.001000
+2020-08-11 17:32:15,856 - __main__ - INFO - infonce_loss : 0.02812, cls_loss : 0.00000, 

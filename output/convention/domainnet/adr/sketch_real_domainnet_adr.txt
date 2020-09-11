@@ -1,0 +1,158 @@
+2020-09-05 05:35:11,434 - __main__ - INFO - 
+----------------- Options ---------------
+                        K: 256                           
+              adapted_dim: 1024                          
+              adj_lr_func: none                          
+                annealing: none                          
+               batch_size: 128                           
+                 channels: 3                             
+              contrastive: False                         
+                   cosine: False                         
+                data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/visda2019/domainnet
+                  dataset: domainnet                     
+        domain_shift_type: convention                    
+                  dropout: False                         
+                     flip: False                         
+                   frozen: []                            
+                      gpu: [0]                           
+               image_size: 224                           
+               lambda_irm: 0.0                           
+                     lirr: False                         
+                load_path: None                          
+                     logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/domainnet/adr/sketch_real_domainnet_adr.txt
+         logger_file_name: domainnet_adr                 
+                       lr: 0.0001                        
+                  lr_flip: 0.1                           
+              lr_quadrant: 0.1                           
+              lr_rotation: 0.1                           
+                  lw_flip: 0.1                           
+              lw_quadrant: 0.1                           
+              lw_rotation: 0.1                           
+                        m: 0.998                         
+                   method: adr                           
+                milestone: 50                            
+                      mim: False                         
+                    mixup: False                         
+            moco_finetune: False                         
+               model_name: resnet34                      
+                   nepoch: 50                            
+                 nthreads: 8                             
+                  num_cls: 345                           
+                     outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/sketch_real_domainnet_adr
+                   quad_p: 2                             
+                 quadrant: False                         
+                 rotation: False                         
+                   source: ['sketch']                    
+                   target: real                          
+                     temp: 1                             
+                trade_off: 0.1                           
+                      vib: False                         
+----------------- End -------------------
+2020-09-05 05:35:11,444 - __main__ - INFO - ==> Reasonableness checking..
+2020-09-05 05:35:11,445 - __main__ - INFO - ==> Building model..
+2020-09-05 05:35:16,862 - __main__ - INFO - ==> Preparing datasets..
+2020-09-05 05:35:18,931 - __main__ - INFO - ==> Creating pretext tasks.
+2020-09-05 05:35:18,931 - __main__ - INFO - ==> No pretext task.
+2020-09-05 05:35:18,931 - __main__ - INFO - ==> Creating Optimizer & Building modules...
+2020-09-05 05:35:18,932 - __main__ - INFO - ==> no extra module need to be constructed.
+2020-09-05 05:35:18,933 - __main__ - INFO - ==> Running..
+2020-09-05 05:35:18,933 - __main__ - INFO - Source epoch 1/50 main_lr=0.000100
+2020-09-05 06:39:43,382 - __main__ - INFO - tgt_test_acc: 53.56 ; src_test_acc: 47.96src_cls_loss : 1.92339, tgt_cls_loss : 0.94175, transfer_loss : 0.15219, 
+2020-09-05 06:39:44,916 - __main__ - INFO - Source epoch 2/50 main_lr=0.001000
+2020-09-05 07:43:31,273 - __main__ - INFO - tgt_test_acc: 54.85 ; src_test_acc: 53.48src_cls_loss : 1.36310, tgt_cls_loss : 0.13633, transfer_loss : 0.15107, 
+2020-09-05 07:43:32,705 - __main__ - INFO - Source epoch 3/50 main_lr=0.001000
+2020-09-05 08:48:21,517 - __main__ - INFO - tgt_test_acc: 53.14 ; src_test_acc: 56.04src_cls_loss : 1.20670, tgt_cls_loss : 0.07837, transfer_loss : 0.10870, 
+2020-09-05 08:48:23,117 - __main__ - INFO - Source epoch 4/50 main_lr=0.001000
+2020-09-05 09:51:55,818 - __main__ - INFO - tgt_test_acc: 52.63 ; src_test_acc: 59.38src_cls_loss : 1.11032, tgt_cls_loss : 0.05819, transfer_loss : 0.08993, 
+2020-09-05 09:51:57,284 - __main__ - INFO - Source epoch 5/50 main_lr=0.001000
+2020-09-05 10:56:03,816 - __main__ - INFO - tgt_test_acc: 52.41 ; src_test_acc: 59.04src_cls_loss : 1.03467, tgt_cls_loss : 0.04705, transfer_loss : 0.08802, 
+2020-09-05 10:56:05,252 - __main__ - INFO - Source epoch 6/50 main_lr=0.001000
+2020-09-05 12:00:50,802 - __main__ - INFO - tgt_test_acc: 50.43 ; src_test_acc: 61.12src_cls_loss : 0.98689, tgt_cls_loss : 0.03797, transfer_loss : 0.08599, 
+2020-09-05 12:00:52,227 - __main__ - INFO - Source epoch 7/50 main_lr=0.001000
+2020-09-05 13:04:46,626 - __main__ - INFO - tgt_test_acc: 47.78 ; src_test_acc: 60.66src_cls_loss : 0.95461, tgt_cls_loss : 0.03802, transfer_loss : 0.08695, 
+2020-09-05 13:04:47,972 - __main__ - INFO - Source epoch 8/50 main_lr=0.001000
+2020-09-05 14:09:20,124 - __main__ - INFO - tgt_test_acc: 49.58 ; src_test_acc: 63.98src_cls_loss : 0.89699, tgt_cls_loss : 0.03151, transfer_loss : 0.08092, 
+2020-09-05 14:09:21,546 - __main__ - INFO - Source epoch 9/50 main_lr=0.001000
+2020-09-05 15:13:15,525 - __main__ - INFO - tgt_test_acc: 34.49 ; src_test_acc: 52.22src_cls_loss : 0.88067, tgt_cls_loss : 0.03064, transfer_loss : 0.08396, 
+2020-09-05 15:13:16,678 - __main__ - INFO - Source epoch 10/50 main_lr=0.001000
+2020-09-05 16:16:57,025 - __main__ - INFO - tgt_test_acc: 17.37 ; src_test_acc: 29.08src_cls_loss : 0.82819, tgt_cls_loss : 0.02668, transfer_loss : 0.07438, 
+2020-09-05 16:16:59,104 - __main__ - INFO - Source epoch 11/50 main_lr=0.001000
+2020-09-05 17:20:18,931 - __main__ - INFO - tgt_test_acc: 18.64 ; src_test_acc: 31.64src_cls_loss : 0.80114, tgt_cls_loss : 0.02758, transfer_loss : 0.07116, 
+2020-09-05 17:20:20,389 - __main__ - INFO - Source epoch 12/50 main_lr=0.001000
+2020-09-05 18:24:01,913 - __main__ - INFO - tgt_test_acc: 34.26 ; src_test_acc: 52.60src_cls_loss : 0.78035, tgt_cls_loss : 0.02844, transfer_loss : 0.08173, 
+2020-09-05 18:24:03,383 - __main__ - INFO - Source epoch 13/50 main_lr=0.001000
+2020-09-05 19:26:33,618 - __main__ - INFO - tgt_test_acc: 25.72 ; src_test_acc: 42.22src_cls_loss : 0.75299, tgt_cls_loss : 0.02630, transfer_loss : 0.07478, 
+2020-09-05 19:26:35,154 - __main__ - INFO - Source epoch 14/50 main_lr=0.001000
+2020-09-05 20:29:24,081 - __main__ - INFO - tgt_test_acc: 44.03 ; src_test_acc: 63.86src_cls_loss : 0.72599, tgt_cls_loss : 0.02478, transfer_loss : 0.07508, 
+2020-09-05 20:29:25,528 - __main__ - INFO - Source epoch 15/50 main_lr=0.001000
+2020-09-05 21:31:58,316 - __main__ - INFO - tgt_test_acc: 25.06 ; src_test_acc: 43.82src_cls_loss : 0.68658, tgt_cls_loss : 0.02015, transfer_loss : 0.06459, 
+2020-09-05 21:31:59,723 - __main__ - INFO - Source epoch 16/50 main_lr=0.001000
+2020-09-05 22:34:42,985 - __main__ - INFO - tgt_test_acc: 46.42 ; src_test_acc: 69.46src_cls_loss : 0.65942, tgt_cls_loss : 0.02102, transfer_loss : 0.06667, 
+2020-09-05 22:34:44,177 - __main__ - INFO - Source epoch 17/50 main_lr=0.001000
+2020-09-05 23:37:24,299 - __main__ - INFO - tgt_test_acc: 48.23 ; src_test_acc: 67.12src_cls_loss : 0.66914, tgt_cls_loss : 0.02182, transfer_loss : 0.07504, 
+2020-09-05 23:37:25,697 - __main__ - INFO - Source epoch 18/50 main_lr=0.001000
+2020-09-06 00:40:24,098 - __main__ - INFO - tgt_test_acc: 41.36 ; src_test_acc: 64.64src_cls_loss : 0.65892, tgt_cls_loss : 0.02432, transfer_loss : 0.08909, 
+2020-09-06 00:40:25,282 - __main__ - INFO - Source epoch 19/50 main_lr=0.001000
+2020-09-06 01:43:07,907 - __main__ - INFO - tgt_test_acc: 33.72 ; src_test_acc: 56.34src_cls_loss : 0.61343, tgt_cls_loss : 0.01482, transfer_loss : 0.06814, 
+2020-09-06 01:43:09,150 - __main__ - INFO - Source epoch 20/50 main_lr=0.001000
+2020-09-06 02:45:37,727 - __main__ - INFO - tgt_test_acc: 22.97 ; src_test_acc: 40.54src_cls_loss : 0.58654, tgt_cls_loss : 0.01421, transfer_loss : 0.06498, 
+2020-09-06 02:45:39,579 - __main__ - INFO - Source epoch 21/50 main_lr=0.001000
+2020-09-06 03:48:06,125 - __main__ - INFO - tgt_test_acc: 19.33 ; src_test_acc: 34.30src_cls_loss : 0.58598, tgt_cls_loss : 0.01801, transfer_loss : 0.07792, 
+2020-09-06 03:48:07,654 - __main__ - INFO - Source epoch 22/50 main_lr=0.001000
+2020-09-06 04:50:53,024 - __main__ - INFO - tgt_test_acc: 9.55 ; src_test_acc: 17.14src_cls_loss : 0.55618, tgt_cls_loss : 0.01543, transfer_loss : 0.07445, 
+2020-09-06 04:50:54,413 - __main__ - INFO - Source epoch 23/50 main_lr=0.001000
+2020-09-06 05:53:12,926 - __main__ - INFO - tgt_test_acc: 10.50 ; src_test_acc: 21.22src_cls_loss : 0.55352, tgt_cls_loss : 0.01293, transfer_loss : 0.07911, 
+2020-09-06 05:53:14,374 - __main__ - INFO - Source epoch 24/50 main_lr=0.001000
+2020-09-06 06:56:11,317 - __main__ - INFO - tgt_test_acc: 13.09 ; src_test_acc: 22.60src_cls_loss : 0.54886, tgt_cls_loss : 0.01614, transfer_loss : 0.08580, 
+2020-09-06 06:56:12,649 - __main__ - INFO - Source epoch 25/50 main_lr=0.001000
+2020-09-06 07:58:45,624 - __main__ - INFO - tgt_test_acc: 19.30 ; src_test_acc: 35.96src_cls_loss : 0.53123, tgt_cls_loss : 0.01588, transfer_loss : 0.09370, 
+2020-09-06 07:58:46,966 - __main__ - INFO - Source epoch 26/50 main_lr=0.001000
+2020-09-06 09:01:24,923 - __main__ - INFO - tgt_test_acc: 39.91 ; src_test_acc: 66.60src_cls_loss : 0.56397, tgt_cls_loss : 0.02679, transfer_loss : 0.12156, 
+2020-09-06 09:01:26,276 - __main__ - INFO - Source epoch 27/50 main_lr=0.001000
+2020-09-06 10:03:33,110 - __main__ - INFO - tgt_test_acc: 29.15 ; src_test_acc: 51.54src_cls_loss : 0.53069, tgt_cls_loss : 0.01681, transfer_loss : 0.11177, 
+2020-09-06 10:03:34,675 - __main__ - INFO - Source epoch 28/50 main_lr=0.001000
+2020-09-06 11:06:35,189 - __main__ - INFO - tgt_test_acc: 27.34 ; src_test_acc: 49.80src_cls_loss : 0.50330, tgt_cls_loss : 0.01395, transfer_loss : 0.12016, 
+2020-09-06 11:06:36,653 - __main__ - INFO - Source epoch 29/50 main_lr=0.001000
+2020-09-06 12:14:54,211 - __main__ - INFO - tgt_test_acc: 24.67 ; src_test_acc: 44.94src_cls_loss : 0.50468, tgt_cls_loss : 0.01534, transfer_loss : 0.13398, 
+2020-09-06 12:14:55,592 - __main__ - INFO - Source epoch 30/50 main_lr=0.001000
+2020-09-06 13:17:48,422 - __main__ - INFO - tgt_test_acc: 17.69 ; src_test_acc: 34.68src_cls_loss : 0.50268, tgt_cls_loss : 0.01430, transfer_loss : 0.15054, 
+2020-09-06 13:17:50,157 - __main__ - INFO - Source epoch 31/50 main_lr=0.001000
+2020-09-06 14:20:29,514 - __main__ - INFO - tgt_test_acc: 37.33 ; src_test_acc: 65.34src_cls_loss : 0.51736, tgt_cls_loss : 0.02083, transfer_loss : 0.17835, 
+2020-09-06 14:20:30,877 - __main__ - INFO - Source epoch 32/50 main_lr=0.001000
+2020-09-06 15:23:14,676 - __main__ - INFO - tgt_test_acc: 29.55 ; src_test_acc: 55.04src_cls_loss : 0.52609, tgt_cls_loss : 0.02198, transfer_loss : 0.20669, 
+2020-09-06 15:23:16,009 - __main__ - INFO - Source epoch 33/50 main_lr=0.001000
+2020-09-06 16:25:51,605 - __main__ - INFO - tgt_test_acc: 21.54 ; src_test_acc: 42.02src_cls_loss : 0.50980, tgt_cls_loss : 0.01452, transfer_loss : 0.24133, 
+2020-09-06 16:25:53,156 - __main__ - INFO - Source epoch 34/50 main_lr=0.001000
+2020-09-06 17:31:03,218 - __main__ - INFO - tgt_test_acc: 36.32 ; src_test_acc: 63.54src_cls_loss : 0.53753, tgt_cls_loss : 0.01577, transfer_loss : 0.27632, 
+2020-09-06 17:31:04,665 - __main__ - INFO - Source epoch 35/50 main_lr=0.001000
+2020-09-06 18:33:31,824 - __main__ - INFO - tgt_test_acc: 24.06 ; src_test_acc: 47.14src_cls_loss : 0.54929, tgt_cls_loss : 0.01662, transfer_loss : 0.34872, 
+2020-09-06 18:33:33,338 - __main__ - INFO - Source epoch 36/50 main_lr=0.001000
+2020-09-06 19:36:07,710 - __main__ - INFO - tgt_test_acc: 46.24 ; src_test_acc: 73.84src_cls_loss : 0.59690, tgt_cls_loss : 0.02765, transfer_loss : 0.42955, 
+2020-09-06 19:36:09,112 - __main__ - INFO - Source epoch 37/50 main_lr=0.001000
+2020-09-06 20:39:28,610 - __main__ - INFO - tgt_test_acc: 43.94 ; src_test_acc: 72.02src_cls_loss : 0.58638, tgt_cls_loss : 0.02426, transfer_loss : 0.38979, 
+2020-09-06 20:39:30,140 - __main__ - INFO - Source epoch 38/50 main_lr=0.001000
+2020-09-06 21:42:58,897 - __main__ - INFO - tgt_test_acc: 40.36 ; src_test_acc: 67.86src_cls_loss : 0.63644, tgt_cls_loss : 0.01698, transfer_loss : 0.57214, 
+2020-09-06 21:43:00,265 - __main__ - INFO - Source epoch 39/50 main_lr=0.001000
+2020-09-06 22:46:13,501 - __main__ - INFO - tgt_test_acc: 42.86 ; src_test_acc: 69.70src_cls_loss : 0.66476, tgt_cls_loss : 0.02004, transfer_loss : 0.65999, 
+2020-09-06 22:46:14,997 - __main__ - INFO - Source epoch 40/50 main_lr=0.001000
+2020-09-06 23:50:11,097 - __main__ - INFO - tgt_test_acc: 41.19 ; src_test_acc: 69.12src_cls_loss : 0.74279, tgt_cls_loss : 0.02363, transfer_loss : 0.88156, 
+2020-09-06 23:50:12,939 - __main__ - INFO - Source epoch 41/50 main_lr=0.001000
+2020-09-07 00:53:18,905 - __main__ - INFO - tgt_test_acc: 41.48 ; src_test_acc: 69.44src_cls_loss : 0.76625, tgt_cls_loss : 0.03561, transfer_loss : 0.73814, 
+2020-09-07 00:53:20,305 - __main__ - INFO - Source epoch 42/50 main_lr=0.001000
+2020-09-07 01:56:24,789 - __main__ - INFO - tgt_test_acc: 43.56 ; src_test_acc: 70.22src_cls_loss : 0.82259, tgt_cls_loss : 0.02700, transfer_loss : 1.03869, 
+2020-09-07 01:56:26,159 - __main__ - INFO - Source epoch 43/50 main_lr=0.001000
+2020-09-07 02:59:29,015 - __main__ - INFO - tgt_test_acc: 42.98 ; src_test_acc: 69.44src_cls_loss : 0.88407, tgt_cls_loss : 0.02638, transfer_loss : 1.10452, 
+2020-09-07 02:59:30,436 - __main__ - INFO - Source epoch 44/50 main_lr=0.001000
+2020-09-07 04:02:14,910 - __main__ - INFO - tgt_test_acc: 39.41 ; src_test_acc: 65.36src_cls_loss : 0.91900, tgt_cls_loss : 0.02671, transfer_loss : 1.32188, 
+2020-09-07 04:02:16,464 - __main__ - INFO - Source epoch 45/50 main_lr=0.001000
+2020-09-07 05:05:21,111 - __main__ - INFO - tgt_test_acc: 40.17 ; src_test_acc: 67.06src_cls_loss : 1.06053, tgt_cls_loss : 0.03677, transfer_loss : 1.51600, 
+2020-09-07 05:05:22,495 - __main__ - INFO - Source epoch 46/50 main_lr=0.001000
+2020-09-07 06:08:05,516 - __main__ - INFO - tgt_test_acc: 42.47 ; src_test_acc: 70.56src_cls_loss : 1.03617, tgt_cls_loss : 0.03013, transfer_loss : 1.52054, 
+2020-09-07 06:08:06,828 - __main__ - INFO - Source epoch 47/50 main_lr=0.001000
+2020-09-07 07:11:16,718 - __main__ - INFO - tgt_test_acc: 42.92 ; src_test_acc: 69.02src_cls_loss : 1.09137, tgt_cls_loss : 0.03774, transfer_loss : 1.42736, 
+2020-09-07 07:11:18,192 - __main__ - INFO - Source epoch 48/50 main_lr=0.001000
+2020-09-07 08:13:29,725 - __main__ - INFO - tgt_test_acc: 41.39 ; src_test_acc: 68.28src_cls_loss : 1.27881, tgt_cls_loss : 0.03948, transfer_loss : 1.98640, 
+2020-09-07 08:13:31,125 - __main__ - INFO - Source epoch 49/50 main_lr=0.001000
+2020-09-07 09:16:30,119 - __main__ - INFO - tgt_test_acc: 42.30 ; src_test_acc: 67.98src_cls_loss : 1.25584, tgt_cls_loss : 0.03448, transfer_loss : 2.12730, 
+2020-09-07 09:16:31,736 - __main__ - INFO - Source epoch 50/50 main_lr=0.001000
+2020-09-07 10:19:54,902 - __main__ - INFO - tgt_test_acc: 38.29 ; src_test_acc: 61.54src_cls_loss : 1.29132, tgt_cls_loss : 0.03463, transfer_loss : 2.27073, 

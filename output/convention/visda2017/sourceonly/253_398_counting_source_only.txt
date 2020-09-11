@@ -1,0 +1,59 @@
+2020-09-10 21:15:25,924 - bootstrap - INFO - 
+----------------- Options ---------------
+                        K: 256                           
+              adapted_dim: 1024                          
+              adj_lr_func: none                          
+                annealing: none                          
+               batch_size: 4                             
+                 channels: 3                             
+              contrastive: False                         
+                   cosine: False                         
+                data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/visda2017
+                  dataset: citycam                       
+        domain_shift_type: convention                    
+                  dropout: False                         
+                     flip: False                         
+                   frozen: []                            
+                      gpu: [0]                           
+               image_size: 224                           
+               lambda_irm: 0.0                           
+                     lirr: False                         
+                load_path: None                          
+                     logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/visda2017/sourceonly/253_398_counting_source_only.txt
+         logger_file_name: counting_source_only          
+                       lr: 0.002                         
+                  lr_flip: 0.1                           
+              lr_quadrant: 0.1                           
+              lr_rotation: 0.1                           
+                  lw_flip: 0.1                           
+              lw_quadrant: 0.1                           
+              lw_rotation: 0.1                           
+                        m: 0.998                         
+                   method: source_only                   
+                milestone: 50                            
+                      mim: False                         
+                    mixup: False                         
+            moco_finetune: False                         
+               model_name: CountingNet                   
+                   nepoch: 100                           
+                 nthreads: 8                             
+                  num_cls: 12                            
+                     outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/253_398_visda2017_source_only
+                   quad_p: 2                             
+                 quadrant: False                         
+                 rotation: False                         
+                   source: ['253']                       
+                   target: 398                           
+                task_type: reg                           
+                     temp: 1                             
+                trade_off: 0.1                           
+                      vib: False                         
+----------------- End -------------------
+2020-09-10 21:15:25,926 - bootstrap - INFO - ==> Building model..
+2020-09-10 21:15:33,189 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-10 21:15:33,345 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-10 21:15:33,346 - bootstrap - INFO - ==> No pretext task.
+2020-09-10 21:15:33,347 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-10 21:15:33,347 - bootstrap - INFO - ==> no extra module need to be constructed.
+2020-09-10 21:15:33,348 - bootstrap - INFO - ==> Running..
+2020-09-10 21:15:33,349 - bootstrap - INFO - Source epoch 1/100 main_lr=0.002000

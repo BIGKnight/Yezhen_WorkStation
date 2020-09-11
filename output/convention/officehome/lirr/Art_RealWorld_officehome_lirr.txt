@@ -1,0 +1,60 @@
+2020-09-04 00:01:41,142 - __main__ - INFO - 
+----------------- Options ---------------
+                        K: 256                           
+              adapted_dim: 1024                          
+              adj_lr_func: none                          
+                annealing: none                          
+               batch_size: 128                           
+                 channels: 3                             
+              contrastive: False                         
+                   cosine: True                          
+                data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/DDA_office/officehome
+                  dataset: officehome                    
+        domain_shift_type: convention                    
+                  dropout: False                         
+                     flip: False                         
+                   frozen: []                            
+                      gpu: [0]                           
+               image_size: 224                           
+                     lirr: False                         
+                load_path: None                          
+                     logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/officehome/lirr/Art_RealWorld_officehome_lirr.txt
+         logger_file_name: officehome_lirr               
+                       lr: 0.0001                        
+                  lr_flip: 0.1                           
+              lr_quadrant: 0.1                           
+              lr_rotation: 0.1                           
+                  lw_flip: 0.1                           
+              lw_quadrant: 0.1                           
+              lw_rotation: 0.1                           
+                        m: 0.998                         
+                   method: lirr                          
+                milestone: 50                            
+                      mim: False                         
+                  mim_src: False                         
+                  mim_tgt: False                         
+                    mixup: False                         
+            moco_finetune: False                         
+               model_name: resnet34                      
+                   nepoch: 50                            
+                 nthreads: 8                             
+                  num_cls: 65                            
+                     outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/Art_RealWorld_officehome_lirr
+                   quad_p: 2                             
+                 quadrant: False                         
+                 rotation: False                         
+                   source: ['Art']                       
+                   target: RealWorld                     
+                     temp: 0.05                          
+                trade_off: 1.0                           
+                      vib: False                         
+----------------- End -------------------
+2020-09-04 00:01:41,144 - __main__ - INFO - ==> Reasonableness checking..
+2020-09-04 00:01:41,144 - __main__ - INFO - ==> Building model..
+2020-09-04 00:01:46,724 - __main__ - INFO - ==> Preparing datasets..
+2020-09-04 00:01:46,878 - __main__ - INFO - ==> Creating pretext tasks.
+2020-09-04 00:01:46,878 - __main__ - INFO - ==> No pretext task.
+2020-09-04 00:01:46,879 - __main__ - INFO - ==> Creating Optimizer & Building modules...
+2020-09-04 00:01:46,950 - __main__ - INFO - ==> Have built extra modules: ad_net, predictor_env under LiRR method.
+2020-09-04 00:01:46,952 - __main__ - INFO - ==> Running..
+2020-09-04 00:01:46,952 - __main__ - INFO - Source epoch 1/50 main_lr=0.000100

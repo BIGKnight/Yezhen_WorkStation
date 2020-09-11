@@ -1,0 +1,83 @@
+2020-09-10 22:49:47,565 - bootstrap - INFO - 
+----------------- Options ---------------
+                        K: 256                           
+              adapted_dim: 1024                          
+              adj_lr_func: none                          
+                annealing: none                          
+               batch_size: 32                            
+                 channels: 3                             
+              contrastive: False                         
+                   cosine: False                         
+                data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/visda2017
+                  dataset: visda2017                     
+        domain_shift_type: convention                    
+                  dropout: False                         
+                     flip: False                         
+                   frozen: []                            
+                      gpu: [0]                           
+               image_size: 224                           
+               lambda_irm: 0.0                           
+                     lirr: False                         
+                load_path: None                          
+                     logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/visda2017/sourceonly/train_validation_visda2017_source_only.txt
+         logger_file_name: visda2017_source_only         
+                       lr: 0.002                         
+                  lr_flip: 0.1                           
+              lr_quadrant: 0.1                           
+              lr_rotation: 0.1                           
+                  lw_flip: 0.1                           
+              lw_quadrant: 0.1                           
+              lw_rotation: 0.1                           
+                        m: 0.998                         
+                   method: source_only                   
+                milestone: 50                            
+                      mim: False                         
+                    mixup: False                         
+            moco_finetune: False                         
+               model_name: resnet34                      
+                   nepoch: 100                           
+                 nthreads: 8                             
+                  num_cls: 12                            
+                     outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/train_validation_visda2017_source_only
+                   quad_p: 2                             
+                 quadrant: False                         
+                 rotation: False                         
+                   source: ['train']                     
+                   target: validation                    
+                task_type: cls                           
+                     temp: 1                             
+                trade_off: 0.1                           
+                      vib: False                         
+----------------- End -------------------
+2020-09-10 22:49:47,566 - bootstrap - INFO - ==> Building model..
+2020-09-10 22:49:53,457 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-10 22:49:54,582 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-10 22:49:54,583 - bootstrap - INFO - ==> No pretext task.
+2020-09-10 22:49:54,583 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-10 22:49:54,584 - bootstrap - INFO - ==> no extra module need to be constructed.
+2020-09-10 22:49:54,585 - bootstrap - INFO - ==> Running..
+2020-09-10 22:49:54,585 - bootstrap - INFO - Source epoch 1/100 main_lr=0.002000
+2020-09-10 23:40:34,957 - __main__ - INFO - tgt_test_acc: 75.11 ; src_test_acc: 97.96src_cls_loss : 0.01192, tgt_cls_loss : 0.00169, transfer_loss : 0.00000, 
+2020-09-10 23:40:36,084 - __main__ - INFO - Source epoch 5/100 main_lr=0.020000
+2020-09-11 01:25:22,799 - __main__ - INFO - tgt_test_acc: 73.96 ; src_test_acc: 98.48src_cls_loss : 0.00872, tgt_cls_loss : 0.00123, transfer_loss : 0.00000, 
+2020-09-11 01:25:24,044 - __main__ - INFO - Source epoch 6/100 main_lr=0.020000
+2020-09-11 03:11:07,807 - __main__ - INFO - tgt_test_acc: 74.79 ; src_test_acc: 97.66src_cls_loss : 0.00727, tgt_cls_loss : 0.00102, transfer_loss : 0.00000, 
+2020-09-11 03:11:09,126 - __main__ - INFO - Source epoch 7/100 main_lr=0.020000
+2020-09-11 04:55:40,632 - __main__ - INFO - tgt_test_acc: 75.64 ; src_test_acc: 98.56src_cls_loss : 0.00610, tgt_cls_loss : 0.00080, transfer_loss : 0.00000, 
+2020-09-11 04:55:41,918 - __main__ - INFO - Source epoch 8/100 main_lr=0.020000
+2020-09-11 06:39:59,309 - __main__ - INFO - tgt_test_acc: 73.24 ; src_test_acc: 98.90src_cls_loss : 0.00506, tgt_cls_loss : 0.00076, transfer_loss : 0.00000, 
+2020-09-11 06:40:00,569 - __main__ - INFO - Source epoch 9/100 main_lr=0.020000
+2020-09-11 08:24:40,602 - __main__ - INFO - tgt_test_acc: 75.83 ; src_test_acc: 98.02src_cls_loss : 0.00455, tgt_cls_loss : 0.00071, transfer_loss : 0.00000, 
+2020-09-11 08:24:41,917 - __main__ - INFO - Source epoch 10/100 main_lr=0.020000
+2020-09-11 10:07:00,097 - __main__ - INFO - tgt_test_acc: 75.25 ; src_test_acc: 98.62src_cls_loss : 0.00408, tgt_cls_loss : 0.00067, transfer_loss : 0.00000, 
+2020-09-11 10:07:01,633 - __main__ - INFO - Source epoch 11/100 main_lr=0.020000
+2020-09-11 11:50:10,839 - __main__ - INFO - tgt_test_acc: 76.06 ; src_test_acc: 98.78src_cls_loss : 0.00400, tgt_cls_loss : 0.00063, transfer_loss : 0.00000, 
+2020-09-11 11:50:12,071 - __main__ - INFO - Source epoch 12/100 main_lr=0.020000
+2020-09-11 13:30:28,719 - __main__ - INFO - tgt_test_acc: 75.11 ; src_test_acc: 99.16src_cls_loss : 0.00351, tgt_cls_loss : 0.00055, transfer_loss : 0.00000, 
+2020-09-11 13:30:29,899 - __main__ - INFO - Source epoch 13/100 main_lr=0.020000
+2020-09-11 15:11:15,440 - __main__ - INFO - tgt_test_acc: 74.37 ; src_test_acc: 99.12src_cls_loss : 0.00317, tgt_cls_loss : 0.00055, transfer_loss : 0.00000, 
+2020-09-11 15:11:16,674 - __main__ - INFO - Source epoch 14/100 main_lr=0.020000
+2020-09-11 16:53:32,295 - __main__ - INFO - tgt_test_acc: 74.58 ; src_test_acc: 98.78src_cls_loss : 0.00301, tgt_cls_loss : 0.00052, transfer_loss : 0.00000, 
+2020-09-11 16:53:33,495 - __main__ - INFO - Source epoch 15/100 main_lr=0.020000
+2020-09-11 18:33:34,222 - __main__ - INFO - tgt_test_acc: 75.62 ; src_test_acc: 98.26src_cls_loss : 0.00285, tgt_cls_loss : 0.00047, transfer_loss : 0.00000, 
+2020-09-11 18:33:35,362 - __main__ - INFO - Source epoch 16/100 main_lr=0.020000

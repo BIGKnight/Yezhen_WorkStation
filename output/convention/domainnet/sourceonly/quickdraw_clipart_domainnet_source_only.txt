@@ -1,0 +1,91 @@
+2020-09-05 03:40:16,754 - __main__ - INFO - 
+----------------- Options ---------------
+                        K: 256                           
+              adapted_dim: 1024                          
+              adj_lr_func: none                          
+                annealing: none                          
+               batch_size: 128                           
+                 channels: 3                             
+              contrastive: False                         
+                   cosine: False                         
+                data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/visda2019/domainnet
+                  dataset: domainnet                     
+        domain_shift_type: convention                    
+                  dropout: False                         
+                     flip: False                         
+                   frozen: []                            
+                      gpu: [0]                           
+               image_size: 224                           
+               lambda_irm: 0.0                           
+                     lirr: False                         
+                load_path: None                          
+                     logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/domainnet/sourceonly/quickdraw_clipart_domainnet_source_only.txt
+         logger_file_name: domainnet_source_only         
+                       lr: 0.0001                        
+                  lr_flip: 0.1                           
+              lr_quadrant: 0.1                           
+              lr_rotation: 0.1                           
+                  lw_flip: 0.1                           
+              lw_quadrant: 0.1                           
+              lw_rotation: 0.1                           
+                        m: 0.998                         
+                   method: source_only                   
+                milestone: 50                            
+                      mim: False                         
+                    mixup: False                         
+            moco_finetune: False                         
+               model_name: resnet34                      
+                   nepoch: 50                            
+                 nthreads: 8                             
+                  num_cls: 345                           
+                     outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/quickdraw_clipart_domainnet_source_only
+                   quad_p: 2                             
+                 quadrant: False                         
+                 rotation: False                         
+                   source: ['quickdraw']                 
+                   target: clipart                       
+                     temp: 1                             
+                trade_off: 0.1                           
+                      vib: False                         
+----------------- End -------------------
+2020-09-05 03:40:16,756 - __main__ - INFO - ==> Reasonableness checking..
+2020-09-05 03:40:16,756 - __main__ - INFO - ==> Building model..
+2020-09-05 03:40:22,205 - __main__ - INFO - ==> Preparing datasets..
+2020-09-05 03:40:23,613 - __main__ - INFO - ==> Creating pretext tasks.
+2020-09-05 03:40:23,613 - __main__ - INFO - ==> No pretext task.
+2020-09-05 03:40:23,614 - __main__ - INFO - ==> Creating Optimizer & Building modules...
+2020-09-05 03:40:23,614 - __main__ - INFO - ==> no extra module need to be constructed.
+2020-09-05 03:40:23,615 - __main__ - INFO - ==> Running..
+2020-09-05 03:40:23,615 - __main__ - INFO - Source epoch 1/50 main_lr=0.000100
+2020-09-05 05:47:55,865 - __main__ - INFO - tgt_test_acc: 24.96 ; src_test_acc: 45.36src_cls_loss : 1.68046, tgt_cls_loss : 0.29867, transfer_loss : 0.00000, 
+2020-09-05 05:47:56,945 - __main__ - INFO - Source epoch 2/50 main_lr=0.001000
+2020-09-05 08:15:54,196 - __main__ - INFO - tgt_test_acc: 25.02 ; src_test_acc: 51.52src_cls_loss : 1.13255, tgt_cls_loss : 0.02844, transfer_loss : 0.00000, 
+2020-09-05 08:15:55,251 - __main__ - INFO - Source epoch 3/50 main_lr=0.001000
+2020-09-05 10:40:31,381 - __main__ - INFO - tgt_test_acc: 25.70 ; src_test_acc: 54.02src_cls_loss : 1.00756, tgt_cls_loss : 0.02136, transfer_loss : 0.00000, 
+2020-09-05 10:40:32,480 - __main__ - INFO - Source epoch 4/50 main_lr=0.001000
+2020-09-05 13:07:44,196 - __main__ - INFO - tgt_test_acc: 24.93 ; src_test_acc: 55.34src_cls_loss : 0.93698, tgt_cls_loss : 0.01784, transfer_loss : 0.00000, 
+2020-09-05 13:07:45,362 - __main__ - INFO - Source epoch 5/50 main_lr=0.001000
+2020-09-05 15:33:23,586 - __main__ - INFO - tgt_test_acc: 22.94 ; src_test_acc: 55.82src_cls_loss : 0.88173, tgt_cls_loss : 0.01652, transfer_loss : 0.00000, 
+2020-09-05 15:33:24,860 - __main__ - INFO - Source epoch 6/50 main_lr=0.001000
+2020-09-05 17:56:34,701 - __main__ - INFO - tgt_test_acc: 22.39 ; src_test_acc: 56.12src_cls_loss : 0.84008, tgt_cls_loss : 0.01532, transfer_loss : 0.00000, 
+2020-09-05 17:56:35,873 - __main__ - INFO - Source epoch 7/50 main_lr=0.001000
+2020-09-05 20:01:57,083 - __main__ - INFO - tgt_test_acc: 23.47 ; src_test_acc: 58.20src_cls_loss : 0.81065, tgt_cls_loss : 0.01448, transfer_loss : 0.00000, 
+2020-09-05 20:01:58,275 - __main__ - INFO - Source epoch 8/50 main_lr=0.001000
+2020-09-05 22:04:09,904 - __main__ - INFO - tgt_test_acc: 23.27 ; src_test_acc: 59.46src_cls_loss : 0.77413, tgt_cls_loss : 0.01352, transfer_loss : 0.00000, 
+2020-09-05 22:04:11,077 - __main__ - INFO - Source epoch 9/50 main_lr=0.001000
+2020-09-06 00:06:24,267 - __main__ - INFO - tgt_test_acc: 24.78 ; src_test_acc: 59.56src_cls_loss : 0.74617, tgt_cls_loss : 0.01265, transfer_loss : 0.00000, 
+2020-09-06 00:06:25,369 - __main__ - INFO - Source epoch 10/50 main_lr=0.001000
+2020-09-06 02:08:32,856 - __main__ - INFO - tgt_test_acc: 23.92 ; src_test_acc: 62.18src_cls_loss : 0.72017, tgt_cls_loss : 0.01268, transfer_loss : 0.00000, 
+2020-09-06 02:08:34,371 - __main__ - INFO - Source epoch 11/50 main_lr=0.001000
+2020-09-06 04:10:43,286 - __main__ - INFO - tgt_test_acc: 24.30 ; src_test_acc: 59.44src_cls_loss : 0.70299, tgt_cls_loss : 0.01246, transfer_loss : 0.00000, 
+2020-09-06 04:10:44,443 - __main__ - INFO - Source epoch 12/50 main_lr=0.001000
+2020-09-06 06:13:03,858 - __main__ - INFO - tgt_test_acc: 23.05 ; src_test_acc: 58.82src_cls_loss : 0.67620, tgt_cls_loss : 0.01275, transfer_loss : 0.00000, 
+2020-09-06 06:13:04,968 - __main__ - INFO - Source epoch 13/50 main_lr=0.001000
+2020-09-06 08:15:29,789 - __main__ - INFO - tgt_test_acc: 22.91 ; src_test_acc: 64.44src_cls_loss : 0.65739, tgt_cls_loss : 0.01222, transfer_loss : 0.00000, 
+2020-09-06 08:15:30,961 - __main__ - INFO - Source epoch 14/50 main_lr=0.001000
+2020-09-06 10:17:39,463 - __main__ - INFO - tgt_test_acc: 23.61 ; src_test_acc: 65.94src_cls_loss : 0.63963, tgt_cls_loss : 0.01170, transfer_loss : 0.00000, 
+2020-09-06 10:17:40,556 - __main__ - INFO - Source epoch 15/50 main_lr=0.001000
+2020-09-06 12:26:52,378 - __main__ - INFO - tgt_test_acc: 24.06 ; src_test_acc: 64.46src_cls_loss : 0.62564, tgt_cls_loss : 0.01109, transfer_loss : 0.00000, 
+2020-09-06 12:26:53,471 - __main__ - INFO - Source epoch 16/50 main_lr=0.001000
+2020-09-06 14:27:45,983 - __main__ - INFO - tgt_test_acc: 23.75 ; src_test_acc: 67.54src_cls_loss : 0.61109, tgt_cls_loss : 0.01107, transfer_loss : 0.00000, 
+2020-09-06 14:27:47,185 - __main__ - INFO - Source epoch 17/50 main_lr=0.001000

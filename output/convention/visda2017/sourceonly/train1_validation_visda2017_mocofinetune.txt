@@ -1,0 +1,58 @@
+2020-08-06 17:27:29,133 - __main__ - INFO - 
+----------------- Options ---------------
+                        K: 8192                          
+              adapted_dim: 1024                          
+              adj_lr_func: none                          
+                annealing: none                          
+               batch_size: 64                            
+                 channels: 3                             
+              contrastive: False                         
+                data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/visda2017
+                  dataset: visda2017                     
+        domain_shift_type: convention                    
+                  dropout: False                         
+                     flip: False                         
+                   frozen: ['conv1', 'bn1', 'layer1', 'layer2', 'layer3', 'layer4', 'bottleneck']
+                      gpu: [0]                           
+               image_size: 224                           
+                     lirr: False                         
+                load_path: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/train_validation_visda2017_moco/net_epoch_100.pth
+                     logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/visda2017/sourceonly/train1_validation_visda2017_mocofinetune.txt
+         logger_file_name: visda2017_mocofinetune        
+                       lr: 0.0001                        
+                  lr_flip: 0.1                           
+              lr_quadrant: 0.1                           
+              lr_rotation: 0.1                           
+                  lw_flip: 0.1                           
+              lw_quadrant: 0.1                           
+              lw_rotation: 0.1                           
+                        m: 0.998                         
+                   method: moco                          
+                milestone: 100                           
+                      mim: False                         
+                    mixup: False                         
+            moco_finetune: True                          
+               model_name: resnet101                     
+                   nepoch: 100                           
+                 nthreads: 8                             
+                  num_cls: 12                            
+                     outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/train1_validation_visda2017_mocofinetune
+                   quad_p: 2                             
+                 quadrant: False                         
+                 rotation: False                         
+                   source: ['train1']                    
+                   target: validation                    
+                     temp: 0.07                          
+                trade_off: 0.1                           
+                      vib: False                         
+----------------- End -------------------
+2020-08-06 17:27:29,134 - __main__ - INFO - ==> Reasonableness checking..
+2020-08-06 17:27:29,134 - __main__ - INFO - ==> Building model..
+2020-08-06 17:27:35,337 - __main__ - INFO - ==> Loading model..
+2020-08-06 17:27:36,069 - __main__ - INFO - ==> Building modules..
+2020-08-06 17:27:36,289 - __main__ - INFO - ==> Preparing datasets..
+2020-08-06 17:27:36,611 - __main__ - INFO - ==> Creating pretext tasks.
+2020-08-06 17:27:36,612 - __main__ - INFO - ==> No pretext task.
+2020-08-06 17:27:36,612 - __main__ - INFO - ==> Creating Optimizer.
+2020-08-06 17:27:36,612 - __main__ - INFO - ==> Running..
+2020-08-06 17:27:36,612 - __main__ - INFO - Source epoch 1/100 main_lr=0.000100

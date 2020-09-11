@@ -1,0 +1,58 @@
+2020-09-11 18:27:34,460 - bootstrap - INFO - 
+----------------- Options ---------------
+                        K: 256                           
+              adapted_dim: 1024                          
+              adj_lr_func: none                          
+                annealing: none                          
+               batch_size: 128                           
+                 channels: 3                             
+              contrastive: False                         
+                   cosine: False                         
+                data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/visda2019/domainnet
+                  dataset: domainnet                     
+        domain_shift_type: convention                    
+                  dropout: False                         
+                     flip: False                         
+                   frozen: []                            
+                      gpu: [0]                           
+               image_size: 224                           
+               lambda_irm: 0.0                           
+                     lirr: False                         
+                load_path: None                          
+                     logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/domainnet/cdan/clipart_sketch_domainnet_cdan.txt
+         logger_file_name: domainnet_cdan                
+                       lr: 0.001                         
+                  lr_flip: 0.1                           
+              lr_quadrant: 0.1                           
+              lr_rotation: 0.1                           
+                  lw_flip: 0.1                           
+              lw_quadrant: 0.1                           
+              lw_rotation: 0.1                           
+                        m: 0.998                         
+                   method: cdan                          
+                milestone: 40                            
+                      mim: False                         
+                    mixup: False                         
+            moco_finetune: False                         
+               model_name: resnet34                      
+                   nepoch: 60                            
+                 nthreads: 8                             
+                  num_cls: 345                           
+           optimizer_type: sgd                           
+                     outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/clipart_sketch_domainnet_cdan
+                   quad_p: 2                             
+                 quadrant: False                         
+                 rotation: False                         
+                   source: ['clipart']                   
+                   target: sketch                        
+                task_type: cls                           
+                     temp: 1                             
+                trade_off: 0.1                           
+                      vib: False                         
+----------------- End -------------------
+2020-09-11 18:27:34,461 - bootstrap - INFO - ==> Building model..
+2020-09-11 18:27:40,101 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-11 18:27:40,899 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-11 18:27:40,899 - bootstrap - INFO - ==> No pretext task.
+2020-09-11 18:27:40,899 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-11 18:27:40,968 - bootstrap - INFO - ==> Have built extra modules: random_layer, ad_net under CADA method.

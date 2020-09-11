@@ -1,0 +1,86 @@
+2020-07-16 23:35:36,048 - __main__ - INFO - 
+----------------- Options ---------------
+                        K: 512                           
+              adapted_dim: 1024                          
+              adj_lr_func: none                          
+                annealing: none                          
+               batch_size: 32                            
+                 channels: 3                             
+              contrastive: True                          
+                data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/visda2019/domainnet
+                  dataset: domainnet                     
+        domain_shift_type: LDS                           
+                  dropout: False                         
+                     flip: True                          
+                   frozen: []                            
+                      gpu: [0]                           
+               image_size: 224                           
+                load_path: None                          
+                     logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/LDS/domainnet/instapbm/infograph_clipart_instapbm.txt
+         logger_file_name: domainnet_instapbm_LDS        
+                       lr: 0.0001                        
+                  lr_flip: 0.0001                        
+              lr_quadrant: 0.0001                        
+              lr_rotation: 0.0001                        
+                  lw_flip: 1.0                           
+              lw_quadrant: 1.0                           
+              lw_rotation: 1.0                           
+                   method: instapbm                      
+                milestone: 45                            
+                      mim: True                          
+                    mixup: True                          
+               model_name: resnet101                     
+                   nepoch: 50                            
+                 nthreads: 8                             
+                  num_cls: 345                           
+                     outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/infograph_clipart_domainnet_instapbm
+                   quad_p: 2                             
+                 quadrant: True                          
+                 rotation: True                          
+                   source: ['infograph']                 
+                   target: clipart                       
+                trade_off: 0.1                           
+                      vib: False                         
+----------------- End -------------------
+2020-07-16 23:35:36,049 - __main__ - INFO - ==> Reasonableness checking..
+2020-07-16 23:35:36,050 - __main__ - INFO - ==> Building model..
+2020-07-16 23:35:42,332 - __main__ - INFO - ==> Building modules..
+2020-07-16 23:35:42,334 - __main__ - INFO - ==> Have built extra modules: queue, ptr for instapbm method.
+2020-07-16 23:35:42,335 - __main__ - INFO - ==> Preparing datasets..
+2020-07-16 23:35:42,973 - __main__ - INFO - ==> Creating pretext tasks.
+2020-07-16 23:35:44,912 - __main__ - INFO - ==> Created pretext task: rot
+2020-07-16 23:35:44,980 - __main__ - INFO - ==> Created pretext task: qdr
+2020-07-16 23:35:44,988 - __main__ - INFO - ==> Created pretext task: flip
+2020-07-16 23:35:44,988 - __main__ - INFO - ==> Creating Optimizer.
+2020-07-16 23:35:44,994 - __main__ - INFO - ==> Running..
+2020-07-16 23:35:44,995 - __main__ - INFO - Source epoch 1/50 main_lr=0.000100
+2020-07-17 01:03:18,607 - __main__ - INFO - tgt_test_acc: 12.04 ; rot : 0.97071, qdr : 0.76094, flip : 0.56039, cls_loss : 4.96317, cent_loss : 0.46746, infoent_loss : -0.52545, mim_loss : -0.05799, tgt_mixup_loss : 0.00166, src_mixup_loss : 0.13222, contrastive_loss : 0.01982, 
+2020-07-17 01:03:19,018 - __main__ - INFO - Source epoch 2/50 main_lr=0.001000
+2020-07-17 02:29:57,580 - __main__ - INFO - tgt_test_acc: 12.12 ; rot : 0.72102, qdr : 0.45236, flip : 0.38461, cls_loss : 4.06384, cent_loss : 0.20205, infoent_loss : -0.34776, mim_loss : -0.14571, tgt_mixup_loss : 0.00531, src_mixup_loss : 0.12637, contrastive_loss : 0.04283, 
+2020-07-17 02:29:57,946 - __main__ - INFO - Source epoch 3/50 main_lr=0.001000
+2020-07-17 03:56:55,327 - __main__ - INFO - tgt_test_acc: 10.90 ; rot : 0.59133, qdr : 0.36557, flip : 0.32127, cls_loss : 3.61038, cent_loss : 0.03263, infoent_loss : -0.09965, mim_loss : -0.06702, tgt_mixup_loss : 0.00372, src_mixup_loss : 0.12253, contrastive_loss : 0.02096, 
+2020-07-17 03:56:55,759 - __main__ - INFO - Source epoch 4/50 main_lr=0.001000
+2020-07-17 05:23:30,685 - __main__ - INFO - tgt_test_acc: 12.84 ; rot : 0.53794, qdr : 0.34891, flip : 0.28711, cls_loss : 3.29427, cent_loss : 0.00607, infoent_loss : -0.02330, mim_loss : -0.01723, tgt_mixup_loss : 0.00141, src_mixup_loss : 0.11949, contrastive_loss : 0.00680, 
+2020-07-17 05:23:31,156 - __main__ - INFO - Source epoch 5/50 main_lr=0.001000
+2020-07-17 06:50:13,222 - __main__ - INFO - tgt_test_acc: 11.78 ; rot : 0.49373, qdr : 0.32560, flip : 0.25853, cls_loss : 3.08524, cent_loss : 0.00237, infoent_loss : -0.00528, mim_loss : -0.00290, tgt_mixup_loss : 0.00025, src_mixup_loss : 0.11700, contrastive_loss : 0.00196, 
+2020-07-17 06:50:13,851 - __main__ - INFO - Source epoch 6/50 main_lr=0.001000
+2020-07-17 08:16:42,016 - __main__ - INFO - tgt_test_acc: 9.68 ; rot : 0.46422, qdr : 0.31147, flip : 0.24689, cls_loss : 2.88704, cent_loss : 0.00150, infoent_loss : -0.00292, mim_loss : -0.00142, tgt_mixup_loss : 0.00015, src_mixup_loss : 0.11506, contrastive_loss : 0.00106, 
+2020-07-17 08:16:42,560 - __main__ - INFO - Source epoch 7/50 main_lr=0.001000
+2020-07-17 09:43:13,208 - __main__ - INFO - tgt_test_acc: 11.68 ; rot : 0.44526, qdr : 0.30493, flip : 0.23432, cls_loss : 2.71366, cent_loss : 0.00116, infoent_loss : -0.00212, mim_loss : -0.00097, tgt_mixup_loss : 0.00011, src_mixup_loss : 0.11348, contrastive_loss : 0.00090, 
+2020-07-17 09:43:13,769 - __main__ - INFO - Source epoch 8/50 main_lr=0.001000
+2020-07-17 11:09:45,521 - __main__ - INFO - tgt_test_acc: 9.80 ; rot : 0.41811, qdr : 0.29740, flip : 0.21856, cls_loss : 2.56220, cent_loss : 0.00091, infoent_loss : -0.00157, mim_loss : -0.00065, tgt_mixup_loss : 0.00009, src_mixup_loss : 0.11171, contrastive_loss : 0.00073, 
+2020-07-17 11:09:46,173 - __main__ - INFO - Source epoch 9/50 main_lr=0.001000
+2020-07-17 12:36:35,503 - __main__ - INFO - tgt_test_acc: 9.22 ; rot : 0.40290, qdr : 0.28646, flip : 0.20550, cls_loss : 2.41806, cent_loss : 0.00095, infoent_loss : -0.00182, mim_loss : -0.00087, tgt_mixup_loss : 0.00011, src_mixup_loss : 0.11040, contrastive_loss : 0.00069, 
+2020-07-17 12:36:36,262 - __main__ - INFO - Source epoch 10/50 main_lr=0.001000
+2020-07-17 14:03:29,626 - __main__ - INFO - tgt_test_acc: 11.38 ; rot : 0.38650, qdr : 0.28759, flip : 0.19600, cls_loss : 2.27675, cent_loss : 0.00075, infoent_loss : -0.00135, mim_loss : -0.00060, tgt_mixup_loss : 0.00007, src_mixup_loss : 0.10917, contrastive_loss : 0.00061, 
+2020-07-17 14:03:30,437 - __main__ - INFO - Source epoch 11/50 main_lr=0.001000
+2020-07-17 15:30:42,193 - __main__ - INFO - tgt_test_acc: 13.08 ; rot : 0.37581, qdr : 0.27235, flip : 0.18769, cls_loss : 2.15482, cent_loss : 0.00075, infoent_loss : -0.00141, mim_loss : -0.00066, tgt_mixup_loss : 0.00005, src_mixup_loss : 0.10716, contrastive_loss : 0.00063, 
+2020-07-17 15:30:43,038 - __main__ - INFO - Source epoch 12/50 main_lr=0.001000
+2020-07-17 16:58:02,596 - __main__ - INFO - tgt_test_acc: 8.60 ; rot : 0.36423, qdr : 0.27199, flip : 0.17513, cls_loss : 2.02224, cent_loss : 0.00060, infoent_loss : -0.00104, mim_loss : -0.00044, tgt_mixup_loss : 0.00005, src_mixup_loss : 0.10631, contrastive_loss : 0.00049, 
+2020-07-17 16:58:03,516 - __main__ - INFO - Source epoch 13/50 main_lr=0.001000
+2020-07-17 18:25:10,137 - __main__ - INFO - tgt_test_acc: 9.88 ; rot : 0.34742, qdr : 0.26949, flip : 0.17079, cls_loss : 1.86433, cent_loss : 0.00052, infoent_loss : -0.00089, mim_loss : -0.00037, tgt_mixup_loss : 0.00005, src_mixup_loss : 0.10448, contrastive_loss : 0.00046, 
+2020-07-17 18:25:11,145 - __main__ - INFO - Source epoch 14/50 main_lr=0.001000
+2020-07-17 19:52:29,605 - __main__ - INFO - tgt_test_acc: 12.32 ; rot : 0.34047, qdr : 0.25926, flip : 0.16397, cls_loss : 1.73577, cent_loss : 0.00055, infoent_loss : -0.00099, mim_loss : -0.00044, tgt_mixup_loss : 0.00004, src_mixup_loss : 0.10300, contrastive_loss : 0.00049, 
+2020-07-17 19:52:30,634 - __main__ - INFO - Source epoch 15/50 main_lr=0.001000
+2020-07-17 21:20:15,299 - __main__ - INFO - tgt_test_acc: 9.30 ; rot : 0.33212, qdr : 0.25704, flip : 0.15645, cls_loss : 1.59641, cent_loss : 0.00054, infoent_loss : -0.00096, mim_loss : -0.00042, tgt_mixup_loss : 0.00005, src_mixup_loss : 0.10173, contrastive_loss : 0.00048, 
+2020-07-17 21:20:16,373 - __main__ - INFO - Source epoch 16/50 main_lr=0.001000

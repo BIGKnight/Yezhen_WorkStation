@@ -1,0 +1,89 @@
+2020-09-05 04:32:58,091 - __main__ - INFO - 
+----------------- Options ---------------
+                        K: 256                           
+              adapted_dim: 1024                          
+              adj_lr_func: none                          
+                annealing: none                          
+               batch_size: 128                           
+                 channels: 3                             
+              contrastive: False                         
+                   cosine: False                         
+                data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/visda2019/domainnet
+                  dataset: domainnet                     
+        domain_shift_type: convention                    
+                  dropout: False                         
+                     flip: False                         
+                   frozen: []                            
+                      gpu: [0]                           
+               image_size: 224                           
+               lambda_irm: 0.0                           
+                     lirr: False                         
+                load_path: None                          
+                     logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/domainnet/cdan/quickdraw_clipart_domainnet_cdan.txt
+         logger_file_name: domainnet_cdan                
+                       lr: 0.0001                        
+                  lr_flip: 0.1                           
+              lr_quadrant: 0.1                           
+              lr_rotation: 0.1                           
+                  lw_flip: 0.1                           
+              lw_quadrant: 0.1                           
+              lw_rotation: 0.1                           
+                        m: 0.998                         
+                   method: cdan                          
+                milestone: 50                            
+                      mim: False                         
+                    mixup: False                         
+            moco_finetune: False                         
+               model_name: resnet34                      
+                   nepoch: 50                            
+                 nthreads: 8                             
+                  num_cls: 345                           
+                     outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/quickdraw_clipart_domainnet_cdan
+                   quad_p: 2                             
+                 quadrant: False                         
+                 rotation: False                         
+                   source: ['quickdraw']                 
+                   target: clipart                       
+                     temp: 1                             
+                trade_off: 0.1                           
+                      vib: False                         
+----------------- End -------------------
+2020-09-05 04:32:58,093 - __main__ - INFO - ==> Reasonableness checking..
+2020-09-05 04:32:58,094 - __main__ - INFO - ==> Building model..
+2020-09-05 04:33:03,416 - __main__ - INFO - ==> Preparing datasets..
+2020-09-05 04:33:04,875 - __main__ - INFO - ==> Creating pretext tasks.
+2020-09-05 04:33:04,875 - __main__ - INFO - ==> No pretext task.
+2020-09-05 04:33:04,876 - __main__ - INFO - ==> Creating Optimizer & Building modules...
+2020-09-05 04:33:04,947 - __main__ - INFO - ==> Have built extra modules: random_layer, ad_net under CADA method.
+2020-09-05 04:33:04,948 - __main__ - INFO - ==> Running..
+2020-09-05 04:33:04,948 - __main__ - INFO - Source epoch 1/50 main_lr=0.000100
+2020-09-05 06:57:34,735 - __main__ - INFO - tgt_test_acc: 26.99 ; src_test_acc: 42.08src_cls_loss : 1.67139, tgt_cls_loss : 0.29040, transfer_loss : 0.07464, 
+2020-09-05 06:57:35,923 - __main__ - INFO - Source epoch 2/50 main_lr=0.001000
+2020-09-05 09:31:39,063 - __main__ - INFO - tgt_test_acc: 27.06 ; src_test_acc: 45.66src_cls_loss : 1.12770, tgt_cls_loss : 0.02850, transfer_loss : 0.07662, 
+2020-09-05 09:31:40,226 - __main__ - INFO - Source epoch 3/50 main_lr=0.001000
+2020-09-05 12:04:58,068 - __main__ - INFO - tgt_test_acc: 27.06 ; src_test_acc: 50.84src_cls_loss : 1.00314, tgt_cls_loss : 0.02110, transfer_loss : 0.07806, 
+2020-09-05 12:04:59,207 - __main__ - INFO - Source epoch 4/50 main_lr=0.001000
+2020-09-05 14:40:39,952 - __main__ - INFO - tgt_test_acc: 27.21 ; src_test_acc: 48.62src_cls_loss : 0.92989, tgt_cls_loss : 0.01811, transfer_loss : 0.07935, 
+2020-09-05 14:40:41,021 - __main__ - INFO - Source epoch 5/50 main_lr=0.001000
+2020-09-05 17:10:41,781 - __main__ - INFO - tgt_test_acc: 26.99 ; src_test_acc: 50.96src_cls_loss : 0.88010, tgt_cls_loss : 0.01670, transfer_loss : 0.08152, 
+2020-09-05 17:10:42,935 - __main__ - INFO - Source epoch 6/50 main_lr=0.001000
+2020-09-05 19:29:46,256 - __main__ - INFO - tgt_test_acc: 26.23 ; src_test_acc: 52.36src_cls_loss : 0.84887, tgt_cls_loss : 0.01609, transfer_loss : 0.08669, 
+2020-09-05 19:29:47,367 - __main__ - INFO - Source epoch 7/50 main_lr=0.001000
+2020-09-05 21:37:50,561 - __main__ - INFO - tgt_test_acc: 26.03 ; src_test_acc: 51.90src_cls_loss : 0.80933, tgt_cls_loss : 0.01625, transfer_loss : 0.10014, 
+2020-09-05 21:37:51,788 - __main__ - INFO - Source epoch 8/50 main_lr=0.001000
+2020-09-05 23:46:36,270 - __main__ - INFO - tgt_test_acc: 26.71 ; src_test_acc: 51.52src_cls_loss : 0.78046, tgt_cls_loss : 0.01812, transfer_loss : 0.12757, 
+2020-09-05 23:46:37,537 - __main__ - INFO - Source epoch 9/50 main_lr=0.001000
+2020-09-06 01:55:25,064 - __main__ - INFO - tgt_test_acc: 24.54 ; src_test_acc: 50.40src_cls_loss : 0.75709, tgt_cls_loss : 0.02063, transfer_loss : 0.18110, 
+2020-09-06 01:55:26,316 - __main__ - INFO - Source epoch 10/50 main_lr=0.001000
+2020-09-06 04:04:03,382 - __main__ - INFO - tgt_test_acc: 23.15 ; src_test_acc: 46.12src_cls_loss : 0.73525, tgt_cls_loss : 0.02514, transfer_loss : 0.29166, 
+2020-09-06 04:04:05,119 - __main__ - INFO - Source epoch 11/50 main_lr=0.001000
+2020-09-06 06:12:44,176 - __main__ - INFO - tgt_test_acc: 21.34 ; src_test_acc: 45.24src_cls_loss : 0.72328, tgt_cls_loss : 0.02742, transfer_loss : 0.47103, 
+2020-09-06 06:12:45,346 - __main__ - INFO - Source epoch 12/50 main_lr=0.001000
+2020-09-06 08:22:33,878 - __main__ - INFO - tgt_test_acc: 21.34 ; src_test_acc: 39.78src_cls_loss : 0.70510, tgt_cls_loss : 0.02626, transfer_loss : 0.70342, 
+2020-09-06 08:22:35,062 - __main__ - INFO - Source epoch 13/50 main_lr=0.001000
+2020-09-06 10:31:08,439 - __main__ - INFO - tgt_test_acc: 20.77 ; src_test_acc: 37.26src_cls_loss : 0.68269, tgt_cls_loss : 0.02491, transfer_loss : 0.84434, 
+2020-09-06 10:31:09,579 - __main__ - INFO - Source epoch 14/50 main_lr=0.001000
+2020-09-06 12:47:36,970 - __main__ - INFO - tgt_test_acc: 19.18 ; src_test_acc: 34.04src_cls_loss : 0.67513, tgt_cls_loss : 0.02524, transfer_loss : 0.94010, 
+2020-09-06 12:47:38,135 - __main__ - INFO - Source epoch 15/50 main_lr=0.001000
+2020-09-06 14:56:47,147 - __main__ - INFO - tgt_test_acc: 17.33 ; src_test_acc: 26.48src_cls_loss : 0.65419, tgt_cls_loss : 0.02568, transfer_loss : 0.97004, 
+2020-09-06 14:56:48,332 - __main__ - INFO - Source epoch 16/50 main_lr=0.001000
