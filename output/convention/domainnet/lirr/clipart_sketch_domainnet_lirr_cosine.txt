@@ -1,4 +1,4 @@
-2020-09-11 18:42:26,220 - bootstrap - INFO - 
+2020-09-11 18:45:50,694 - bootstrap - INFO - 
 ----------------- Options ---------------
                         K: 256                           
               adapted_dim: 1024                          
@@ -50,4 +50,11 @@
                 trade_off: 1.0                           
                       vib: False                         
 ----------------- End -------------------
-2020-09-11 18:42:26,221 - bootstrap - INFO - ==> Building model..
+2020-09-11 18:45:50,695 - bootstrap - INFO - ==> Building model..
+2020-09-11 18:45:56,315 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-11 18:45:57,425 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-11 18:45:57,426 - bootstrap - INFO - ==> No pretext task.
+2020-09-11 18:45:57,426 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-11 18:45:57,496 - bootstrap - INFO - ==> Have built extra modules: ad_net, predictor_env under LiRR method.
+2020-09-11 18:45:57,498 - bootstrap - INFO - ==> Running..
+2020-09-11 18:45:57,498 - bootstrap - INFO - Source epoch 1/60 main_lr=0.001000

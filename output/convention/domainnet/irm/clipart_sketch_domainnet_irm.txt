@@ -1,4 +1,4 @@
-2020-09-11 18:42:25,368 - bootstrap - INFO - 
+2020-09-11 18:45:50,237 - bootstrap - INFO - 
 ----------------- Options ---------------
                         K: 256                           
               adapted_dim: 1024                          
@@ -50,4 +50,11 @@
                 trade_off: 1.0                           
                       vib: False                         
 ----------------- End -------------------
-2020-09-11 18:42:25,369 - bootstrap - INFO - ==> Building model..
+2020-09-11 18:45:50,238 - bootstrap - INFO - ==> Building model..
+2020-09-11 18:45:55,635 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-11 18:45:56,463 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-11 18:45:56,464 - bootstrap - INFO - ==> No pretext task.
+2020-09-11 18:45:56,464 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-11 18:45:56,465 - bootstrap - INFO - ==> no extra module need to be constructed.
+2020-09-11 18:45:56,466 - bootstrap - INFO - ==> Running..
+2020-09-11 18:45:56,467 - bootstrap - INFO - Source epoch 1/60 main_lr=0.001000

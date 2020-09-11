@@ -1,4 +1,4 @@
-2020-09-11 18:42:24,785 - bootstrap - INFO - 
+2020-09-11 18:45:49,745 - bootstrap - INFO - 
 ----------------- Options ---------------
                         K: 256                           
               adapted_dim: 1024                          
@@ -50,4 +50,11 @@
                 trade_off: 0.1                           
                       vib: False                         
 ----------------- End -------------------
-2020-09-11 18:42:24,786 - bootstrap - INFO - ==> Building model..
+2020-09-11 18:45:49,746 - bootstrap - INFO - ==> Building model..
+2020-09-11 18:45:55,118 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-11 18:45:55,919 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-11 18:45:55,919 - bootstrap - INFO - ==> No pretext task.
+2020-09-11 18:45:55,919 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-11 18:45:55,989 - bootstrap - INFO - ==> Have built extra modules: random_layer, ad_net under CADA method.
+2020-09-11 18:45:55,990 - bootstrap - INFO - ==> Running..
+2020-09-11 18:45:55,991 - bootstrap - INFO - Source epoch 1/60 main_lr=0.001000

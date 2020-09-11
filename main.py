@@ -49,18 +49,18 @@ def main():
     params_lr['main'] = []
     params_lr['encoder'] = []
     params_lr['classifier'] = []
-    for param_group in main_optimizer.param_groups:
+    for param_group in optimizers['main'].param_groups:
         params_lr['main'].append(param_group["lr"])
-    for param_group in encoder_optimizer.param_groups:
+    for param_group in optimizers['encoder'].param_groups:
         params_lr['encoder'].append(param_group["lr"])
-    for param_group in classifier_optimizer.param_groups:
+    for param_group in optimizers['classifier'].param_groups:
         params_lr['classifier'].append(param_group["lr"])
     
     logger.info('==> Running..')
     all_epoch_stats = []
     best_tgt_te_err = 100
     for epoch in range(1, args.nepoch + 1):
-        logger.info('Source epoch %d/%d main_lr=%.6f' % (epoch, args.nepoch, main_optimizer.param_groups[0]['lr']))
+        logger.info('Source epoch %d/%d main_lr=%.6f' % (epoch, args.nepoch, optimizers['main'].param_groups[0]['lr']))
         tg_te_err = train(
             args, epoch,
             sstasks, optimizers,

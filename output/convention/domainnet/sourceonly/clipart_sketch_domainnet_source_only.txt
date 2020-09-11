@@ -1,10 +1,10 @@
-2020-09-11 18:42:24,307 - bootstrap - INFO - 
+2020-09-11 18:44:40,801 - bootstrap - INFO - 
 ----------------- Options ---------------
                         K: 256                           
               adapted_dim: 1024                          
               adj_lr_func: none                          
                 annealing: none                          
-               batch_size: 128                           
+               batch_size: 32                            
                  channels: 3                             
               contrastive: False                         
                    cosine: False                         
@@ -50,9 +50,11 @@
                 trade_off: 0.1                           
                       vib: False                         
 ----------------- End -------------------
-2020-09-11 18:42:24,308 - bootstrap - INFO - ==> Building model..
-2020-09-11 18:42:29,439 - bootstrap - INFO - ==> Preparing datasets..
-2020-09-11 18:42:30,205 - bootstrap - INFO - ==> Creating pretext tasks.
-2020-09-11 18:42:30,205 - bootstrap - INFO - ==> No pretext task.
-2020-09-11 18:42:30,206 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
-2020-09-11 18:42:30,206 - bootstrap - INFO - ==> no extra module need to be constructed.
+2020-09-11 18:44:40,802 - bootstrap - INFO - ==> Building model..
+2020-09-11 18:44:46,499 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-11 18:44:47,130 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-11 18:44:47,130 - bootstrap - INFO - ==> No pretext task.
+2020-09-11 18:44:47,130 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-11 18:44:47,131 - bootstrap - INFO - ==> no extra module need to be constructed.
+2020-09-11 18:44:47,132 - bootstrap - INFO - ==> Running..
+2020-09-11 18:44:47,133 - bootstrap - INFO - Source epoch 1/60 main_lr=0.001000
