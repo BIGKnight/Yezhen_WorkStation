@@ -1,4 +1,4 @@
-2020-09-11 18:27:33,676 - bootstrap - INFO - 
+2020-09-11 18:42:24,577 - bootstrap - INFO - 
 ----------------- Options ---------------
                         K: 256                           
               adapted_dim: 1024                          
@@ -50,9 +50,4 @@
                 trade_off: 1.0                           
                       vib: False                         
 ----------------- End -------------------
-2020-09-11 18:27:33,677 - bootstrap - INFO - ==> Building model..
-2020-09-11 18:27:40,111 - bootstrap - INFO - ==> Preparing datasets..
-2020-09-11 18:27:40,958 - bootstrap - INFO - ==> Creating pretext tasks.
-2020-09-11 18:27:40,958 - bootstrap - INFO - ==> No pretext task.
-2020-09-11 18:27:40,959 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
-2020-09-11 18:27:41,011 - bootstrap - INFO - ==> Have built extra modules: ad_net under DANN method.
+2020-09-11 18:42:24,578 - bootstrap - INFO - ==> Building model..

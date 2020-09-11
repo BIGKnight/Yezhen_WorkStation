@@ -101,9 +101,7 @@ def parsing():
     return args, logger
 
 def create_optimizer(parameters, lr, optimizer_type):
-    print(optimizer_type)
     if optimizer_type == 'sgd':
-        
         return optim.SGD(parameters, lr=lr, momentum=0.9, weight_decay=5e-4)
     elif optimizer_type=='adam':
         return optim.Adam(parameters, lr=lr)

@@ -35,9 +35,9 @@ def main():
     encoder_parameters, classifier_parameters = net.get_parameters()
     main_parameters = encoder_parameters + classifier_parameters
     modules = building_modules(args, net, optimizers, main_parameters, params_lr, logger)
-    optimizers['encoder'] = create_optimizer(encoder_parameters, args.lr, args.task_type)
-    optimizers['classifier'] = create_optimizer(classifier_parameters, args.lr, args.task_type)
-    optimizers['main'] = create_optimizer(main_parameters, args.lr, args.task_type)
+    optimizers['encoder'] = create_optimizer(encoder_parameters, args.lr, args.optimizer_type)
+    optimizers['classifier'] = create_optimizer(classifier_parameters, args.lr, args.optimizer_type)
+    optimizers['main'] = create_optimizer(main_parameters, args.lr, args.optimizer_type)
     optimizers_schedulers = {}
     for optimizer_name, optimizer in optimizers.items():
         optimizers_schedulers[optimizer_name] = torch.optim.lr_scheduler.MultiStepLR(
