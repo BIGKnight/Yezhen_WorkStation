@@ -7,6 +7,7 @@ import numpy as np
 import random
 from utils.utils import TwoCropsTransform
 
+# what about re-calculate these values for each dataset?
 class DomainnetParams(object):
     num_channels = 3
     image_size = 256 # 384, 216
