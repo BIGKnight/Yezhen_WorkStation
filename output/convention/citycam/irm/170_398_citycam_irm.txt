@@ -1,0 +1,91 @@
+2020-09-16 14:09:59,887 - bootstrap - INFO - 
+----------------- Options ---------------
+                        K: 256                           
+              adapted_dim: 1024                          
+              adj_lr_func: none                          
+                annealing: none                          
+               batch_size: 24                            
+                 channels: 3                             
+              contrastive: False                         
+                   cosine: False                         
+                data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/CityCam
+                  dataset: citycam                       
+        domain_shift_type: convention                    
+                  dropout: False                         
+                     flip: False                         
+                   frozen: []                            
+                      gpu: [0]                           
+               image_size: 256                           
+               lambda_irm: 0.0                           
+                     lirr: False                         
+                load_path: None                          
+                     logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/citycam/irm/170_398_citycam_irm.txt
+         logger_file_name: citycam_irm                   
+                       lr: 1e-06                         
+                  lr_flip: 0.1                           
+              lr_quadrant: 0.1                           
+              lr_rotation: 0.1                           
+                  lw_flip: 0.1                           
+              lw_quadrant: 0.1                           
+              lw_rotation: 0.1                           
+                        m: 0.998                         
+                   method: irm                           
+                milestone: 60                            
+                      mim: False                         
+                    mixup: False                         
+            moco_finetune: False                         
+               model_name: CountingNet                   
+                   nepoch: 60                            
+                 nthreads: 8                             
+                  num_cls: 1                             
+           optimizer_type: adam                          
+                     outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/170_398_citycam_irm
+                   quad_p: 2                             
+                 quadrant: False                         
+                 rotation: False                         
+                   source: ['170']                       
+                   target: 398                           
+   target_labeled_portion: 10                            
+                task_type: reg                           
+                     temp: 1.0                           
+                trade_off: 0.1                           
+                      vib: False                         
+----------------- End -------------------
+2020-09-16 14:09:59,891 - bootstrap - INFO - ==> Building model..
+2020-09-16 14:10:06,201 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-16 14:10:06,461 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-16 14:10:06,461 - bootstrap - INFO - ==> No pretext task.
+2020-09-16 14:10:06,462 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-16 14:10:06,462 - bootstrap - INFO - ==> no extra module need to be constructed.
+2020-09-16 14:10:06,463 - bootstrap - INFO - ==> Running..
+2020-09-16 14:10:06,464 - bootstrap - INFO - Source epoch 1/60 main_lr=0.000001
+2020-09-16 14:18:44,437 - bootstrap - INFO - tgt_test_acc: 10.79 ; src_test_acc: 3.55src_cls_loss : 1.28475, tgt_cls_loss : 2.28351, irm_loss : 14.10225, 
+2020-09-16 14:18:45,573 - bootstrap - INFO - Source epoch 2/60 main_lr=0.000001
+2020-09-16 14:27:10,343 - bootstrap - INFO - tgt_test_acc: 14.83 ; src_test_acc: 4.52src_cls_loss : 0.78214, tgt_cls_loss : 1.75678, irm_loss : 0.27257, 
+2020-09-16 14:27:11,400 - bootstrap - INFO - Source epoch 3/60 main_lr=0.000001
+2020-09-16 14:35:36,223 - bootstrap - INFO - tgt_test_acc: 16.45 ; src_test_acc: 5.73src_cls_loss : 0.71412, tgt_cls_loss : 1.70729, irm_loss : 0.05430, 
+2020-09-16 14:35:37,270 - bootstrap - INFO - Source epoch 4/60 main_lr=0.000001
+2020-09-16 14:44:14,334 - bootstrap - INFO - tgt_test_acc: 17.24 ; src_test_acc: 6.42src_cls_loss : 0.69351, tgt_cls_loss : 1.68417, irm_loss : 0.01702, 
+2020-09-16 14:44:15,488 - bootstrap - INFO - Source epoch 5/60 main_lr=0.000001
+2020-09-16 14:52:46,946 - bootstrap - INFO - tgt_test_acc: 17.69 ; src_test_acc: 6.82src_cls_loss : 0.67404, tgt_cls_loss : 1.67679, irm_loss : 0.00731, 
+2020-09-16 14:52:48,229 - bootstrap - INFO - Source epoch 6/60 main_lr=0.000001
+2020-09-16 15:01:18,831 - bootstrap - INFO - tgt_test_acc: 17.95 ; src_test_acc: 7.06src_cls_loss : 0.67006, tgt_cls_loss : 1.66910, irm_loss : 0.00369, 
+2020-09-16 15:01:19,985 - bootstrap - INFO - Source epoch 7/60 main_lr=0.000001
+2020-09-16 15:09:50,931 - bootstrap - INFO - tgt_test_acc: 18.11 ; src_test_acc: 7.21src_cls_loss : 0.66757, tgt_cls_loss : 1.67447, irm_loss : 0.00219, 
+2020-09-16 15:09:52,075 - bootstrap - INFO - Source epoch 8/60 main_lr=0.000001
+2020-09-16 15:18:43,552 - bootstrap - INFO - tgt_test_acc: 18.19 ; src_test_acc: 7.30src_cls_loss : 0.66342, tgt_cls_loss : 1.66259, irm_loss : 0.00141, 
+2020-09-16 15:18:44,878 - bootstrap - INFO - Source epoch 9/60 main_lr=0.000001
+2020-09-16 15:27:23,322 - bootstrap - INFO - tgt_test_acc: 18.23 ; src_test_acc: 7.34src_cls_loss : 0.66200, tgt_cls_loss : 1.65806, irm_loss : 0.00095, 
+2020-09-16 15:27:24,462 - bootstrap - INFO - Source epoch 10/60 main_lr=0.000001
+2020-09-16 15:36:00,766 - bootstrap - INFO - tgt_test_acc: 18.22 ; src_test_acc: 7.36src_cls_loss : 0.66352, tgt_cls_loss : 1.66569, irm_loss : 0.00070, 
+2020-09-16 15:36:01,938 - bootstrap - INFO - Source epoch 11/60 main_lr=0.000001
+2020-09-16 15:44:34,020 - bootstrap - INFO - tgt_test_acc: 18.15 ; src_test_acc: 7.33src_cls_loss : 0.65435, tgt_cls_loss : 1.66411, irm_loss : 0.00054, 
+2020-09-16 15:44:35,052 - bootstrap - INFO - Source epoch 12/60 main_lr=0.000001
+2020-09-16 15:53:25,434 - bootstrap - INFO - tgt_test_acc: 17.97 ; src_test_acc: 7.24src_cls_loss : 0.65551, tgt_cls_loss : 1.66797, irm_loss : 0.00043, 
+2020-09-16 15:53:26,463 - bootstrap - INFO - Source epoch 13/60 main_lr=0.000001
+2020-09-16 16:02:01,360 - bootstrap - INFO - tgt_test_acc: 17.57 ; src_test_acc: 7.08src_cls_loss : 0.65672, tgt_cls_loss : 1.64880, irm_loss : 0.00043, 
+2020-09-16 16:02:02,609 - bootstrap - INFO - Source epoch 14/60 main_lr=0.000001
+2020-09-16 16:10:49,934 - bootstrap - INFO - tgt_test_acc: 17.12 ; src_test_acc: 6.91src_cls_loss : 0.65644, tgt_cls_loss : 1.64961, irm_loss : 0.00066, 
+2020-09-16 16:10:50,932 - bootstrap - INFO - Source epoch 15/60 main_lr=0.000001
+2020-09-16 16:19:35,673 - bootstrap - INFO - tgt_test_acc: 16.62 ; src_test_acc: 6.72src_cls_loss : 0.64781, tgt_cls_loss : 1.65042, irm_loss : 0.00077, 
+2020-09-16 16:19:36,816 - bootstrap - INFO - Source epoch 16/60 main_lr=0.000001

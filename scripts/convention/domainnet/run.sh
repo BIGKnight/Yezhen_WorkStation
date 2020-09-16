@@ -1,7 +1,7 @@
 #!/bin/bash
 source /nfs/project/wangyezhen/.Pytorch_Env
 #CUDA_VISIBLE_DEVICES=0
-methods=('source_only' 'dann' 'cdan' 'lirr' 'irm' 'adr' 'mme', 'lirr-cosine')
+methods=('source_only' 'dann' 'cdan' 'lirr' 'irm' 'adr' 'lirr-cosine' 'mme')
 params=""
 for((i=1;i<=$#;i++)); do 
     j=${!i}

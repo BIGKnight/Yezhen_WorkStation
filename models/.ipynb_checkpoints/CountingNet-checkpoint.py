@@ -49,43 +49,63 @@ class X2Transpose(nn.Module):
     
 @register_model('FCN_Head')
 class FCN_Head(nn.Module):
-    def __init__(self, num_reg=1):
+    def __init__(self, num_reg=1, env_dim=0):
         super(FCN_Head, self).__init__()
         self.num_reg = num_reg
         self.relu = nn.ReLU(inplace=True)
         self.leaky_relu = nn.LeakyReLU(0.01, inplace=True)
-        self.deconv1 = X2Transpose(512, 512, kernel_size=3, padding=1)
-        self.deconv2 = X2Transpose(512, 256, kernel_size=3, padding=1)
-        self.deconv3 = X2Transpose(256, 128, kernel_size=3, padding=1)
-        self.deconv4 = X2Transpose(128, 64, kernel_size=3, padding=1)
-        self.deconv5 = X2Transpose(64, 64, kernel_size=3, padding=1)         
-        
-        self.classifier = nn.Conv2d(64, self.num_reg, kernel_size=3, padding=1)
+        self.deconv1 = nn.ConvTranspose2d(512 + env_dim, 512, kernel_size=3, stride=2, padding=1, dilation=1, output_padding=1)
+        self.deconv2 = nn.ConvTranspose2d(512, 256, kernel_size=3, stride=2, padding=1, dilation=1, output_padding=1)
+        self.deconv3 = nn.ConvTranspose2d(256, 128, kernel_size=3, stride=2, padding=1, dilation=1, output_padding=1)
+        self.deconv4 = nn.ConvTranspose2d(128, 64, kernel_size=3, stride=2, padding=1, dilation=1, output_padding=1)
+        self.deconv5 = nn.ConvTranspose2d(64, 64, kernel_size=3, stride=2, padding=1, dilation=1, output_padding=1)
+        self.classifier = nn.Sequential(
+            nn.Conv2d(64, 32, kernel_size=3, padding=1),
+            nn.LeakyReLU(0.01, inplace=True),
+            nn.Conv2d(32, num_reg, kernel_size=1)
+        )
+        self.env_dim = env_dim
         for m in self.modules():
             if isinstance(m, nn.Conv2d) or isinstance(m, nn.ConvTranspose2d):
-                nn.init.xavier_uniform_(m.weight)
+                nn.init.xavier_normal_(m.weight)
                 if m.bias is not None:
                     nn.init.constant_(m.bias, 0)
-            elif isinstance(m, nn.InstanceNorm2d):
+            elif isinstance(m, nn.BatchNorm2d):
                 nn.init.constant_(m.weight, 1)
                 nn.init.constant_(m.bias, 0)
         
-    def forward(self, output): 
-        
-        x5 = output['x5']  # size=(N, 512, x.H/32, x.W/32)
-        x4 = output['x4']  # size=(N, 512, x.H/16, x.W/16)
-        x3 = output['x3']  # size=(N, 256, x.H/8,  x.W/8)
-        x2 = output['x2']  # size=(N, 128, x.H/4,  x.W/4)
-        x1 = output['x1']  # size=(N, 64, x.H/2,  x.W/2)
-        
-        score = self.relu(self.deconv1(x5))  # size=(N, 512, x.H/16, x.W/16)
-        score = self.relu(self.deconv2(score))  # size=(N, 256, x.H/8, x.W/8)
-        score = self.relu(self.deconv3(score))  # size=(N, 128, x.H/4, x.W/4)
-        score = self.relu(self.deconv4(score))  # size=(N, 64, x.H/2, x.W/2)
-        score = self.relu(self.deconv5(score))
-        score = self.relu(self.classifier(score))
-        
-        return score  # size=(N, n_class, x.H/1, x.W/1)
+    def forward(self, output, env='src', temp=1, cosine=False):
+        B, C, H, W = output.shape
+#         x5 = output['x5']  # size=(N, 512, x.H/32, x.W/32)
+#         x4 = output['x4']  # size=(N, 512, x.H/16, x.W/16)
+#         x3 = output['x3']  # size=(N, 256, x.H/8,  x.W/8)
+#         x2 = output['x2']  # size=(N, 128, x.H/4,  x.W/4)
+#         x1 = output['x1']  # size=(N, 64, x.H/2,  x.W/2)
+        if self.env_dim > 0 and env=='src':
+            env_embedding = torch.zeros(B, self.env_dim, H, W, device=output.device)
+            x = torch.cat([output, env_embedding], dim=1)
+        elif self.env_dim > 0 and env=='tgt':
+            env_embedding = torch.ones(B, self.env_dim, H, W, device=output.device)
+            x = torch.cat([output, env_embedding], dim=1)            
+        else:
+            x = output
+        score = self.leaky_relu(self.deconv1(x))  # size=(N, 512, x.H/16, x.W/16)
+        score = score # element-wise add, size=(N, 512, x.H/16, x.W/16)
+        score = self.leaky_relu(self.deconv2(score))  # size=(N, 256, x.H/8, x.W/8)
+        score = score # element-wise add, size=(N, 256, x.H/8, x.W/8)
+        score = self.leaky_relu(self.deconv3(score))  # size=(N, 128, x.H/4, x.W/4)
+        score = score
+        score = self.leaky_relu(self.deconv4(score))  # size=(N, 64, x.H/2, x.W/2)
+        score = score
+        score = self.leaky_relu(self.deconv5(score))
+# #         score = torch.nn.functional.interpolate(score, scale_factor=2, mode='bilinear', align_corners=True)  # size=(N, 32, x.H, x.W)
+        score = self.leaky_relu(self.classifier(score))
+         # size=(N, n_class, x.H/1, x.W/1)
+
+        return score  # size=(N, n_class, x.H/1, x.W/1) 
+    
+    def get_parameters(self):
+        return [{"params": self.parameters(), 'lr_mult': 1}]
         
 
 @register_model('CountingNet')
@@ -101,12 +121,14 @@ class CountingNet(nn.Module):
         self.ordered_module_names = ['encoder']
         
     def forward(self, x, temp=1, dropout=True, cosine=False):
+        input = x.sum()
         for name in self.ordered_module_names:
             module = self._modules[name]
             x = module(x)
             x = x.detach() if name in self.frozen else x
             
-        embedding_coding = x
+#         embedding_coding = x['x5']
+        embedding_coding = x['x5']
         out = self.decoder(embedding_coding)
         return {
             'features':embedding_coding, 

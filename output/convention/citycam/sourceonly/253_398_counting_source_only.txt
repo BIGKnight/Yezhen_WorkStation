@@ -1,10 +1,10 @@
-2020-09-11 16:11:14,276 - bootstrap - INFO - 
+2020-09-14 05:02:35,838 - bootstrap - INFO - 
 ----------------- Options ---------------
                         K: 256                           
-              adapted_dim: 1024                          
+              adapted_dim: 512                           
               adj_lr_func: none                          
                 annealing: none                          
-               batch_size: 4                             
+               batch_size: 8                             
                  channels: 3                             
               contrastive: False                         
                    cosine: False                         
@@ -15,13 +15,13 @@
                      flip: False                         
                    frozen: []                            
                       gpu: [0]                           
-               image_size: 512                           
+               image_size: 256                           
                lambda_irm: 0.0                           
                      lirr: False                         
                 load_path: None                          
                      logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/citycam/sourceonly/253_398_counting_source_only.txt
          logger_file_name: counting_source_only          
-                       lr: 1e-06                         
+                       lr: 1e-05                         
                   lr_flip: 0.1                           
               lr_quadrant: 0.1                           
               lr_rotation: 0.1                           
@@ -38,40 +38,25 @@
                    nepoch: 1000                          
                  nthreads: 8                             
                   num_cls: 1                             
+           optimizer_type: adam                          
                      outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/253_398_visda2017_source_only
                    quad_p: 2                             
                  quadrant: False                         
                  rotation: False                         
-                   source: ['253']                       
+                   source: ['170']                       
                    target: 398                           
                 task_type: reg                           
                      temp: 1                             
                 trade_off: 0.1                           
                       vib: False                         
 ----------------- End -------------------
-2020-09-11 16:11:14,278 - bootstrap - INFO - ==> Building model..
-2020-09-11 16:11:21,306 - bootstrap - INFO - ==> Preparing datasets..
-2020-09-11 16:11:21,409 - bootstrap - INFO - ==> Creating pretext tasks.
-2020-09-11 16:11:21,410 - bootstrap - INFO - ==> No pretext task.
-2020-09-11 16:11:21,410 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
-2020-09-11 16:11:21,412 - bootstrap - INFO - ==> no extra module need to be constructed.
-2020-09-11 16:11:21,413 - bootstrap - INFO - ==> Running..
-2020-09-11 16:11:21,414 - bootstrap - INFO - Source epoch 1/1000 main_lr=0.000001
-2020-09-11 16:24:06,618 - bootstrap - INFO - tgt_test_acc: 78.70 ; src_test_acc: 49.60src_cls_loss : 0.00587, tgt_cls_loss : 0.00791, transfer_loss : 0.00000, 
-2020-09-11 16:24:07,101 - bootstrap - INFO - Source epoch 2/1000 main_lr=0.000001
-2020-09-11 16:36:43,144 - bootstrap - INFO - tgt_test_acc: 34.77 ; src_test_acc: 20.96src_cls_loss : 0.00064, tgt_cls_loss : 0.00093, transfer_loss : 0.00000, 
-2020-09-11 16:36:43,723 - bootstrap - INFO - Source epoch 3/1000 main_lr=0.000001
-2020-09-11 16:49:20,223 - bootstrap - INFO - tgt_test_acc: 20.67 ; src_test_acc: 13.98src_cls_loss : 0.00040, tgt_cls_loss : 0.00057, transfer_loss : 0.00000, 
-2020-09-11 16:49:20,765 - bootstrap - INFO - Source epoch 4/1000 main_lr=0.000001
-2020-09-11 17:02:07,347 - bootstrap - INFO - tgt_test_acc: 14.83 ; src_test_acc: 11.82src_cls_loss : 0.00027, tgt_cls_loss : 0.00043, transfer_loss : 0.00000, 
-2020-09-11 17:02:07,834 - bootstrap - INFO - Source epoch 5/1000 main_lr=0.000001
-2020-09-11 17:14:46,542 - bootstrap - INFO - tgt_test_acc: 11.90 ; src_test_acc: 11.15src_cls_loss : 0.00022, tgt_cls_loss : 0.00034, transfer_loss : 0.00000, 
-2020-09-11 17:14:47,011 - bootstrap - INFO - Source epoch 6/1000 main_lr=0.000001
-2020-09-11 17:27:29,601 - bootstrap - INFO - tgt_test_acc: 10.34 ; src_test_acc: 11.00src_cls_loss : 0.00018, tgt_cls_loss : 0.00030, transfer_loss : 0.00000, 
-2020-09-11 17:27:30,080 - bootstrap - INFO - Source epoch 7/1000 main_lr=0.000001
-2020-09-11 17:40:10,223 - bootstrap - INFO - tgt_test_acc: 9.51 ; src_test_acc: 11.07src_cls_loss : 0.00016, tgt_cls_loss : 0.00026, transfer_loss : 0.00000, 
-2020-09-11 17:40:10,711 - bootstrap - INFO - Source epoch 8/1000 main_lr=0.000001
-2020-09-11 17:52:52,449 - bootstrap - INFO - tgt_test_acc: 9.10 ; src_test_acc: 11.24src_cls_loss : 0.00015, tgt_cls_loss : 0.00024, transfer_loss : 0.00000, 
-2020-09-11 17:52:52,967 - bootstrap - INFO - Source epoch 9/1000 main_lr=0.000001
-2020-09-11 18:05:35,706 - bootstrap - INFO - tgt_test_acc: 8.93 ; src_test_acc: 11.45src_cls_loss : 0.00013, tgt_cls_loss : 0.00022, transfer_loss : 0.00000, 
-2020-09-11 18:05:36,172 - bootstrap - INFO - Source epoch 10/1000 main_lr=0.000001
+2020-09-14 05:02:35,855 - bootstrap - INFO - ==> Building model..
+2020-09-14 05:02:42,985 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-14 05:02:43,148 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-14 05:02:43,149 - bootstrap - INFO - ==> No pretext task.
+2020-09-14 05:02:43,150 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-14 05:02:43,151 - bootstrap - INFO - ==> no extra module need to be constructed.
+2020-09-14 05:02:43,152 - bootstrap - INFO - ==> Running..
+2020-09-14 05:02:43,153 - bootstrap - INFO - Source epoch 1/1000 main_lr=0.000010
+2020-09-14 05:11:38,399 - bootstrap - INFO - tgt_test_acc: 13.05 ; src_test_acc: 5.35src_cls_loss : 0.60622, tgt_cls_loss : 0.64103, transfer_loss : 0.00000, 
+2020-09-14 05:11:38,888 - bootstrap - INFO - Source epoch 2/1000 main_lr=0.000010

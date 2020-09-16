@@ -12,6 +12,7 @@ def run_iter_mme(
     net = models['net']
     classifier_optimizer = optimizers['classifier']
     encoder_optimizer = optimizers['encoder']
+    main_optimizer = optimizers['main']
     
     src_inputs = inputs['src']['sample_1_q'][0].cuda()
     src_labels = inputs['src']['sample_1_q'][1].cuda()
@@ -47,14 +48,20 @@ def run_iter_mme(
     ul_tgt_scores = torch.nn.functional.softmax(ul_tgt_logits, dim=1)
     loss_adent = -args.trade_off * torch.mean(torch.sum(ul_tgt_scores *(torch.log(ul_tgt_scores + 1e-5)), 1))
     
-    total_loss = loss_cls + loss_adent
-    encoder_optimizer.zero_grad()
+    total_loss = loss_cls
+    main_optimizer.zero_grad()
     total_loss.backward(retain_graph=True)
-    encoder_optimizer.step()
-    total_loss = loss_cls - loss_adent
+    main_optimizer.step()
+    
+    total_loss = - loss_adent
     classifier_optimizer.zero_grad()
+    total_loss.backward(retain_graph=True)
+    classifier_optimizer.step()
+    
+    total_loss = loss_adent
+    encoder_optimizer.zero_grad()
     total_loss.backward()
-    classifier_optimizer.step()    
+    encoder_optimizer.step()  
     # update meters
     meters['src_cls_loss'].update(loss_cls_src.item())
     meters['tgt_cls_loss'].update(loss_cls_tgt.item())

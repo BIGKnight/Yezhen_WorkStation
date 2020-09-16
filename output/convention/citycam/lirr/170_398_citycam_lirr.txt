@@ -1,0 +1,63 @@
+2020-09-16 16:03:15,713 - bootstrap - INFO - 
+----------------- Options ---------------
+                        K: 256                           
+              adapted_dim: 512                           
+              adj_lr_func: none                          
+                annealing: none                          
+               batch_size: 24                            
+                 channels: 3                             
+              contrastive: False                         
+                   cosine: False                         
+                data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/CityCam
+                  dataset: citycam                       
+        domain_shift_type: convention                    
+                  dropout: False                         
+                     flip: False                         
+                   frozen: []                            
+                      gpu: [0]                           
+               image_size: 256                           
+               lambda_irm: 0.0                           
+                     lirr: False                         
+                load_path: None                          
+                     logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/citycam/lirr/170_398_citycam_lirr.txt
+         logger_file_name: citycam_lirr                  
+                       lr: 1e-06                         
+                  lr_flip: 0.1                           
+              lr_quadrant: 0.1                           
+              lr_rotation: 0.1                           
+                  lw_flip: 0.1                           
+              lw_quadrant: 0.1                           
+              lw_rotation: 0.1                           
+                        m: 0.998                         
+                   method: lirr                          
+                milestone: 60                            
+                      mim: False                         
+                    mixup: False                         
+            moco_finetune: False                         
+               model_name: CountingNet                   
+                   nepoch: 60                            
+                 nthreads: 8                             
+                  num_cls: 1                             
+           optimizer_type: adam                          
+                     outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/170_398_citycam_lirr
+                   quad_p: 2                             
+                 quadrant: False                         
+                 rotation: False                         
+                   source: ['170']                       
+                   target: 398                           
+   target_labeled_portion: 10                            
+                task_type: reg                           
+                     temp: 1.0                           
+                trade_off: 0.05                          
+                      vib: False                         
+----------------- End -------------------
+2020-09-16 16:03:15,714 - bootstrap - INFO - ==> Building model..
+2020-09-16 16:03:22,115 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-16 16:03:22,265 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-16 16:03:22,266 - bootstrap - INFO - ==> No pretext task.
+2020-09-16 16:03:22,266 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-16 16:03:22,400 - bootstrap - INFO - ==> Have built extra modules: ad_net, predictor_env under LiRR method.
+2020-09-16 16:03:22,472 - bootstrap - INFO - ==> Running..
+2020-09-16 16:03:22,473 - bootstrap - INFO - Source epoch 1/60 main_lr=0.000001
+2020-09-16 16:16:19,066 - bootstrap - INFO - tgt_test_acc: 6.34 ; src_test_acc: 6.73src_cls_loss : 3.40052, tgt_cls_loss : 4.54427, transfer_loss : 0.03538, env_loss : 3.91382, 
+2020-09-16 16:16:20,115 - bootstrap - INFO - Source epoch 2/60 main_lr=0.000001

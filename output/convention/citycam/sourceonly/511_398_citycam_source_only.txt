@@ -1,0 +1,97 @@
+2020-09-16 13:50:26,256 - bootstrap - INFO - 
+----------------- Options ---------------
+                        K: 256                           
+              adapted_dim: 1024                          
+              adj_lr_func: none                          
+                annealing: none                          
+               batch_size: 24                            
+                 channels: 3                             
+              contrastive: False                         
+                   cosine: False                         
+                data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/CityCam
+                  dataset: citycam                       
+        domain_shift_type: convention                    
+                  dropout: False                         
+                     flip: False                         
+                   frozen: []                            
+                      gpu: [0]                           
+               image_size: 256                           
+               lambda_irm: 0.0                           
+                     lirr: False                         
+                load_path: None                          
+                     logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/citycam/sourceonly/511_398_citycam_source_only.txt
+         logger_file_name: citycam_source_only           
+                       lr: 1e-06                         
+                  lr_flip: 0.1                           
+              lr_quadrant: 0.1                           
+              lr_rotation: 0.1                           
+                  lw_flip: 0.1                           
+              lw_quadrant: 0.1                           
+              lw_rotation: 0.1                           
+                        m: 0.998                         
+                   method: source_only                   
+                milestone: 60                            
+                      mim: False                         
+                    mixup: False                         
+            moco_finetune: False                         
+               model_name: CountingNet                   
+                   nepoch: 60                            
+                 nthreads: 8                             
+                  num_cls: 1                             
+           optimizer_type: adam                          
+                     outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/511_398_citycam_source_only
+                   quad_p: 2                             
+                 quadrant: False                         
+                 rotation: False                         
+                   source: ['511']                       
+                   target: 398                           
+   target_labeled_portion: 10                            
+                task_type: reg                           
+                     temp: 1.0                           
+                trade_off: 0.1                           
+                      vib: False                         
+----------------- End -------------------
+2020-09-16 13:50:26,267 - bootstrap - INFO - ==> Building model..
+2020-09-16 13:50:32,691 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-16 13:50:33,083 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-16 13:50:33,083 - bootstrap - INFO - ==> No pretext task.
+2020-09-16 13:50:33,083 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-16 13:50:33,084 - bootstrap - INFO - ==> no extra module need to be constructed.
+2020-09-16 13:50:33,085 - bootstrap - INFO - ==> Running..
+2020-09-16 13:50:33,086 - bootstrap - INFO - Source epoch 1/60 main_lr=0.000001
+2020-09-16 13:58:53,589 - bootstrap - INFO - tgt_test_acc: 12.52 ; src_test_acc: 7.22src_cls_loss : 1.94377, tgt_cls_loss : 1.67743, transfer_loss : 0.00000, 
+2020-09-16 13:58:54,794 - bootstrap - INFO - Source epoch 2/60 main_lr=0.000001
+2020-09-16 14:07:02,295 - bootstrap - INFO - tgt_test_acc: 5.86 ; src_test_acc: 5.55src_cls_loss : 1.69954, tgt_cls_loss : 1.46451, transfer_loss : 0.00000, 
+2020-09-16 14:07:03,552 - bootstrap - INFO - Source epoch 3/60 main_lr=0.000001
+2020-09-16 14:15:12,400 - bootstrap - INFO - tgt_test_acc: 5.77 ; src_test_acc: 5.35src_cls_loss : 1.60141, tgt_cls_loss : 1.39100, transfer_loss : 0.00000, 
+2020-09-16 14:15:13,605 - bootstrap - INFO - Source epoch 4/60 main_lr=0.000001
+2020-09-16 14:23:23,703 - bootstrap - INFO - tgt_test_acc: 5.74 ; src_test_acc: 5.27src_cls_loss : 1.54218, tgt_cls_loss : 1.37650, transfer_loss : 0.00000, 
+2020-09-16 14:23:24,955 - bootstrap - INFO - Source epoch 5/60 main_lr=0.000001
+2020-09-16 14:31:34,370 - bootstrap - INFO - tgt_test_acc: 6.09 ; src_test_acc: 5.28src_cls_loss : 1.52202, tgt_cls_loss : 1.34160, transfer_loss : 0.00000, 
+2020-09-16 14:31:35,580 - bootstrap - INFO - Source epoch 6/60 main_lr=0.000001
+2020-09-16 14:39:45,979 - bootstrap - INFO - tgt_test_acc: 5.38 ; src_test_acc: 4.76src_cls_loss : 1.49953, tgt_cls_loss : 1.31908, transfer_loss : 0.00000, 
+2020-09-16 14:39:47,085 - bootstrap - INFO - Source epoch 7/60 main_lr=0.000001
+2020-09-16 14:47:59,882 - bootstrap - INFO - tgt_test_acc: 5.84 ; src_test_acc: 5.06src_cls_loss : 1.49357, tgt_cls_loss : 1.29921, transfer_loss : 0.00000, 
+2020-09-16 14:48:01,097 - bootstrap - INFO - Source epoch 8/60 main_lr=0.000001
+2020-09-16 14:56:15,083 - bootstrap - INFO - tgt_test_acc: 6.06 ; src_test_acc: 5.14src_cls_loss : 1.45128, tgt_cls_loss : 1.26679, transfer_loss : 0.00000, 
+2020-09-16 14:56:16,412 - bootstrap - INFO - Source epoch 9/60 main_lr=0.000001
+2020-09-16 15:04:34,377 - bootstrap - INFO - tgt_test_acc: 5.99 ; src_test_acc: 5.16src_cls_loss : 1.41639, tgt_cls_loss : 1.25115, transfer_loss : 0.00000, 
+2020-09-16 15:04:35,522 - bootstrap - INFO - Source epoch 10/60 main_lr=0.000001
+2020-09-16 15:12:54,583 - bootstrap - INFO - tgt_test_acc: 6.06 ; src_test_acc: 5.17src_cls_loss : 1.41107, tgt_cls_loss : 1.22152, transfer_loss : 0.00000, 
+2020-09-16 15:12:55,698 - bootstrap - INFO - Source epoch 11/60 main_lr=0.000001
+2020-09-16 15:21:08,706 - bootstrap - INFO - tgt_test_acc: 6.56 ; src_test_acc: 5.49src_cls_loss : 1.40564, tgt_cls_loss : 1.19516, transfer_loss : 0.00000, 
+2020-09-16 15:21:10,026 - bootstrap - INFO - Source epoch 12/60 main_lr=0.000001
+2020-09-16 15:29:22,064 - bootstrap - INFO - tgt_test_acc: 6.37 ; src_test_acc: 5.59src_cls_loss : 1.34481, tgt_cls_loss : 1.17103, transfer_loss : 0.00000, 
+2020-09-16 15:29:23,236 - bootstrap - INFO - Source epoch 13/60 main_lr=0.000001
+2020-09-16 15:37:34,368 - bootstrap - INFO - tgt_test_acc: 7.13 ; src_test_acc: 6.06src_cls_loss : 1.33563, tgt_cls_loss : 1.14528, transfer_loss : 0.00000, 
+2020-09-16 15:37:35,626 - bootstrap - INFO - Source epoch 14/60 main_lr=0.000001
+2020-09-16 15:45:45,710 - bootstrap - INFO - tgt_test_acc: 6.93 ; src_test_acc: 6.01src_cls_loss : 1.33705, tgt_cls_loss : 1.11620, transfer_loss : 0.00000, 
+2020-09-16 15:45:46,861 - bootstrap - INFO - Source epoch 15/60 main_lr=0.000001
+2020-09-16 15:54:10,291 - bootstrap - INFO - tgt_test_acc: 7.10 ; src_test_acc: 6.09src_cls_loss : 1.29286, tgt_cls_loss : 1.08519, transfer_loss : 0.00000, 
+2020-09-16 15:54:11,590 - bootstrap - INFO - Source epoch 16/60 main_lr=0.000001
+2020-09-16 16:02:33,977 - bootstrap - INFO - tgt_test_acc: 7.25 ; src_test_acc: 6.19src_cls_loss : 1.23995, tgt_cls_loss : 1.06465, transfer_loss : 0.00000, 
+2020-09-16 16:02:35,315 - bootstrap - INFO - Source epoch 17/60 main_lr=0.000001
+2020-09-16 16:10:57,289 - bootstrap - INFO - tgt_test_acc: 7.31 ; src_test_acc: 6.32src_cls_loss : 1.25515, tgt_cls_loss : 1.02201, transfer_loss : 0.00000, 
+2020-09-16 16:10:58,440 - bootstrap - INFO - Source epoch 18/60 main_lr=0.000001
+2020-09-16 16:19:23,111 - bootstrap - INFO - tgt_test_acc: 7.17 ; src_test_acc: 6.31src_cls_loss : 1.24003, tgt_cls_loss : 1.00805, transfer_loss : 0.00000, 
+2020-09-16 16:19:24,353 - bootstrap - INFO - Source epoch 19/60 main_lr=0.000001

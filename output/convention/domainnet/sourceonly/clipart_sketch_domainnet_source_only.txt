@@ -1,10 +1,10 @@
-2020-09-11 18:44:40,801 - bootstrap - INFO - 
+2020-09-12 13:11:52,534 - bootstrap - INFO - 
 ----------------- Options ---------------
                         K: 256                           
               adapted_dim: 1024                          
               adj_lr_func: none                          
                 annealing: none                          
-               batch_size: 32                            
+               batch_size: 128                           
                  channels: 3                             
               contrastive: False                         
                    cosine: False                         
@@ -50,11 +50,29 @@
                 trade_off: 0.1                           
                       vib: False                         
 ----------------- End -------------------
-2020-09-11 18:44:40,802 - bootstrap - INFO - ==> Building model..
-2020-09-11 18:44:46,499 - bootstrap - INFO - ==> Preparing datasets..
-2020-09-11 18:44:47,130 - bootstrap - INFO - ==> Creating pretext tasks.
-2020-09-11 18:44:47,130 - bootstrap - INFO - ==> No pretext task.
-2020-09-11 18:44:47,130 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
-2020-09-11 18:44:47,131 - bootstrap - INFO - ==> no extra module need to be constructed.
-2020-09-11 18:44:47,132 - bootstrap - INFO - ==> Running..
-2020-09-11 18:44:47,133 - bootstrap - INFO - Source epoch 1/60 main_lr=0.001000
+2020-09-12 13:11:52,537 - bootstrap - INFO - ==> Building model..
+2020-09-12 13:11:59,053 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-12 13:12:00,092 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-12 13:12:00,092 - bootstrap - INFO - ==> No pretext task.
+2020-09-12 13:12:00,092 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-12 13:12:00,093 - bootstrap - INFO - ==> no extra module need to be constructed.
+2020-09-12 13:12:00,094 - bootstrap - INFO - ==> Running..
+2020-09-12 13:12:00,094 - bootstrap - INFO - Source epoch 1/60 main_lr=0.001000
+2020-09-12 13:45:54,099 - bootstrap - INFO - tgt_test_acc: 44.96 ; src_test_acc: 81.78src_cls_loss : 0.55840, tgt_cls_loss : 0.02650, transfer_loss : 0.00000, 
+2020-09-12 13:45:55,407 - bootstrap - INFO - Source epoch 24/60 main_lr=0.010000
+2020-09-12 13:56:35,822 - bootstrap - INFO - tgt_test_acc: 26.17 ; src_test_acc: 37.82src_cls_loss : 2.62119, tgt_cls_loss : 2.20473, transfer_loss : 0.00000, 
+2020-09-12 13:56:37,540 - bootstrap - INFO - Source epoch 2/60 main_lr=0.010000
+2020-09-12 14:28:49,173 - bootstrap - INFO - tgt_test_acc: 45.40 ; src_test_acc: 82.92src_cls_loss : 0.54256, tgt_cls_loss : 0.02543, transfer_loss : 0.00000, 
+2020-09-12 14:28:50,560 - bootstrap - INFO - Source epoch 25/60 main_lr=0.010000
+2020-09-12 14:41:43,431 - bootstrap - INFO - tgt_test_acc: 35.20 ; src_test_acc: 52.38src_cls_loss : 1.80652, tgt_cls_loss : 0.70742, transfer_loss : 0.00000, 
+2020-09-12 14:41:45,128 - bootstrap - INFO - Source epoch 3/60 main_lr=0.010000
+2020-09-12 15:11:42,458 - bootstrap - INFO - tgt_test_acc: 45.19 ; src_test_acc: 82.74src_cls_loss : 0.53032, tgt_cls_loss : 0.02557, transfer_loss : 0.00000, 
+2020-09-12 15:11:44,272 - bootstrap - INFO - Source epoch 26/60 main_lr=0.010000
+2020-09-12 15:26:22,829 - bootstrap - INFO - tgt_test_acc: 37.92 ; src_test_acc: 58.66src_cls_loss : 1.47980, tgt_cls_loss : 0.32511, transfer_loss : 0.00000, 
+2020-09-12 15:26:24,366 - bootstrap - INFO - Source epoch 4/60 main_lr=0.010000
+2020-09-12 15:54:08,362 - bootstrap - INFO - tgt_test_acc: 45.54 ; src_test_acc: 83.00src_cls_loss : 0.51592, tgt_cls_loss : 0.02307, transfer_loss : 0.00000, 
+2020-09-12 15:54:10,018 - bootstrap - INFO - Source epoch 27/60 main_lr=0.010000
+2020-09-12 16:12:01,628 - bootstrap - INFO - tgt_test_acc: 39.71 ; src_test_acc: 63.62src_cls_loss : 1.29562, tgt_cls_loss : 0.20319, transfer_loss : 0.00000, 
+2020-09-12 16:12:03,429 - bootstrap - INFO - Source epoch 5/60 main_lr=0.010000
+2020-09-12 16:56:53,442 - bootstrap - INFO - tgt_test_acc: 41.15 ; src_test_acc: 65.82src_cls_loss : 1.17679, tgt_cls_loss : 0.14963, transfer_loss : 0.00000, 
+2020-09-12 16:56:55,206 - bootstrap - INFO - Source epoch 6/60 main_lr=0.010000

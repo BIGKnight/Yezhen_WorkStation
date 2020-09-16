@@ -32,10 +32,11 @@ do
             --data_root /nfs/volume-92-5/wangyezhen_i/Datasets/visda2017 \
             --outf /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/${source_domain}_${target_domain}_visda17_mimcontra \
             --logf ${logf_root}${source_domain}_${target_domain}_mimcontra.txt \
-            --batch_size 64 \
+            --batch_size ${2} \
             --nthreads 8 \
             --method mimcontra \
-            --trade_off ${1} \
+            --trade_off 0.1 \
+            --lambda_irm 1 \
             --logger_file_name visda2017_mimcontra_convention
         fi
     done

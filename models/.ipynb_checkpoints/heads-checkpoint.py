@@ -31,7 +31,7 @@ class RandomLayer(nn.Module):
         return return_tensor
 
 class DANNDiscriminator(nn.Module):
-    def __init__(self, in_feature, hidden_size):
+    def __init__(self, in_feature, hidden_size, task_type='cls'):
         super(DANNDiscriminator, self).__init__()
         self.ad_layer1 = nn.Linear(in_feature, hidden_size)
         self.ad_layer2 = nn.Linear(hidden_size, hidden_size)
@@ -46,6 +46,7 @@ class DANNDiscriminator(nn.Module):
         self.alpha = 10
         self.low = 0.0
         self.high = 1.0
+        self.task_type = task_type
 
     def forward(self, x, max_iter):
         if self.training:
@@ -55,6 +56,8 @@ class DANNDiscriminator(nn.Module):
             self.high, self.low, self.alpha, 
             max_iter
         )
+        if self.task_type == 'reg':
+            x = torch.nn.functional.adaptive_avg_pool2d(x, [1, 1]).reshape(x.size(0), -1)
         x = x * 1.0
         x.register_hook(grl_hook(coeff))
         x = self.ad_layer1(x)
@@ -83,7 +86,10 @@ class EnvPredictor(nn.Module):
         
         self.apply(init_weights)
         self.num_class = num_class
-        self.env_embedding = {'src':torch.zeros(batch_size, 1).cuda(), 'tgt':torch.ones(batch_size, 1).cuda()}
+        self.env_embedding = {
+            'src':torch.zeros(batch_size, 1).cuda(), 
+            'tgt':torch.ones(batch_size, 1).cuda()
+        }
 
     def forward(self, x, env, temp=1, cosine=False):
         x1 = torch.cat([x, self.env_embedding[env]], 1)
@@ -91,7 +97,7 @@ class EnvPredictor(nn.Module):
         encodes = torch.nn.functional.relu(self.bottleneck(drop_x), inplace=False)
         drop_x = self.dropout2(encodes)
         #       cosine classifer
-        normed_x = F.normalize(drop_x, p=2, dim=1)
+#         normed_x = F.normalize(drop_x, p=2, dim=1)
         if cosine:
     #       cosine classifer
             normed_x = F.normalize(drop_x, p=2, dim=1)

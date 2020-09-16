@@ -56,11 +56,11 @@ def get_transforms(args, Params):
         },
         'reg': {
             'train': T.Compose([
-                        T.Resize([args.image_size, args.image_size]),
-                        T.RandomApply([
-                            T.ColorJitter(0.4, 0.4, 0.4, 0.1)  # not strengthened
-                        ], p=0.8),
-                        T.RandomGrayscale(p=0.2),
+                        T.Resize([256, 384]),
+#                         T.RandomApply([
+#                             T.ColorJitter(0.4, 0.4, 0.4, 0.1)  # not strengthened
+#                         ], p=0.8),
+#                         T.RandomGrayscale(p=0.2),
                         T.ToTensor(),
                         T.Normalize(
                             mean=Params.mean,
@@ -68,7 +68,7 @@ def get_transforms(args, Params):
                            )
                         ]),
             'test': T.Compose([
-                        T.Resize([args.image_size, args.image_size]),
+                        T.Resize([256, 384]),
                         T.ToTensor(),
                         T.Normalize(Params.mean, Params.std)
                     ])

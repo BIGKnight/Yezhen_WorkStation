@@ -1,13 +1,13 @@
-2020-09-04 00:01:41,142 - __main__ - INFO - 
+2020-09-16 15:39:56,863 - bootstrap - INFO - 
 ----------------- Options ---------------
                         K: 256                           
               adapted_dim: 1024                          
               adj_lr_func: none                          
                 annealing: none                          
-               batch_size: 128                           
+               batch_size: 64                            
                  channels: 3                             
               contrastive: False                         
-                   cosine: True                          
+                   cosine: False                         
                 data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/DDA_office/officehome
                   dataset: officehome                    
         domain_shift_type: convention                    
@@ -16,11 +16,12 @@
                    frozen: []                            
                       gpu: [0]                           
                image_size: 224                           
+               lambda_irm: 0.0                           
                      lirr: False                         
                 load_path: None                          
                      logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/officehome/lirr/Art_RealWorld_officehome_lirr.txt
          logger_file_name: officehome_lirr               
-                       lr: 0.0001                        
+                       lr: 0.001                         
                   lr_flip: 0.1                           
               lr_quadrant: 0.1                           
               lr_rotation: 0.1                           
@@ -29,32 +30,46 @@
               lw_rotation: 0.1                           
                         m: 0.998                         
                    method: lirr                          
-                milestone: 50                            
+                milestone: 35                            
                       mim: False                         
-                  mim_src: False                         
-                  mim_tgt: False                         
                     mixup: False                         
             moco_finetune: False                         
                model_name: resnet34                      
                    nepoch: 50                            
                  nthreads: 8                             
                   num_cls: 65                            
+           optimizer_type: sgd                           
                      outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/Art_RealWorld_officehome_lirr
                    quad_p: 2                             
                  quadrant: False                         
                  rotation: False                         
                    source: ['Art']                       
                    target: RealWorld                     
-                     temp: 0.05                          
-                trade_off: 1.0                           
+   target_labeled_portion: 15                            
+                task_type: cls                           
+                     temp: 1                             
+                trade_off: 0.1                           
                       vib: False                         
 ----------------- End -------------------
-2020-09-04 00:01:41,144 - __main__ - INFO - ==> Reasonableness checking..
-2020-09-04 00:01:41,144 - __main__ - INFO - ==> Building model..
-2020-09-04 00:01:46,724 - __main__ - INFO - ==> Preparing datasets..
-2020-09-04 00:01:46,878 - __main__ - INFO - ==> Creating pretext tasks.
-2020-09-04 00:01:46,878 - __main__ - INFO - ==> No pretext task.
-2020-09-04 00:01:46,879 - __main__ - INFO - ==> Creating Optimizer & Building modules...
-2020-09-04 00:01:46,950 - __main__ - INFO - ==> Have built extra modules: ad_net, predictor_env under LiRR method.
-2020-09-04 00:01:46,952 - __main__ - INFO - ==> Running..
-2020-09-04 00:01:46,952 - __main__ - INFO - Source epoch 1/50 main_lr=0.000100
+2020-09-16 15:39:56,864 - bootstrap - INFO - ==> Building model..
+2020-09-16 15:40:01,419 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-16 15:40:01,520 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-16 15:40:01,520 - bootstrap - INFO - ==> No pretext task.
+2020-09-16 15:40:01,521 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-16 15:40:01,590 - bootstrap - INFO - ==> Have built extra modules: ad_net, predictor_env under LiRR method.
+2020-09-16 15:40:01,592 - bootstrap - INFO - ==> Running..
+2020-09-16 15:40:01,592 - bootstrap - INFO - Source epoch 1/50 main_lr=0.001000
+2020-09-16 15:46:03,366 - bootstrap - INFO - tgt_test_acc: 46.35 ; src_test_acc: 45.20src_cls_loss : 2.21717, tgt_cls_loss : 2.17334, transfer_loss : 0.08041, env_loss : 5.82513, 
+2020-09-16 15:46:04,209 - bootstrap - INFO - Source epoch 2/50 main_lr=0.010000
+2020-09-16 15:52:04,368 - bootstrap - INFO - tgt_test_acc: 64.05 ; src_test_acc: 62.09src_cls_loss : 1.43121, tgt_cls_loss : 1.26471, transfer_loss : 0.07845, env_loss : 5.44377, 
+2020-09-16 15:52:05,058 - bootstrap - INFO - Source epoch 3/50 main_lr=0.010000
+2020-09-16 15:58:06,760 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 67.78src_cls_loss : 1.12723, tgt_cls_loss : 0.86130, transfer_loss : 0.07995, env_loss : 5.27348, 
+2020-09-16 15:58:07,554 - bootstrap - INFO - Source epoch 4/50 main_lr=0.010000
+2020-09-16 16:04:13,070 - bootstrap - INFO - tgt_test_acc: 76.09 ; src_test_acc: 73.26src_cls_loss : 0.96364, tgt_cls_loss : 0.66251, transfer_loss : 0.08176, env_loss : 5.00772, 
+2020-09-16 16:04:13,929 - bootstrap - INFO - Source epoch 5/50 main_lr=0.010000
+2020-09-16 16:10:19,092 - bootstrap - INFO - tgt_test_acc: 77.56 ; src_test_acc: 75.40src_cls_loss : 0.82685, tgt_cls_loss : 0.52015, transfer_loss : 0.07986, env_loss : 4.78872, 
+2020-09-16 16:10:19,914 - bootstrap - INFO - Source epoch 6/50 main_lr=0.010000
+2020-09-16 16:16:20,150 - bootstrap - INFO - tgt_test_acc: 79.35 ; src_test_acc: 78.12src_cls_loss : 0.79212, tgt_cls_loss : 0.46069, transfer_loss : 0.07971, env_loss : 4.58783, 
+2020-09-16 16:16:21,034 - bootstrap - INFO - Source epoch 7/50 main_lr=0.010000
+2020-09-16 16:22:22,988 - bootstrap - INFO - tgt_test_acc: 79.04 ; src_test_acc: 80.63src_cls_loss : 0.72728, tgt_cls_loss : 0.38254, transfer_loss : 0.08121, env_loss : 4.47322, 
+2020-09-16 16:22:23,877 - bootstrap - INFO - Source epoch 8/50 main_lr=0.010000

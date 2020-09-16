@@ -1,0 +1,71 @@
+2020-09-16 15:56:02,076 - bootstrap - INFO - 
+----------------- Options ---------------
+                        K: 256                           
+              adapted_dim: 1024                          
+              adj_lr_func: none                          
+                annealing: none                          
+               batch_size: 64                            
+                 channels: 3                             
+              contrastive: False                         
+                   cosine: False                         
+                data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/DDA_office/officehome
+                  dataset: officehome                    
+        domain_shift_type: convention                    
+                  dropout: False                         
+                     flip: False                         
+                   frozen: []                            
+                      gpu: [0]                           
+               image_size: 224                           
+               lambda_irm: 0.0                           
+                     lirr: False                         
+                load_path: None                          
+                     logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/officehome/adr/Clipart_Art_officehome_adr.txt
+         logger_file_name: officehome_adr                
+                       lr: 0.001                         
+                  lr_flip: 0.1                           
+              lr_quadrant: 0.1                           
+              lr_rotation: 0.1                           
+                  lw_flip: 0.1                           
+              lw_quadrant: 0.1                           
+              lw_rotation: 0.1                           
+                        m: 0.998                         
+                   method: adr                           
+                milestone: 35                            
+                      mim: False                         
+                    mixup: False                         
+            moco_finetune: False                         
+               model_name: resnet34                      
+                   nepoch: 50                            
+                 nthreads: 8                             
+                  num_cls: 65                            
+           optimizer_type: sgd                           
+                     outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/Clipart_Art_officehome_adr
+                   quad_p: 2                             
+                 quadrant: False                         
+                 rotation: False                         
+                   source: ['Clipart']                   
+                   target: Art                           
+   target_labeled_portion: 20                            
+                task_type: cls                           
+                     temp: 1                             
+                trade_off: 0.01                          
+                      vib: False                         
+----------------- End -------------------
+2020-09-16 15:56:02,083 - bootstrap - INFO - ==> Building model..
+2020-09-16 15:56:06,518 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-16 15:56:06,784 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-16 15:56:06,784 - bootstrap - INFO - ==> No pretext task.
+2020-09-16 15:56:06,784 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-16 15:56:06,785 - bootstrap - INFO - ==> no extra module need to be constructed.
+2020-09-16 15:56:06,787 - bootstrap - INFO - ==> Running..
+2020-09-16 15:56:06,787 - bootstrap - INFO - Source epoch 1/50 main_lr=0.001000
+2020-09-16 16:01:40,982 - bootstrap - INFO - tgt_test_acc: 56.12 ; src_test_acc: 44.15src_cls_loss : 2.03100, tgt_cls_loss : 1.83717, transfer_loss : 0.01156, 
+2020-09-16 16:01:41,971 - bootstrap - INFO - Source epoch 2/50 main_lr=0.010000
+2020-09-16 16:07:16,688 - bootstrap - INFO - tgt_test_acc: 67.79 ; src_test_acc: 59.24src_cls_loss : 1.33372, tgt_cls_loss : 0.94536, transfer_loss : 0.01222, 
+2020-09-16 16:07:17,532 - bootstrap - INFO - Source epoch 3/50 main_lr=0.010000
+2020-09-16 16:12:54,685 - bootstrap - INFO - tgt_test_acc: 69.20 ; src_test_acc: 65.75src_cls_loss : 1.09627, tgt_cls_loss : 0.57221, transfer_loss : 0.01272, 
+2020-09-16 16:12:55,632 - bootstrap - INFO - Source epoch 4/50 main_lr=0.010000
+2020-09-16 16:18:31,872 - bootstrap - INFO - tgt_test_acc: 71.59 ; src_test_acc: 69.39src_cls_loss : 0.91172, tgt_cls_loss : 0.39380, transfer_loss : 0.01231, 
+2020-09-16 16:18:32,777 - bootstrap - INFO - Source epoch 5/50 main_lr=0.010000
+2020-09-16 16:24:08,078 - bootstrap - INFO - tgt_test_acc: 70.32 ; src_test_acc: 72.33src_cls_loss : 0.82257, tgt_cls_loss : 0.31725, transfer_loss : 0.01194, 
+2020-09-16 16:24:08,984 - bootstrap - INFO - Source epoch 6/50 main_lr=0.010000

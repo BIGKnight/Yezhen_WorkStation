@@ -2,7 +2,7 @@
 source /nfs/project/wangyezhen/.Pytorch_Env
 cd /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/
 #CUDA_VISIBLE_DEVICES=0
-datasets=('train' 'validation')
+datasets=('validation_fullt' 'validation')
 logf_root='/nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/visda2017/sourceonly/'
 
 for((i = 0; i < 1; i++))
@@ -17,13 +17,13 @@ do
         --domain_shift_type convention \
         --source ${source_domain} \
         --target ${target_domain} \
-        --nepoch 100 \
+        --nepoch 30 \
         --model_name ${1} \
         --image_size 224 \
         --channels 3 \
         --num_cls 12 \
-        --lr 0.002 \
-        --milestone 50 \
+        --lr 0.001 \
+        --milestone 20 \
         --data_root /nfs/volume-92-5/wangyezhen_i/Datasets/visda2017 \
         --outf /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/${source_domain}_${target_domain}_visda2017_source_only \
         --logf ${logf_root}${source_domain}_${target_domain}_visda2017_source_only.txt \

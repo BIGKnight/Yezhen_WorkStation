@@ -1,0 +1,89 @@
+2020-09-16 14:54:31,860 - bootstrap - INFO - 
+----------------- Options ---------------
+                        K: 256                           
+              adapted_dim: 1024                          
+              adj_lr_func: none                          
+                annealing: none                          
+               batch_size: 64                            
+                 channels: 3                             
+              contrastive: False                         
+                   cosine: False                         
+                data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/DDA_office/officehome
+                  dataset: officehome                    
+        domain_shift_type: convention                    
+                  dropout: False                         
+                     flip: False                         
+                   frozen: []                            
+                      gpu: [0]                           
+               image_size: 224                           
+               lambda_irm: 0.0                           
+                     lirr: False                         
+                load_path: None                          
+                     logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/officehome/lirr/Clipart_Art_officehome_lirr.txt
+         logger_file_name: officehome_lirr               
+                       lr: 0.001                         
+                  lr_flip: 0.1                           
+              lr_quadrant: 0.1                           
+              lr_rotation: 0.1                           
+                  lw_flip: 0.1                           
+              lw_quadrant: 0.1                           
+              lw_rotation: 0.1                           
+                        m: 0.998                         
+                   method: lirr                          
+                milestone: 35                            
+                      mim: False                         
+                    mixup: False                         
+            moco_finetune: False                         
+               model_name: resnet34                      
+                   nepoch: 50                            
+                 nthreads: 8                             
+                  num_cls: 65                            
+           optimizer_type: sgd                           
+                     outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/Clipart_Art_officehome_lirr
+                   quad_p: 2                             
+                 quadrant: False                         
+                 rotation: False                         
+                   source: ['Clipart']                   
+                   target: Art                           
+   target_labeled_portion: 10                            
+                task_type: cls                           
+                     temp: 1                             
+                trade_off: 0.1                           
+                      vib: False                         
+----------------- End -------------------
+2020-09-16 14:54:31,868 - bootstrap - INFO - ==> Building model..
+2020-09-16 14:54:36,528 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-16 14:54:36,678 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-16 14:54:36,678 - bootstrap - INFO - ==> No pretext task.
+2020-09-16 14:54:36,678 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-16 14:54:36,747 - bootstrap - INFO - ==> Have built extra modules: ad_net, predictor_env under LiRR method.
+2020-09-16 14:54:36,749 - bootstrap - INFO - ==> Running..
+2020-09-16 14:54:36,750 - bootstrap - INFO - Source epoch 1/50 main_lr=0.001000
+2020-09-16 15:01:02,633 - bootstrap - INFO - tgt_test_acc: 46.69 ; src_test_acc: 41.97src_cls_loss : 2.03253, tgt_cls_loss : 1.74600, transfer_loss : 0.07648, env_loss : 5.58367, 
+2020-09-16 15:01:03,410 - bootstrap - INFO - Source epoch 2/50 main_lr=0.010000
+2020-09-16 15:07:26,782 - bootstrap - INFO - tgt_test_acc: 60.76 ; src_test_acc: 59.84src_cls_loss : 1.37438, tgt_cls_loss : 0.75098, transfer_loss : 0.07808, env_loss : 5.12176, 
+2020-09-16 15:07:27,567 - bootstrap - INFO - Source epoch 3/50 main_lr=0.010000
+2020-09-16 15:13:47,939 - bootstrap - INFO - tgt_test_acc: 63.01 ; src_test_acc: 65.77src_cls_loss : 1.09750, tgt_cls_loss : 0.39065, transfer_loss : 0.07989, env_loss : 4.78681, 
+2020-09-16 15:13:48,717 - bootstrap - INFO - Source epoch 4/50 main_lr=0.010000
+2020-09-16 15:20:17,435 - bootstrap - INFO - tgt_test_acc: 63.29 ; src_test_acc: 70.15src_cls_loss : 0.93086, tgt_cls_loss : 0.24052, transfer_loss : 0.07897, env_loss : 4.50454, 
+2020-09-16 15:20:18,182 - bootstrap - INFO - Source epoch 5/50 main_lr=0.010000
+2020-09-16 15:26:39,771 - bootstrap - INFO - tgt_test_acc: 63.71 ; src_test_acc: 72.71src_cls_loss : 0.80758, tgt_cls_loss : 0.16282, transfer_loss : 0.07899, env_loss : 4.22712, 
+2020-09-16 15:26:40,462 - bootstrap - INFO - Source epoch 6/50 main_lr=0.010000
+2020-09-16 15:32:58,070 - bootstrap - INFO - tgt_test_acc: 63.01 ; src_test_acc: 75.01src_cls_loss : 0.72738, tgt_cls_loss : 0.12320, transfer_loss : 0.07903, env_loss : 4.00405, 
+2020-09-16 15:32:58,733 - bootstrap - INFO - Source epoch 7/50 main_lr=0.010000
+2020-09-16 15:39:22,643 - bootstrap - INFO - tgt_test_acc: 64.56 ; src_test_acc: 75.19src_cls_loss : 0.64568, tgt_cls_loss : 0.10462, transfer_loss : 0.07798, env_loss : 3.77533, 
+2020-09-16 15:39:23,318 - bootstrap - INFO - Source epoch 8/50 main_lr=0.010000
+2020-09-16 15:45:45,045 - bootstrap - INFO - tgt_test_acc: 63.57 ; src_test_acc: 77.85src_cls_loss : 0.59340, tgt_cls_loss : 0.08447, transfer_loss : 0.07829, env_loss : 3.58440, 
+2020-09-16 15:45:45,694 - bootstrap - INFO - Source epoch 9/50 main_lr=0.010000
+2020-09-16 15:52:08,344 - bootstrap - INFO - tgt_test_acc: 63.99 ; src_test_acc: 79.70src_cls_loss : 0.54637, tgt_cls_loss : 0.07044, transfer_loss : 0.07730, env_loss : 3.38550, 
+2020-09-16 15:52:09,038 - bootstrap - INFO - Source epoch 10/50 main_lr=0.010000
+2020-09-16 15:58:38,432 - bootstrap - INFO - tgt_test_acc: 63.15 ; src_test_acc: 80.05src_cls_loss : 0.49796, tgt_cls_loss : 0.06100, transfer_loss : 0.07724, env_loss : 3.21422, 
+2020-09-16 15:58:39,155 - bootstrap - INFO - Source epoch 11/50 main_lr=0.010000
+2020-09-16 16:05:10,677 - bootstrap - INFO - tgt_test_acc: 63.99 ; src_test_acc: 82.54src_cls_loss : 0.46233, tgt_cls_loss : 0.05319, transfer_loss : 0.07726, env_loss : 3.06877, 
+2020-09-16 16:05:11,441 - bootstrap - INFO - Source epoch 12/50 main_lr=0.010000
+2020-09-16 16:11:43,447 - bootstrap - INFO - tgt_test_acc: 64.98 ; src_test_acc: 82.68src_cls_loss : 0.43979, tgt_cls_loss : 0.04909, transfer_loss : 0.07704, env_loss : 2.91593, 
+2020-09-16 16:11:44,174 - bootstrap - INFO - Source epoch 13/50 main_lr=0.010000
+2020-09-16 16:18:25,894 - bootstrap - INFO - tgt_test_acc: 63.99 ; src_test_acc: 83.41src_cls_loss : 0.41195, tgt_cls_loss : 0.03973, transfer_loss : 0.07670, env_loss : 2.75487, 
+2020-09-16 16:18:26,625 - bootstrap - INFO - Source epoch 14/50 main_lr=0.010000
+2020-09-16 16:24:56,679 - bootstrap - INFO - tgt_test_acc: 65.26 ; src_test_acc: 85.45src_cls_loss : 0.39847, tgt_cls_loss : 0.03621, transfer_loss : 0.07653, env_loss : 2.63396, 
+2020-09-16 16:24:57,337 - bootstrap - INFO - Source epoch 15/50 main_lr=0.010000

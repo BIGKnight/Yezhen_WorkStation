@@ -1,10 +1,10 @@
-2020-09-10 22:49:47,565 - bootstrap - INFO - 
+2020-09-11 23:20:58,208 - bootstrap - INFO - 
 ----------------- Options ---------------
                         K: 256                           
               adapted_dim: 1024                          
               adj_lr_func: none                          
                 annealing: none                          
-               batch_size: 32                            
+               batch_size: 128                           
                  channels: 3                             
               contrastive: False                         
                    cosine: False                         
@@ -21,7 +21,7 @@
                 load_path: None                          
                      logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/visda2017/sourceonly/train_validation_visda2017_source_only.txt
          logger_file_name: visda2017_source_only         
-                       lr: 0.002                         
+                       lr: 0.001                         
                   lr_flip: 0.1                           
               lr_quadrant: 0.1                           
               lr_rotation: 0.1                           
@@ -30,14 +30,15 @@
               lw_rotation: 0.1                           
                         m: 0.998                         
                    method: source_only                   
-                milestone: 50                            
+                milestone: 20                            
                       mim: False                         
                     mixup: False                         
             moco_finetune: False                         
                model_name: resnet34                      
-                   nepoch: 100                           
+                   nepoch: 30                            
                  nthreads: 8                             
                   num_cls: 12                            
+           optimizer_type: sgd                           
                      outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/train_validation_visda2017_source_only
                    quad_p: 2                             
                  quadrant: False                         
@@ -49,35 +50,27 @@
                 trade_off: 0.1                           
                       vib: False                         
 ----------------- End -------------------
-2020-09-10 22:49:47,566 - bootstrap - INFO - ==> Building model..
-2020-09-10 22:49:53,457 - bootstrap - INFO - ==> Preparing datasets..
-2020-09-10 22:49:54,582 - bootstrap - INFO - ==> Creating pretext tasks.
-2020-09-10 22:49:54,583 - bootstrap - INFO - ==> No pretext task.
-2020-09-10 22:49:54,583 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
-2020-09-10 22:49:54,584 - bootstrap - INFO - ==> no extra module need to be constructed.
-2020-09-10 22:49:54,585 - bootstrap - INFO - ==> Running..
-2020-09-10 22:49:54,585 - bootstrap - INFO - Source epoch 1/100 main_lr=0.002000
-2020-09-10 23:40:34,957 - __main__ - INFO - tgt_test_acc: 75.11 ; src_test_acc: 97.96src_cls_loss : 0.01192, tgt_cls_loss : 0.00169, transfer_loss : 0.00000, 
-2020-09-10 23:40:36,084 - __main__ - INFO - Source epoch 5/100 main_lr=0.020000
-2020-09-11 01:25:22,799 - __main__ - INFO - tgt_test_acc: 73.96 ; src_test_acc: 98.48src_cls_loss : 0.00872, tgt_cls_loss : 0.00123, transfer_loss : 0.00000, 
-2020-09-11 01:25:24,044 - __main__ - INFO - Source epoch 6/100 main_lr=0.020000
-2020-09-11 03:11:07,807 - __main__ - INFO - tgt_test_acc: 74.79 ; src_test_acc: 97.66src_cls_loss : 0.00727, tgt_cls_loss : 0.00102, transfer_loss : 0.00000, 
-2020-09-11 03:11:09,126 - __main__ - INFO - Source epoch 7/100 main_lr=0.020000
-2020-09-11 04:55:40,632 - __main__ - INFO - tgt_test_acc: 75.64 ; src_test_acc: 98.56src_cls_loss : 0.00610, tgt_cls_loss : 0.00080, transfer_loss : 0.00000, 
-2020-09-11 04:55:41,918 - __main__ - INFO - Source epoch 8/100 main_lr=0.020000
-2020-09-11 06:39:59,309 - __main__ - INFO - tgt_test_acc: 73.24 ; src_test_acc: 98.90src_cls_loss : 0.00506, tgt_cls_loss : 0.00076, transfer_loss : 0.00000, 
-2020-09-11 06:40:00,569 - __main__ - INFO - Source epoch 9/100 main_lr=0.020000
-2020-09-11 08:24:40,602 - __main__ - INFO - tgt_test_acc: 75.83 ; src_test_acc: 98.02src_cls_loss : 0.00455, tgt_cls_loss : 0.00071, transfer_loss : 0.00000, 
-2020-09-11 08:24:41,917 - __main__ - INFO - Source epoch 10/100 main_lr=0.020000
-2020-09-11 10:07:00,097 - __main__ - INFO - tgt_test_acc: 75.25 ; src_test_acc: 98.62src_cls_loss : 0.00408, tgt_cls_loss : 0.00067, transfer_loss : 0.00000, 
-2020-09-11 10:07:01,633 - __main__ - INFO - Source epoch 11/100 main_lr=0.020000
-2020-09-11 11:50:10,839 - __main__ - INFO - tgt_test_acc: 76.06 ; src_test_acc: 98.78src_cls_loss : 0.00400, tgt_cls_loss : 0.00063, transfer_loss : 0.00000, 
-2020-09-11 11:50:12,071 - __main__ - INFO - Source epoch 12/100 main_lr=0.020000
-2020-09-11 13:30:28,719 - __main__ - INFO - tgt_test_acc: 75.11 ; src_test_acc: 99.16src_cls_loss : 0.00351, tgt_cls_loss : 0.00055, transfer_loss : 0.00000, 
-2020-09-11 13:30:29,899 - __main__ - INFO - Source epoch 13/100 main_lr=0.020000
-2020-09-11 15:11:15,440 - __main__ - INFO - tgt_test_acc: 74.37 ; src_test_acc: 99.12src_cls_loss : 0.00317, tgt_cls_loss : 0.00055, transfer_loss : 0.00000, 
-2020-09-11 15:11:16,674 - __main__ - INFO - Source epoch 14/100 main_lr=0.020000
-2020-09-11 16:53:32,295 - __main__ - INFO - tgt_test_acc: 74.58 ; src_test_acc: 98.78src_cls_loss : 0.00301, tgt_cls_loss : 0.00052, transfer_loss : 0.00000, 
-2020-09-11 16:53:33,495 - __main__ - INFO - Source epoch 15/100 main_lr=0.020000
-2020-09-11 18:33:34,222 - __main__ - INFO - tgt_test_acc: 75.62 ; src_test_acc: 98.26src_cls_loss : 0.00285, tgt_cls_loss : 0.00047, transfer_loss : 0.00000, 
-2020-09-11 18:33:35,362 - __main__ - INFO - Source epoch 16/100 main_lr=0.020000
+2020-09-11 23:20:58,232 - bootstrap - INFO - ==> Building model..
+2020-09-11 23:21:03,778 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-11 23:21:08,656 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-11 23:21:08,657 - bootstrap - INFO - ==> No pretext task.
+2020-09-11 23:21:08,657 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-11 23:21:08,658 - bootstrap - INFO - ==> no extra module need to be constructed.
+2020-09-11 23:21:08,661 - bootstrap - INFO - ==> Running..
+2020-09-11 23:21:08,661 - bootstrap - INFO - Source epoch 1/30 main_lr=0.001000
+2020-09-12 01:18:07,216 - bootstrap - INFO - tgt_test_acc: 78.17 ; src_test_acc: 95.18src_cls_loss : 0.14838, tgt_cls_loss : 0.12027, transfer_loss : 0.00000, 
+2020-09-12 01:18:08,640 - bootstrap - INFO - Source epoch 2/30 main_lr=0.010000
+2020-09-12 03:20:25,502 - bootstrap - INFO - tgt_test_acc: 76.70 ; src_test_acc: 96.40src_cls_loss : 0.04393, tgt_cls_loss : 0.00914, transfer_loss : 0.00000, 
+2020-09-12 03:20:26,931 - bootstrap - INFO - Source epoch 3/30 main_lr=0.010000
+2020-09-12 05:14:16,420 - bootstrap - INFO - tgt_test_acc: 76.17 ; src_test_acc: 97.10src_cls_loss : 0.02657, tgt_cls_loss : 0.00456, transfer_loss : 0.00000, 
+2020-09-12 05:14:17,763 - bootstrap - INFO - Source epoch 4/30 main_lr=0.010000
+2020-09-12 07:03:52,006 - bootstrap - INFO - tgt_test_acc: 76.28 ; src_test_acc: 97.18src_cls_loss : 0.01789, tgt_cls_loss : 0.00291, transfer_loss : 0.00000, 
+2020-09-12 07:03:53,391 - bootstrap - INFO - Source epoch 5/30 main_lr=0.010000
+2020-09-12 08:52:17,825 - bootstrap - INFO - tgt_test_acc: 76.30 ; src_test_acc: 98.06src_cls_loss : 0.01399, tgt_cls_loss : 0.00227, transfer_loss : 0.00000, 
+2020-09-12 08:52:19,092 - bootstrap - INFO - Source epoch 6/30 main_lr=0.010000
+2020-09-12 10:42:52,136 - bootstrap - INFO - tgt_test_acc: 76.17 ; src_test_acc: 98.04src_cls_loss : 0.01124, tgt_cls_loss : 0.00184, transfer_loss : 0.00000, 
+2020-09-12 10:42:53,584 - bootstrap - INFO - Source epoch 7/30 main_lr=0.010000
+2020-09-12 12:30:48,047 - bootstrap - INFO - tgt_test_acc: 75.13 ; src_test_acc: 98.20src_cls_loss : 0.00965, tgt_cls_loss : 0.00138, transfer_loss : 0.00000, 
+2020-09-12 12:30:49,346 - bootstrap - INFO - Source epoch 8/30 main_lr=0.010000
+2020-09-12 14:19:53,513 - bootstrap - INFO - tgt_test_acc: 75.18 ; src_test_acc: 98.48src_cls_loss : 0.00821, tgt_cls_loss : 0.00124, transfer_loss : 0.00000, 
+2020-09-12 14:19:54,961 - bootstrap - INFO - Source epoch 9/30 main_lr=0.010000

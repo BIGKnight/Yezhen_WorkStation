@@ -67,6 +67,7 @@ def parsing():
     parser.add_argument('--adj_lr_func', type=str, default='none')
     parser.add_argument('--dropout', action='store_true')
     parser.add_argument('--K', default=256, type=int)
+    parser.add_argument('--target_labeled_portion', default=1, type=int)
     parser.add_argument('--task_type', default='cls', type=str)
     args = parser.parse_args()
     try:
@@ -115,12 +116,15 @@ def building_modules(args, net, optimizers, all_parameters, params_lr, logger):
         logger.info('==> Have built extra modules: queue, ptr for instapbm method.')
         
     elif 'lirr' == args.method.lower():
-        ad_net = DANNDiscriminator(args.adapted_dim, args.adapted_dim).cuda()
-        predictor_env = EnvPredictor(
-            args.batch_size, 
-            args.num_cls, 
-            net.get_classifer_in_features(), 
-            args.adapted_dim).cuda()
+        ad_net = DANNDiscriminator(args.adapted_dim, args.adapted_dim, args.task_type).cuda()
+        if args.task_type == 'cls':
+            predictor_env = EnvPredictor(
+                args.batch_size, 
+                args.num_cls, 
+                net.get_classifer_in_features(), 
+                args.adapted_dim).cuda()
+        elif args.task_type == 'reg':
+            predictor_env = FCN_Head(num_reg=1, env_dim=1).cuda()
         all_parameters += predictor_env.get_parameters()
         modules['ad_net'] = ad_net
         modules['predictor_env'] = predictor_env
@@ -131,7 +135,7 @@ def building_modules(args, net, optimizers, all_parameters, params_lr, logger):
         logger.info('==> Have built extra modules: ad_net, predictor_env under LiRR method.')
 
     elif 'dann' == args.method.lower():
-        ad_net = DANNDiscriminator(args.adapted_dim, args.adapted_dim).cuda()
+        ad_net = DANNDiscriminator(args.adapted_dim, args.adapted_dim, args.task_type).cuda()
         modules['ad_net'] = ad_net
         optimizers['dis'] = create_optimizer(ad_net.get_parameters(), args.lr, args.optimizer_type)
         params_lr['dis'] = []
@@ -141,7 +145,7 @@ def building_modules(args, net, optimizers, all_parameters, params_lr, logger):
 
     elif 'cdan' in args.method.lower():
         random_layer = RandomLayer([args.adapted_dim, args.num_cls], args.adapted_dim).cuda()
-        ad_net = DANNDiscriminator(args.adapted_dim, args.adapted_dim).cuda()
+        ad_net = DANNDiscriminator(args.adapted_dim, args.adapted_dim, args.task_type).cuda()
         modules['random_layer'] = random_layer
         modules['ad_net'] = ad_net
         optimizers['dis'] = create_optimizer(ad_net.get_parameters(), args.lr, args.optimizer_type)

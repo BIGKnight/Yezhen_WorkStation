@@ -17,13 +17,13 @@ do
         --domain_shift_type convention \
         --source ${source_domain} \
         --target ${target_domain} \
-        --nepoch 60 \
+        --nepoch 30 \
         --model_name ${1} \
         --image_size 224 \
         --channels 3 \
         --num_cls 345 \
         --lr 1e-3 \
-        --milestone 40 \
+        --milestone 20 \
         --data_root /nfs/volume-92-5/wangyezhen_i/Datasets/visda2019/domainnet \
         --outf /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/${source_domain}_${target_domain}_domainnet_dann \
         --logf ${logf_root}${source_domain}_${target_domain}_domainnet_dann.txt \

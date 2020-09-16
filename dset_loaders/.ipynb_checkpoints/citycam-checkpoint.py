@@ -199,14 +199,14 @@ class CITYCAM(data.Dataset):
         img_q, img_k = self.transform(img)
         rand_img_q, rand_img_k = self.transform(rand_img)
         # resize
-        gt_map = F.interpolate(gt_map, img_q.shape[1:3], mode='nearest').squeeze(dim=0)
-        rand_gt_map = F.interpolate(rand_gt_map, img_k.shape[1:3], mode='nearest').squeeze(dim=0)
-        mask = F.interpolate(mask, img_q.shape[1:3], mode='nearest').squeeze(dim=0)
-        rand_mask = F.interpolate(rand_mask, img_k.shape[1:3], mode='nearest').squeeze(dim=0)
-        # normalize
-        gt_map *= (float(len(gt_points)) / gt_map.sum())
-        rand_gt_map *= (float(len(rand_gt_points)) / rand_gt_map.sum())
+        gt_map = F.interpolate(gt_map, img_q.shape[1:3] , mode='nearest').squeeze(dim=0)
         
+        rand_gt_map = F.interpolate(rand_gt_map, rand_img_q.shape[1:3] , mode='nearest').squeeze(dim=0)
+        mask = F.interpolate(mask, img_q.shape[1:3], mode='nearest').squeeze(dim=0)
+        rand_mask = F.interpolate(rand_mask, rand_img_q.shape[1:3], mode='nearest').squeeze(dim=0)
+        # normalize
+        gt_map *= (float(len(gt_points)) / (gt_map.sum() + 1e-8))
+        rand_gt_map *= (float(len(rand_gt_points)) / (rand_gt_map.sum() + 1e-8))
         return {
             'sample_1_q':(img_q, gt_map, mask),
             'sample_1_k':(img_k, gt_map, mask),

@@ -1,0 +1,78 @@
+2020-09-12 08:04:08,806 - bootstrap - INFO - 
+----------------- Options ---------------
+                        K: 256                           
+              adapted_dim: 1024                          
+              adj_lr_func: none                          
+                annealing: none                          
+               batch_size: 128                           
+                 channels: 3                             
+              contrastive: False                         
+                   cosine: False                         
+                data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/visda2019/domainnet
+                  dataset: domainnet                     
+        domain_shift_type: convention                    
+                  dropout: False                         
+                     flip: False                         
+                   frozen: []                            
+                      gpu: [0]                           
+               image_size: 224                           
+               lambda_irm: 1.0                           
+                     lirr: False                         
+                load_path: None                          
+                     logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/domainnet/instapbm/clipart_real_mimcontra.txt
+         logger_file_name: domainnet_mimcontra_convention
+                       lr: 0.001                         
+                  lr_flip: 0.1                           
+              lr_quadrant: 0.1                           
+              lr_rotation: 0.1                           
+                  lw_flip: 0.1                           
+              lw_quadrant: 0.1                           
+              lw_rotation: 0.1                           
+                        m: 0.998                         
+                   method: mimcontra                     
+                milestone: 40                            
+                      mim: False                         
+                    mixup: False                         
+            moco_finetune: False                         
+               model_name: resnet34                      
+                   nepoch: 60                            
+                 nthreads: 8                             
+                  num_cls: 345                           
+           optimizer_type: sgd                           
+                     outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/clipart_real_domainnet_mimcontra
+                   quad_p: 2                             
+                 quadrant: False                         
+                 rotation: False                         
+                   source: ['clipart']                   
+                   target: real                          
+                task_type: cls                           
+                     temp: 1                             
+                trade_off: 0.1                           
+                      vib: False                         
+----------------- End -------------------
+2020-09-12 08:04:08,808 - bootstrap - INFO - ==> Building model..
+2020-09-12 08:04:14,005 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-12 08:04:15,743 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-12 08:04:15,743 - bootstrap - INFO - ==> No pretext task.
+2020-09-12 08:04:15,743 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-12 08:04:15,744 - bootstrap - INFO - ==> no extra module need to be constructed.
+2020-09-12 08:04:15,746 - bootstrap - INFO - ==> Running..
+2020-09-12 08:04:15,746 - bootstrap - INFO - Source epoch 1/60 main_lr=0.001000
+2020-09-12 08:54:53,380 - bootstrap - INFO - tgt_test_acc: 26.80 ; src_test_acc: 25.72src_cls_loss : 5.43110, tgt_cls_loss : 5.20979, mim_loss : -0.30854, irm_loss : 0.10429, consistant_loss : 0.01373, 
+2020-09-12 08:54:55,408 - bootstrap - INFO - Source epoch 2/60 main_lr=0.010000
+2020-09-12 09:45:00,700 - bootstrap - INFO - tgt_test_acc: 43.02 ; src_test_acc: 45.14src_cls_loss : 3.78793, tgt_cls_loss : 2.93611, mim_loss : -0.39073, irm_loss : 0.05634, consistant_loss : 0.07033, 
+2020-09-12 09:45:02,231 - bootstrap - INFO - Source epoch 3/60 main_lr=0.010000
+2020-09-12 10:34:38,907 - bootstrap - INFO - tgt_test_acc: 51.59 ; src_test_acc: 54.06src_cls_loss : 3.05044, tgt_cls_loss : 1.89645, mim_loss : -0.42487, irm_loss : 0.06099, consistant_loss : 0.06211, 
+2020-09-12 10:34:40,905 - bootstrap - INFO - Source epoch 4/60 main_lr=0.010000
+2020-09-12 11:24:31,908 - bootstrap - INFO - tgt_test_acc: 55.38 ; src_test_acc: 58.74src_cls_loss : 2.64097, tgt_cls_loss : 1.36064, mim_loss : -0.43909, irm_loss : 0.05658, consistant_loss : 0.05653, 
+2020-09-12 11:24:33,514 - bootstrap - INFO - Source epoch 5/60 main_lr=0.010000
+2020-09-12 12:14:24,311 - bootstrap - INFO - tgt_test_acc: 56.73 ; src_test_acc: 61.70src_cls_loss : 2.44014, tgt_cls_loss : 1.02660, mim_loss : -0.44637, irm_loss : 0.04743, consistant_loss : 0.05928, 
+2020-09-12 12:14:25,970 - bootstrap - INFO - Source epoch 6/60 main_lr=0.010000
+2020-09-12 13:04:21,889 - bootstrap - INFO - tgt_test_acc: 57.99 ; src_test_acc: 62.78src_cls_loss : 2.26042, tgt_cls_loss : 0.78513, mim_loss : -0.45170, irm_loss : 0.04261, consistant_loss : 0.05967, 
+2020-09-12 13:04:23,585 - bootstrap - INFO - Source epoch 7/60 main_lr=0.010000
+2020-09-12 13:54:25,488 - bootstrap - INFO - tgt_test_acc: 58.20 ; src_test_acc: 64.28src_cls_loss : 2.12619, tgt_cls_loss : 0.59998, mim_loss : -0.45534, irm_loss : 0.04064, consistant_loss : 0.06039, 
+2020-09-12 13:54:26,956 - bootstrap - INFO - Source epoch 8/60 main_lr=0.010000
+2020-09-12 14:45:17,202 - bootstrap - INFO - tgt_test_acc: 59.56 ; src_test_acc: 66.32src_cls_loss : 2.00426, tgt_cls_loss : 0.46857, mim_loss : -0.45786, irm_loss : 0.03660, consistant_loss : 0.06008, 
+2020-09-12 14:45:18,818 - bootstrap - INFO - Source epoch 9/60 main_lr=0.010000
+2020-09-12 15:35:21,377 - bootstrap - INFO - tgt_test_acc: 59.21 ; src_test_acc: 66.98src_cls_loss : 1.92068, tgt_cls_loss : 0.37196, mim_loss : -0.45897, irm_loss : 0.03309, consistant_loss : 0.06394, 
+2020-09-12 15:35:23,162 - bootstrap - INFO - Source epoch 10/60 main_lr=0.010000

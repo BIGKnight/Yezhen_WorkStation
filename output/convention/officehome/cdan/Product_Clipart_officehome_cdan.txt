@@ -1,0 +1,75 @@
+2020-09-16 15:51:26,509 - bootstrap - INFO - 
+----------------- Options ---------------
+                        K: 256                           
+              adapted_dim: 1024                          
+              adj_lr_func: none                          
+                annealing: none                          
+               batch_size: 64                            
+                 channels: 3                             
+              contrastive: False                         
+                   cosine: False                         
+                data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/DDA_office/officehome
+                  dataset: officehome                    
+        domain_shift_type: convention                    
+                  dropout: False                         
+                     flip: False                         
+                   frozen: []                            
+                      gpu: [0]                           
+               image_size: 224                           
+               lambda_irm: 0.0                           
+                     lirr: False                         
+                load_path: None                          
+                     logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/officehome/cdan/Product_Clipart_officehome_cdan.txt
+         logger_file_name: officehome_cdan               
+                       lr: 0.001                         
+                  lr_flip: 0.1                           
+              lr_quadrant: 0.1                           
+              lr_rotation: 0.1                           
+                  lw_flip: 0.1                           
+              lw_quadrant: 0.1                           
+              lw_rotation: 0.1                           
+                        m: 0.998                         
+                   method: cdan                          
+                milestone: 35                            
+                      mim: False                         
+                    mixup: False                         
+            moco_finetune: False                         
+               model_name: resnet34                      
+                   nepoch: 50                            
+                 nthreads: 8                             
+                  num_cls: 65                            
+           optimizer_type: sgd                           
+                     outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/Product_Clipart_officehome_cdan
+                   quad_p: 2                             
+                 quadrant: False                         
+                 rotation: False                         
+                   source: ['Product']                   
+                   target: Clipart                       
+   target_labeled_portion: 25                            
+                task_type: cls                           
+                     temp: 1                             
+                trade_off: 0.1                           
+                      vib: False                         
+----------------- End -------------------
+2020-09-16 15:51:26,515 - bootstrap - INFO - ==> Building model..
+2020-09-16 15:51:30,952 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-16 15:51:31,097 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-16 15:51:31,097 - bootstrap - INFO - ==> No pretext task.
+2020-09-16 15:51:31,097 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-16 15:51:31,163 - bootstrap - INFO - ==> Have built extra modules: random_layer, ad_net under CADA method.
+2020-09-16 15:51:31,165 - bootstrap - INFO - ==> Running..
+2020-09-16 15:51:31,165 - bootstrap - INFO - Source epoch 1/50 main_lr=0.001000
+2020-09-16 15:56:02,987 - bootstrap - INFO - tgt_test_acc: 44.94 ; src_test_acc: 61.84src_cls_loss : 1.86285, tgt_cls_loss : 1.95509, transfer_loss : 0.07038, 
+2020-09-16 15:56:03,925 - bootstrap - INFO - Source epoch 2/50 main_lr=0.010000
+2020-09-16 16:00:39,917 - bootstrap - INFO - tgt_test_acc: 60.94 ; src_test_acc: 74.90src_cls_loss : 0.97995, tgt_cls_loss : 1.16260, transfer_loss : 0.07389, 
+2020-09-16 16:00:40,946 - bootstrap - INFO - Source epoch 3/50 main_lr=0.010000
+2020-09-16 16:05:14,920 - bootstrap - INFO - tgt_test_acc: 68.00 ; src_test_acc: 81.64src_cls_loss : 0.74887, tgt_cls_loss : 0.88349, transfer_loss : 0.07523, 
+2020-09-16 16:05:15,838 - bootstrap - INFO - Source epoch 4/50 main_lr=0.010000
+2020-09-16 16:09:51,487 - bootstrap - INFO - tgt_test_acc: 72.00 ; src_test_acc: 83.89src_cls_loss : 0.61749, tgt_cls_loss : 0.67829, transfer_loss : 0.07656, 
+2020-09-16 16:09:52,450 - bootstrap - INFO - Source epoch 5/50 main_lr=0.010000
+2020-09-16 16:14:28,282 - bootstrap - INFO - tgt_test_acc: 71.76 ; src_test_acc: 86.57src_cls_loss : 0.53425, tgt_cls_loss : 0.54286, transfer_loss : 0.07808, 
+2020-09-16 16:14:29,246 - bootstrap - INFO - Source epoch 6/50 main_lr=0.010000
+2020-09-16 16:19:03,783 - bootstrap - INFO - tgt_test_acc: 74.75 ; src_test_acc: 87.59src_cls_loss : 0.46395, tgt_cls_loss : 0.45657, transfer_loss : 0.07843, 
+2020-09-16 16:19:04,735 - bootstrap - INFO - Source epoch 7/50 main_lr=0.010000
+2020-09-16 16:23:39,003 - bootstrap - INFO - tgt_test_acc: 77.02 ; src_test_acc: 89.84src_cls_loss : 0.45039, tgt_cls_loss : 0.39962, transfer_loss : 0.07894, 
+2020-09-16 16:23:39,929 - bootstrap - INFO - Source epoch 8/50 main_lr=0.010000

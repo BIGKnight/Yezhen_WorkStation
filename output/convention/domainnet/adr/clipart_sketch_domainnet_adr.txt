@@ -1,4 +1,4 @@
-2020-09-11 18:45:50,033 - bootstrap - INFO - 
+2020-09-12 15:47:14,975 - bootstrap - INFO - 
 ----------------- Options ---------------
                         K: 256                           
               adapted_dim: 1024                          
@@ -50,11 +50,15 @@
                 trade_off: 0.01                          
                       vib: False                         
 ----------------- End -------------------
-2020-09-11 18:45:50,035 - bootstrap - INFO - ==> Building model..
-2020-09-11 18:45:55,144 - bootstrap - INFO - ==> Preparing datasets..
-2020-09-11 18:45:56,063 - bootstrap - INFO - ==> Creating pretext tasks.
-2020-09-11 18:45:56,063 - bootstrap - INFO - ==> No pretext task.
-2020-09-11 18:45:56,064 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
-2020-09-11 18:45:56,064 - bootstrap - INFO - ==> no extra module need to be constructed.
-2020-09-11 18:45:56,066 - bootstrap - INFO - ==> Running..
-2020-09-11 18:45:56,066 - bootstrap - INFO - Source epoch 1/60 main_lr=0.001000
+2020-09-12 15:47:14,979 - bootstrap - INFO - ==> Building model..
+2020-09-12 15:47:21,148 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-12 15:47:22,200 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-12 15:47:22,200 - bootstrap - INFO - ==> No pretext task.
+2020-09-12 15:47:22,200 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-12 15:47:22,201 - bootstrap - INFO - ==> no extra module need to be constructed.
+2020-09-12 15:47:22,203 - bootstrap - INFO - ==> Running..
+2020-09-12 15:47:22,203 - bootstrap - INFO - Source epoch 1/60 main_lr=0.001000
+2020-09-12 16:34:42,265 - bootstrap - INFO - tgt_test_acc: 27.51 ; src_test_acc: 36.28src_cls_loss : 2.59330, tgt_cls_loss : 2.16100, transfer_loss : 0.01036, 
+2020-09-12 16:34:43,988 - bootstrap - INFO - Source epoch 2/60 main_lr=0.010000
+2020-09-12 17:17:29,349 - bootstrap - INFO - tgt_test_acc: 35.85 ; src_test_acc: 51.28src_cls_loss : 1.78137, tgt_cls_loss : 0.67998, transfer_loss : 0.01844, 
+2020-09-12 17:17:30,891 - bootstrap - INFO - Source epoch 3/60 main_lr=0.010000

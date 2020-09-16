@@ -17,20 +17,20 @@ do
         --domain_shift_type convention \
         --source ${source_domain} \
         --target ${target_domain} \
-        --nepoch 50 \
+        --nepoch 30 \
         --model_name ${1} \
         --image_size 224 \
         --channels 3 \
         --num_cls 12 \
-        --lr 0.0001 \
-        --milestone 50 \
+        --lr 0.001 \
+        --milestone 20 \
         --data_root /nfs/volume-92-5/wangyezhen_i/Datasets/visda2017 \
         --outf /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/${source_domain}_${target_domain}_visda2017_cdan \
         --logf ${logf_root}${source_domain}_${target_domain}_visda2017_cdan.txt \
         --batch_size ${2} \
         --nthreads 8 \
         --method cdan \
-        --trade_off 0.5 \
+        --trade_off 0.1 \
         --logger_file_name visda2017_cdan
     done
 done
