@@ -47,7 +47,7 @@ def collect_ids_cls(args):
             data_collection['source']['train']['ids'].append(os.path.join(args.data_root, dm.split('_')[0] + '/' + id))
             data_collection['source']['train']['labels'].append(label2index_parser[general_domain][cls])
             
-    target_partitions = [portion.get(args.target_labeled_portion, ""), 'unlabeled', 'validation']
+    target_partitions = [portion.get(args.target_labeled_portion, "labeled"), 'unlabeled', 'validation']
     for item in target_partitions:
         t_p = item.split("_")[0]
         domain_ls_path = os.path.join(
@@ -116,7 +116,7 @@ def collect_ids_reg(args):
             data_collection['source']['train']['labels'].append(os.path.join(args.data_root, dm.split('_')[0] + '/' + reg))
             data_collection['source']['train']['masks'].append(os.path.join(args.data_root, dm.split('_')[0] + '/' + mask))
     
-    target_partitions = [portion.get(args.target_labeled_portion, ""), 'unlabeled', 'validation']
+    target_partitions = [portion.get(args.target_labeled_portion, "labeled"), 'unlabeled', 'validation']
     for item in target_partitions:
         t_p = item.split("_")[0]
         domain_ls_path = os.path.join(
