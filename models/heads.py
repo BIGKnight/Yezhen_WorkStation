@@ -31,7 +31,7 @@ class RandomLayer(nn.Module):
         return return_tensor
 
 class DANNDiscriminator(nn.Module):
-    def __init__(self, in_feature, hidden_size, task_type='cls'):
+    def __init__(self, in_feature=512, hidden_size=512, task_type='cls'):
         super(DANNDiscriminator, self).__init__()
         self.ad_layer1 = nn.Linear(in_feature, hidden_size)
         self.ad_layer2 = nn.Linear(hidden_size, hidden_size)
