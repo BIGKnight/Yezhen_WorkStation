@@ -7,16 +7,15 @@ import numpy as np
 import random
 from utils.utils import TwoCropsTransform
 
-# what about re-calculate these values for each dataset?
-class DomainnetParams(object):
+class NICOParams(object):
     num_channels = 3
     image_size = 256 # 384, 216
     mean = [0.485, 0.456, 0.406]
     std = [0.229, 0.224, 0.225]
-    num_cls = 345
+    num_cls = 5
     target_transform = None
     
-class DOMAINNET(data.Dataset):
+class NICO(data.Dataset):
     def __init__(self, root, num_cls, transform, data=None):
         self.root = root
         self.transform = transform
