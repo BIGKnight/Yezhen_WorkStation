@@ -96,8 +96,6 @@ class EnvPredictor(nn.Module):
         drop_x = self.dropout2(x1)
         encodes = torch.nn.functional.relu(self.bottleneck(drop_x), inplace=False)
         drop_x = self.dropout2(encodes)
-        #       cosine classifer
-#         normed_x = F.normalize(drop_x, p=2, dim=1)
         if cosine:
     #       cosine classifer
             normed_x = F.normalize(drop_x, p=2, dim=1)
@@ -108,27 +106,3 @@ class EnvPredictor(nn.Module):
 
     def get_parameters(self):
         return [{"params": self.parameters(), "lr_mult": 1, 'decay_mult': 10}]
-    
-
-# class EnvPredictor(nn.Module):
-#     def __init__(self, batch_size, num_class, in_features, bottleneck_dim=1024):
-#         super(EnvPredictor, self).__init__()
-#         self.dropout1 = nn.Dropout(p=0.5)
-#         self.dropout2 = nn.Dropout(p=0.5)
-#         self.bottleneck = nn.Linear(in_features=in_features * 2, out_features=bottleneck_dim, bias=True)
-#         self.fc = nn.Linear(in_features=bottleneck_dim, out_features=num_class, bias=True)
-        
-#         self.apply(init_weights)
-#         self.num_class = num_class
-#         self.env_embedding = {'src':torch.zeros(batch_size, in_features).cuda(), 'tgt':torch.ones(batch_size, in_features).cuda()}
-
-#     def forward(self, x, env):
-#         x_in = torch.cat([x, self.env_embedding[env]], 1)
-#         drop_x = self.dropout2(x_in)
-#         encodes = torch.nn.functional.relu(self.bottleneck(drop_x), inplace=False)
-#         drop_x = self.dropout2(encodes)
-#         logits = self.fc(drop_x)
-#         return logits
-
-#     def get_parameters(self):
-#         return [{"params": self.parameters(), "lr_mult": 1, 'decay_mult': 10}]

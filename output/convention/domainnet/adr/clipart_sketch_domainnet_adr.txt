@@ -1,4 +1,4 @@
-2020-09-12 15:47:14,975 - bootstrap - INFO - 
+2020-09-20 15:16:39,613 - bootstrap - INFO - 
 ----------------- Options ---------------
                         K: 256                           
               adapted_dim: 1024                          
@@ -30,12 +30,12 @@
               lw_rotation: 0.1                           
                         m: 0.998                         
                    method: adr                           
-                milestone: 40                            
+                milestone: 30                            
                       mim: False                         
                     mixup: False                         
             moco_finetune: False                         
                model_name: resnet34                      
-                   nepoch: 60                            
+                   nepoch: 40                            
                  nthreads: 8                             
                   num_cls: 345                           
            optimizer_type: sgd                           
@@ -45,20 +45,17 @@
                  rotation: False                         
                    source: ['clipart']                   
                    target: sketch                        
+   target_labeled_portion: 5                             
                 task_type: cls                           
                      temp: 1                             
                 trade_off: 0.01                          
                       vib: False                         
 ----------------- End -------------------
-2020-09-12 15:47:14,979 - bootstrap - INFO - ==> Building model..
-2020-09-12 15:47:21,148 - bootstrap - INFO - ==> Preparing datasets..
-2020-09-12 15:47:22,200 - bootstrap - INFO - ==> Creating pretext tasks.
-2020-09-12 15:47:22,200 - bootstrap - INFO - ==> No pretext task.
-2020-09-12 15:47:22,200 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
-2020-09-12 15:47:22,201 - bootstrap - INFO - ==> no extra module need to be constructed.
-2020-09-12 15:47:22,203 - bootstrap - INFO - ==> Running..
-2020-09-12 15:47:22,203 - bootstrap - INFO - Source epoch 1/60 main_lr=0.001000
-2020-09-12 16:34:42,265 - bootstrap - INFO - tgt_test_acc: 27.51 ; src_test_acc: 36.28src_cls_loss : 2.59330, tgt_cls_loss : 2.16100, transfer_loss : 0.01036, 
-2020-09-12 16:34:43,988 - bootstrap - INFO - Source epoch 2/60 main_lr=0.010000
-2020-09-12 17:17:29,349 - bootstrap - INFO - tgt_test_acc: 35.85 ; src_test_acc: 51.28src_cls_loss : 1.78137, tgt_cls_loss : 0.67998, transfer_loss : 0.01844, 
-2020-09-12 17:17:30,891 - bootstrap - INFO - Source epoch 3/60 main_lr=0.010000
+2020-09-20 15:16:39,639 - bootstrap - INFO - ==> Building model..
+2020-09-20 15:16:47,406 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-20 15:16:49,782 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-20 15:16:49,783 - bootstrap - INFO - ==> No pretext task.
+2020-09-20 15:16:49,783 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-20 15:16:49,784 - bootstrap - INFO - ==> no extra module need to be constructed.
+2020-09-20 15:16:49,785 - bootstrap - INFO - ==> Running..
+2020-09-20 15:16:49,786 - bootstrap - INFO - Source epoch 1/40 main_lr=0.001000

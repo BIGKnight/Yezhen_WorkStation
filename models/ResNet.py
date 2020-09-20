@@ -126,7 +126,6 @@ class ResNet_34Fc(nn.Module):
         encodes = torch.nn.functional.relu(self.bottleneck(drop_x), inplace=False)
         drop_x = F.dropout(encodes, training=self.training, p=0.5) if dropout else encodes
         if cosine:
-    #       cosine classifer
             normed_x = F.normalize(drop_x, p=2, dim=1)
             logits = self.fc(normed_x) / temp
         else:

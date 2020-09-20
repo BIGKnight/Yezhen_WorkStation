@@ -1,4 +1,4 @@
-2020-09-12 17:22:55,801 - bootstrap - INFO - 
+2020-09-20 15:17:31,472 - bootstrap - INFO - 
 ----------------- Options ---------------
                         K: 256                           
               adapted_dim: 1024                          
@@ -30,12 +30,12 @@
               lw_rotation: 0.1                           
                         m: 0.998                         
                    method: lirr                          
-                milestone: 20                            
+                milestone: 30                            
                       mim: False                         
                     mixup: False                         
             moco_finetune: False                         
                model_name: resnet34                      
-                   nepoch: 30                            
+                   nepoch: 40                            
                  nthreads: 8                             
                   num_cls: 345                           
            optimizer_type: sgd                           
@@ -45,68 +45,17 @@
                  rotation: False                         
                    source: ['real']                      
                    target: clipart                       
+   target_labeled_portion: 5                             
                 task_type: cls                           
                      temp: 1                             
-                trade_off: 1.0                           
+                trade_off: 0.1                           
                       vib: False                         
 ----------------- End -------------------
-2020-09-12 17:22:55,802 - bootstrap - INFO - ==> Building model..
-2020-09-12 17:23:02,770 - bootstrap - INFO - ==> Preparing datasets..
-2020-09-12 17:23:04,264 - bootstrap - INFO - ==> Creating pretext tasks.
-2020-09-12 17:23:04,265 - bootstrap - INFO - ==> No pretext task.
-2020-09-12 17:23:04,265 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
-2020-09-12 17:23:04,336 - bootstrap - INFO - ==> Have built extra modules: ad_net, predictor_env under LiRR method.
-2020-09-12 17:23:04,338 - bootstrap - INFO - ==> Running..
-2020-09-12 17:23:04,338 - bootstrap - INFO - Source epoch 1/30 main_lr=0.001000
-2020-09-12 19:49:12,819 - bootstrap - INFO - tgt_test_acc: 39.01 ; src_test_acc: 57.16src_cls_loss : 1.96682, tgt_cls_loss : 1.16963, transfer_loss : 0.71230, env_loss : 5.13924, 
-2020-09-12 19:49:14,268 - bootstrap - INFO - Source epoch 2/30 main_lr=0.010000
-2020-09-12 22:16:16,366 - bootstrap - INFO - tgt_test_acc: 43.17 ; src_test_acc: 65.28src_cls_loss : 1.14210, tgt_cls_loss : 0.14501, transfer_loss : 0.68498, env_loss : 2.73423, 
-2020-09-12 22:16:17,646 - bootstrap - INFO - Source epoch 3/30 main_lr=0.010000
-2020-09-13 01:01:21,804 - bootstrap - INFO - tgt_test_acc: 45.19 ; src_test_acc: 68.68src_cls_loss : 0.94478, tgt_cls_loss : 0.07204, transfer_loss : 0.68465, env_loss : 1.70913, 
-2020-09-13 01:01:23,110 - bootstrap - INFO - Source epoch 4/30 main_lr=0.010000
-2020-09-13 03:52:04,569 - bootstrap - INFO - tgt_test_acc: 46.68 ; src_test_acc: 71.32src_cls_loss : 0.83732, tgt_cls_loss : 0.04996, transfer_loss : 0.68788, env_loss : 1.33401, 
-2020-09-13 03:52:05,818 - bootstrap - INFO - Source epoch 5/30 main_lr=0.010000
-2020-09-13 06:45:36,194 - bootstrap - INFO - tgt_test_acc: 47.30 ; src_test_acc: 72.72src_cls_loss : 0.76946, tgt_cls_loss : 0.04010, transfer_loss : 0.69121, env_loss : 1.14273, 
-2020-09-13 06:45:37,344 - bootstrap - INFO - Source epoch 6/30 main_lr=0.010000
-2020-09-13 09:41:57,904 - bootstrap - INFO - tgt_test_acc: 48.16 ; src_test_acc: 73.26src_cls_loss : 0.71655, tgt_cls_loss : 0.03503, transfer_loss : 0.69198, env_loss : 1.02162, 
-2020-09-13 09:41:59,166 - bootstrap - INFO - Source epoch 7/30 main_lr=0.010000
-2020-09-13 12:21:33,100 - bootstrap - INFO - tgt_test_acc: 48.92 ; src_test_acc: 74.04src_cls_loss : 0.67410, tgt_cls_loss : 0.03188, transfer_loss : 0.69222, env_loss : 0.93336, 
-2020-09-13 12:21:34,290 - bootstrap - INFO - Source epoch 8/30 main_lr=0.010000
-2020-09-13 14:55:21,797 - bootstrap - INFO - tgt_test_acc: 49.17 ; src_test_acc: 74.90src_cls_loss : 0.65013, tgt_cls_loss : 0.02928, transfer_loss : 0.69267, env_loss : 0.87377, 
-2020-09-13 14:55:23,133 - bootstrap - INFO - Source epoch 9/30 main_lr=0.010000
-2020-09-13 17:23:35,478 - bootstrap - INFO - tgt_test_acc: 50.06 ; src_test_acc: 75.78src_cls_loss : 0.62106, tgt_cls_loss : 0.02808, transfer_loss : 0.69277, env_loss : 0.82089, 
-2020-09-13 17:23:36,636 - bootstrap - INFO - Source epoch 10/30 main_lr=0.010000
-2020-09-13 19:51:41,863 - bootstrap - INFO - tgt_test_acc: 49.85 ; src_test_acc: 76.92src_cls_loss : 0.59623, tgt_cls_loss : 0.02649, transfer_loss : 0.69282, env_loss : 0.77553, 
-2020-09-13 19:51:43,146 - bootstrap - INFO - Source epoch 11/30 main_lr=0.010000
-2020-09-13 22:55:54,981 - bootstrap - INFO - tgt_test_acc: 50.12 ; src_test_acc: 76.76src_cls_loss : 0.57588, tgt_cls_loss : 0.02546, transfer_loss : 0.69320, env_loss : 0.73764, 
-2020-09-13 22:55:56,232 - bootstrap - INFO - Source epoch 12/30 main_lr=0.010000
-2020-09-14 02:15:20,610 - bootstrap - INFO - tgt_test_acc: 50.35 ; src_test_acc: 77.44src_cls_loss : 0.55860, tgt_cls_loss : 0.02468, transfer_loss : 0.69305, env_loss : 0.70502, 
-2020-09-14 02:15:21,799 - bootstrap - INFO - Source epoch 13/30 main_lr=0.010000
-2020-09-14 05:05:29,876 - bootstrap - INFO - tgt_test_acc: 50.70 ; src_test_acc: 77.86src_cls_loss : 0.54384, tgt_cls_loss : 0.02353, transfer_loss : 0.69330, env_loss : 0.68133, 
-2020-09-14 05:05:31,062 - bootstrap - INFO - Source epoch 14/30 main_lr=0.010000
-2020-09-14 07:33:03,395 - bootstrap - INFO - tgt_test_acc: 50.43 ; src_test_acc: 78.38src_cls_loss : 0.53177, tgt_cls_loss : 0.02309, transfer_loss : 0.69322, env_loss : 0.65805, 
-2020-09-14 07:33:04,706 - bootstrap - INFO - Source epoch 15/30 main_lr=0.010000
-2020-09-14 09:57:15,594 - bootstrap - INFO - tgt_test_acc: 50.33 ; src_test_acc: 78.52src_cls_loss : 0.51084, tgt_cls_loss : 0.02255, transfer_loss : 0.69335, env_loss : 0.62865, 
-2020-09-14 09:57:16,875 - bootstrap - INFO - Source epoch 16/30 main_lr=0.010000
-2020-09-14 12:21:40,894 - bootstrap - INFO - tgt_test_acc: 50.69 ; src_test_acc: 78.72src_cls_loss : 0.50275, tgt_cls_loss : 0.02209, transfer_loss : 0.69331, env_loss : 0.61284, 
-2020-09-14 12:21:42,374 - bootstrap - INFO - Source epoch 17/30 main_lr=0.010000
-2020-09-14 14:47:59,206 - bootstrap - INFO - tgt_test_acc: 50.97 ; src_test_acc: 79.70src_cls_loss : 0.49095, tgt_cls_loss : 0.02143, transfer_loss : 0.69335, env_loss : 0.59272, 
-2020-09-14 14:48:00,464 - bootstrap - INFO - Source epoch 18/30 main_lr=0.010000
-2020-09-14 17:15:46,005 - bootstrap - INFO - tgt_test_acc: 51.10 ; src_test_acc: 80.28src_cls_loss : 0.48059, tgt_cls_loss : 0.02113, transfer_loss : 0.69329, env_loss : 0.57796, 
-2020-09-14 17:15:47,174 - bootstrap - INFO - Source epoch 19/30 main_lr=0.010000
-2020-09-14 19:44:17,287 - bootstrap - INFO - tgt_test_acc: 50.40 ; src_test_acc: 79.78src_cls_loss : 0.46675, tgt_cls_loss : 0.02032, transfer_loss : 0.69336, env_loss : 0.55796, 
-2020-09-14 19:44:18,489 - bootstrap - INFO - Source epoch 20/30 main_lr=0.010000
-2020-09-14 22:09:30,983 - bootstrap - INFO - tgt_test_acc: 50.65 ; src_test_acc: 80.40src_cls_loss : 0.45557, tgt_cls_loss : 0.02059, transfer_loss : 0.69325, env_loss : 0.54169, 
-2020-09-14 22:09:32,276 - bootstrap - INFO - Source epoch 21/30 main_lr=0.000100
-2020-09-15 00:33:49,366 - bootstrap - INFO - tgt_test_acc: 51.10 ; src_test_acc: 80.48src_cls_loss : 0.44744, tgt_cls_loss : 0.01988, transfer_loss : 0.69324, env_loss : 0.52713, 
-2020-09-15 00:33:50,636 - bootstrap - INFO - Source epoch 22/30 main_lr=0.010000
-2020-09-15 02:58:39,009 - bootstrap - INFO - tgt_test_acc: 51.26 ; src_test_acc: 80.72src_cls_loss : 0.43904, tgt_cls_loss : 0.01919, transfer_loss : 0.69335, env_loss : 0.51585, 
-2020-09-15 02:58:40,183 - bootstrap - INFO - Source epoch 23/30 main_lr=0.010000
-2020-09-15 05:22:43,585 - bootstrap - INFO - tgt_test_acc: 50.93 ; src_test_acc: 81.48src_cls_loss : 0.42935, tgt_cls_loss : 0.01921, transfer_loss : 0.69321, env_loss : 0.50466, 
-2020-09-15 05:22:44,769 - bootstrap - INFO - Source epoch 24/30 main_lr=0.010000
-2020-09-15 07:46:27,299 - bootstrap - INFO - tgt_test_acc: 51.26 ; src_test_acc: 81.34src_cls_loss : 0.42123, tgt_cls_loss : 0.01913, transfer_loss : 0.69317, env_loss : 0.49205, 
-2020-09-15 07:46:28,546 - bootstrap - INFO - Source epoch 25/30 main_lr=0.010000
-2020-09-15 10:10:12,387 - bootstrap - INFO - tgt_test_acc: 51.06 ; src_test_acc: 82.16src_cls_loss : 0.41071, tgt_cls_loss : 0.01858, transfer_loss : 0.69335, env_loss : 0.47809, 
-2020-09-15 10:10:13,523 - bootstrap - INFO - Source epoch 26/30 main_lr=0.010000
-2020-09-15 12:33:52,596 - bootstrap - INFO - tgt_test_acc: 51.89 ; src_test_acc: 81.92src_cls_loss : 0.40523, tgt_cls_loss : 0.01839, transfer_loss : 0.69327, env_loss : 0.46857, 
-2020-09-15 12:33:53,802 - bootstrap - INFO - Source epoch 27/30 main_lr=0.010000
+2020-09-20 15:17:31,505 - bootstrap - INFO - ==> Building model..
+2020-09-20 15:17:37,010 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-20 15:17:40,209 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-20 15:17:40,209 - bootstrap - INFO - ==> No pretext task.
+2020-09-20 15:17:40,209 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-20 15:17:40,280 - bootstrap - INFO - ==> Have built extra modules: ad_net, predictor_env under LiRR method.
+2020-09-20 15:17:40,282 - bootstrap - INFO - ==> Running..
+2020-09-20 15:17:40,283 - bootstrap - INFO - Source epoch 1/40 main_lr=0.001000

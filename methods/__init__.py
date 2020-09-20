@@ -1,4 +1,5 @@
 from .source_only import run_iter_source_only
+from .fullt import run_iter_fullt
 from .instapbm import run_iter_instapbm
 from .moco import run_iter_moco
 from .mimcontra import run_iter_mimcontra
@@ -21,5 +22,6 @@ train_method = {
     'adr': run_iter_adr,
     'lirr': run_iter_lirr,
     'irm': run_iter_irm,
-    'mme': run_iter_mme
+    'mme': run_iter_mme,
+    'fullt': run_iter_fullt
 }

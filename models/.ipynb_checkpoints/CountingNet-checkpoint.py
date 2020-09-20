@@ -76,11 +76,6 @@ class FCN_Head(nn.Module):
         
     def forward(self, output, env='src', temp=1, cosine=False):
         B, C, H, W = output.shape
-#         x5 = output['x5']  # size=(N, 512, x.H/32, x.W/32)
-#         x4 = output['x4']  # size=(N, 512, x.H/16, x.W/16)
-#         x3 = output['x3']  # size=(N, 256, x.H/8,  x.W/8)
-#         x2 = output['x2']  # size=(N, 128, x.H/4,  x.W/4)
-#         x1 = output['x1']  # size=(N, 64, x.H/2,  x.W/2)
         if self.env_dim > 0 and env=='src':
             env_embedding = torch.zeros(B, self.env_dim, H, W, device=output.device)
             x = torch.cat([output, env_embedding], dim=1)
@@ -98,7 +93,6 @@ class FCN_Head(nn.Module):
         score = self.leaky_relu(self.deconv4(score))  # size=(N, 64, x.H/2, x.W/2)
         score = score
         score = self.leaky_relu(self.deconv5(score))
-# #         score = torch.nn.functional.interpolate(score, scale_factor=2, mode='bilinear', align_corners=True)  # size=(N, 32, x.H, x.W)
         score = self.leaky_relu(self.classifier(score))
          # size=(N, n_class, x.H/1, x.W/1)
 

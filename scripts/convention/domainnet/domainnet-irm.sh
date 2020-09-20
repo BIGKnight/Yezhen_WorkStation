@@ -2,35 +2,33 @@
 source /nfs/project/wangyezhen/.Pytorch_Env
 cd /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/
 #CUDA_VISIBLE_DEVICES=0
-datasets=(${3} ${4})
+datasets=(${1} ${2})
 logf_root='/nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/domainnet/irm/'
 
-for((i = 0; i < 1; i++))
+for((j = 1; j < 3; j++))
 do
-    for((j = 1; j < 2; j++))
-    do
-        source_domain=${datasets[${i}]}
-        target_domain=${datasets[${j}]}
-        echo "source: ${source_domain}; target: ${target_domain}."
-        python3 main.py \
-        --dataset domainnet \
-        --domain_shift_type convention \
-        --source ${source_domain} \
-        --target ${target_domain} \
-        --nepoch 30 \
-        --model_name ${1} \
-        --image_size 224 \
-        --channels 3 \
-        --num_cls 345 \
-        --lr 1e-3 \
-        --milestone 20 \
-        --data_root /nfs/volume-92-5/wangyezhen_i/Datasets/visda2019/domainnet \
-        --outf /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/${source_domain}_${target_domain}_domainnet_irm \
-        --logf ${logf_root}${source_domain}_${target_domain}_domainnet_irm.txt \
-        --batch_size ${2} \
-        --nthreads 8 \
-        --method irm \
-        --trade_off 0.1 \
-        --logger_file_name domainnet_irm
-    done
+    source_domain=${datasets[${i}]}
+    target_domain=${datasets[${j}]}
+    echo "source: ${source_domain}; target: ${target_domain}."
+    python3 main.py \
+    --dataset domainnet \
+    --domain_shift_type convention \
+    --source ${source_domain} \
+    --target ${target_domain} \
+    --nepoch 40 \
+    --model_name resnet34 \
+    --image_size 224 \
+    --channels 3 \
+    --num_cls 345 \
+    --lr 1e-3 \
+    --milestone 30 \
+    --data_root /nfs/volume-92-5/wangyezhen_i/Datasets/visda2019/domainnet \
+    --outf /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/${source_domain}_${target_domain}_domainnet_irm \
+    --logf ${logf_root}${source_domain}_${target_domain}_domainnet_irm.txt \
+    --batch_size ${3} \
+    --nthreads 8 \
+    --method irm \
+    --trade_off 0.1 \
+    --target_labeled_portion $(expr $j \* 5) \
+    --logger_file_name domainnet_irm
 done

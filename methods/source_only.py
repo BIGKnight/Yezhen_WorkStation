@@ -30,17 +30,6 @@ def run_iter_source_only(
     l_tgt_logits = l_tgt_outputs['output_logits']
     src_logits = src_logits * src_masks
     l_tgt_logits = l_tgt_logits * l_tgt_masks
-    r = random.random()
-#     if r < 0.005 and is_mask:
-#         src_features = src_outputs['features'].mean(dim=1)
-#         _, (inputs, gt, ft, pred) = plt.subplots(1, 4, figsize=(10, 10))
-#         inputs.imshow(src_inputs.permute(0, 2, 3, 1).cpu().numpy()[0])
-#         gt.imshow(src_labels.squeeze(1).cpu().numpy()[0], cmap=plt.cm.jet)
-#         gt.set_title(str(src_labels[0].sum().cpu().numpy()))
-#         ft.imshow(src_features.squeeze(1).detach().cpu().numpy()[0], cmap=plt.cm.jet)
-#         pred.imshow(src_logits.squeeze(1).detach().cpu().numpy()[0], cmap=plt.cm.jet)
-#         pred.set_title(str(src_logits[0].sum().detach().cpu().numpy()))
-#         plt.show()
     # classification loss
     loss_cls_src = supervised_loss(
         src_logits, src_labels, 
@@ -48,7 +37,7 @@ def run_iter_source_only(
         global_step, entire_steps, 
         args.annealing,
         args.task_type
-    )
+    ) / 2.
     loss_cls_tgt = supervised_loss(
         l_tgt_logits, l_tgt_labels, 
         args.num_cls, args.batch_size, 
@@ -56,7 +45,6 @@ def run_iter_source_only(
         args.annealing,
         args.task_type
     ) / 2.
-#     loss_cls = loss_cls_src
     loss_cls = loss_cls_src + loss_cls_tgt
     optimizer.zero_grad()
     loss_cls.backward()

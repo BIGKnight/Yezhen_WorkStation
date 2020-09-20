@@ -1,4 +1,4 @@
-2020-09-11 23:20:54,309 - bootstrap - INFO - 
+2020-09-20 15:34:32,424 - bootstrap - INFO - 
 ----------------- Options ---------------
                         K: 256                           
               adapted_dim: 1024                          
@@ -30,12 +30,12 @@
               lw_rotation: 0.1                           
                         m: 0.998                         
                    method: adr                           
-                milestone: 20                            
+                milestone: 10                            
                       mim: False                         
                     mixup: False                         
             moco_finetune: False                         
                model_name: resnet34                      
-                   nepoch: 30                            
+                   nepoch: 20                            
                  nthreads: 8                             
                   num_cls: 12                            
            optimizer_type: sgd                           
@@ -45,32 +45,17 @@
                  rotation: False                         
                    source: ['train']                     
                    target: validation                    
+   target_labeled_portion: 5                             
                 task_type: cls                           
                      temp: 1                             
-                trade_off: 0.1                           
+                trade_off: 0.01                          
                       vib: False                         
 ----------------- End -------------------
-2020-09-11 23:20:54,335 - bootstrap - INFO - ==> Building model..
-2020-09-11 23:21:00,077 - bootstrap - INFO - ==> Preparing datasets..
-2020-09-11 23:21:02,990 - bootstrap - INFO - ==> Creating pretext tasks.
-2020-09-11 23:21:02,991 - bootstrap - INFO - ==> No pretext task.
-2020-09-11 23:21:02,991 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
-2020-09-11 23:21:02,992 - bootstrap - INFO - ==> no extra module need to be constructed.
-2020-09-11 23:21:02,993 - bootstrap - INFO - ==> Running..
-2020-09-11 23:21:02,994 - bootstrap - INFO - Source epoch 1/30 main_lr=0.001000
-2020-09-12 01:25:00,870 - bootstrap - INFO - tgt_test_acc: 80.40 ; src_test_acc: 94.46src_cls_loss : 0.15134, tgt_cls_loss : 0.11769, transfer_loss : 0.05559, 
-2020-09-12 01:25:02,200 - bootstrap - INFO - Source epoch 2/30 main_lr=0.010000
-2020-09-12 03:34:31,162 - bootstrap - INFO - tgt_test_acc: 80.17 ; src_test_acc: 94.24src_cls_loss : 0.04672, tgt_cls_loss : 0.01116, transfer_loss : 0.04009, 
-2020-09-12 03:34:32,540 - bootstrap - INFO - Source epoch 3/30 main_lr=0.010000
-2020-09-12 05:31:26,730 - bootstrap - INFO - tgt_test_acc: 80.17 ; src_test_acc: 94.26src_cls_loss : 0.02830, tgt_cls_loss : 0.00711, transfer_loss : 0.02900, 
-2020-09-12 05:31:28,035 - bootstrap - INFO - Source epoch 4/30 main_lr=0.010000
-2020-09-12 07:25:43,041 - bootstrap - INFO - tgt_test_acc: 79.17 ; src_test_acc: 94.72src_cls_loss : 0.02062, tgt_cls_loss : 0.00524, transfer_loss : 0.02322, 
-2020-09-12 07:25:44,458 - bootstrap - INFO - Source epoch 5/30 main_lr=0.010000
-2020-09-12 09:19:26,549 - bootstrap - INFO - tgt_test_acc: 78.31 ; src_test_acc: 94.90src_cls_loss : 0.01563, tgt_cls_loss : 0.00383, transfer_loss : 0.01924, 
-2020-09-12 09:19:27,966 - bootstrap - INFO - Source epoch 6/30 main_lr=0.010000
-2020-09-12 11:12:37,272 - bootstrap - INFO - tgt_test_acc: 77.21 ; src_test_acc: 95.46src_cls_loss : 0.01200, tgt_cls_loss : 0.00332, transfer_loss : 0.01744, 
-2020-09-12 11:12:38,802 - bootstrap - INFO - Source epoch 7/30 main_lr=0.010000
-2020-09-12 13:05:08,681 - bootstrap - INFO - tgt_test_acc: 77.20 ; src_test_acc: 94.96src_cls_loss : 0.01114, tgt_cls_loss : 0.00313, transfer_loss : 0.01641, 
-2020-09-12 13:05:10,269 - bootstrap - INFO - Source epoch 8/30 main_lr=0.010000
-2020-09-12 14:59:00,562 - bootstrap - INFO - tgt_test_acc: 76.15 ; src_test_acc: 96.14src_cls_loss : 0.00945, tgt_cls_loss : 0.00320, transfer_loss : 0.01602, 
-2020-09-12 14:59:01,965 - bootstrap - INFO - Source epoch 9/30 main_lr=0.010000
+2020-09-20 15:34:32,450 - bootstrap - INFO - ==> Building model..
+2020-09-20 15:34:38,884 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-20 15:34:41,776 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-20 15:34:41,777 - bootstrap - INFO - ==> No pretext task.
+2020-09-20 15:34:41,777 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-20 15:34:41,778 - bootstrap - INFO - ==> no extra module need to be constructed.
+2020-09-20 15:34:41,780 - bootstrap - INFO - ==> Running..
+2020-09-20 15:34:41,780 - bootstrap - INFO - Source epoch 1/20 main_lr=0.001000

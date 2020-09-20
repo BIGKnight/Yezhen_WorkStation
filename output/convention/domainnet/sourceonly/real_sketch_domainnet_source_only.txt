@@ -1,0 +1,61 @@
+2020-09-20 14:56:25,133 - bootstrap - INFO - 
+----------------- Options ---------------
+                        K: 256                           
+              adapted_dim: 1024                          
+              adj_lr_func: none                          
+                annealing: none                          
+               batch_size: 4                             
+                 channels: 3                             
+              contrastive: False                         
+                   cosine: False                         
+                data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/visda2019/domainnet
+                  dataset: domainnet                     
+        domain_shift_type: convention                    
+                  dropout: False                         
+                     flip: False                         
+                   frozen: []                            
+                      gpu: [0]                           
+               image_size: 224                           
+               lambda_irm: 0.0                           
+                     lirr: False                         
+                load_path: None                          
+                     logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/domainnet/sourceonly/real_sketch_domainnet_source_only.txt
+         logger_file_name: domainnet_source_only         
+                       lr: 0.001                         
+                  lr_flip: 0.1                           
+              lr_quadrant: 0.1                           
+              lr_rotation: 0.1                           
+                  lw_flip: 0.1                           
+              lw_quadrant: 0.1                           
+              lw_rotation: 0.1                           
+                        m: 0.998                         
+                   method: source_only                   
+                milestone: 20                            
+                      mim: False                         
+                    mixup: False                         
+            moco_finetune: False                         
+               model_name: resnet34                      
+                   nepoch: 30                            
+                 nthreads: 8                             
+                  num_cls: 345                           
+           optimizer_type: sgd                           
+                     outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/real_sketch_domainnet_source_only
+                   quad_p: 2                             
+                 quadrant: False                         
+                 rotation: False                         
+                   source: ['real']                      
+                   target: sketch                        
+   target_labeled_portion: 5                             
+                task_type: cls                           
+                     temp: 1.0                           
+                trade_off: 0.1                           
+                      vib: False                         
+----------------- End -------------------
+2020-09-20 14:56:25,134 - bootstrap - INFO - ==> Building model..
+2020-09-20 14:56:33,298 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-20 14:56:34,768 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-20 14:56:34,769 - bootstrap - INFO - ==> No pretext task.
+2020-09-20 14:56:34,769 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-20 14:56:34,770 - bootstrap - INFO - ==> no extra module need to be constructed.
+2020-09-20 14:56:34,772 - bootstrap - INFO - ==> Running..
+2020-09-20 14:56:34,773 - bootstrap - INFO - Source epoch 1/30 main_lr=0.001000

@@ -77,13 +77,12 @@ def run_iter_lirr(
     
     features = torch.cat((src_ada_features, ul_tgt_ada_features), dim=0)
     loss_transfer = DANN(features, ad_net, entire_steps) * args.trade_off
-    total_loss = loss_transfer + loss_inv + (loss_env) * 0.1
+    total_loss = loss_transfer + loss_inv + torch.sqrt((loss_inv - loss_env) ** 2) * 0.1
     main_optimizer.zero_grad()
     dis_optimizer.zero_grad()
     total_loss.backward()
     main_optimizer.step()
     dis_optimizer.step()
-    # normalize classifer's weights
     # update meters
     meters['src_cls_loss'].update(loss_cls_src.item())
     meters['tgt_cls_loss'].update(loss_cls_tgt.item())

@@ -1,4 +1,4 @@
-2020-09-12 15:02:37,552 - bootstrap - INFO - 
+2020-09-20 15:16:34,140 - bootstrap - INFO - 
 ----------------- Options ---------------
                         K: 256                           
               adapted_dim: 1024                          
@@ -30,12 +30,12 @@
               lw_rotation: 0.1                           
                         m: 0.998                         
                    method: cdan                          
-                milestone: 40                            
+                milestone: 30                            
                       mim: False                         
                     mixup: False                         
             moco_finetune: False                         
                model_name: resnet34                      
-                   nepoch: 60                            
+                   nepoch: 40                            
                  nthreads: 8                             
                   num_cls: 345                           
            optimizer_type: sgd                           
@@ -45,20 +45,17 @@
                  rotation: False                         
                    source: ['clipart']                   
                    target: real                          
+   target_labeled_portion: 5                             
                 task_type: cls                           
                      temp: 1                             
                 trade_off: 0.1                           
                       vib: False                         
 ----------------- End -------------------
-2020-09-12 15:02:37,553 - bootstrap - INFO - ==> Building model..
-2020-09-12 15:02:47,448 - bootstrap - INFO - ==> Preparing datasets..
-2020-09-12 15:02:49,039 - bootstrap - INFO - ==> Creating pretext tasks.
-2020-09-12 15:02:49,039 - bootstrap - INFO - ==> No pretext task.
-2020-09-12 15:02:49,040 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
-2020-09-12 15:02:49,111 - bootstrap - INFO - ==> Have built extra modules: random_layer, ad_net under CADA method.
-2020-09-12 15:02:49,113 - bootstrap - INFO - ==> Running..
-2020-09-12 15:02:49,113 - bootstrap - INFO - Source epoch 1/60 main_lr=0.001000
-2020-09-12 15:51:56,804 - bootstrap - INFO - tgt_test_acc: 47.45 ; src_test_acc: 40.78src_cls_loss : 2.54154, tgt_cls_loss : 2.15192, transfer_loss : 0.07053, 
-2020-09-12 15:51:58,722 - bootstrap - INFO - Source epoch 2/60 main_lr=0.010000
-2020-09-12 16:42:00,030 - bootstrap - INFO - tgt_test_acc: 56.07 ; src_test_acc: 52.52src_cls_loss : 1.67364, tgt_cls_loss : 0.85441, transfer_loss : 0.07540, 
-2020-09-12 16:42:01,881 - bootstrap - INFO - Source epoch 3/60 main_lr=0.010000
+2020-09-20 15:16:34,190 - bootstrap - INFO - ==> Building model..
+2020-09-20 15:16:39,790 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-20 15:16:43,330 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-20 15:16:43,330 - bootstrap - INFO - ==> No pretext task.
+2020-09-20 15:16:43,330 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-20 15:16:43,398 - bootstrap - INFO - ==> Have built extra modules: random_layer, ad_net under CADA method.
+2020-09-20 15:16:43,400 - bootstrap - INFO - ==> Running..
+2020-09-20 15:16:43,400 - bootstrap - INFO - Source epoch 1/40 main_lr=0.001000

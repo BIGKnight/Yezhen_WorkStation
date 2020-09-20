@@ -5,7 +5,7 @@ cd /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/
 datasets=(${1} ${2})
 logf_root='/nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/citycam/sourceonly/'
 
-for((j = 0; j < 7; j++))
+for((j = 0; j < 1; j++))
 do
     source_domain=${datasets[0]}
     target_domain=${datasets[1]}
