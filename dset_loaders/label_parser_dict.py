@@ -122,7 +122,7 @@ label2index_parser = {
         'Alarm_Clock': 62,
         'Toys': 63,
         'Postit_Notes': 64
-    },  
+    },
     'office_caltech_10': {
         'laptop_computer': 0,
         'back_pack': 1,
@@ -195,7 +195,7 @@ label2index_parser = {
         'sky_transport': 22,
         'insect': 23
     },
-    'domainnet':{
+    'domainnet': {
         'belt': 0,
         'stitches': 1,
         'fan': 2,
@@ -541,6 +541,16 @@ label2index_parser = {
         'raccoon': 342,
         'pizza': 343,
         'bridge': 344
+    },
+    'nico': {
+        'cat': 0,
+        'cow': 1,
+        'dog': 2,
+        'elephant': 3,
+        'horse': 4,
+        'monkey': 5,
+        'rat': 6,
+        'sheep': 7
     }
 }
 
@@ -569,7 +579,7 @@ index2label_parser = {
         20: 'kitchen',
         21: 'water_transport',
         22: 'sky_transport',
- 23: 'insect'
+        23: 'insect'
     },
     'office31': {
         0: 'back_pack',
@@ -604,7 +614,7 @@ index2label_parser = {
         29: 'keyboard',
         30: 'punchers'
     },
-    'digits':{
+    'digits': {
         0: '0',
         1: '1',
         2: '2',
@@ -616,7 +626,7 @@ index2label_parser = {
         8: '8',
         9: '9'
     },
-    'digits_origin':{
+    'digits_origin': {
         0: '0',
         1: '1',
         2: '2',
@@ -1087,43 +1097,72 @@ index2label_parser = {
         342: 'raccoon',
         343: 'pizza',
         344: 'bridge'
-    }
+    },
+    'nico': {0: 'cat',
+             1: 'cow',
+             2: 'dog',
+             3: 'elephant',
+             4: 'horse',
+             5: 'monkey',
+             6: 'rat',
+             7: 'sheep'}
 }
 
 meta_label = {
-    'furniture': ['table', 'teapot', 'streetlight', 'umbrella', 'wine_glass', 'stairs', 'vase', 'toothbrush', 'suitcase', 'toilet', 'stove', 'bed',
-               'toothpaste', 'see_saw', 'ladder', 'bench', 'pillow', 'hot_tub', 'fence', 'door', 'sleeping_bag', 'fireplace', 'lantern',
-               'couch', 'swing_set', 'sink', 'mailbox', 'postcard', 'picture_frame', 'floor_lamp', 'chandelier', 'chair', 'dresser',
-               'ceiling_fan'],
-    'mamal': ['squirrel', 'dog', 'whale', 'tiger', 'zebra', 'sheep', 'elephant', 'horse', 'cat', 'raccoon', 'monkey', 'lion', 'pig', 'bear',
-           'dolphin', 'rabbit', 'rhinoceros', 'hedgehog', 'giraffe', 'kangaroo', 'panda', 'camel', 'cow', 'bat', 'mouse'],
-    'tool': ['nail', 'sword', 'stethoscope', 'skateboard', 'dumbbell', 'bottlecap', 'shovel', 'basket', 'syringe', 'broom', 'rifle', 'wheel',
-          'screwdriver', 'bandage', 'pliers', 'axe', 'rake', 'boomerang', 'drill', 'paint_can', 'passport', 'bucket', 'stitches', 'anvil',
-          'hammer', 'compass', 'key', 'saw'],
-    'cloth': ['shoe', 'sock', 'bracelet', 'wristwatch', 'bowtie', 'necklace', 'hat', 'shorts', 'eyeglasses', 'helmet', 'sweater', 'rollerskates',
-           'pants', 'flip_flops', 'underwear', 'belt', 'diamond', 'purse', 'jacket', 'lipstick', 't-shirt', 'crown', 'camouflage'],
-    'electricity': ['spreadsheet', 'toaster', 'headphones', 'washing_machine', 'light_bulb', 'television', 'flashlight', 'telephone',
-                 'microphone', 'megaphone', 'keyboard', 'laptop', 'stereo', 'power_outlet', 'remote_control', 'cell_phone', 'camera', 'cooler',
-                 'dishwasher', 'computer', 'radio', 'oven', 'fan', 'microwave', 'calculator'],
-    'building': ['golf_club', 'windmill', 'lighthouse', 'bridge', 'pond', 'garden', 'tent', 'The_Eiffel_Tower', 'square', 'skyscraper', 'barn',
-              'waterslide', 'pool', 'castle', 'house', 'The_Great_Wall_of_China', 'garden_hose', 'diving_board', 'church', 'hospital', 'jail'],
-    'office': ['nail', 'cup', 'mug', 'coffee_cup', 'scissors', 'map', 'envelope', 'backpack', 'book', 'candle', 'binoculars', 'pencil', 'clock',
-            'bandage', 'crayon', 'paper_clip', 'alarm_clock', 'paintbrush', 'marker', 'eraser', 'calendar'],
-    'human_body': ['beard', 'eye', 'brain', 'hand', 'goatee', 'face', 'skull', 'nose', 'leg', 'moustache', 'finger', 'tooth', 'foot', 'arm',
-                'knee', 'toe', 'elbow', 'smiley_face', 'mouth'],
-    'road_transport': ['truck', 'train', 'van', 'bicycle', 'tractor', 'firetruck', 'bus', 'motorbike', 'school_bus', 'car', 'pickup_truck',
-                    'police_car', 'bulldozer', 'roller_coaster', 'ambulance'],
-    'food': ['bread', 'steak', 'ice_cream', 'donut', 'popsicle', 'hamburger', 'cake', 'pizza', 'sandwich', 'hot_dog', 'lollipop', 'cookie',
-          'birthday_cake', 'peanut'],
-    'nature': ['river', 'sun', 'tornado', 'beach', 'mountain', 'moon', 'ocean', 'snowflake', 'lightning', 'cloud', 'rain', 'hurricane', 'star',
-            'rainbow'],
-    'cold_blooded': ['spider', 'sea_turtle', 'snake', 'fish', 'shark', 'octopus', 'frog', 'snail', 'lobster', 'scorpion', 'crocodile', 'crab'],
-    'other': ['snowman', 'feather', 'teddy-bear', 'animal_migration', 'traffic_light', 'dragon', 'angel', 'mermaid', 'campfire', 'fire_hydrant',
-           'The_Mona_Lisa', 'stop_sign', 'cannon'],
+    'furniture': ['table', 'teapot', 'streetlight', 'umbrella', 'wine_glass', 'stairs', 'vase', 'toothbrush',
+                  'suitcase', 'toilet', 'stove', 'bed',
+                  'toothpaste', 'see_saw', 'ladder', 'bench', 'pillow', 'hot_tub', 'fence', 'door', 'sleeping_bag',
+                  'fireplace', 'lantern',
+                  'couch', 'swing_set', 'sink', 'mailbox', 'postcard', 'picture_frame', 'floor_lamp', 'chandelier',
+                  'chair', 'dresser',
+                  'ceiling_fan'],
+    'mamal': ['squirrel', 'dog', 'whale', 'tiger', 'zebra', 'sheep', 'elephant', 'horse', 'cat', 'raccoon', 'monkey',
+              'lion', 'pig', 'bear',
+              'dolphin', 'rabbit', 'rhinoceros', 'hedgehog', 'giraffe', 'kangaroo', 'panda', 'camel', 'cow', 'bat',
+              'mouse'],
+    'tool': ['nail', 'sword', 'stethoscope', 'skateboard', 'dumbbell', 'bottlecap', 'shovel', 'basket', 'syringe',
+             'broom', 'rifle', 'wheel',
+             'screwdriver', 'bandage', 'pliers', 'axe', 'rake', 'boomerang', 'drill', 'paint_can', 'passport', 'bucket',
+             'stitches', 'anvil',
+             'hammer', 'compass', 'key', 'saw'],
+    'cloth': ['shoe', 'sock', 'bracelet', 'wristwatch', 'bowtie', 'necklace', 'hat', 'shorts', 'eyeglasses', 'helmet',
+              'sweater', 'rollerskates',
+              'pants', 'flip_flops', 'underwear', 'belt', 'diamond', 'purse', 'jacket', 'lipstick', 't-shirt', 'crown',
+              'camouflage'],
+    'electricity': ['spreadsheet', 'toaster', 'headphones', 'washing_machine', 'light_bulb', 'television', 'flashlight',
+                    'telephone',
+                    'microphone', 'megaphone', 'keyboard', 'laptop', 'stereo', 'power_outlet', 'remote_control',
+                    'cell_phone', 'camera', 'cooler',
+                    'dishwasher', 'computer', 'radio', 'oven', 'fan', 'microwave', 'calculator'],
+    'building': ['golf_club', 'windmill', 'lighthouse', 'bridge', 'pond', 'garden', 'tent', 'The_Eiffel_Tower',
+                 'square', 'skyscraper', 'barn',
+                 'waterslide', 'pool', 'castle', 'house', 'The_Great_Wall_of_China', 'garden_hose', 'diving_board',
+                 'church', 'hospital', 'jail'],
+    'office': ['nail', 'cup', 'mug', 'coffee_cup', 'scissors', 'map', 'envelope', 'backpack', 'book', 'candle',
+               'binoculars', 'pencil', 'clock',
+               'bandage', 'crayon', 'paper_clip', 'alarm_clock', 'paintbrush', 'marker', 'eraser', 'calendar'],
+    'human_body': ['beard', 'eye', 'brain', 'hand', 'goatee', 'face', 'skull', 'nose', 'leg', 'moustache', 'finger',
+                   'tooth', 'foot', 'arm',
+                   'knee', 'toe', 'elbow', 'smiley_face', 'mouth'],
+    'road_transport': ['truck', 'train', 'van', 'bicycle', 'tractor', 'firetruck', 'bus', 'motorbike', 'school_bus',
+                       'car', 'pickup_truck',
+                       'police_car', 'bulldozer', 'roller_coaster', 'ambulance'],
+    'food': ['bread', 'steak', 'ice_cream', 'donut', 'popsicle', 'hamburger', 'cake', 'pizza', 'sandwich', 'hot_dog',
+             'lollipop', 'cookie',
+             'birthday_cake', 'peanut'],
+    'nature': ['river', 'sun', 'tornado', 'beach', 'mountain', 'moon', 'ocean', 'snowflake', 'lightning', 'cloud',
+               'rain', 'hurricane', 'star',
+               'rainbow'],
+    'cold_blooded': ['spider', 'sea_turtle', 'snake', 'fish', 'shark', 'octopus', 'frog', 'snail', 'lobster',
+                     'scorpion', 'crocodile', 'crab'],
+    'other': ['snowman', 'feather', 'teddy-bear', 'animal_migration', 'traffic_light', 'dragon', 'angel', 'mermaid',
+              'campfire', 'fire_hydrant',
+              'The_Mona_Lisa', 'stop_sign', 'cannon'],
     'music': ['saxophone', 'drums', 'violin', 'guitar', 'trombone', 'harp', 'piano', 'trumpet', 'cello', 'clarinet'],
     'fruit': ['strawberry', 'watermelon', 'grapes', 'pineapple', 'blueberry', 'pear', 'banana', 'blackberry', 'apple'],
-    'sport': ['snorkel', 'yoga', 'soccer_ball', 'hockey_stick', 'tennis_racquet', 'flying_saucer', 'hockey_puck', 'basketball', 'baseball_bat',
-           'baseball'],
+    'sport': ['snorkel', 'yoga', 'soccer_ball', 'hockey_stick', 'tennis_racquet', 'flying_saucer', 'hockey_puck',
+              'basketball', 'baseball_bat',
+              'baseball'],
     'tree': ['tree', 'flower', 'palm_tree', 'leaf', 'house_plant', 'grass', 'cactus', 'bush'],
     'bird': ['bird', 'owl', 'penguin', 'swan', 'parrot', 'duck', 'flamingo'],
     'vegetable': ['mushroom', 'asparagus', 'onion', 'broccoli', 'carrot', 'peas', 'potato'],

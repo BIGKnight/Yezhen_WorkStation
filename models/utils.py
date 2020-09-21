@@ -44,18 +44,16 @@ def grl_hook(coeff):
     return fun1
 
 class GradReverse(Function):
-    def __init__(self, lambd):
-        self.lambd = lambd
-
-    def forward(self, x):
+    @staticmethod
+    def forward(ctx, x):
         return x.view_as(x)
 
-    def backward(self, grad_output):
-        return (grad_output * -self.lambd)
+    @staticmethod
+    def backward(ctx, grad_output):
+        return grad_output.neg()
 
-
-def grad_reverse(x, lambd=1.0):
-    return GradReverse(lambd)(x)
+def grad_reverse(x, lambd):
+    return GradReverse.apply(x)
 
 def calc_coeff(iter_num, high=1.0, low=0.0, alpha=10.0, max_iter=10000.0):
     return np.float(2.0 * (high - low) / (1.0 + np.exp(-alpha*iter_num / max_iter)) - (high - low) + low)
