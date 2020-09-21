@@ -7,22 +7,25 @@ import numpy as np
 import random
 from utils.utils import TwoCropsTransform
 
+import warnings
+warnings.simplefilter("ignore")
+
 class NICOParams(object):
     num_channels = 3
     image_size = 256 # 384, 216
     mean = [0.485, 0.456, 0.406]
     std = [0.229, 0.224, 0.225]
-    num_cls = 5
+    num_cls = 8
     target_transform = None
     
 class NICO(data.Dataset):
-    def __init__(self, root, num_cls, transform, data=None):
+    def __init__(self, root, transform, data=None):
         self.root = root
         self.transform = transform
         self.classes = []
-        for i in range(num_cls):
+        for i in range(NICOParams.num_cls):
             self.classes.append(i)
-        self.num_cls = num_cls
+        self.num_cls = NICOParams.num_cls
         self.images, self.labels = data['ids'], data['labels']
         self.transform = TwoCropsTransform(self.transform)
 
