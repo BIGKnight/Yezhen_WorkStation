@@ -5,7 +5,7 @@ cd /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/
 datasets=(${1} ${2})
 logf_root='/nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/officehome/mme/'
 
-for((j = 1; j < 7; j++))
+for((j = 1; j < 3; j++))
 do
     source_domain=${datasets[0]}
     target_domain=${datasets[1]}
@@ -29,8 +29,8 @@ do
     --nthreads 8 \
     --method mme \
     --trade_off 0.1 \
-    --temp 0.05 \
-    --cosine \
     --target_labeled_portion $(expr $j \* 5) \
     --logger_file_name officehome_mme
 done
+#     --temp 0.05 \
+#     --cosine \

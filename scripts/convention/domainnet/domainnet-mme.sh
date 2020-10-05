@@ -7,8 +7,8 @@ logf_root='/nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-
 
 for((j = 1; j < 3; j++))
 do
-    source_domain=${datasets[${i}]}
-    target_domain=${datasets[${j}]}
+    source_domain=${datasets[0]}
+    target_domain=${datasets[1]}
     echo "source: ${source_domain}; target: ${target_domain}."
     python3 main.py \
     --dataset domainnet \
@@ -29,9 +29,9 @@ do
     --nthreads 8 \
     --method mme \
     --trade_off 0.1 \
-    --temp 0.05 \
-    --cosine \
     --adj_lr_func none \
     --target_labeled_portion $(expr $j \* 5) \
-    --logger_file_name domainnet_mme_
+    --logger_file_name domainnet_mme
 done
+#     --temp 0.05 \
+#     --cosine \

@@ -59,3 +59,35 @@
 2020-09-20 15:12:04,919 - bootstrap - INFO - ==> no extra module need to be constructed.
 2020-09-20 15:12:04,920 - bootstrap - INFO - ==> Running..
 2020-09-20 15:12:04,920 - bootstrap - INFO - Source epoch 1/40 main_lr=0.001000
+2020-09-20 19:13:44,573 - bootstrap - INFO - tgt_test_acc: 48.85 ; src_test_acc: 52.40src_cls_loss : 1.79537, tgt_cls_loss : 1.68951, transfer_loss : 0.44763, 
+2020-09-20 19:13:46,517 - bootstrap - INFO - Source epoch 2/40 main_lr=0.010000
+2020-09-20 22:36:43,498 - bootstrap - INFO - tgt_test_acc: 56.41 ; src_test_acc: 61.62src_cls_loss : 1.05495, tgt_cls_loss : 0.60088, transfer_loss : 0.29346, 
+2020-09-20 22:36:45,422 - bootstrap - INFO - Source epoch 3/40 main_lr=0.010000
+2020-09-21 01:57:40,176 - bootstrap - INFO - tgt_test_acc: 58.60 ; src_test_acc: 65.40src_cls_loss : 0.90034, tgt_cls_loss : 0.31082, transfer_loss : 0.24781, 
+2020-09-21 01:57:42,088 - bootstrap - INFO - Source epoch 4/40 main_lr=0.010000
+2020-09-21 05:26:23,698 - bootstrap - INFO - tgt_test_acc: 59.81 ; src_test_acc: 67.94src_cls_loss : 0.81293, tgt_cls_loss : 0.20504, transfer_loss : 0.22943, 
+2020-09-21 05:26:25,454 - bootstrap - INFO - Source epoch 5/40 main_lr=0.010000
+2020-09-21 08:59:41,650 - bootstrap - INFO - tgt_test_acc: 60.87 ; src_test_acc: 69.86src_cls_loss : 0.75249, tgt_cls_loss : 0.15496, transfer_loss : 0.22007, 
+2020-09-21 08:59:43,482 - bootstrap - INFO - Source epoch 6/40 main_lr=0.010000
+2020-09-21 12:26:45,853 - bootstrap - INFO - tgt_test_acc: 61.15 ; src_test_acc: 69.58src_cls_loss : 0.71325, tgt_cls_loss : 0.12893, transfer_loss : 0.21338, 
+2020-09-21 12:26:47,854 - bootstrap - INFO - Source epoch 7/40 main_lr=0.010000
+2020-09-21 15:43:26,796 - bootstrap - INFO - tgt_test_acc: 62.16 ; src_test_acc: 71.14src_cls_loss : 0.68495, tgt_cls_loss : 0.11596, transfer_loss : 0.20806, 
+2020-09-21 15:43:28,758 - bootstrap - INFO - Source epoch 8/40 main_lr=0.010000
+2020-09-21 19:15:33,994 - bootstrap - INFO - tgt_test_acc: 62.23 ; src_test_acc: 71.80src_cls_loss : 0.66265, tgt_cls_loss : 0.10488, transfer_loss : 0.20304, 
+2020-09-21 19:15:36,313 - bootstrap - INFO - Source epoch 9/40 main_lr=0.010000
+2020-09-21 23:36:04,286 - bootstrap - INFO - tgt_test_acc: 62.67 ; src_test_acc: 71.90src_cls_loss : 0.64005, tgt_cls_loss : 0.09924, transfer_loss : 0.19843, 
+2020-09-21 23:36:06,422 - bootstrap - INFO - Source epoch 10/40 main_lr=0.010000
+2020-09-22 02:54:25,455 - bootstrap - INFO - tgt_test_acc: 63.45 ; src_test_acc: 73.22src_cls_loss : 0.62110, tgt_cls_loss : 0.09508, transfer_loss : 0.19303, 
+2020-09-22 02:54:27,148 - bootstrap - INFO - Source epoch 11/40 main_lr=0.010000
+2020-09-22 06:15:32,999 - bootstrap - INFO - tgt_test_acc: 63.71 ; src_test_acc: 73.02src_cls_loss : 0.60732, tgt_cls_loss : 0.09177, transfer_loss : 0.18876, 
+2020-09-22 06:15:34,860 - bootstrap - INFO - Source epoch 12/40 main_lr=0.010000
+2020-09-22 09:46:44,850 - bootstrap - INFO - tgt_test_acc: 63.50 ; src_test_acc: 74.40src_cls_loss : 0.58851, tgt_cls_loss : 0.08905, transfer_loss : 0.18296, 
+2020-09-22 09:46:46,445 - bootstrap - INFO - Source epoch 13/40 main_lr=0.010000
+2020-09-22 12:58:05,880 - bootstrap - INFO - tgt_test_acc: 63.69 ; src_test_acc: 74.02src_cls_loss : 0.57397, tgt_cls_loss : 0.08826, transfer_loss : 0.17930, 
+2020-09-22 12:58:08,041 - bootstrap - INFO - Source epoch 14/40 main_lr=0.010000
+2020-09-22 16:09:23,780 - bootstrap - INFO - tgt_test_acc: 63.66 ; src_test_acc: 75.20src_cls_loss : 0.56543, tgt_cls_loss : 0.08518, transfer_loss : 0.17512, 
+2020-09-22 16:09:25,974 - bootstrap - INFO - Source epoch 15/40 main_lr=0.010000
+2020-09-22 19:05:39,496 - bootstrap - INFO - tgt_test_acc: 64.29 ; src_test_acc: 74.64src_cls_loss : 0.55260, tgt_cls_loss : 0.08364, transfer_loss : 0.17145, 
+2020-09-22 19:05:41,540 - bootstrap - INFO - Source epoch 16/40 main_lr=0.010000
+2020-09-22 22:03:48,591 - bootstrap - INFO - tgt_test_acc: 64.05 ; src_test_acc: 75.82src_cls_loss : 0.54494, tgt_cls_loss : 0.08231, transfer_loss : 0.16826, 
+2020-09-22 22:03:50,596 - bootstrap - INFO - Source epoch 17/40 main_lr=0.010000

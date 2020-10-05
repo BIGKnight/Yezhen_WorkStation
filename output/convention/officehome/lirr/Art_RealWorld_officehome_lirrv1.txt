@@ -1,0 +1,1238 @@
+2020-09-27 14:45:46,697 - bootstrap - INFO - 
+----------------- Options ---------------
+                        K: 256                           
+              adapted_dim: 1024                          
+              adj_lr_func: none                          
+                annealing: none                          
+               batch_size: 64                            
+                 channels: 3                             
+              contrastive: False                         
+                   cosine: False                         
+                data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/DDA_office/officehome
+                  dataset: officehome                    
+            distance_type: sqr                           
+        domain_shift_type: convention                    
+                  dropout: False                         
+                     flip: False                         
+                   frozen: []                            
+                      gpu: [0]                           
+               image_size: 224                           
+               lambda_adv: 0.01                          
+               lambda_env: 0.0                           
+               lambda_inv: 1.0                           
+               lambda_irm: 0.0                           
+              lambda_lirr: 0.1                           
+                     lirr: False                         
+                load_path: None                          
+                     logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/officehome/lirr/Art_RealWorld_officehome_lirrv1.txt
+         logger_file_name: officehome_lirrv1             
+                       lr: 0.001                         
+                  lr_flip: 0.1                           
+              lr_quadrant: 0.1                           
+              lr_rotation: 0.1                           
+                  lw_flip: 0.1                           
+              lw_quadrant: 0.1                           
+              lw_rotation: 0.1                           
+                        m: 0.998                         
+                   method: lirrv1                        
+                milestone: 50                            
+                      mim: False                         
+                    mixup: False                         
+            moco_finetune: False                         
+               model_name: resnet34                      
+                   nepoch: 200                           
+                 nthreads: 8                             
+                  num_cls: 65                            
+           optimizer_type: sgd                           
+                     outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/Art_RealWorld_officehome_lirrv1
+                   quad_p: 2                             
+                 quadrant: False                         
+                 rotation: False                         
+                   source: ['Art']                       
+                   target: RealWorld                     
+   target_labeled_portion: 0                             
+                task_type: cls                           
+                     temp: 1                             
+                trade_off: 0.1                           
+                      vib: False                         
+----------------- End -------------------
+2020-09-27 14:45:46,698 - bootstrap - INFO - ==> Building model..
+2020-09-27 14:45:52,003 - bootstrap - INFO - ==> Preparing datasets..
+2020-09-27 14:45:52,607 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-09-27 14:45:52,607 - bootstrap - INFO - ==> No pretext task.
+2020-09-27 14:45:52,607 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-09-27 14:45:52,674 - bootstrap - INFO - ==> Have built extra modules: ad_net, predictor_env under LiRR method.
+2020-09-27 14:45:52,676 - bootstrap - INFO - ==> Running..
+2020-09-27 14:45:52,676 - bootstrap - INFO - Source epoch 1/200 main_lr=0.001000
+2020-09-27 14:49:35,615 - bootstrap - INFO - tgt_test_acc: 68.48 ; src_test_acc: 95.10src_cls_loss : 0.22909, tgt_cls_loss : 0.00835, transfer_loss : 0.00816, env_loss : 1.23330, 
+2020-09-27 14:49:36,347 - bootstrap - INFO - Source epoch 37/200 main_lr=0.010000
+2020-09-27 14:50:27,357 - bootstrap - INFO - tgt_test_acc: 70.57 ; src_test_acc: 93.70src_cls_loss : 0.28460, tgt_cls_loss : 0.01163, transfer_loss : 0.00810, env_loss : 1.23720, 
+2020-09-27 14:50:28,075 - bootstrap - INFO - Source epoch 29/200 main_lr=0.010000
+2020-09-27 14:51:47,279 - bootstrap - INFO - tgt_test_acc: 70.42 ; src_test_acc: 99.30src_cls_loss : 0.03026, tgt_cls_loss : 0.00072, transfer_loss : 0.00773, env_loss : 0.06238, 
+2020-09-27 14:51:47,892 - bootstrap - INFO - Source epoch 152/200 main_lr=0.010000
+2020-09-27 14:52:42,818 - bootstrap - INFO - tgt_test_acc: 40.99 ; src_test_acc: 39.10src_cls_loss : 2.21381, tgt_cls_loss : 1.82959, transfer_loss : 0.00862, env_loss : 5.88185, 
+2020-09-27 14:52:43,469 - bootstrap - INFO - Source epoch 2/200 main_lr=0.010000
+2020-09-27 14:56:14,700 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 94.93src_cls_loss : 0.24015, tgt_cls_loss : 0.00676, transfer_loss : 0.00812, env_loss : 1.17847, 
+2020-09-27 14:56:15,346 - bootstrap - INFO - Source epoch 38/200 main_lr=0.010000
+2020-09-27 14:57:10,584 - bootstrap - INFO - tgt_test_acc: 69.88 ; src_test_acc: 94.03src_cls_loss : 0.25991, tgt_cls_loss : 0.01082, transfer_loss : 0.00810, env_loss : 1.20335, 
+2020-09-27 14:57:11,150 - bootstrap - INFO - Source epoch 30/200 main_lr=0.010000
+2020-09-27 14:58:35,958 - bootstrap - INFO - tgt_test_acc: 70.57 ; src_test_acc: 99.46src_cls_loss : 0.02987, tgt_cls_loss : 0.00116, transfer_loss : 0.00774, env_loss : 0.06003, 
+2020-09-27 14:58:36,583 - bootstrap - INFO - Source epoch 153/200 main_lr=0.010000
+2020-09-27 14:59:21,719 - bootstrap - INFO - tgt_test_acc: 53.73 ; src_test_acc: 50.60src_cls_loss : 1.65447, tgt_cls_loss : 0.76961, transfer_loss : 0.00798, env_loss : 5.36913, 
+2020-09-27 14:59:22,402 - bootstrap - INFO - Source epoch 3/200 main_lr=0.010000
+2020-09-27 15:02:57,785 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 95.10src_cls_loss : 0.20984, tgt_cls_loss : 0.00671, transfer_loss : 0.00829, env_loss : 1.12946, 
+2020-09-27 15:02:58,353 - bootstrap - INFO - Source epoch 39/200 main_lr=0.010000
+2020-09-27 15:03:52,172 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 93.74src_cls_loss : 0.27039, tgt_cls_loss : 0.00857, transfer_loss : 0.00800, env_loss : 1.15794, 
+2020-09-27 15:03:52,857 - bootstrap - INFO - Source epoch 31/200 main_lr=0.010000
+2020-09-27 15:05:26,891 - bootstrap - INFO - tgt_test_acc: 71.66 ; src_test_acc: 99.38src_cls_loss : 0.02432, tgt_cls_loss : 0.00079, transfer_loss : 0.00784, env_loss : 0.06396, 
+2020-09-27 15:05:27,480 - bootstrap - INFO - Source epoch 154/200 main_lr=0.010000
+2020-09-27 15:06:05,237 - bootstrap - INFO - tgt_test_acc: 57.07 ; src_test_acc: 54.26src_cls_loss : 1.44092, tgt_cls_loss : 0.40843, transfer_loss : 0.00829, env_loss : 4.77284, 
+2020-09-27 15:06:06,021 - bootstrap - INFO - Source epoch 4/200 main_lr=0.010000
+2020-09-27 15:09:41,117 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 96.09src_cls_loss : 0.20268, tgt_cls_loss : 0.00818, transfer_loss : 0.00815, env_loss : 1.14069, 
+2020-09-27 15:09:41,803 - bootstrap - INFO - Source epoch 40/200 main_lr=0.010000
+2020-09-27 15:10:36,448 - bootstrap - INFO - tgt_test_acc: 71.27 ; src_test_acc: 94.31src_cls_loss : 0.25348, tgt_cls_loss : 0.01008, transfer_loss : 0.00807, env_loss : 1.12577, 
+2020-09-27 15:10:36,908 - bootstrap - INFO - Source epoch 32/200 main_lr=0.010000
+2020-09-27 15:12:17,668 - bootstrap - INFO - tgt_test_acc: 70.73 ; src_test_acc: 99.38src_cls_loss : 0.02518, tgt_cls_loss : 0.00067, transfer_loss : 0.00769, env_loss : 0.05586, 
+2020-09-27 15:12:18,355 - bootstrap - INFO - Source epoch 155/200 main_lr=0.010000
+2020-09-27 15:12:47,713 - bootstrap - INFO - tgt_test_acc: 56.83 ; src_test_acc: 59.21src_cls_loss : 1.27831, tgt_cls_loss : 0.26495, transfer_loss : 0.00817, env_loss : 4.31667, 
+2020-09-27 15:12:48,312 - bootstrap - INFO - Source epoch 5/200 main_lr=0.010000
+2020-09-27 15:16:19,389 - bootstrap - INFO - tgt_test_acc: 68.25 ; src_test_acc: 95.96src_cls_loss : 0.19228, tgt_cls_loss : 0.00573, transfer_loss : 0.00820, env_loss : 1.09244, 
+2020-09-27 15:16:20,093 - bootstrap - INFO - Source epoch 41/200 main_lr=0.010000
+2020-09-27 15:17:16,001 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 95.22src_cls_loss : 0.25376, tgt_cls_loss : 0.00754, transfer_loss : 0.00810, env_loss : 1.15659, 
+2020-09-27 15:17:16,654 - bootstrap - INFO - Source epoch 33/200 main_lr=0.010000
+2020-09-27 15:19:12,584 - bootstrap - INFO - tgt_test_acc: 71.97 ; src_test_acc: 99.42src_cls_loss : 0.02351, tgt_cls_loss : 0.00092, transfer_loss : 0.00780, env_loss : 0.05997, 
+2020-09-27 15:19:13,270 - bootstrap - INFO - Source epoch 156/200 main_lr=0.010000
+2020-09-27 15:19:32,505 - bootstrap - INFO - tgt_test_acc: 58.54 ; src_test_acc: 64.11src_cls_loss : 1.16215, tgt_cls_loss : 0.20042, transfer_loss : 0.00811, env_loss : 3.93400, 
+2020-09-27 15:19:33,036 - bootstrap - INFO - Source epoch 6/200 main_lr=0.010000
+2020-09-27 15:22:57,107 - bootstrap - INFO - tgt_test_acc: 69.49 ; src_test_acc: 97.16src_cls_loss : 0.19380, tgt_cls_loss : 0.00632, transfer_loss : 0.00819, env_loss : 1.07488, 
+2020-09-27 15:22:57,688 - bootstrap - INFO - Source epoch 42/200 main_lr=0.010000
+2020-09-27 15:23:58,169 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 95.55src_cls_loss : 0.23538, tgt_cls_loss : 0.00790, transfer_loss : 0.00816, env_loss : 1.07018, 
+2020-09-27 15:23:58,787 - bootstrap - INFO - Source epoch 34/200 main_lr=0.010000
+2020-09-27 15:26:02,370 - bootstrap - INFO - tgt_test_acc: 70.50 ; src_test_acc: 99.42src_cls_loss : 0.02993, tgt_cls_loss : 0.00090, transfer_loss : 0.00776, env_loss : 0.06163, 
+2020-09-27 15:26:03,151 - bootstrap - INFO - Source epoch 157/200 main_lr=0.010000
+2020-09-27 15:26:16,631 - bootstrap - INFO - tgt_test_acc: 60.56 ; src_test_acc: 65.47src_cls_loss : 1.09181, tgt_cls_loss : 0.15584, transfer_loss : 0.00804, env_loss : 3.70056, 
+2020-09-27 15:26:17,160 - bootstrap - INFO - Source epoch 7/200 main_lr=0.010000
+2020-09-27 15:29:41,296 - bootstrap - INFO - tgt_test_acc: 69.18 ; src_test_acc: 96.42src_cls_loss : 0.19146, tgt_cls_loss : 0.00514, transfer_loss : 0.00820, env_loss : 1.06901, 
+2020-09-27 15:29:41,872 - bootstrap - INFO - Source epoch 43/200 main_lr=0.010000
+2020-09-27 15:30:41,553 - bootstrap - INFO - tgt_test_acc: 71.74 ; src_test_acc: 96.17src_cls_loss : 0.20807, tgt_cls_loss : 0.00764, transfer_loss : 0.00808, env_loss : 1.03070, 
+2020-09-27 15:30:42,135 - bootstrap - INFO - Source epoch 35/200 main_lr=0.010000
+2020-09-27 15:32:56,304 - bootstrap - INFO - tgt_test_acc: 61.57 ; src_test_acc: 68.27src_cls_loss : 0.96859, tgt_cls_loss : 0.11728, transfer_loss : 0.00802, env_loss : 3.39431, 
+2020-09-27 15:32:56,811 - bootstrap - INFO - Source epoch 8/200 main_lr=0.010000
+2020-09-27 15:32:58,354 - bootstrap - INFO - tgt_test_acc: 71.51 ; src_test_acc: 99.42src_cls_loss : 0.02262, tgt_cls_loss : 0.00129, transfer_loss : 0.00778, env_loss : 0.05909, 
+2020-09-27 15:32:59,072 - bootstrap - INFO - Source epoch 158/200 main_lr=0.010000
+2020-09-27 15:36:28,913 - bootstrap - INFO - tgt_test_acc: 70.57 ; src_test_acc: 97.03src_cls_loss : 0.20200, tgt_cls_loss : 0.00445, transfer_loss : 0.00809, env_loss : 1.05744, 
+2020-09-27 15:36:29,512 - bootstrap - INFO - Source epoch 44/200 main_lr=0.010000
+2020-09-27 15:37:25,559 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 95.30src_cls_loss : 0.22377, tgt_cls_loss : 0.00702, transfer_loss : 0.00805, env_loss : 1.04625, 
+2020-09-27 15:37:26,074 - bootstrap - INFO - Source epoch 36/200 main_lr=0.010000
+2020-09-27 15:39:42,506 - bootstrap - INFO - tgt_test_acc: 62.34 ; src_test_acc: 70.13src_cls_loss : 0.95728, tgt_cls_loss : 0.10415, transfer_loss : 0.00820, env_loss : 3.24961, 
+2020-09-27 15:39:43,103 - bootstrap - INFO - Source epoch 9/200 main_lr=0.010000
+2020-09-27 15:39:51,253 - bootstrap - INFO - tgt_test_acc: 70.96 ; src_test_acc: 99.26src_cls_loss : 0.02554, tgt_cls_loss : 0.00117, transfer_loss : 0.00777, env_loss : 0.06338, 
+2020-09-27 15:39:51,884 - bootstrap - INFO - Source epoch 159/200 main_lr=0.010000
+2020-09-27 15:43:15,790 - bootstrap - INFO - tgt_test_acc: 68.87 ; src_test_acc: 96.25src_cls_loss : 0.16681, tgt_cls_loss : 0.00510, transfer_loss : 0.00815, env_loss : 1.02635, 
+2020-09-27 15:43:16,476 - bootstrap - INFO - Source epoch 45/200 main_lr=0.010000
+2020-09-27 15:44:11,077 - bootstrap - INFO - tgt_test_acc: 70.50 ; src_test_acc: 96.09src_cls_loss : 0.20730, tgt_cls_loss : 0.00736, transfer_loss : 0.00814, env_loss : 1.02058, 
+2020-09-27 15:44:11,673 - bootstrap - INFO - Source epoch 37/200 main_lr=0.010000
+2020-09-27 15:46:29,932 - bootstrap - INFO - tgt_test_acc: 64.21 ; src_test_acc: 73.42src_cls_loss : 0.83487, tgt_cls_loss : 0.07987, transfer_loss : 0.00792, env_loss : 3.04481, 
+2020-09-27 15:46:30,564 - bootstrap - INFO - Source epoch 10/200 main_lr=0.010000
+2020-09-27 15:46:43,386 - bootstrap - INFO - tgt_test_acc: 71.04 ; src_test_acc: 99.30src_cls_loss : 0.03119, tgt_cls_loss : 0.00082, transfer_loss : 0.00767, env_loss : 0.06271, 
+2020-09-27 15:46:44,172 - bootstrap - INFO - Source epoch 160/200 main_lr=0.010000
+2020-09-27 15:50:01,219 - bootstrap - INFO - tgt_test_acc: 69.18 ; src_test_acc: 97.12src_cls_loss : 0.16708, tgt_cls_loss : 0.00653, transfer_loss : 0.00814, env_loss : 1.02560, 
+2020-09-27 15:50:01,836 - bootstrap - INFO - Source epoch 46/200 main_lr=0.010000
+2020-09-27 15:50:57,684 - bootstrap - INFO - tgt_test_acc: 71.35 ; src_test_acc: 96.13src_cls_loss : 0.19126, tgt_cls_loss : 0.00444, transfer_loss : 0.00808, env_loss : 0.98051, 
+2020-09-27 15:50:58,268 - bootstrap - INFO - Source epoch 38/200 main_lr=0.010000
+2020-09-27 15:53:13,417 - bootstrap - INFO - tgt_test_acc: 63.66 ; src_test_acc: 74.12src_cls_loss : 0.81144, tgt_cls_loss : 0.07361, transfer_loss : 0.00806, env_loss : 2.95207, 
+2020-09-27 15:53:14,107 - bootstrap - INFO - Source epoch 11/200 main_lr=0.010000
+2020-09-27 15:53:33,177 - bootstrap - INFO - tgt_test_acc: 71.51 ; src_test_acc: 99.46src_cls_loss : 0.02315, tgt_cls_loss : 0.00134, transfer_loss : 0.00768, env_loss : 0.05185, 
+2020-09-27 15:53:33,788 - bootstrap - INFO - Source epoch 161/200 main_lr=0.010000
+2020-09-27 15:56:41,203 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 96.99src_cls_loss : 0.15650, tgt_cls_loss : 0.00492, transfer_loss : 0.00817, env_loss : 0.99523, 
+2020-09-27 15:56:41,847 - bootstrap - INFO - Source epoch 47/200 main_lr=0.010000
+2020-09-27 15:57:44,897 - bootstrap - INFO - tgt_test_acc: 71.66 ; src_test_acc: 96.87src_cls_loss : 0.17926, tgt_cls_loss : 0.00497, transfer_loss : 0.00800, env_loss : 0.95681, 
+2020-09-27 15:57:45,475 - bootstrap - INFO - Source epoch 39/200 main_lr=0.010000
+2020-09-27 15:59:55,924 - bootstrap - INFO - tgt_test_acc: 64.36 ; src_test_acc: 75.73src_cls_loss : 0.75061, tgt_cls_loss : 0.06751, transfer_loss : 0.00805, env_loss : 2.82645, 
+2020-09-27 15:59:56,680 - bootstrap - INFO - Source epoch 12/200 main_lr=0.010000
+2020-09-27 16:00:23,294 - bootstrap - INFO - tgt_test_acc: 71.74 ; src_test_acc: 99.38src_cls_loss : 0.03044, tgt_cls_loss : 0.00073, transfer_loss : 0.00776, env_loss : 0.06201, 
+2020-09-27 16:00:23,936 - bootstrap - INFO - Source epoch 162/200 main_lr=0.010000
+2020-09-27 16:03:23,991 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 97.57src_cls_loss : 0.16154, tgt_cls_loss : 0.00510, transfer_loss : 0.00806, env_loss : 0.98676, 
+2020-09-27 16:03:24,577 - bootstrap - INFO - Source epoch 48/200 main_lr=0.010000
+2020-09-27 16:04:25,362 - bootstrap - INFO - tgt_test_acc: 70.34 ; src_test_acc: 96.70src_cls_loss : 0.18940, tgt_cls_loss : 0.00690, transfer_loss : 0.00799, env_loss : 0.93354, 
+2020-09-27 16:04:25,957 - bootstrap - INFO - Source epoch 40/200 main_lr=0.010000
+2020-09-27 16:06:44,523 - bootstrap - INFO - tgt_test_acc: 63.66 ; src_test_acc: 77.38src_cls_loss : 0.73431, tgt_cls_loss : 0.05412, transfer_loss : 0.00796, env_loss : 2.71465, 
+2020-09-27 16:06:45,216 - bootstrap - INFO - Source epoch 13/200 main_lr=0.010000
+2020-09-27 16:07:17,985 - bootstrap - INFO - tgt_test_acc: 71.58 ; src_test_acc: 99.51src_cls_loss : 0.02600, tgt_cls_loss : 0.00230, transfer_loss : 0.00772, env_loss : 0.05597, 
+2020-09-27 16:07:18,579 - bootstrap - INFO - Source epoch 163/200 main_lr=0.010000
+2020-09-27 16:10:09,197 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 97.32src_cls_loss : 0.16564, tgt_cls_loss : 0.00415, transfer_loss : 0.00815, env_loss : 0.97867, 
+2020-09-27 16:10:09,741 - bootstrap - INFO - Source epoch 49/200 main_lr=0.010000
+2020-09-27 16:11:11,157 - bootstrap - INFO - tgt_test_acc: 71.27 ; src_test_acc: 96.83src_cls_loss : 0.19141, tgt_cls_loss : 0.00441, transfer_loss : 0.00821, env_loss : 0.90772, 
+2020-09-27 16:11:11,777 - bootstrap - INFO - Source epoch 41/200 main_lr=0.010000
+2020-09-27 16:13:34,414 - bootstrap - INFO - tgt_test_acc: 65.76 ; src_test_acc: 78.90src_cls_loss : 0.68394, tgt_cls_loss : 0.04914, transfer_loss : 0.00804, env_loss : 2.59167, 
+2020-09-27 16:13:35,102 - bootstrap - INFO - Source epoch 14/200 main_lr=0.010000
+2020-09-27 16:14:12,855 - bootstrap - INFO - tgt_test_acc: 71.58 ; src_test_acc: 99.55src_cls_loss : 0.02811, tgt_cls_loss : 0.00093, transfer_loss : 0.00771, env_loss : 0.05544, 
+2020-09-27 16:14:13,617 - bootstrap - INFO - Source epoch 164/200 main_lr=0.010000
+2020-09-27 16:16:53,723 - bootstrap - INFO - tgt_test_acc: 69.10 ; src_test_acc: 98.10src_cls_loss : 0.15339, tgt_cls_loss : 0.00284, transfer_loss : 0.00822, env_loss : 0.92963, 
+2020-09-27 16:16:54,325 - bootstrap - INFO - Source epoch 50/200 main_lr=0.010000
+2020-09-27 16:17:55,278 - bootstrap - INFO - tgt_test_acc: 70.42 ; src_test_acc: 97.28src_cls_loss : 0.17281, tgt_cls_loss : 0.00479, transfer_loss : 0.00813, env_loss : 0.90082, 
+2020-09-27 16:17:55,812 - bootstrap - INFO - Source epoch 42/200 main_lr=0.010000
+2020-09-27 16:20:18,921 - bootstrap - INFO - tgt_test_acc: 66.69 ; src_test_acc: 80.92src_cls_loss : 0.65711, tgt_cls_loss : 0.04184, transfer_loss : 0.00811, env_loss : 2.48755, 
+2020-09-27 16:20:19,447 - bootstrap - INFO - Source epoch 15/200 main_lr=0.010000
+2020-09-27 16:21:04,634 - bootstrap - INFO - tgt_test_acc: 70.50 ; src_test_acc: 99.38src_cls_loss : 0.02573, tgt_cls_loss : 0.00082, transfer_loss : 0.00775, env_loss : 0.05375, 
+2020-09-27 16:21:05,258 - bootstrap - INFO - Source epoch 165/200 main_lr=0.010000
+2020-09-27 16:23:33,910 - bootstrap - INFO - tgt_test_acc: 70.65 ; src_test_acc: 97.65src_cls_loss : 0.14984, tgt_cls_loss : 0.00495, transfer_loss : 0.00819, env_loss : 0.93624, 
+2020-09-27 16:23:34,442 - bootstrap - INFO - Source epoch 51/200 main_lr=0.000100
+2020-09-27 16:24:38,399 - bootstrap - INFO - tgt_test_acc: 70.57 ; src_test_acc: 97.12src_cls_loss : 0.17130, tgt_cls_loss : 0.00536, transfer_loss : 0.00810, env_loss : 0.86884, 
+2020-09-27 16:24:38,966 - bootstrap - INFO - Source epoch 43/200 main_lr=0.010000
+2020-09-27 16:27:03,295 - bootstrap - INFO - tgt_test_acc: 66.46 ; src_test_acc: 80.51src_cls_loss : 0.62165, tgt_cls_loss : 0.03735, transfer_loss : 0.00795, env_loss : 2.43213, 
+2020-09-27 16:27:03,997 - bootstrap - INFO - Source epoch 16/200 main_lr=0.010000
+2020-09-27 16:27:57,765 - bootstrap - INFO - tgt_test_acc: 70.50 ; src_test_acc: 99.38src_cls_loss : 0.02235, tgt_cls_loss : 0.00062, transfer_loss : 0.00756, env_loss : 0.05084, 
+2020-09-27 16:27:58,368 - bootstrap - INFO - Source epoch 166/200 main_lr=0.010000
+2020-09-27 16:30:13,517 - bootstrap - INFO - tgt_test_acc: 69.57 ; src_test_acc: 98.27src_cls_loss : 0.12967, tgt_cls_loss : 0.00423, transfer_loss : 0.00823, env_loss : 0.88794, 
+2020-09-27 16:30:14,103 - bootstrap - INFO - Source epoch 52/200 main_lr=0.010000
+2020-09-27 16:31:21,380 - bootstrap - INFO - tgt_test_acc: 70.81 ; src_test_acc: 97.40src_cls_loss : 0.16698, tgt_cls_loss : 0.00541, transfer_loss : 0.00805, env_loss : 0.86915, 
+2020-09-27 16:31:21,940 - bootstrap - INFO - Source epoch 44/200 main_lr=0.010000
+2020-09-27 16:33:46,810 - bootstrap - INFO - tgt_test_acc: 66.15 ; src_test_acc: 83.68src_cls_loss : 0.57873, tgt_cls_loss : 0.03346, transfer_loss : 0.00806, env_loss : 2.32926, 
+2020-09-27 16:33:47,395 - bootstrap - INFO - Source epoch 17/200 main_lr=0.010000
+2020-09-27 16:34:49,473 - bootstrap - INFO - tgt_test_acc: 71.66 ; src_test_acc: 99.42src_cls_loss : 0.02803, tgt_cls_loss : 0.00112, transfer_loss : 0.00764, env_loss : 0.04839, 
+2020-09-27 16:34:50,217 - bootstrap - INFO - Source epoch 167/200 main_lr=0.010000
+2020-09-27 16:36:52,805 - bootstrap - INFO - tgt_test_acc: 70.26 ; src_test_acc: 98.56src_cls_loss : 0.13373, tgt_cls_loss : 0.00378, transfer_loss : 0.00827, env_loss : 0.86194, 
+2020-09-27 16:36:53,389 - bootstrap - INFO - Source epoch 53/200 main_lr=0.010000
+2020-09-27 16:38:03,987 - bootstrap - INFO - tgt_test_acc: 71.04 ; src_test_acc: 97.07src_cls_loss : 0.17396, tgt_cls_loss : 0.00516, transfer_loss : 0.00802, env_loss : 0.86157, 
+2020-09-27 16:38:04,772 - bootstrap - INFO - Source epoch 45/200 main_lr=0.010000
+2020-09-27 16:40:34,095 - bootstrap - INFO - tgt_test_acc: 67.31 ; src_test_acc: 84.88src_cls_loss : 0.57767, tgt_cls_loss : 0.03214, transfer_loss : 0.00808, env_loss : 2.26999, 
+2020-09-27 16:40:34,628 - bootstrap - INFO - Source epoch 18/200 main_lr=0.010000
+2020-09-27 16:41:43,846 - bootstrap - INFO - tgt_test_acc: 71.04 ; src_test_acc: 99.46src_cls_loss : 0.02452, tgt_cls_loss : 0.00081, transfer_loss : 0.00766, env_loss : 0.05545, 
+2020-09-27 16:41:44,457 - bootstrap - INFO - Source epoch 168/200 main_lr=0.010000
+2020-09-27 16:43:30,912 - bootstrap - INFO - tgt_test_acc: 69.80 ; src_test_acc: 98.19src_cls_loss : 0.13192, tgt_cls_loss : 0.00391, transfer_loss : 0.00807, env_loss : 0.86751, 
+2020-09-27 16:43:31,559 - bootstrap - INFO - Source epoch 54/200 main_lr=0.010000
+2020-09-27 16:44:40,753 - bootstrap - INFO - tgt_test_acc: 70.81 ; src_test_acc: 97.57src_cls_loss : 0.15775, tgt_cls_loss : 0.00388, transfer_loss : 0.00816, env_loss : 0.84950, 
+2020-09-27 16:44:41,343 - bootstrap - INFO - Source epoch 46/200 main_lr=0.010000
+2020-09-27 16:47:22,399 - bootstrap - INFO - tgt_test_acc: 66.77 ; src_test_acc: 84.80src_cls_loss : 0.52559, tgt_cls_loss : 0.02766, transfer_loss : 0.00800, env_loss : 2.20137, 
+2020-09-27 16:47:23,009 - bootstrap - INFO - Source epoch 19/200 main_lr=0.010000
+2020-09-27 16:48:34,571 - bootstrap - INFO - tgt_test_acc: 71.20 ; src_test_acc: 99.42src_cls_loss : 0.02291, tgt_cls_loss : 0.00105, transfer_loss : 0.00769, env_loss : 0.04798, 
+2020-09-27 16:48:35,370 - bootstrap - INFO - Source epoch 169/200 main_lr=0.010000
+2020-09-27 16:50:14,082 - bootstrap - INFO - tgt_test_acc: 69.25 ; src_test_acc: 98.15src_cls_loss : 0.13350, tgt_cls_loss : 0.00281, transfer_loss : 0.00820, env_loss : 0.90927, 
+2020-09-27 16:50:14,784 - bootstrap - INFO - Source epoch 55/200 main_lr=0.010000
+2020-09-27 16:51:21,858 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 97.45src_cls_loss : 0.13893, tgt_cls_loss : 0.00449, transfer_loss : 0.00809, env_loss : 0.82783, 
+2020-09-27 16:51:22,506 - bootstrap - INFO - Source epoch 47/200 main_lr=0.010000
+2020-09-27 16:54:14,914 - bootstrap - INFO - tgt_test_acc: 67.62 ; src_test_acc: 85.41src_cls_loss : 0.50104, tgt_cls_loss : 0.02362, transfer_loss : 0.00811, env_loss : 2.13665, 
+2020-09-27 16:54:15,611 - bootstrap - INFO - Source epoch 20/200 main_lr=0.010000
+2020-09-27 16:55:24,977 - bootstrap - INFO - tgt_test_acc: 71.43 ; src_test_acc: 99.34src_cls_loss : 0.02526, tgt_cls_loss : 0.00104, transfer_loss : 0.00773, env_loss : 0.05622, 
+2020-09-27 16:55:25,610 - bootstrap - INFO - Source epoch 170/200 main_lr=0.010000
+2020-09-27 16:56:54,984 - bootstrap - INFO - tgt_test_acc: 69.33 ; src_test_acc: 98.81src_cls_loss : 0.12117, tgt_cls_loss : 0.00287, transfer_loss : 0.00808, env_loss : 0.85958, 
+2020-09-27 16:56:55,566 - bootstrap - INFO - Source epoch 56/200 main_lr=0.010000
+2020-09-27 16:58:03,979 - bootstrap - INFO - tgt_test_acc: 71.04 ; src_test_acc: 97.94src_cls_loss : 0.13609, tgt_cls_loss : 0.00422, transfer_loss : 0.00807, env_loss : 0.80665, 
+2020-09-27 16:58:04,535 - bootstrap - INFO - Source epoch 48/200 main_lr=0.010000
+2020-09-27 17:00:59,341 - bootstrap - INFO - tgt_test_acc: 66.85 ; src_test_acc: 86.16src_cls_loss : 0.48042, tgt_cls_loss : 0.02138, transfer_loss : 0.00819, env_loss : 2.10213, 
+2020-09-27 17:00:59,940 - bootstrap - INFO - Source epoch 21/200 main_lr=0.010000
+2020-09-27 17:02:14,038 - bootstrap - INFO - tgt_test_acc: 70.89 ; src_test_acc: 99.51src_cls_loss : 0.02303, tgt_cls_loss : 0.00080, transfer_loss : 0.00773, env_loss : 0.05095, 
+2020-09-27 17:02:14,647 - bootstrap - INFO - Source epoch 171/200 main_lr=0.010000
+2020-09-27 17:03:36,206 - bootstrap - INFO - tgt_test_acc: 68.32 ; src_test_acc: 98.02src_cls_loss : 0.11685, tgt_cls_loss : 0.00386, transfer_loss : 0.00818, env_loss : 0.84150, 
+2020-09-27 17:03:36,748 - bootstrap - INFO - Source epoch 57/200 main_lr=0.010000
+2020-09-27 17:04:46,972 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 98.27src_cls_loss : 0.12830, tgt_cls_loss : 0.00386, transfer_loss : 0.00802, env_loss : 0.78159, 
+2020-09-27 17:04:47,491 - bootstrap - INFO - Source epoch 49/200 main_lr=0.010000
+2020-09-27 17:07:46,513 - bootstrap - INFO - tgt_test_acc: 67.93 ; src_test_acc: 87.31src_cls_loss : 0.44469, tgt_cls_loss : 0.02214, transfer_loss : 0.00812, env_loss : 2.01035, 
+2020-09-27 17:07:47,124 - bootstrap - INFO - Source epoch 22/200 main_lr=0.010000
+2020-09-27 17:09:05,971 - bootstrap - INFO - tgt_test_acc: 70.96 ; src_test_acc: 99.42src_cls_loss : 0.02035, tgt_cls_loss : 0.00086, transfer_loss : 0.00768, env_loss : 0.05267, 
+2020-09-27 17:09:06,768 - bootstrap - INFO - Source epoch 172/200 main_lr=0.010000
+2020-09-27 17:10:19,911 - bootstrap - INFO - tgt_test_acc: 69.25 ; src_test_acc: 98.39src_cls_loss : 0.12214, tgt_cls_loss : 0.00283, transfer_loss : 0.00821, env_loss : 0.84456, 
+2020-09-27 17:10:20,458 - bootstrap - INFO - Source epoch 58/200 main_lr=0.010000
+2020-09-27 17:11:31,691 - bootstrap - INFO - tgt_test_acc: 69.80 ; src_test_acc: 98.27src_cls_loss : 0.13427, tgt_cls_loss : 0.00402, transfer_loss : 0.00813, env_loss : 0.76527, 
+2020-09-27 17:11:32,274 - bootstrap - INFO - Source epoch 50/200 main_lr=0.010000
+2020-09-27 17:14:34,530 - bootstrap - INFO - tgt_test_acc: 67.55 ; src_test_acc: 87.85src_cls_loss : 0.42230, tgt_cls_loss : 0.01811, transfer_loss : 0.00820, env_loss : 1.95218, 
+2020-09-27 17:14:35,103 - bootstrap - INFO - Source epoch 23/200 main_lr=0.010000
+2020-09-27 17:16:00,876 - bootstrap - INFO - tgt_test_acc: 70.34 ; src_test_acc: 99.42src_cls_loss : 0.02340, tgt_cls_loss : 0.00072, transfer_loss : 0.00771, env_loss : 0.04907, 
+2020-09-27 17:16:01,673 - bootstrap - INFO - Source epoch 173/200 main_lr=0.010000
+2020-09-27 17:17:05,200 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 98.76src_cls_loss : 0.10847, tgt_cls_loss : 0.00231, transfer_loss : 0.00821, env_loss : 0.83236, 
+2020-09-27 17:17:05,785 - bootstrap - INFO - Source epoch 59/200 main_lr=0.010000
+2020-09-27 17:18:19,585 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 98.10src_cls_loss : 0.12950, tgt_cls_loss : 0.00264, transfer_loss : 0.00807, env_loss : 0.75614, 
+2020-09-27 17:18:20,158 - bootstrap - INFO - Source epoch 51/200 main_lr=0.000100
+2020-09-27 17:21:19,302 - bootstrap - INFO - tgt_test_acc: 67.93 ; src_test_acc: 88.63src_cls_loss : 0.43272, tgt_cls_loss : 0.01769, transfer_loss : 0.00819, env_loss : 1.95561, 
+2020-09-27 17:21:19,906 - bootstrap - INFO - Source epoch 24/200 main_lr=0.010000
+2020-09-27 17:22:52,874 - bootstrap - INFO - tgt_test_acc: 70.96 ; src_test_acc: 99.34src_cls_loss : 0.02099, tgt_cls_loss : 0.00150, transfer_loss : 0.00765, env_loss : 0.05284, 
+2020-09-27 17:22:53,665 - bootstrap - INFO - Source epoch 174/200 main_lr=0.010000
+2020-09-27 17:23:48,906 - bootstrap - INFO - tgt_test_acc: 69.49 ; src_test_acc: 98.68src_cls_loss : 0.10176, tgt_cls_loss : 0.00197, transfer_loss : 0.00810, env_loss : 0.78572, 
+2020-09-27 17:23:49,576 - bootstrap - INFO - Source epoch 60/200 main_lr=0.010000
+2020-09-27 17:25:03,751 - bootstrap - INFO - tgt_test_acc: 68.87 ; src_test_acc: 97.82src_cls_loss : 0.14184, tgt_cls_loss : 0.00266, transfer_loss : 0.00804, env_loss : 0.75175, 
+2020-09-27 17:25:04,354 - bootstrap - INFO - Source epoch 52/200 main_lr=0.010000
+2020-09-27 17:28:10,430 - bootstrap - INFO - tgt_test_acc: 68.48 ; src_test_acc: 89.78src_cls_loss : 0.41949, tgt_cls_loss : 0.01763, transfer_loss : 0.00813, env_loss : 1.93049, 
+2020-09-27 17:28:11,080 - bootstrap - INFO - Source epoch 25/200 main_lr=0.010000
+2020-09-27 17:29:41,783 - bootstrap - INFO - tgt_test_acc: 71.43 ; src_test_acc: 99.30src_cls_loss : 0.02807, tgt_cls_loss : 0.00077, transfer_loss : 0.00771, env_loss : 0.04956, 
+2020-09-27 17:29:42,561 - bootstrap - INFO - Source epoch 175/200 main_lr=0.010000
+2020-09-27 17:30:32,777 - bootstrap - INFO - tgt_test_acc: 70.57 ; src_test_acc: 98.76src_cls_loss : 0.10392, tgt_cls_loss : 0.00249, transfer_loss : 0.00805, env_loss : 0.80159, 
+2020-09-27 17:30:33,381 - bootstrap - INFO - Source epoch 61/200 main_lr=0.010000
+2020-09-27 17:31:46,470 - bootstrap - INFO - tgt_test_acc: 69.80 ; src_test_acc: 98.56src_cls_loss : 0.10829, tgt_cls_loss : 0.00365, transfer_loss : 0.00807, env_loss : 0.72386, 
+2020-09-27 17:31:47,075 - bootstrap - INFO - Source epoch 53/200 main_lr=0.010000
+2020-09-27 17:34:55,402 - bootstrap - INFO - tgt_test_acc: 68.79 ; src_test_acc: 90.89src_cls_loss : 0.38746, tgt_cls_loss : 0.01613, transfer_loss : 0.00811, env_loss : 1.83438, 
+2020-09-27 17:34:55,929 - bootstrap - INFO - Source epoch 26/200 main_lr=0.010000
+2020-09-27 17:36:36,445 - bootstrap - INFO - tgt_test_acc: 70.73 ; src_test_acc: 99.42src_cls_loss : 0.02598, tgt_cls_loss : 0.00170, transfer_loss : 0.00777, env_loss : 0.05157, 
+2020-09-27 17:36:37,074 - bootstrap - INFO - Source epoch 176/200 main_lr=0.010000
+2020-09-27 17:37:18,900 - bootstrap - INFO - tgt_test_acc: 70.57 ; src_test_acc: 98.97src_cls_loss : 0.08794, tgt_cls_loss : 0.00242, transfer_loss : 0.00795, env_loss : 0.77335, 
+2020-09-27 17:37:19,593 - bootstrap - INFO - Source epoch 62/200 main_lr=0.010000
+2020-09-27 17:38:32,154 - bootstrap - INFO - tgt_test_acc: 70.96 ; src_test_acc: 98.31src_cls_loss : 0.10842, tgt_cls_loss : 0.00345, transfer_loss : 0.00800, env_loss : 0.71129, 
+2020-09-27 17:38:32,838 - bootstrap - INFO - Source epoch 54/200 main_lr=0.010000
+2020-09-27 17:41:44,227 - bootstrap - INFO - tgt_test_acc: 67.86 ; src_test_acc: 90.52src_cls_loss : 0.35241, tgt_cls_loss : 0.01272, transfer_loss : 0.00811, env_loss : 1.79587, 
+2020-09-27 17:41:44,787 - bootstrap - INFO - Source epoch 27/200 main_lr=0.010000
+2020-09-27 17:43:37,147 - bootstrap - INFO - tgt_test_acc: 70.65 ; src_test_acc: 99.38src_cls_loss : 0.01894, tgt_cls_loss : 0.00090, transfer_loss : 0.00772, env_loss : 0.05080, 
+2020-09-27 17:43:37,754 - bootstrap - INFO - Source epoch 177/200 main_lr=0.010000
+2020-09-27 17:44:02,411 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 98.81src_cls_loss : 0.10139, tgt_cls_loss : 0.00322, transfer_loss : 0.00814, env_loss : 0.76064, 
+2020-09-27 17:44:02,965 - bootstrap - INFO - Source epoch 63/200 main_lr=0.010000
+2020-09-27 17:45:16,956 - bootstrap - INFO - tgt_test_acc: 70.73 ; src_test_acc: 98.39src_cls_loss : 0.12041, tgt_cls_loss : 0.00360, transfer_loss : 0.00806, env_loss : 0.70109, 
+2020-09-27 17:45:17,556 - bootstrap - INFO - Source epoch 55/200 main_lr=0.010000
+2020-09-27 17:48:31,693 - bootstrap - INFO - tgt_test_acc: 68.48 ; src_test_acc: 91.47src_cls_loss : 0.33646, tgt_cls_loss : 0.01510, transfer_loss : 0.00813, env_loss : 1.78699, 
+2020-09-27 17:48:32,244 - bootstrap - INFO - Source epoch 28/200 main_lr=0.010000
+2020-09-27 17:50:30,089 - bootstrap - INFO - tgt_test_acc: 70.96 ; src_test_acc: 99.34src_cls_loss : 0.02174, tgt_cls_loss : 0.00076, transfer_loss : 0.00766, env_loss : 0.04924, 
+2020-09-27 17:50:30,715 - bootstrap - INFO - Source epoch 178/200 main_lr=0.010000
+2020-09-27 17:50:47,417 - bootstrap - INFO - tgt_test_acc: 68.94 ; src_test_acc: 99.01src_cls_loss : 0.09649, tgt_cls_loss : 0.00285, transfer_loss : 0.00814, env_loss : 0.76035, 
+2020-09-27 17:50:48,105 - bootstrap - INFO - Source epoch 64/200 main_lr=0.010000
+2020-09-27 17:52:01,377 - bootstrap - INFO - tgt_test_acc: 70.50 ; src_test_acc: 98.60src_cls_loss : 0.10632, tgt_cls_loss : 0.00308, transfer_loss : 0.00799, env_loss : 0.65462, 
+2020-09-27 17:52:02,051 - bootstrap - INFO - Source epoch 56/200 main_lr=0.010000
+2020-09-27 17:55:17,233 - bootstrap - INFO - tgt_test_acc: 67.00 ; src_test_acc: 91.43src_cls_loss : 0.33819, tgt_cls_loss : 0.01251, transfer_loss : 0.00816, env_loss : 1.74381, 
+2020-09-27 17:55:17,996 - bootstrap - INFO - Source epoch 29/200 main_lr=0.010000
+2020-09-27 17:57:25,552 - bootstrap - INFO - tgt_test_acc: 70.42 ; src_test_acc: 99.38src_cls_loss : 0.02390, tgt_cls_loss : 0.00093, transfer_loss : 0.00762, env_loss : 0.04845, 
+2020-09-27 17:57:26,255 - bootstrap - INFO - Source epoch 179/200 main_lr=0.010000
+2020-09-27 17:57:33,219 - bootstrap - INFO - tgt_test_acc: 69.57 ; src_test_acc: 98.85src_cls_loss : 0.09459, tgt_cls_loss : 0.00247, transfer_loss : 0.00825, env_loss : 0.74738, 
+2020-09-27 17:57:33,886 - bootstrap - INFO - Source epoch 65/200 main_lr=0.010000
+2020-09-27 17:58:44,960 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 98.85src_cls_loss : 0.09954, tgt_cls_loss : 0.00291, transfer_loss : 0.00808, env_loss : 0.67676, 
+2020-09-27 17:58:45,576 - bootstrap - INFO - Source epoch 57/200 main_lr=0.010000
+2020-09-27 18:02:03,434 - bootstrap - INFO - tgt_test_acc: 69.33 ; src_test_acc: 91.55src_cls_loss : 0.31455, tgt_cls_loss : 0.01014, transfer_loss : 0.00812, env_loss : 1.68407, 
+2020-09-27 18:02:04,061 - bootstrap - INFO - Source epoch 30/200 main_lr=0.010000
+2020-09-27 18:04:16,371 - bootstrap - INFO - tgt_test_acc: 70.89 ; src_test_acc: 99.38src_cls_loss : 0.02201, tgt_cls_loss : 0.00102, transfer_loss : 0.00770, env_loss : 0.05978, 
+2020-09-27 18:04:16,713 - bootstrap - INFO - tgt_test_acc: 69.80 ; src_test_acc: 98.93src_cls_loss : 0.08951, tgt_cls_loss : 0.00217, transfer_loss : 0.00815, env_loss : 0.73047, 
+2020-09-27 18:04:17,163 - bootstrap - INFO - Source epoch 180/200 main_lr=0.010000
+2020-09-27 18:04:17,470 - bootstrap - INFO - Source epoch 66/200 main_lr=0.010000
+2020-09-27 18:05:24,477 - bootstrap - INFO - tgt_test_acc: 71.04 ; src_test_acc: 98.52src_cls_loss : 0.09472, tgt_cls_loss : 0.00382, transfer_loss : 0.00807, env_loss : 0.65562, 
+2020-09-27 18:05:25,156 - bootstrap - INFO - Source epoch 58/200 main_lr=0.010000
+2020-09-27 18:08:50,937 - bootstrap - INFO - tgt_test_acc: 68.40 ; src_test_acc: 92.54src_cls_loss : 0.32555, tgt_cls_loss : 0.01126, transfer_loss : 0.00809, env_loss : 1.69461, 
+2020-09-27 18:08:51,615 - bootstrap - INFO - Source epoch 31/200 main_lr=0.010000
+2020-09-27 18:11:01,515 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 99.01src_cls_loss : 0.09180, tgt_cls_loss : 0.00218, transfer_loss : 0.00809, env_loss : 0.73672, 
+2020-09-27 18:11:02,215 - bootstrap - INFO - Source epoch 67/200 main_lr=0.010000
+2020-09-27 18:11:09,160 - bootstrap - INFO - tgt_test_acc: 71.58 ; src_test_acc: 99.42src_cls_loss : 0.02312, tgt_cls_loss : 0.00106, transfer_loss : 0.00765, env_loss : 0.04708, 
+2020-09-27 18:11:09,807 - bootstrap - INFO - Source epoch 181/200 main_lr=0.010000
+2020-09-27 18:12:08,588 - bootstrap - INFO - tgt_test_acc: 70.26 ; src_test_acc: 98.56src_cls_loss : 0.11286, tgt_cls_loss : 0.00312, transfer_loss : 0.00811, env_loss : 0.65719, 
+2020-09-27 18:12:09,261 - bootstrap - INFO - Source epoch 59/200 main_lr=0.010000
+2020-09-27 18:15:35,720 - bootstrap - INFO - tgt_test_acc: 66.85 ; src_test_acc: 92.30src_cls_loss : 0.30704, tgt_cls_loss : 0.01068, transfer_loss : 0.00792, env_loss : 1.66659, 
+2020-09-27 18:15:36,436 - bootstrap - INFO - Source epoch 32/200 main_lr=0.010000
+2020-09-27 18:17:44,874 - bootstrap - INFO - tgt_test_acc: 68.71 ; src_test_acc: 98.81src_cls_loss : 0.08911, tgt_cls_loss : 0.00179, transfer_loss : 0.00814, env_loss : 0.72140, 
+2020-09-27 18:17:45,414 - bootstrap - INFO - Source epoch 68/200 main_lr=0.010000
+2020-09-27 18:17:59,995 - bootstrap - INFO - tgt_test_acc: 70.89 ; src_test_acc: 99.34src_cls_loss : 0.02589, tgt_cls_loss : 0.00082, transfer_loss : 0.00769, env_loss : 0.04940, 
+2020-09-27 18:18:00,750 - bootstrap - INFO - Source epoch 182/200 main_lr=0.010000
+2020-09-27 18:18:54,197 - bootstrap - INFO - tgt_test_acc: 70.73 ; src_test_acc: 98.64src_cls_loss : 0.08872, tgt_cls_loss : 0.00294, transfer_loss : 0.00804, env_loss : 0.64610, 
+2020-09-27 18:18:54,689 - bootstrap - INFO - Source epoch 60/200 main_lr=0.010000
+2020-09-27 18:22:23,212 - bootstrap - INFO - tgt_test_acc: 69.18 ; src_test_acc: 92.95src_cls_loss : 0.30789, tgt_cls_loss : 0.00982, transfer_loss : 0.00801, env_loss : 1.61653, 
+2020-09-27 18:22:23,886 - bootstrap - INFO - Source epoch 33/200 main_lr=0.010000
+2020-09-27 18:24:30,294 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 98.60src_cls_loss : 0.08846, tgt_cls_loss : 0.00237, transfer_loss : 0.00809, env_loss : 0.72092, 
+2020-09-27 18:24:30,883 - bootstrap - INFO - Source epoch 69/200 main_lr=0.010000
+2020-09-27 18:24:52,768 - bootstrap - INFO - tgt_test_acc: 71.58 ; src_test_acc: 99.46src_cls_loss : 0.01814, tgt_cls_loss : 0.00063, transfer_loss : 0.00763, env_loss : 0.04473, 
+2020-09-27 18:24:53,552 - bootstrap - INFO - Source epoch 183/200 main_lr=0.010000
+2020-09-27 18:25:39,077 - bootstrap - INFO - tgt_test_acc: 69.88 ; src_test_acc: 98.64src_cls_loss : 0.09372, tgt_cls_loss : 0.00276, transfer_loss : 0.00821, env_loss : 0.61541, 
+2020-09-27 18:25:39,643 - bootstrap - INFO - Source epoch 61/200 main_lr=0.010000
+2020-09-27 18:29:03,123 - bootstrap - INFO - tgt_test_acc: 68.32 ; src_test_acc: 93.65src_cls_loss : 0.27640, tgt_cls_loss : 0.01065, transfer_loss : 0.00800, env_loss : 1.59752, 
+2020-09-27 18:29:03,793 - bootstrap - INFO - Source epoch 34/200 main_lr=0.010000
+2020-09-27 18:31:11,901 - bootstrap - INFO - tgt_test_acc: 69.25 ; src_test_acc: 98.81src_cls_loss : 0.08398, tgt_cls_loss : 0.00236, transfer_loss : 0.00818, env_loss : 0.68929, 
+2020-09-27 18:31:12,491 - bootstrap - INFO - Source epoch 70/200 main_lr=0.010000
+2020-09-27 18:31:48,239 - bootstrap - INFO - tgt_test_acc: 71.04 ; src_test_acc: 99.42src_cls_loss : 0.02090, tgt_cls_loss : 0.00080, transfer_loss : 0.00760, env_loss : 0.04882, 
+2020-09-27 18:31:48,842 - bootstrap - INFO - Source epoch 184/200 main_lr=0.010000
+2020-09-27 18:32:24,377 - bootstrap - INFO - tgt_test_acc: 70.26 ; src_test_acc: 98.56src_cls_loss : 0.08855, tgt_cls_loss : 0.00349, transfer_loss : 0.00802, env_loss : 0.61974, 
+2020-09-27 18:32:25,067 - bootstrap - INFO - Source epoch 62/200 main_lr=0.010000
+2020-09-27 18:35:46,619 - bootstrap - INFO - tgt_test_acc: 69.80 ; src_test_acc: 93.74src_cls_loss : 0.24106, tgt_cls_loss : 0.00943, transfer_loss : 0.00810, env_loss : 1.52950, 
+2020-09-27 18:35:47,214 - bootstrap - INFO - Source epoch 35/200 main_lr=0.010000
+2020-09-27 18:37:54,509 - bootstrap - INFO - tgt_test_acc: 68.48 ; src_test_acc: 98.89src_cls_loss : 0.08202, tgt_cls_loss : 0.00244, transfer_loss : 0.00818, env_loss : 0.69520, 
+2020-09-27 18:37:55,076 - bootstrap - INFO - Source epoch 71/200 main_lr=0.010000
+2020-09-27 18:38:41,188 - bootstrap - INFO - tgt_test_acc: 71.66 ; src_test_acc: 99.38src_cls_loss : 0.02372, tgt_cls_loss : 0.00080, transfer_loss : 0.00765, env_loss : 0.04112, 
+2020-09-27 18:38:42,062 - bootstrap - INFO - Source epoch 185/200 main_lr=0.010000
+2020-09-27 18:39:11,672 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 98.52src_cls_loss : 0.08593, tgt_cls_loss : 0.00208, transfer_loss : 0.00808, env_loss : 0.62713, 
+2020-09-27 18:39:12,342 - bootstrap - INFO - Source epoch 63/200 main_lr=0.010000
+2020-09-27 18:42:28,637 - bootstrap - INFO - tgt_test_acc: 69.10 ; src_test_acc: 94.40src_cls_loss : 0.25269, tgt_cls_loss : 0.00641, transfer_loss : 0.00808, env_loss : 1.48978, 
+2020-09-27 18:42:29,221 - bootstrap - INFO - Source epoch 36/200 main_lr=0.010000
+2020-09-27 18:44:38,417 - bootstrap - INFO - tgt_test_acc: 69.33 ; src_test_acc: 98.72src_cls_loss : 0.07961, tgt_cls_loss : 0.00133, transfer_loss : 0.00822, env_loss : 0.66833, 
+2020-09-27 18:44:38,996 - bootstrap - INFO - Source epoch 72/200 main_lr=0.010000
+2020-09-27 18:45:39,254 - bootstrap - INFO - tgt_test_acc: 70.57 ; src_test_acc: 99.38src_cls_loss : 0.02404, tgt_cls_loss : 0.00078, transfer_loss : 0.00769, env_loss : 0.05118, 
+2020-09-27 18:45:39,851 - bootstrap - INFO - Source epoch 186/200 main_lr=0.010000
+2020-09-27 18:45:59,075 - bootstrap - INFO - tgt_test_acc: 70.65 ; src_test_acc: 98.89src_cls_loss : 0.08772, tgt_cls_loss : 0.00269, transfer_loss : 0.00801, env_loss : 0.60109, 
+2020-09-27 18:45:59,663 - bootstrap - INFO - Source epoch 64/200 main_lr=0.010000
+2020-09-27 18:49:13,908 - bootstrap - INFO - tgt_test_acc: 68.56 ; src_test_acc: 94.60src_cls_loss : 0.23417, tgt_cls_loss : 0.00646, transfer_loss : 0.00802, env_loss : 1.51002, 
+2020-09-27 18:49:14,420 - bootstrap - INFO - Source epoch 37/200 main_lr=0.010000
+2020-09-27 18:51:22,600 - bootstrap - INFO - tgt_test_acc: 69.10 ; src_test_acc: 99.13src_cls_loss : 0.08405, tgt_cls_loss : 0.00176, transfer_loss : 0.00807, env_loss : 0.69298, 
+2020-09-27 18:51:23,262 - bootstrap - INFO - Source epoch 73/200 main_lr=0.010000
+2020-09-27 18:52:26,500 - bootstrap - INFO - tgt_test_acc: 71.20 ; src_test_acc: 99.42src_cls_loss : 0.02060, tgt_cls_loss : 0.00119, transfer_loss : 0.00765, env_loss : 0.04719, 
+2020-09-27 18:52:27,140 - bootstrap - INFO - Source epoch 187/200 main_lr=0.010000
+2020-09-27 18:52:41,693 - bootstrap - INFO - tgt_test_acc: 70.50 ; src_test_acc: 98.85src_cls_loss : 0.07943, tgt_cls_loss : 0.00156, transfer_loss : 0.00807, env_loss : 0.58196, 
+2020-09-27 18:52:42,334 - bootstrap - INFO - Source epoch 65/200 main_lr=0.010000
+2020-09-27 18:55:54,889 - bootstrap - INFO - tgt_test_acc: 68.87 ; src_test_acc: 95.06src_cls_loss : 0.23352, tgt_cls_loss : 0.00770, transfer_loss : 0.00801, env_loss : 1.47950, 
+2020-09-27 18:55:55,450 - bootstrap - INFO - Source epoch 38/200 main_lr=0.010000
+2020-09-27 18:58:03,118 - bootstrap - INFO - tgt_test_acc: 69.18 ; src_test_acc: 99.09src_cls_loss : 0.07584, tgt_cls_loss : 0.00203, transfer_loss : 0.00798, env_loss : 0.66823, 
+2020-09-27 18:58:03,677 - bootstrap - INFO - Source epoch 74/200 main_lr=0.010000
+2020-09-27 18:59:22,285 - bootstrap - INFO - tgt_test_acc: 71.35 ; src_test_acc: 99.38src_cls_loss : 0.02147, tgt_cls_loss : 0.00073, transfer_loss : 0.00769, env_loss : 0.04412, 
+2020-09-27 18:59:23,015 - bootstrap - INFO - Source epoch 188/200 main_lr=0.010000
+2020-09-27 18:59:28,860 - bootstrap - INFO - tgt_test_acc: 71.04 ; src_test_acc: 98.81src_cls_loss : 0.08243, tgt_cls_loss : 0.00187, transfer_loss : 0.00820, env_loss : 0.56521, 
+2020-09-27 18:59:29,419 - bootstrap - INFO - Source epoch 66/200 main_lr=0.010000
+2020-09-27 19:02:38,610 - bootstrap - INFO - tgt_test_acc: 68.79 ; src_test_acc: 94.60src_cls_loss : 0.22419, tgt_cls_loss : 0.00782, transfer_loss : 0.00817, env_loss : 1.44694, 
+2020-09-27 19:02:39,210 - bootstrap - INFO - Source epoch 39/200 main_lr=0.010000
+2020-09-27 19:04:49,192 - bootstrap - INFO - tgt_test_acc: 69.10 ; src_test_acc: 98.97src_cls_loss : 0.07728, tgt_cls_loss : 0.00225, transfer_loss : 0.00813, env_loss : 0.63665, 
+2020-09-27 19:04:49,791 - bootstrap - INFO - Source epoch 75/200 main_lr=0.010000
+2020-09-27 19:06:13,588 - bootstrap - INFO - tgt_test_acc: 70.50 ; src_test_acc: 99.38src_cls_loss : 0.01998, tgt_cls_loss : 0.00074, transfer_loss : 0.00766, env_loss : 0.04098, 
+2020-09-27 19:06:14,218 - bootstrap - INFO - Source epoch 189/200 main_lr=0.010000
+2020-09-27 19:06:16,095 - bootstrap - INFO - tgt_test_acc: 70.34 ; src_test_acc: 98.89src_cls_loss : 0.07657, tgt_cls_loss : 0.00201, transfer_loss : 0.00799, env_loss : 0.57040, 
+2020-09-27 19:06:16,681 - bootstrap - INFO - Source epoch 67/200 main_lr=0.010000
+2020-09-27 19:09:25,322 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 95.43src_cls_loss : 0.21610, tgt_cls_loss : 0.00559, transfer_loss : 0.00812, env_loss : 1.38817, 
+2020-09-27 19:09:25,926 - bootstrap - INFO - Source epoch 40/200 main_lr=0.010000
+2020-09-27 19:11:37,210 - bootstrap - INFO - tgt_test_acc: 70.19 ; src_test_acc: 99.09src_cls_loss : 0.07360, tgt_cls_loss : 0.00169, transfer_loss : 0.00805, env_loss : 0.66015, 
+2020-09-27 19:11:37,774 - bootstrap - INFO - Source epoch 76/200 main_lr=0.010000
+2020-09-27 19:13:01,673 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 98.81src_cls_loss : 0.07915, tgt_cls_loss : 0.00149, transfer_loss : 0.00803, env_loss : 0.53842, 
+2020-09-27 19:13:02,345 - bootstrap - INFO - Source epoch 68/200 main_lr=0.010000
+2020-09-27 19:13:08,639 - bootstrap - INFO - tgt_test_acc: 71.51 ; src_test_acc: 99.42src_cls_loss : 0.01515, tgt_cls_loss : 0.00095, transfer_loss : 0.00764, env_loss : 0.03821, 
+2020-09-27 19:13:09,356 - bootstrap - INFO - Source epoch 190/200 main_lr=0.010000
+2020-09-27 19:16:09,421 - bootstrap - INFO - tgt_test_acc: 68.94 ; src_test_acc: 96.17src_cls_loss : 0.22034, tgt_cls_loss : 0.00563, transfer_loss : 0.00833, env_loss : 1.42502, 
+2020-09-27 19:16:09,987 - bootstrap - INFO - Source epoch 41/200 main_lr=0.010000
+2020-09-27 19:18:19,198 - bootstrap - INFO - tgt_test_acc: 69.49 ; src_test_acc: 98.85src_cls_loss : 0.07145, tgt_cls_loss : 0.00127, transfer_loss : 0.00805, env_loss : 0.64620, 
+2020-09-27 19:18:19,873 - bootstrap - INFO - Source epoch 77/200 main_lr=0.010000
+2020-09-27 19:19:46,254 - bootstrap - INFO - tgt_test_acc: 70.50 ; src_test_acc: 99.05src_cls_loss : 0.07722, tgt_cls_loss : 0.00149, transfer_loss : 0.00805, env_loss : 0.54779, 
+2020-09-27 19:19:46,863 - bootstrap - INFO - Source epoch 69/200 main_lr=0.010000
+2020-09-27 19:20:04,436 - bootstrap - INFO - tgt_test_acc: 70.96 ; src_test_acc: 99.30src_cls_loss : 0.02052, tgt_cls_loss : 0.00076, transfer_loss : 0.00758, env_loss : 0.03784, 
+2020-09-27 19:20:05,008 - bootstrap - INFO - Source epoch 191/200 main_lr=0.010000
+2020-09-27 19:22:53,543 - bootstrap - INFO - tgt_test_acc: 69.57 ; src_test_acc: 95.92src_cls_loss : 0.19788, tgt_cls_loss : 0.00718, transfer_loss : 0.00812, env_loss : 1.40148, 
+2020-09-27 19:22:54,289 - bootstrap - INFO - Source epoch 42/200 main_lr=0.010000
+2020-09-27 19:25:02,021 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 98.97src_cls_loss : 0.06799, tgt_cls_loss : 0.00102, transfer_loss : 0.00805, env_loss : 0.65585, 
+2020-09-27 19:25:02,759 - bootstrap - INFO - Source epoch 78/200 main_lr=0.010000
+2020-09-27 19:26:33,058 - bootstrap - INFO - tgt_test_acc: 70.65 ; src_test_acc: 98.89src_cls_loss : 0.06869, tgt_cls_loss : 0.00191, transfer_loss : 0.00803, env_loss : 0.51978, 
+2020-09-27 19:26:33,614 - bootstrap - INFO - Source epoch 70/200 main_lr=0.010000
+2020-09-27 19:27:00,645 - bootstrap - INFO - tgt_test_acc: 71.04 ; src_test_acc: 99.34src_cls_loss : 0.02113, tgt_cls_loss : 0.00115, transfer_loss : 0.00762, env_loss : 0.03885, 
+2020-09-27 19:27:01,261 - bootstrap - INFO - Source epoch 192/200 main_lr=0.010000
+2020-09-27 19:29:38,237 - bootstrap - INFO - tgt_test_acc: 68.17 ; src_test_acc: 95.96src_cls_loss : 0.19756, tgt_cls_loss : 0.00509, transfer_loss : 0.00793, env_loss : 1.32034, 
+2020-09-27 19:29:38,899 - bootstrap - INFO - Source epoch 43/200 main_lr=0.010000
+2020-09-27 19:31:43,817 - bootstrap - INFO - tgt_test_acc: 69.88 ; src_test_acc: 99.13src_cls_loss : 0.07233, tgt_cls_loss : 0.00144, transfer_loss : 0.00811, env_loss : 0.61805, 
+2020-09-27 19:31:44,385 - bootstrap - INFO - Source epoch 79/200 main_lr=0.010000
+2020-09-27 19:33:13,454 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 98.97src_cls_loss : 0.07743, tgt_cls_loss : 0.00127, transfer_loss : 0.00807, env_loss : 0.51604, 
+2020-09-27 19:33:13,984 - bootstrap - INFO - Source epoch 71/200 main_lr=0.010000
+2020-09-27 19:33:51,271 - bootstrap - INFO - tgt_test_acc: 71.04 ; src_test_acc: 99.34src_cls_loss : 0.01636, tgt_cls_loss : 0.00110, transfer_loss : 0.00769, env_loss : 0.04328, 
+2020-09-27 19:33:51,970 - bootstrap - INFO - Source epoch 193/200 main_lr=0.010000
+2020-09-27 19:36:34,638 - bootstrap - INFO - tgt_test_acc: 67.55 ; src_test_acc: 95.88src_cls_loss : 0.17077, tgt_cls_loss : 0.00607, transfer_loss : 0.00816, env_loss : 1.30129, 
+2020-09-27 19:36:35,364 - bootstrap - INFO - Source epoch 44/200 main_lr=0.010000
+2020-09-27 19:38:42,613 - bootstrap - INFO - tgt_test_acc: 70.65 ; src_test_acc: 99.05src_cls_loss : 0.07563, tgt_cls_loss : 0.00125, transfer_loss : 0.00795, env_loss : 0.60772, 
+2020-09-27 19:38:43,339 - bootstrap - INFO - Source epoch 80/200 main_lr=0.010000
+2020-09-27 19:40:14,752 - bootstrap - INFO - tgt_test_acc: 70.89 ; src_test_acc: 99.09src_cls_loss : 0.07124, tgt_cls_loss : 0.00160, transfer_loss : 0.00790, env_loss : 0.52996, 
+2020-09-27 19:40:15,347 - bootstrap - INFO - Source epoch 72/200 main_lr=0.010000
+2020-09-27 19:41:03,279 - bootstrap - INFO - tgt_test_acc: 70.57 ; src_test_acc: 99.42src_cls_loss : 0.02368, tgt_cls_loss : 0.00122, transfer_loss : 0.00772, env_loss : 0.03953, 
+2020-09-27 19:41:04,043 - bootstrap - INFO - Source epoch 194/200 main_lr=0.010000
+2020-09-27 19:43:39,631 - bootstrap - INFO - tgt_test_acc: 68.25 ; src_test_acc: 96.66src_cls_loss : 0.18924, tgt_cls_loss : 0.00553, transfer_loss : 0.00823, env_loss : 1.34358, 
+2020-09-27 19:43:40,350 - bootstrap - INFO - Source epoch 45/200 main_lr=0.010000
+2020-09-27 19:45:48,317 - bootstrap - INFO - tgt_test_acc: 70.50 ; src_test_acc: 99.01src_cls_loss : 0.07537, tgt_cls_loss : 0.00128, transfer_loss : 0.00801, env_loss : 0.60947, 
+2020-09-27 19:45:49,043 - bootstrap - INFO - Source epoch 81/200 main_lr=0.010000
+2020-09-27 19:47:31,386 - bootstrap - INFO - tgt_test_acc: 69.49 ; src_test_acc: 98.97src_cls_loss : 0.07361, tgt_cls_loss : 0.00146, transfer_loss : 0.00798, env_loss : 0.53836, 
+2020-09-27 19:47:32,037 - bootstrap - INFO - Source epoch 73/200 main_lr=0.010000
+2020-09-27 19:48:31,937 - bootstrap - INFO - tgt_test_acc: 70.19 ; src_test_acc: 99.46src_cls_loss : 0.02047, tgt_cls_loss : 0.00085, transfer_loss : 0.00765, env_loss : 0.04260, 
+2020-09-27 19:48:32,661 - bootstrap - INFO - Source epoch 195/200 main_lr=0.010000
+2020-09-27 19:50:47,120 - bootstrap - INFO - tgt_test_acc: 67.78 ; src_test_acc: 96.62src_cls_loss : 0.17752, tgt_cls_loss : 0.00470, transfer_loss : 0.00808, env_loss : 1.31642, 
+2020-09-27 19:50:47,660 - bootstrap - INFO - Source epoch 46/200 main_lr=0.010000
+2020-09-27 19:52:34,421 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 99.09src_cls_loss : 0.06300, tgt_cls_loss : 0.00135, transfer_loss : 0.00801, env_loss : 0.62537, 
+2020-09-27 19:52:35,089 - bootstrap - INFO - Source epoch 82/200 main_lr=0.010000
+2020-09-27 19:54:14,073 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 99.01src_cls_loss : 0.06770, tgt_cls_loss : 0.00149, transfer_loss : 0.00806, env_loss : 0.52184, 
+2020-09-27 19:54:14,655 - bootstrap - INFO - Source epoch 74/200 main_lr=0.010000
+2020-09-27 19:55:23,075 - bootstrap - INFO - tgt_test_acc: 71.66 ; src_test_acc: 99.46src_cls_loss : 0.01760, tgt_cls_loss : 0.00104, transfer_loss : 0.00763, env_loss : 0.04434, 
+2020-09-27 19:55:23,843 - bootstrap - INFO - Source epoch 196/200 main_lr=0.010000
+2020-09-27 19:57:29,830 - bootstrap - INFO - tgt_test_acc: 69.18 ; src_test_acc: 97.07src_cls_loss : 0.17573, tgt_cls_loss : 0.00681, transfer_loss : 0.00810, env_loss : 1.30862, 
+2020-09-27 19:57:30,544 - bootstrap - INFO - Source epoch 47/200 main_lr=0.010000
+2020-09-27 19:59:14,303 - bootstrap - INFO - tgt_test_acc: 69.33 ; src_test_acc: 99.13src_cls_loss : 0.06055, tgt_cls_loss : 0.00202, transfer_loss : 0.00802, env_loss : 0.58672, 
+2020-09-27 19:59:14,952 - bootstrap - INFO - Source epoch 83/200 main_lr=0.010000
+2020-09-27 20:00:56,875 - bootstrap - INFO - tgt_test_acc: 70.96 ; src_test_acc: 98.97src_cls_loss : 0.06034, tgt_cls_loss : 0.00207, transfer_loss : 0.00808, env_loss : 0.49191, 
+2020-09-27 20:00:57,504 - bootstrap - INFO - Source epoch 75/200 main_lr=0.010000
+2020-09-27 20:02:12,441 - bootstrap - INFO - tgt_test_acc: 71.43 ; src_test_acc: 99.42src_cls_loss : 0.02038, tgt_cls_loss : 0.00066, transfer_loss : 0.00765, env_loss : 0.04168, 
+2020-09-27 20:02:13,162 - bootstrap - INFO - Source epoch 197/200 main_lr=0.010000
+2020-09-27 20:04:09,315 - bootstrap - INFO - tgt_test_acc: 68.94 ; src_test_acc: 97.07src_cls_loss : 0.16466, tgt_cls_loss : 0.00403, transfer_loss : 0.00821, env_loss : 1.27000, 
+2020-09-27 20:04:09,910 - bootstrap - INFO - Source epoch 48/200 main_lr=0.010000
+2020-09-27 20:05:57,590 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 99.13src_cls_loss : 0.05881, tgt_cls_loss : 0.00136, transfer_loss : 0.00807, env_loss : 0.59587, 
+2020-09-27 20:05:58,149 - bootstrap - INFO - Source epoch 84/200 main_lr=0.010000
+2020-09-27 20:07:46,660 - bootstrap - INFO - tgt_test_acc: 70.81 ; src_test_acc: 98.81src_cls_loss : 0.06164, tgt_cls_loss : 0.00139, transfer_loss : 0.00801, env_loss : 0.48627, 
+2020-09-27 20:07:47,344 - bootstrap - INFO - Source epoch 76/200 main_lr=0.010000
+2020-09-27 20:09:04,745 - bootstrap - INFO - tgt_test_acc: 71.51 ; src_test_acc: 99.42src_cls_loss : 0.02401, tgt_cls_loss : 0.00064, transfer_loss : 0.00766, env_loss : 0.04892, 
+2020-09-27 20:09:05,313 - bootstrap - INFO - Source epoch 198/200 main_lr=0.010000
+2020-09-27 20:10:53,900 - bootstrap - INFO - tgt_test_acc: 68.79 ; src_test_acc: 97.49src_cls_loss : 0.15377, tgt_cls_loss : 0.00372, transfer_loss : 0.00788, env_loss : 1.24737, 
+2020-09-27 20:10:54,543 - bootstrap - INFO - Source epoch 49/200 main_lr=0.010000
+2020-09-27 20:12:39,386 - bootstrap - INFO - tgt_test_acc: 69.49 ; src_test_acc: 99.22src_cls_loss : 0.06768, tgt_cls_loss : 0.00273, transfer_loss : 0.00804, env_loss : 0.59046, 
+2020-09-27 20:12:40,025 - bootstrap - INFO - Source epoch 85/200 main_lr=0.010000
+2020-09-27 20:14:29,763 - bootstrap - INFO - tgt_test_acc: 70.65 ; src_test_acc: 98.89src_cls_loss : 0.05835, tgt_cls_loss : 0.00125, transfer_loss : 0.00805, env_loss : 0.48677, 
+2020-09-27 20:14:30,398 - bootstrap - INFO - Source epoch 77/200 main_lr=0.010000
+2020-09-27 20:16:00,388 - bootstrap - INFO - tgt_test_acc: 71.20 ; src_test_acc: 99.46src_cls_loss : 0.01998, tgt_cls_loss : 0.00102, transfer_loss : 0.00760, env_loss : 0.03778, 
+2020-09-27 20:16:01,072 - bootstrap - INFO - Source epoch 199/200 main_lr=0.010000
+2020-09-27 20:17:37,723 - bootstrap - INFO - tgt_test_acc: 69.25 ; src_test_acc: 97.73src_cls_loss : 0.13658, tgt_cls_loss : 0.00420, transfer_loss : 0.00807, env_loss : 1.19546, 
+2020-09-27 20:17:38,417 - bootstrap - INFO - Source epoch 50/200 main_lr=0.010000
+2020-09-27 20:19:22,013 - bootstrap - INFO - tgt_test_acc: 69.25 ; src_test_acc: 99.13src_cls_loss : 0.05024, tgt_cls_loss : 0.00111, transfer_loss : 0.00796, env_loss : 0.55648, 
+2020-09-27 20:19:22,694 - bootstrap - INFO - Source epoch 86/200 main_lr=0.010000
+2020-09-27 20:21:10,286 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 99.05src_cls_loss : 0.07467, tgt_cls_loss : 0.00196, transfer_loss : 0.00793, env_loss : 0.50031, 
+2020-09-27 20:21:10,913 - bootstrap - INFO - Source epoch 78/200 main_lr=0.010000
+2020-09-27 20:22:55,145 - bootstrap - INFO - tgt_test_acc: 70.65 ; src_test_acc: 99.38src_cls_loss : 0.02159, tgt_cls_loss : 0.00118, transfer_loss : 0.00767, env_loss : 0.04222, 
+2020-09-27 20:22:55,875 - bootstrap - INFO - Source epoch 200/200 main_lr=0.010000
+2020-09-27 20:24:24,126 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 97.73src_cls_loss : 0.14828, tgt_cls_loss : 0.00514, transfer_loss : 0.00808, env_loss : 1.23505, 
+2020-09-27 20:24:24,823 - bootstrap - INFO - Source epoch 51/200 main_lr=0.000100
+2020-09-27 20:26:04,882 - bootstrap - INFO - tgt_test_acc: 69.18 ; src_test_acc: 99.26src_cls_loss : 0.06342, tgt_cls_loss : 0.00162, transfer_loss : 0.00804, env_loss : 0.56361, 
+2020-09-27 20:26:05,475 - bootstrap - INFO - Source epoch 87/200 main_lr=0.010000
+2020-09-27 20:27:56,983 - bootstrap - INFO - tgt_test_acc: 70.34 ; src_test_acc: 99.18src_cls_loss : 0.06298, tgt_cls_loss : 0.00157, transfer_loss : 0.00799, env_loss : 0.47510, 
+2020-09-27 20:27:57,570 - bootstrap - INFO - Source epoch 79/200 main_lr=0.010000
+2020-09-27 20:29:51,473 - bootstrap - INFO - tgt_test_acc: 69.88 ; src_test_acc: 99.38src_cls_loss : 0.01819, tgt_cls_loss : 0.00064, transfer_loss : 0.00763, env_loss : 0.03834, 
+2020-09-27 20:31:10,500 - bootstrap - INFO - tgt_test_acc: 69.57 ; src_test_acc: 97.69src_cls_loss : 0.14287, tgt_cls_loss : 0.00363, transfer_loss : 0.00816, env_loss : 1.18182, 
+2020-09-27 20:31:11,145 - bootstrap - INFO - Source epoch 52/200 main_lr=0.010000
+2020-09-27 20:32:47,887 - bootstrap - INFO - tgt_test_acc: 70.42 ; src_test_acc: 99.22src_cls_loss : 0.06102, tgt_cls_loss : 0.00124, transfer_loss : 0.00797, env_loss : 0.58143, 
+2020-09-27 20:32:48,417 - bootstrap - INFO - Source epoch 88/200 main_lr=0.010000
+2020-09-27 20:34:39,692 - bootstrap - INFO - tgt_test_acc: 70.19 ; src_test_acc: 98.97src_cls_loss : 0.06593, tgt_cls_loss : 0.00168, transfer_loss : 0.00788, env_loss : 0.46976, 
+2020-09-27 20:34:40,304 - bootstrap - INFO - Source epoch 80/200 main_lr=0.010000
+2020-09-27 20:37:55,421 - bootstrap - INFO - tgt_test_acc: 70.65 ; src_test_acc: 97.82src_cls_loss : 0.14135, tgt_cls_loss : 0.00416, transfer_loss : 0.00803, env_loss : 1.19270, 
+2020-09-27 20:37:55,950 - bootstrap - INFO - Source epoch 53/200 main_lr=0.010000
+2020-09-27 20:39:26,380 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.26src_cls_loss : 0.05458, tgt_cls_loss : 0.00091, transfer_loss : 0.00800, env_loss : 0.55123, 
+2020-09-27 20:39:27,069 - bootstrap - INFO - Source epoch 89/200 main_lr=0.010000
+2020-09-27 20:41:21,108 - bootstrap - INFO - tgt_test_acc: 70.89 ; src_test_acc: 99.18src_cls_loss : 0.05378, tgt_cls_loss : 0.00147, transfer_loss : 0.00803, env_loss : 0.45431, 
+2020-09-27 20:41:21,697 - bootstrap - INFO - Source epoch 81/200 main_lr=0.010000
+2020-09-27 20:44:39,007 - bootstrap - INFO - tgt_test_acc: 69.41 ; src_test_acc: 97.86src_cls_loss : 0.12978, tgt_cls_loss : 0.00401, transfer_loss : 0.00805, env_loss : 1.18055, 
+2020-09-27 20:44:39,626 - bootstrap - INFO - Source epoch 54/200 main_lr=0.010000
+2020-09-27 20:46:08,885 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 99.01src_cls_loss : 0.04830, tgt_cls_loss : 0.00154, transfer_loss : 0.00810, env_loss : 0.52182, 
+2020-09-27 20:46:09,434 - bootstrap - INFO - Source epoch 90/200 main_lr=0.010000
+2020-09-27 20:48:04,451 - bootstrap - INFO - tgt_test_acc: 70.81 ; src_test_acc: 99.18src_cls_loss : 0.05578, tgt_cls_loss : 0.00134, transfer_loss : 0.00791, env_loss : 0.46212, 
+2020-09-27 20:48:05,080 - bootstrap - INFO - Source epoch 82/200 main_lr=0.010000
+2020-09-27 20:51:26,032 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 97.86src_cls_loss : 0.14196, tgt_cls_loss : 0.00339, transfer_loss : 0.00815, env_loss : 1.24363, 
+2020-09-27 20:51:26,763 - bootstrap - INFO - Source epoch 55/200 main_lr=0.010000
+2020-09-27 20:52:51,721 - bootstrap - INFO - tgt_test_acc: 69.88 ; src_test_acc: 99.38src_cls_loss : 0.05205, tgt_cls_loss : 0.00123, transfer_loss : 0.00800, env_loss : 0.53917, 
+2020-09-27 20:52:52,417 - bootstrap - INFO - Source epoch 91/200 main_lr=0.010000
+2020-09-27 20:54:50,795 - bootstrap - INFO - tgt_test_acc: 70.65 ; src_test_acc: 98.85src_cls_loss : 0.05595, tgt_cls_loss : 0.00152, transfer_loss : 0.00780, env_loss : 0.45499, 
+2020-09-27 20:54:51,463 - bootstrap - INFO - Source epoch 83/200 main_lr=0.010000
+2020-09-27 20:58:11,513 - bootstrap - INFO - tgt_test_acc: 69.25 ; src_test_acc: 98.27src_cls_loss : 0.11720, tgt_cls_loss : 0.00284, transfer_loss : 0.00800, env_loss : 1.14063, 
+2020-09-27 20:58:12,154 - bootstrap - INFO - Source epoch 56/200 main_lr=0.010000
+2020-09-27 20:59:34,979 - bootstrap - INFO - tgt_test_acc: 69.80 ; src_test_acc: 99.30src_cls_loss : 0.05164, tgt_cls_loss : 0.00219, transfer_loss : 0.00796, env_loss : 0.52488, 
+2020-09-27 20:59:35,608 - bootstrap - INFO - Source epoch 92/200 main_lr=0.010000
+2020-09-27 21:01:36,567 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 99.34src_cls_loss : 0.05936, tgt_cls_loss : 0.00101, transfer_loss : 0.00808, env_loss : 0.44715, 
+2020-09-27 21:01:37,168 - bootstrap - INFO - Source epoch 84/200 main_lr=0.010000
+2020-09-27 21:04:56,346 - bootstrap - INFO - tgt_test_acc: 69.02 ; src_test_acc: 98.19src_cls_loss : 0.12003, tgt_cls_loss : 0.00334, transfer_loss : 0.00797, env_loss : 1.13463, 
+2020-09-27 21:04:57,085 - bootstrap - INFO - Source epoch 57/200 main_lr=0.010000
+2020-09-27 21:06:14,597 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 99.30src_cls_loss : 0.05120, tgt_cls_loss : 0.00131, transfer_loss : 0.00803, env_loss : 0.52339, 
+2020-09-27 21:06:15,315 - bootstrap - INFO - Source epoch 93/200 main_lr=0.010000
+2020-09-27 21:08:23,366 - bootstrap - INFO - tgt_test_acc: 70.73 ; src_test_acc: 99.30src_cls_loss : 0.05819, tgt_cls_loss : 0.00113, transfer_loss : 0.00798, env_loss : 0.41686, 
+2020-09-27 21:08:24,046 - bootstrap - INFO - Source epoch 85/200 main_lr=0.010000
+2020-09-27 21:11:42,824 - bootstrap - INFO - tgt_test_acc: 68.25 ; src_test_acc: 98.35src_cls_loss : 0.11151, tgt_cls_loss : 0.00334, transfer_loss : 0.00813, env_loss : 1.10574, 
+2020-09-27 21:11:43,361 - bootstrap - INFO - Source epoch 58/200 main_lr=0.010000
+2020-09-27 21:13:01,391 - bootstrap - INFO - tgt_test_acc: 69.49 ; src_test_acc: 99.38src_cls_loss : 0.05777, tgt_cls_loss : 0.00132, transfer_loss : 0.00800, env_loss : 0.52845, 
+2020-09-27 21:13:01,962 - bootstrap - INFO - Source epoch 94/200 main_lr=0.010000
+2020-09-27 21:15:07,181 - bootstrap - INFO - tgt_test_acc: 70.42 ; src_test_acc: 99.09src_cls_loss : 0.05693, tgt_cls_loss : 0.00172, transfer_loss : 0.00790, env_loss : 0.42450, 
+2020-09-27 21:15:07,756 - bootstrap - INFO - Source epoch 86/200 main_lr=0.010000
+2020-09-27 21:18:28,094 - bootstrap - INFO - tgt_test_acc: 68.71 ; src_test_acc: 98.06src_cls_loss : 0.12476, tgt_cls_loss : 0.00319, transfer_loss : 0.00810, env_loss : 1.09503, 
+2020-09-27 21:18:28,744 - bootstrap - INFO - Source epoch 59/200 main_lr=0.010000
+2020-09-27 21:19:43,711 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 99.34src_cls_loss : 0.04529, tgt_cls_loss : 0.00121, transfer_loss : 0.00807, env_loss : 0.51961, 
+2020-09-27 21:19:44,226 - bootstrap - INFO - Source epoch 95/200 main_lr=0.010000
+2020-09-27 21:21:57,277 - bootstrap - INFO - tgt_test_acc: 70.57 ; src_test_acc: 99.22src_cls_loss : 0.05524, tgt_cls_loss : 0.00117, transfer_loss : 0.00800, env_loss : 0.43560, 
+2020-09-27 21:21:57,852 - bootstrap - INFO - Source epoch 87/200 main_lr=0.010000
+2020-09-27 21:25:23,992 - bootstrap - INFO - tgt_test_acc: 68.87 ; src_test_acc: 98.27src_cls_loss : 0.11005, tgt_cls_loss : 0.00417, transfer_loss : 0.00803, env_loss : 1.09352, 
+2020-09-27 21:25:24,541 - bootstrap - INFO - Source epoch 60/200 main_lr=0.010000
+2020-09-27 21:26:35,015 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 99.34src_cls_loss : 0.04408, tgt_cls_loss : 0.00114, transfer_loss : 0.00790, env_loss : 0.50189, 
+2020-09-27 21:26:35,668 - bootstrap - INFO - Source epoch 96/200 main_lr=0.010000
+2020-09-27 21:28:48,655 - bootstrap - INFO - tgt_test_acc: 70.26 ; src_test_acc: 99.18src_cls_loss : 0.05525, tgt_cls_loss : 0.00097, transfer_loss : 0.00785, env_loss : 0.41441, 
+2020-09-27 21:28:49,208 - bootstrap - INFO - Source epoch 88/200 main_lr=0.010000
+2020-09-27 21:32:18,114 - bootstrap - INFO - tgt_test_acc: 68.56 ; src_test_acc: 98.39src_cls_loss : 0.10769, tgt_cls_loss : 0.00235, transfer_loss : 0.00795, env_loss : 1.08735, 
+2020-09-27 21:32:18,744 - bootstrap - INFO - Source epoch 61/200 main_lr=0.010000
+2020-09-27 21:33:27,422 - bootstrap - INFO - tgt_test_acc: 69.57 ; src_test_acc: 99.09src_cls_loss : 0.04785, tgt_cls_loss : 0.00157, transfer_loss : 0.00788, env_loss : 0.50390, 
+2020-09-27 21:33:28,074 - bootstrap - INFO - Source epoch 97/200 main_lr=0.010000
+2020-09-27 21:35:42,271 - bootstrap - INFO - tgt_test_acc: 71.43 ; src_test_acc: 99.30src_cls_loss : 0.04663, tgt_cls_loss : 0.00139, transfer_loss : 0.00802, env_loss : 0.41734, 
+2020-09-27 21:35:42,821 - bootstrap - INFO - Source epoch 89/200 main_lr=0.010000
+2020-09-27 21:39:10,519 - bootstrap - INFO - tgt_test_acc: 68.48 ; src_test_acc: 98.68src_cls_loss : 0.10229, tgt_cls_loss : 0.00332, transfer_loss : 0.00790, env_loss : 1.05814, 
+2020-09-27 21:39:11,208 - bootstrap - INFO - Source epoch 62/200 main_lr=0.010000
+2020-09-27 21:40:20,280 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 99.18src_cls_loss : 0.05322, tgt_cls_loss : 0.00155, transfer_loss : 0.00816, env_loss : 0.48917, 
+2020-09-27 21:40:20,931 - bootstrap - INFO - Source epoch 98/200 main_lr=0.010000
+2020-09-27 21:42:30,373 - bootstrap - INFO - tgt_test_acc: 70.89 ; src_test_acc: 99.38src_cls_loss : 0.05297, tgt_cls_loss : 0.00117, transfer_loss : 0.00804, env_loss : 0.41704, 
+2020-09-27 21:42:30,990 - bootstrap - INFO - Source epoch 90/200 main_lr=0.010000
+2020-09-27 21:45:56,502 - bootstrap - INFO - tgt_test_acc: 68.71 ; src_test_acc: 98.89src_cls_loss : 0.10973, tgt_cls_loss : 0.00259, transfer_loss : 0.00810, env_loss : 1.07430, 
+2020-09-27 21:45:57,130 - bootstrap - INFO - Source epoch 63/200 main_lr=0.010000
+2020-09-27 21:47:06,503 - bootstrap - INFO - tgt_test_acc: 69.88 ; src_test_acc: 99.13src_cls_loss : 0.04541, tgt_cls_loss : 0.00137, transfer_loss : 0.00795, env_loss : 0.50266, 
+2020-09-27 21:47:07,042 - bootstrap - INFO - Source epoch 99/200 main_lr=0.010000
+2020-09-27 21:49:15,494 - bootstrap - INFO - tgt_test_acc: 71.12 ; src_test_acc: 99.18src_cls_loss : 0.05088, tgt_cls_loss : 0.00128, transfer_loss : 0.00808, env_loss : 0.41661, 
+2020-09-27 21:49:16,056 - bootstrap - INFO - Source epoch 91/200 main_lr=0.010000
+2020-09-27 21:52:42,226 - bootstrap - INFO - tgt_test_acc: 68.79 ; src_test_acc: 98.56src_cls_loss : 0.09093, tgt_cls_loss : 0.00272, transfer_loss : 0.00806, env_loss : 1.03988, 
+2020-09-27 21:52:42,844 - bootstrap - INFO - Source epoch 64/200 main_lr=0.010000
+2020-09-27 21:53:52,213 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 99.34src_cls_loss : 0.04219, tgt_cls_loss : 0.00102, transfer_loss : 0.00806, env_loss : 0.48666, 
+2020-09-27 21:53:52,895 - bootstrap - INFO - Source epoch 100/200 main_lr=0.010000
+2020-09-27 21:56:04,507 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 99.30src_cls_loss : 0.05125, tgt_cls_loss : 0.00106, transfer_loss : 0.00784, env_loss : 0.40611, 
+2020-09-27 21:56:04,993 - bootstrap - INFO - Source epoch 92/200 main_lr=0.010000
+2020-09-27 21:59:40,118 - bootstrap - INFO - tgt_test_acc: 68.32 ; src_test_acc: 98.93src_cls_loss : 0.09741, tgt_cls_loss : 0.00315, transfer_loss : 0.00792, env_loss : 1.01209, 
+2020-09-27 21:59:40,751 - bootstrap - INFO - Source epoch 65/200 main_lr=0.010000
+2020-09-27 22:00:46,485 - bootstrap - INFO - tgt_test_acc: 69.10 ; src_test_acc: 99.13src_cls_loss : 0.05420, tgt_cls_loss : 0.00110, transfer_loss : 0.00792, env_loss : 0.48589, 
+2020-09-27 22:00:47,199 - bootstrap - INFO - Source epoch 101/200 main_lr=0.010000
+2020-09-27 22:02:48,376 - bootstrap - INFO - tgt_test_acc: 70.65 ; src_test_acc: 99.46src_cls_loss : 0.04517, tgt_cls_loss : 0.00108, transfer_loss : 0.00788, env_loss : 0.38406, 
+2020-09-27 22:02:48,969 - bootstrap - INFO - Source epoch 93/200 main_lr=0.010000
+2020-09-27 22:06:29,996 - bootstrap - INFO - tgt_test_acc: 67.78 ; src_test_acc: 98.89src_cls_loss : 0.08100, tgt_cls_loss : 0.00279, transfer_loss : 0.00795, env_loss : 1.01715, 
+2020-09-27 22:06:30,661 - bootstrap - INFO - Source epoch 66/200 main_lr=0.010000
+2020-09-27 22:07:32,497 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.18src_cls_loss : 0.04182, tgt_cls_loss : 0.00105, transfer_loss : 0.00800, env_loss : 0.48120, 
+2020-09-27 22:07:33,161 - bootstrap - INFO - Source epoch 102/200 main_lr=0.010000
+2020-09-27 22:09:32,186 - bootstrap - INFO - tgt_test_acc: 70.34 ; src_test_acc: 99.34src_cls_loss : 0.04687, tgt_cls_loss : 0.00181, transfer_loss : 0.00797, env_loss : 0.38112, 
+2020-09-27 22:09:32,768 - bootstrap - INFO - Source epoch 94/200 main_lr=0.010000
+2020-09-27 22:13:17,941 - bootstrap - INFO - tgt_test_acc: 69.49 ; src_test_acc: 98.89src_cls_loss : 0.08540, tgt_cls_loss : 0.00239, transfer_loss : 0.00797, env_loss : 0.98941, 
+2020-09-27 22:13:18,593 - bootstrap - INFO - Source epoch 67/200 main_lr=0.010000
+2020-09-27 22:14:20,210 - bootstrap - INFO - tgt_test_acc: 69.49 ; src_test_acc: 99.26src_cls_loss : 0.04753, tgt_cls_loss : 0.00117, transfer_loss : 0.00803, env_loss : 0.45772, 
+2020-09-27 22:14:20,897 - bootstrap - INFO - Source epoch 103/200 main_lr=0.010000
+2020-09-27 22:16:18,973 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 99.34src_cls_loss : 0.04336, tgt_cls_loss : 0.00139, transfer_loss : 0.00798, env_loss : 0.39459, 
+2020-09-27 22:16:19,588 - bootstrap - INFO - Source epoch 95/200 main_lr=0.010000
+2020-09-27 22:20:03,193 - bootstrap - INFO - tgt_test_acc: 68.17 ; src_test_acc: 98.64src_cls_loss : 0.08690, tgt_cls_loss : 0.00189, transfer_loss : 0.00801, env_loss : 0.97792, 
+2020-09-27 22:20:03,865 - bootstrap - INFO - Source epoch 68/200 main_lr=0.010000
+2020-09-27 22:21:03,097 - bootstrap - INFO - tgt_test_acc: 69.41 ; src_test_acc: 99.42src_cls_loss : 0.04208, tgt_cls_loss : 0.00088, transfer_loss : 0.00794, env_loss : 0.46833, 
+2020-09-27 22:21:03,696 - bootstrap - INFO - Source epoch 104/200 main_lr=0.010000
+2020-09-27 22:23:07,092 - bootstrap - INFO - tgt_test_acc: 70.57 ; src_test_acc: 99.46src_cls_loss : 0.04245, tgt_cls_loss : 0.00146, transfer_loss : 0.00796, env_loss : 0.37956, 
+2020-09-27 22:23:07,771 - bootstrap - INFO - Source epoch 96/200 main_lr=0.010000
+2020-09-27 22:26:49,095 - bootstrap - INFO - tgt_test_acc: 67.93 ; src_test_acc: 98.85src_cls_loss : 0.09344, tgt_cls_loss : 0.00192, transfer_loss : 0.00786, env_loss : 1.00969, 
+2020-09-27 22:26:49,778 - bootstrap - INFO - Source epoch 69/200 main_lr=0.010000
+2020-09-27 22:27:47,694 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.30src_cls_loss : 0.04003, tgt_cls_loss : 0.00095, transfer_loss : 0.00791, env_loss : 0.45069, 
+2020-09-27 22:27:48,293 - bootstrap - INFO - Source epoch 105/200 main_lr=0.010000
+2020-09-27 22:29:52,778 - bootstrap - INFO - tgt_test_acc: 70.89 ; src_test_acc: 99.38src_cls_loss : 0.04015, tgt_cls_loss : 0.00114, transfer_loss : 0.00786, env_loss : 0.37619, 
+2020-09-27 22:29:53,403 - bootstrap - INFO - Source epoch 97/200 main_lr=0.010000
+2020-09-27 22:33:33,119 - bootstrap - INFO - tgt_test_acc: 69.02 ; src_test_acc: 98.97src_cls_loss : 0.07440, tgt_cls_loss : 0.00216, transfer_loss : 0.00796, env_loss : 0.98687, 
+2020-09-27 22:33:33,705 - bootstrap - INFO - Source epoch 70/200 main_lr=0.010000
+2020-09-27 22:34:34,518 - bootstrap - INFO - tgt_test_acc: 69.49 ; src_test_acc: 99.30src_cls_loss : 0.03967, tgt_cls_loss : 0.00128, transfer_loss : 0.00797, env_loss : 0.45310, 
+2020-09-27 22:34:35,168 - bootstrap - INFO - Source epoch 106/200 main_lr=0.010000
+2020-09-27 22:36:34,990 - bootstrap - INFO - tgt_test_acc: 70.96 ; src_test_acc: 99.18src_cls_loss : 0.04976, tgt_cls_loss : 0.00093, transfer_loss : 0.00798, env_loss : 0.38909, 
+2020-09-27 22:36:35,501 - bootstrap - INFO - Source epoch 98/200 main_lr=0.010000
+2020-09-27 22:40:21,405 - bootstrap - INFO - tgt_test_acc: 69.02 ; src_test_acc: 98.97src_cls_loss : 0.08878, tgt_cls_loss : 0.00165, transfer_loss : 0.00807, env_loss : 0.97209, 
+2020-09-27 22:40:21,989 - bootstrap - INFO - Source epoch 71/200 main_lr=0.010000
+2020-09-27 22:41:23,594 - bootstrap - INFO - tgt_test_acc: 70.65 ; src_test_acc: 99.38src_cls_loss : 0.04119, tgt_cls_loss : 0.00084, transfer_loss : 0.00801, env_loss : 0.45081, 
+2020-09-27 22:41:24,286 - bootstrap - INFO - Source epoch 107/200 main_lr=0.010000
+2020-09-27 22:43:13,397 - bootstrap - INFO - tgt_test_acc: 70.50 ; src_test_acc: 99.34src_cls_loss : 0.04832, tgt_cls_loss : 0.00114, transfer_loss : 0.00790, env_loss : 0.36402, 
+2020-09-27 22:43:14,133 - bootstrap - INFO - Source epoch 99/200 main_lr=0.010000
+2020-09-27 22:47:09,823 - bootstrap - INFO - tgt_test_acc: 68.32 ; src_test_acc: 99.01src_cls_loss : 0.07975, tgt_cls_loss : 0.00352, transfer_loss : 0.00801, env_loss : 0.96784, 
+2020-09-27 22:47:10,457 - bootstrap - INFO - Source epoch 72/200 main_lr=0.010000
+2020-09-27 22:48:09,972 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 99.18src_cls_loss : 0.04596, tgt_cls_loss : 0.00120, transfer_loss : 0.00785, env_loss : 0.45928, 
+2020-09-27 22:48:10,628 - bootstrap - INFO - Source epoch 108/200 main_lr=0.010000
+2020-09-27 22:49:54,092 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 99.34src_cls_loss : 0.04919, tgt_cls_loss : 0.00093, transfer_loss : 0.00789, env_loss : 0.36180, 
+2020-09-27 22:49:54,656 - bootstrap - INFO - Source epoch 100/200 main_lr=0.010000
+2020-09-27 22:53:53,512 - bootstrap - INFO - tgt_test_acc: 69.33 ; src_test_acc: 98.97src_cls_loss : 0.07484, tgt_cls_loss : 0.00157, transfer_loss : 0.00788, env_loss : 0.94961, 
+2020-09-27 22:53:54,085 - bootstrap - INFO - Source epoch 73/200 main_lr=0.010000
+2020-09-27 22:54:55,195 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.30src_cls_loss : 0.04381, tgt_cls_loss : 0.00096, transfer_loss : 0.00797, env_loss : 0.45836, 
+2020-09-27 22:54:55,852 - bootstrap - INFO - Source epoch 109/200 main_lr=0.010000
+2020-09-27 22:56:40,273 - bootstrap - INFO - tgt_test_acc: 71.97 ; src_test_acc: 99.26src_cls_loss : 0.03684, tgt_cls_loss : 0.00123, transfer_loss : 0.00784, env_loss : 0.35862, 
+2020-09-27 22:56:40,956 - bootstrap - INFO - Source epoch 101/200 main_lr=0.010000
+2020-09-27 23:00:38,130 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 98.97src_cls_loss : 0.08191, tgt_cls_loss : 0.00194, transfer_loss : 0.00800, env_loss : 0.95142, 
+2020-09-27 23:00:38,824 - bootstrap - INFO - Source epoch 74/200 main_lr=0.010000
+2020-09-27 23:01:36,279 - bootstrap - INFO - tgt_test_acc: 70.19 ; src_test_acc: 99.26src_cls_loss : 0.04274, tgt_cls_loss : 0.00141, transfer_loss : 0.00796, env_loss : 0.45969, 
+2020-09-27 23:01:36,810 - bootstrap - INFO - Source epoch 110/200 main_lr=0.010000
+2020-09-27 23:03:21,964 - bootstrap - INFO - tgt_test_acc: 71.35 ; src_test_acc: 99.30src_cls_loss : 0.04014, tgt_cls_loss : 0.00121, transfer_loss : 0.00786, env_loss : 0.36426, 
+2020-09-27 23:03:22,473 - bootstrap - INFO - Source epoch 102/200 main_lr=0.010000
+2020-09-27 23:07:23,123 - bootstrap - INFO - tgt_test_acc: 68.94 ; src_test_acc: 99.13src_cls_loss : 0.07599, tgt_cls_loss : 0.00180, transfer_loss : 0.00811, env_loss : 0.94498, 
+2020-09-27 23:07:23,701 - bootstrap - INFO - Source epoch 75/200 main_lr=0.010000
+2020-09-27 23:08:19,280 - bootstrap - INFO - tgt_test_acc: 70.26 ; src_test_acc: 99.34src_cls_loss : 0.03504, tgt_cls_loss : 0.00116, transfer_loss : 0.00796, env_loss : 0.45401, 
+2020-09-27 23:08:19,964 - bootstrap - INFO - Source epoch 111/200 main_lr=0.010000
+2020-09-27 23:10:07,872 - bootstrap - INFO - tgt_test_acc: 69.88 ; src_test_acc: 99.38src_cls_loss : 0.04484, tgt_cls_loss : 0.00126, transfer_loss : 0.00793, env_loss : 0.35241, 
+2020-09-27 23:10:08,400 - bootstrap - INFO - Source epoch 103/200 main_lr=0.010000
+2020-09-27 23:14:10,720 - bootstrap - INFO - tgt_test_acc: 68.48 ; src_test_acc: 99.18src_cls_loss : 0.06938, tgt_cls_loss : 0.00205, transfer_loss : 0.00786, env_loss : 0.91916, 
+2020-09-27 23:14:11,366 - bootstrap - INFO - Source epoch 76/200 main_lr=0.010000
+2020-09-27 23:15:05,675 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 99.34src_cls_loss : 0.03793, tgt_cls_loss : 0.00117, transfer_loss : 0.00797, env_loss : 0.43816, 
+2020-09-27 23:15:06,218 - bootstrap - INFO - Source epoch 112/200 main_lr=0.010000
+2020-09-27 23:16:52,861 - bootstrap - INFO - tgt_test_acc: 70.19 ; src_test_acc: 99.51src_cls_loss : 0.04035, tgt_cls_loss : 0.00137, transfer_loss : 0.00794, env_loss : 0.35569, 
+2020-09-27 23:16:53,429 - bootstrap - INFO - Source epoch 104/200 main_lr=0.010000
+2020-09-27 23:20:52,920 - bootstrap - INFO - tgt_test_acc: 69.33 ; src_test_acc: 98.97src_cls_loss : 0.07439, tgt_cls_loss : 0.00186, transfer_loss : 0.00804, env_loss : 0.92784, 
+2020-09-27 23:20:53,592 - bootstrap - INFO - Source epoch 77/200 main_lr=0.010000
+2020-09-27 23:21:48,620 - bootstrap - INFO - tgt_test_acc: 69.33 ; src_test_acc: 99.34src_cls_loss : 0.03935, tgt_cls_loss : 0.00111, transfer_loss : 0.00804, env_loss : 0.42294, 
+2020-09-27 23:21:49,250 - bootstrap - INFO - Source epoch 113/200 main_lr=0.010000
+2020-09-27 23:23:40,167 - bootstrap - INFO - tgt_test_acc: 71.04 ; src_test_acc: 99.46src_cls_loss : 0.03805, tgt_cls_loss : 0.00184, transfer_loss : 0.00792, env_loss : 0.35691, 
+2020-09-27 23:23:40,794 - bootstrap - INFO - Source epoch 105/200 main_lr=0.010000
+2020-09-27 23:27:42,199 - bootstrap - INFO - tgt_test_acc: 69.88 ; src_test_acc: 99.18src_cls_loss : 0.06242, tgt_cls_loss : 0.00164, transfer_loss : 0.00789, env_loss : 0.91199, 
+2020-09-27 23:27:42,716 - bootstrap - INFO - Source epoch 78/200 main_lr=0.010000
+2020-09-27 23:28:33,486 - bootstrap - INFO - tgt_test_acc: 69.49 ; src_test_acc: 99.26src_cls_loss : 0.03329, tgt_cls_loss : 0.00104, transfer_loss : 0.00772, env_loss : 0.42329, 
+2020-09-27 23:28:34,196 - bootstrap - INFO - Source epoch 114/200 main_lr=0.010000
+2020-09-27 23:30:26,060 - bootstrap - INFO - tgt_test_acc: 69.57 ; src_test_acc: 99.42src_cls_loss : 0.03766, tgt_cls_loss : 0.00092, transfer_loss : 0.00790, env_loss : 0.33511, 
+2020-09-27 23:30:26,604 - bootstrap - INFO - Source epoch 106/200 main_lr=0.010000
+2020-09-27 23:34:27,292 - bootstrap - INFO - tgt_test_acc: 68.63 ; src_test_acc: 99.05src_cls_loss : 0.07016, tgt_cls_loss : 0.00153, transfer_loss : 0.00799, env_loss : 0.87817, 
+2020-09-27 23:34:27,830 - bootstrap - INFO - Source epoch 79/200 main_lr=0.010000
+2020-09-27 23:35:22,094 - bootstrap - INFO - tgt_test_acc: 69.57 ; src_test_acc: 99.26src_cls_loss : 0.03457, tgt_cls_loss : 0.00120, transfer_loss : 0.00787, env_loss : 0.40538, 
+2020-09-27 23:35:22,790 - bootstrap - INFO - Source epoch 115/200 main_lr=0.010000
+2020-09-27 23:37:13,087 - bootstrap - INFO - tgt_test_acc: 70.34 ; src_test_acc: 99.42src_cls_loss : 0.03416, tgt_cls_loss : 0.00079, transfer_loss : 0.00801, env_loss : 0.32049, 
+2020-09-27 23:37:13,819 - bootstrap - INFO - Source epoch 107/200 main_lr=0.010000
+2020-09-27 23:41:16,592 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 98.97src_cls_loss : 0.06793, tgt_cls_loss : 0.00181, transfer_loss : 0.00788, env_loss : 0.88313, 
+2020-09-27 23:41:17,306 - bootstrap - INFO - Source epoch 80/200 main_lr=0.010000
+2020-09-27 23:42:12,412 - bootstrap - INFO - tgt_test_acc: 70.57 ; src_test_acc: 99.30src_cls_loss : 0.04154, tgt_cls_loss : 0.00104, transfer_loss : 0.00792, env_loss : 0.43468, 
+2020-09-27 23:42:12,987 - bootstrap - INFO - Source epoch 116/200 main_lr=0.010000
+2020-09-27 23:43:58,496 - bootstrap - INFO - tgt_test_acc: 70.96 ; src_test_acc: 99.51src_cls_loss : 0.03967, tgt_cls_loss : 0.00091, transfer_loss : 0.00796, env_loss : 0.32311, 
+2020-09-27 23:43:59,257 - bootstrap - INFO - Source epoch 108/200 main_lr=0.010000
+2020-09-27 23:47:59,823 - bootstrap - INFO - tgt_test_acc: 68.87 ; src_test_acc: 99.09src_cls_loss : 0.06641, tgt_cls_loss : 0.00150, transfer_loss : 0.00793, env_loss : 0.90386, 
+2020-09-27 23:48:00,541 - bootstrap - INFO - Source epoch 81/200 main_lr=0.010000
+2020-09-27 23:49:00,979 - bootstrap - INFO - tgt_test_acc: 69.25 ; src_test_acc: 99.26src_cls_loss : 0.04126, tgt_cls_loss : 0.00067, transfer_loss : 0.00790, env_loss : 0.41468, 
+2020-09-27 23:49:01,694 - bootstrap - INFO - Source epoch 117/200 main_lr=0.010000
+2020-09-27 23:50:43,184 - bootstrap - INFO - tgt_test_acc: 70.34 ; src_test_acc: 99.46src_cls_loss : 0.03547, tgt_cls_loss : 0.00105, transfer_loss : 0.00804, env_loss : 0.32967, 
+2020-09-27 23:50:43,811 - bootstrap - INFO - Source epoch 109/200 main_lr=0.010000
+2020-09-27 23:54:43,529 - bootstrap - INFO - tgt_test_acc: 68.01 ; src_test_acc: 99.01src_cls_loss : 0.07124, tgt_cls_loss : 0.00178, transfer_loss : 0.00802, env_loss : 0.90547, 
+2020-09-27 23:54:44,086 - bootstrap - INFO - Source epoch 82/200 main_lr=0.010000
+2020-09-27 23:55:46,583 - bootstrap - INFO - tgt_test_acc: 69.57 ; src_test_acc: 99.34src_cls_loss : 0.04849, tgt_cls_loss : 0.00071, transfer_loss : 0.00800, env_loss : 0.42651, 
+2020-09-27 23:55:47,167 - bootstrap - INFO - Source epoch 118/200 main_lr=0.010000
+2020-09-27 23:57:27,955 - bootstrap - INFO - tgt_test_acc: 70.42 ; src_test_acc: 99.30src_cls_loss : 0.03844, tgt_cls_loss : 0.00190, transfer_loss : 0.00780, env_loss : 0.32530, 
+2020-09-27 23:57:28,592 - bootstrap - INFO - Source epoch 110/200 main_lr=0.010000
+2020-09-28 00:01:27,923 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.09src_cls_loss : 0.06996, tgt_cls_loss : 0.00117, transfer_loss : 0.00798, env_loss : 0.86671, 
+2020-09-28 00:01:28,561 - bootstrap - INFO - Source epoch 83/200 main_lr=0.010000
+2020-09-28 00:02:32,727 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 99.26src_cls_loss : 0.03693, tgt_cls_loss : 0.00113, transfer_loss : 0.00796, env_loss : 0.40146, 
+2020-09-28 00:02:33,359 - bootstrap - INFO - Source epoch 119/200 main_lr=0.010000
+2020-09-28 00:04:08,356 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 99.42src_cls_loss : 0.03734, tgt_cls_loss : 0.00070, transfer_loss : 0.00776, env_loss : 0.32532, 
+2020-09-28 00:04:08,882 - bootstrap - INFO - Source epoch 111/200 main_lr=0.010000
+2020-09-28 00:08:10,527 - bootstrap - INFO - tgt_test_acc: 69.49 ; src_test_acc: 99.34src_cls_loss : 0.05768, tgt_cls_loss : 0.00152, transfer_loss : 0.00809, env_loss : 0.86729, 
+2020-09-28 00:08:11,078 - bootstrap - INFO - Source epoch 84/200 main_lr=0.010000
+2020-09-28 00:09:21,013 - bootstrap - INFO - tgt_test_acc: 69.80 ; src_test_acc: 99.30src_cls_loss : 0.02831, tgt_cls_loss : 0.00069, transfer_loss : 0.00789, env_loss : 0.40749, 
+2020-09-28 00:09:21,670 - bootstrap - INFO - Source epoch 120/200 main_lr=0.010000
+2020-09-28 00:10:50,982 - bootstrap - INFO - tgt_test_acc: 70.50 ; src_test_acc: 99.38src_cls_loss : 0.03845, tgt_cls_loss : 0.00099, transfer_loss : 0.00792, env_loss : 0.31274, 
+2020-09-28 00:10:51,568 - bootstrap - INFO - Source epoch 112/200 main_lr=0.010000
+2020-09-28 00:15:00,429 - bootstrap - INFO - tgt_test_acc: 69.80 ; src_test_acc: 99.09src_cls_loss : 0.05886, tgt_cls_loss : 0.00179, transfer_loss : 0.00795, env_loss : 0.85705, 
+2020-09-28 00:15:01,073 - bootstrap - INFO - Source epoch 85/200 main_lr=0.010000
+2020-09-28 00:16:07,083 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 99.30src_cls_loss : 0.03469, tgt_cls_loss : 0.00089, transfer_loss : 0.00779, env_loss : 0.40201, 
+2020-09-28 00:16:07,671 - bootstrap - INFO - Source epoch 121/200 main_lr=0.010000
+2020-09-28 00:17:34,660 - bootstrap - INFO - tgt_test_acc: 70.19 ; src_test_acc: 99.26src_cls_loss : 0.03505, tgt_cls_loss : 0.00095, transfer_loss : 0.00785, env_loss : 0.30929, 
+2020-09-28 00:17:35,342 - bootstrap - INFO - Source epoch 113/200 main_lr=0.010000
+2020-09-28 00:21:43,937 - bootstrap - INFO - tgt_test_acc: 69.02 ; src_test_acc: 99.22src_cls_loss : 0.05998, tgt_cls_loss : 0.00152, transfer_loss : 0.00786, env_loss : 0.86943, 
+2020-09-28 00:21:44,595 - bootstrap - INFO - Source epoch 86/200 main_lr=0.010000
+2020-09-28 00:22:52,486 - bootstrap - INFO - tgt_test_acc: 69.25 ; src_test_acc: 99.13src_cls_loss : 0.03589, tgt_cls_loss : 0.00099, transfer_loss : 0.00774, env_loss : 0.39228, 
+2020-09-28 00:22:53,186 - bootstrap - INFO - Source epoch 122/200 main_lr=0.010000
+2020-09-28 00:24:14,478 - bootstrap - INFO - tgt_test_acc: 70.26 ; src_test_acc: 99.30src_cls_loss : 0.03269, tgt_cls_loss : 0.00082, transfer_loss : 0.00785, env_loss : 0.31077, 
+2020-09-28 00:24:15,087 - bootstrap - INFO - Source epoch 114/200 main_lr=0.010000
+2020-09-28 00:28:24,399 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.13src_cls_loss : 0.06053, tgt_cls_loss : 0.00178, transfer_loss : 0.00791, env_loss : 0.82512, 
+2020-09-28 00:28:25,000 - bootstrap - INFO - Source epoch 87/200 main_lr=0.010000
+2020-09-28 00:29:38,688 - bootstrap - INFO - tgt_test_acc: 69.18 ; src_test_acc: 99.18src_cls_loss : 0.02612, tgt_cls_loss : 0.00117, transfer_loss : 0.00798, env_loss : 0.38846, 
+2020-09-28 00:29:39,375 - bootstrap - INFO - Source epoch 123/200 main_lr=0.010000
+2020-09-28 00:30:55,262 - bootstrap - INFO - tgt_test_acc: 70.50 ; src_test_acc: 99.46src_cls_loss : 0.03833, tgt_cls_loss : 0.00104, transfer_loss : 0.00802, env_loss : 0.32195, 
+2020-09-28 00:30:55,876 - bootstrap - INFO - Source epoch 115/200 main_lr=0.010000
+2020-09-28 00:35:00,900 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 99.05src_cls_loss : 0.05467, tgt_cls_loss : 0.00165, transfer_loss : 0.00787, env_loss : 0.82857, 
+2020-09-28 00:35:01,616 - bootstrap - INFO - Source epoch 88/200 main_lr=0.010000
+2020-09-28 00:36:25,703 - bootstrap - INFO - tgt_test_acc: 69.25 ; src_test_acc: 99.30src_cls_loss : 0.04218, tgt_cls_loss : 0.00122, transfer_loss : 0.00788, env_loss : 0.41138, 
+2020-09-28 00:36:26,471 - bootstrap - INFO - Source epoch 124/200 main_lr=0.010000
+2020-09-28 00:37:39,271 - bootstrap - INFO - tgt_test_acc: 70.57 ; src_test_acc: 99.42src_cls_loss : 0.03572, tgt_cls_loss : 0.00099, transfer_loss : 0.00786, env_loss : 0.32642, 
+2020-09-28 00:37:39,788 - bootstrap - INFO - Source epoch 116/200 main_lr=0.010000
+2020-09-28 00:41:39,826 - bootstrap - INFO - tgt_test_acc: 69.41 ; src_test_acc: 99.05src_cls_loss : 0.05620, tgt_cls_loss : 0.00113, transfer_loss : 0.00789, env_loss : 0.80437, 
+2020-09-28 00:41:40,459 - bootstrap - INFO - Source epoch 89/200 main_lr=0.010000
+2020-09-28 00:43:13,782 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.26src_cls_loss : 0.03129, tgt_cls_loss : 0.00079, transfer_loss : 0.00796, env_loss : 0.39479, 
+2020-09-28 00:43:14,295 - bootstrap - INFO - Source epoch 125/200 main_lr=0.010000
+2020-09-28 00:44:23,762 - bootstrap - INFO - tgt_test_acc: 70.50 ; src_test_acc: 99.46src_cls_loss : 0.03544, tgt_cls_loss : 0.00101, transfer_loss : 0.00789, env_loss : 0.29133, 
+2020-09-28 00:44:24,262 - bootstrap - INFO - Source epoch 117/200 main_lr=0.010000
+2020-09-28 00:48:22,225 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 99.05src_cls_loss : 0.05570, tgt_cls_loss : 0.00082, transfer_loss : 0.00798, env_loss : 0.83526, 
+2020-09-28 00:48:22,918 - bootstrap - INFO - Source epoch 90/200 main_lr=0.010000
+2020-09-28 00:50:03,109 - bootstrap - INFO - tgt_test_acc: 69.80 ; src_test_acc: 99.26src_cls_loss : 0.03087, tgt_cls_loss : 0.00090, transfer_loss : 0.00788, env_loss : 0.38404, 
+2020-09-28 00:50:03,735 - bootstrap - INFO - Source epoch 126/200 main_lr=0.010000
+2020-09-28 00:51:06,592 - bootstrap - INFO - tgt_test_acc: 70.73 ; src_test_acc: 99.34src_cls_loss : 0.03893, tgt_cls_loss : 0.00080, transfer_loss : 0.00802, env_loss : 0.30069, 
+2020-09-28 00:51:07,287 - bootstrap - INFO - Source epoch 118/200 main_lr=0.010000
+2020-09-28 00:55:06,900 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.13src_cls_loss : 0.05966, tgt_cls_loss : 0.00118, transfer_loss : 0.00786, env_loss : 0.80540, 
+2020-09-28 00:55:07,433 - bootstrap - INFO - Source epoch 91/200 main_lr=0.010000
+2020-09-28 00:56:50,587 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 99.30src_cls_loss : 0.03309, tgt_cls_loss : 0.00083, transfer_loss : 0.00781, env_loss : 0.37386, 
+2020-09-28 00:56:51,191 - bootstrap - INFO - Source epoch 127/200 main_lr=0.010000
+2020-09-28 00:57:53,197 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 99.30src_cls_loss : 0.03591, tgt_cls_loss : 0.00071, transfer_loss : 0.00792, env_loss : 0.30773, 
+2020-09-28 00:57:53,786 - bootstrap - INFO - Source epoch 119/200 main_lr=0.010000
+2020-09-28 01:01:50,215 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 98.85src_cls_loss : 0.05112, tgt_cls_loss : 0.00139, transfer_loss : 0.00783, env_loss : 0.81330, 
+2020-09-28 01:01:50,823 - bootstrap - INFO - Source epoch 92/200 main_lr=0.010000
+2020-09-28 01:03:40,107 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 99.22src_cls_loss : 0.04171, tgt_cls_loss : 0.00078, transfer_loss : 0.00794, env_loss : 0.40029, 
+2020-09-28 01:03:40,774 - bootstrap - INFO - Source epoch 128/200 main_lr=0.010000
+2020-09-28 01:04:35,864 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 99.26src_cls_loss : 0.02911, tgt_cls_loss : 0.00104, transfer_loss : 0.00778, env_loss : 0.28677, 
+2020-09-28 01:04:36,398 - bootstrap - INFO - Source epoch 120/200 main_lr=0.010000
+2020-09-28 01:08:31,903 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.05src_cls_loss : 0.05401, tgt_cls_loss : 0.00135, transfer_loss : 0.00794, env_loss : 0.79805, 
+2020-09-28 01:08:32,424 - bootstrap - INFO - Source epoch 93/200 main_lr=0.010000
+2020-09-28 01:10:28,679 - bootstrap - INFO - tgt_test_acc: 69.80 ; src_test_acc: 99.34src_cls_loss : 0.03209, tgt_cls_loss : 0.00092, transfer_loss : 0.00788, env_loss : 0.36873, 
+2020-09-28 01:10:29,202 - bootstrap - INFO - Source epoch 129/200 main_lr=0.010000
+2020-09-28 01:11:18,493 - bootstrap - INFO - tgt_test_acc: 70.42 ; src_test_acc: 99.38src_cls_loss : 0.03293, tgt_cls_loss : 0.00082, transfer_loss : 0.00776, env_loss : 0.28212, 
+2020-09-28 01:11:19,121 - bootstrap - INFO - Source epoch 121/200 main_lr=0.010000
+2020-09-28 01:15:18,219 - bootstrap - INFO - tgt_test_acc: 69.41 ; src_test_acc: 99.18src_cls_loss : 0.05011, tgt_cls_loss : 0.00123, transfer_loss : 0.00798, env_loss : 0.80952, 
+2020-09-28 01:15:18,738 - bootstrap - INFO - Source epoch 94/200 main_lr=0.010000
+2020-09-28 01:17:18,214 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 99.30src_cls_loss : 0.03081, tgt_cls_loss : 0.00093, transfer_loss : 0.00776, env_loss : 0.37735, 
+2020-09-28 01:17:18,878 - bootstrap - INFO - Source epoch 130/200 main_lr=0.010000
+2020-09-28 01:18:04,258 - bootstrap - INFO - tgt_test_acc: 71.12 ; src_test_acc: 99.22src_cls_loss : 0.03855, tgt_cls_loss : 0.00076, transfer_loss : 0.00784, env_loss : 0.29261, 
+2020-09-28 01:18:04,930 - bootstrap - INFO - Source epoch 122/200 main_lr=0.010000
+2020-09-28 01:22:02,426 - bootstrap - INFO - tgt_test_acc: 69.25 ; src_test_acc: 99.26src_cls_loss : 0.04661, tgt_cls_loss : 0.00120, transfer_loss : 0.00786, env_loss : 0.79479, 
+2020-09-28 01:22:03,084 - bootstrap - INFO - Source epoch 95/200 main_lr=0.010000
+2020-09-28 01:24:06,473 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 99.30src_cls_loss : 0.03933, tgt_cls_loss : 0.00110, transfer_loss : 0.00794, env_loss : 0.37251, 
+2020-09-28 01:24:07,017 - bootstrap - INFO - Source epoch 131/200 main_lr=0.010000
+2020-09-28 01:24:43,758 - bootstrap - INFO - tgt_test_acc: 70.96 ; src_test_acc: 99.38src_cls_loss : 0.03514, tgt_cls_loss : 0.00104, transfer_loss : 0.00781, env_loss : 0.28278, 
+2020-09-28 01:24:44,433 - bootstrap - INFO - Source epoch 123/200 main_lr=0.010000
+2020-09-28 01:28:45,913 - bootstrap - INFO - tgt_test_acc: 68.40 ; src_test_acc: 99.22src_cls_loss : 0.05759, tgt_cls_loss : 0.00136, transfer_loss : 0.00789, env_loss : 0.77899, 
+2020-09-28 01:28:46,445 - bootstrap - INFO - Source epoch 96/200 main_lr=0.010000
+2020-09-28 01:30:55,190 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 99.26src_cls_loss : 0.03093, tgt_cls_loss : 0.00111, transfer_loss : 0.00787, env_loss : 0.38322, 
+2020-09-28 01:30:55,804 - bootstrap - INFO - Source epoch 132/200 main_lr=0.010000
+2020-09-28 01:31:30,458 - bootstrap - INFO - tgt_test_acc: 70.34 ; src_test_acc: 99.30src_cls_loss : 0.03654, tgt_cls_loss : 0.00121, transfer_loss : 0.00771, env_loss : 0.28280, 
+2020-09-28 01:31:31,157 - bootstrap - INFO - Source epoch 124/200 main_lr=0.010000
+2020-09-28 01:35:28,404 - bootstrap - INFO - tgt_test_acc: 69.02 ; src_test_acc: 99.34src_cls_loss : 0.04549, tgt_cls_loss : 0.00102, transfer_loss : 0.00794, env_loss : 0.76537, 
+2020-09-28 01:35:29,089 - bootstrap - INFO - Source epoch 97/200 main_lr=0.010000
+2020-09-28 01:37:43,714 - bootstrap - INFO - tgt_test_acc: 69.41 ; src_test_acc: 99.26src_cls_loss : 0.03388, tgt_cls_loss : 0.00094, transfer_loss : 0.00777, env_loss : 0.35335, 
+2020-09-28 01:37:44,306 - bootstrap - INFO - Source epoch 133/200 main_lr=0.010000
+2020-09-28 01:38:11,868 - bootstrap - INFO - tgt_test_acc: 70.34 ; src_test_acc: 99.22src_cls_loss : 0.03430, tgt_cls_loss : 0.00103, transfer_loss : 0.00779, env_loss : 0.28056, 
+2020-09-28 01:38:12,438 - bootstrap - INFO - Source epoch 125/200 main_lr=0.010000
+2020-09-28 01:42:13,114 - bootstrap - INFO - tgt_test_acc: 68.79 ; src_test_acc: 99.30src_cls_loss : 0.03814, tgt_cls_loss : 0.00141, transfer_loss : 0.00798, env_loss : 0.76817, 
+2020-09-28 01:42:13,746 - bootstrap - INFO - Source epoch 98/200 main_lr=0.010000
+2020-09-28 01:44:32,989 - bootstrap - INFO - tgt_test_acc: 68.79 ; src_test_acc: 99.30src_cls_loss : 0.02676, tgt_cls_loss : 0.00058, transfer_loss : 0.00791, env_loss : 0.35070, 
+2020-09-28 01:44:33,674 - bootstrap - INFO - Source epoch 134/200 main_lr=0.010000
+2020-09-28 01:44:56,504 - bootstrap - INFO - tgt_test_acc: 70.34 ; src_test_acc: 99.18src_cls_loss : 0.03239, tgt_cls_loss : 0.00085, transfer_loss : 0.00778, env_loss : 0.28461, 
+2020-09-28 01:44:57,077 - bootstrap - INFO - Source epoch 126/200 main_lr=0.010000
+2020-09-28 01:48:53,212 - bootstrap - INFO - tgt_test_acc: 68.09 ; src_test_acc: 99.26src_cls_loss : 0.03971, tgt_cls_loss : 0.00118, transfer_loss : 0.00785, env_loss : 0.76157, 
+2020-09-28 01:48:53,900 - bootstrap - INFO - Source epoch 99/200 main_lr=0.010000
+2020-09-28 01:51:17,518 - bootstrap - INFO - tgt_test_acc: 69.02 ; src_test_acc: 99.34src_cls_loss : 0.03143, tgt_cls_loss : 0.00063, transfer_loss : 0.00783, env_loss : 0.36285, 
+2020-09-28 01:51:18,262 - bootstrap - INFO - Source epoch 135/200 main_lr=0.010000
+2020-09-28 01:51:40,593 - bootstrap - INFO - tgt_test_acc: 70.81 ; src_test_acc: 99.34src_cls_loss : 0.03408, tgt_cls_loss : 0.00154, transfer_loss : 0.00779, env_loss : 0.28697, 
+2020-09-28 01:51:41,277 - bootstrap - INFO - Source epoch 127/200 main_lr=0.010000
+2020-09-28 01:55:37,703 - bootstrap - INFO - tgt_test_acc: 67.70 ; src_test_acc: 99.22src_cls_loss : 0.04493, tgt_cls_loss : 0.00097, transfer_loss : 0.00787, env_loss : 0.75144, 
+2020-09-28 01:55:38,237 - bootstrap - INFO - Source epoch 100/200 main_lr=0.010000
+2020-09-28 01:58:03,997 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.26src_cls_loss : 0.03961, tgt_cls_loss : 0.00058, transfer_loss : 0.00780, env_loss : 0.37493, 
+2020-09-28 01:58:04,731 - bootstrap - INFO - Source epoch 136/200 main_lr=0.010000
+2020-09-28 01:58:31,778 - bootstrap - INFO - tgt_test_acc: 70.50 ; src_test_acc: 99.30src_cls_loss : 0.03157, tgt_cls_loss : 0.00072, transfer_loss : 0.00785, env_loss : 0.26776, 
+2020-09-28 01:58:32,489 - bootstrap - INFO - Source epoch 128/200 main_lr=0.010000
+2020-09-28 02:02:22,108 - bootstrap - INFO - tgt_test_acc: 68.01 ; src_test_acc: 99.30src_cls_loss : 0.04978, tgt_cls_loss : 0.00114, transfer_loss : 0.00783, env_loss : 0.78194, 
+2020-09-28 02:02:22,756 - bootstrap - INFO - Source epoch 101/200 main_lr=0.010000
+2020-09-28 02:04:46,587 - bootstrap - INFO - tgt_test_acc: 69.10 ; src_test_acc: 99.30src_cls_loss : 0.03192, tgt_cls_loss : 0.00087, transfer_loss : 0.00785, env_loss : 0.34365, 
+2020-09-28 02:04:47,168 - bootstrap - INFO - Source epoch 137/200 main_lr=0.010000
+2020-09-28 02:05:14,399 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 99.30src_cls_loss : 0.02872, tgt_cls_loss : 0.00072, transfer_loss : 0.00777, env_loss : 0.26652, 
+2020-09-28 02:05:15,034 - bootstrap - INFO - Source epoch 129/200 main_lr=0.010000
+2020-09-28 02:09:07,212 - bootstrap - INFO - tgt_test_acc: 68.32 ; src_test_acc: 99.22src_cls_loss : 0.04684, tgt_cls_loss : 0.00133, transfer_loss : 0.00775, env_loss : 0.75863, 
+2020-09-28 02:09:07,887 - bootstrap - INFO - Source epoch 102/200 main_lr=0.010000
+2020-09-28 02:11:34,121 - bootstrap - INFO - tgt_test_acc: 70.65 ; src_test_acc: 99.34src_cls_loss : 0.03122, tgt_cls_loss : 0.00123, transfer_loss : 0.00789, env_loss : 0.35813, 
+2020-09-28 02:11:34,797 - bootstrap - INFO - Source epoch 138/200 main_lr=0.010000
+2020-09-28 02:11:55,376 - bootstrap - INFO - tgt_test_acc: 69.80 ; src_test_acc: 99.34src_cls_loss : 0.03139, tgt_cls_loss : 0.00096, transfer_loss : 0.00780, env_loss : 0.27917, 
+2020-09-28 02:11:55,993 - bootstrap - INFO - Source epoch 130/200 main_lr=0.010000
+2020-09-28 02:15:46,625 - bootstrap - INFO - tgt_test_acc: 68.87 ; src_test_acc: 99.09src_cls_loss : 0.04944, tgt_cls_loss : 0.00120, transfer_loss : 0.00784, env_loss : 0.76849, 
+2020-09-28 02:15:47,209 - bootstrap - INFO - Source epoch 103/200 main_lr=0.010000
+2020-09-28 02:18:16,596 - bootstrap - INFO - tgt_test_acc: 69.88 ; src_test_acc: 99.26src_cls_loss : 0.03300, tgt_cls_loss : 0.00156, transfer_loss : 0.00787, env_loss : 0.35573, 
+2020-09-28 02:18:17,221 - bootstrap - INFO - Source epoch 139/200 main_lr=0.010000
+2020-09-28 02:18:34,184 - bootstrap - INFO - tgt_test_acc: 70.26 ; src_test_acc: 99.30src_cls_loss : 0.02965, tgt_cls_loss : 0.00083, transfer_loss : 0.00788, env_loss : 0.25589, 
+2020-09-28 02:18:34,852 - bootstrap - INFO - Source epoch 131/200 main_lr=0.010000
+2020-09-28 02:22:28,515 - bootstrap - INFO - tgt_test_acc: 67.78 ; src_test_acc: 99.30src_cls_loss : 0.04970, tgt_cls_loss : 0.00080, transfer_loss : 0.00781, env_loss : 0.74885, 
+2020-09-28 02:22:29,138 - bootstrap - INFO - Source epoch 104/200 main_lr=0.010000
+2020-09-28 02:25:03,514 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.34src_cls_loss : 0.02995, tgt_cls_loss : 0.00088, transfer_loss : 0.00778, env_loss : 0.34283, 
+2020-09-28 02:25:04,070 - bootstrap - INFO - Source epoch 140/200 main_lr=0.010000
+2020-09-28 02:25:17,374 - bootstrap - INFO - tgt_test_acc: 70.26 ; src_test_acc: 99.42src_cls_loss : 0.03342, tgt_cls_loss : 0.00097, transfer_loss : 0.00782, env_loss : 0.26204, 
+2020-09-28 02:25:18,027 - bootstrap - INFO - Source epoch 132/200 main_lr=0.010000
+2020-09-28 02:29:08,138 - bootstrap - INFO - tgt_test_acc: 68.56 ; src_test_acc: 99.38src_cls_loss : 0.04265, tgt_cls_loss : 0.00115, transfer_loss : 0.00795, env_loss : 0.72547, 
+2020-09-28 02:29:08,811 - bootstrap - INFO - Source epoch 105/200 main_lr=0.010000
+2020-09-28 02:31:49,614 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 99.30src_cls_loss : 0.03186, tgt_cls_loss : 0.00086, transfer_loss : 0.00783, env_loss : 0.34088, 
+2020-09-28 02:31:50,352 - bootstrap - INFO - Source epoch 141/200 main_lr=0.010000
+2020-09-28 02:32:02,096 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 99.46src_cls_loss : 0.02586, tgt_cls_loss : 0.00078, transfer_loss : 0.00763, env_loss : 0.25422, 
+2020-09-28 02:32:02,755 - bootstrap - INFO - Source epoch 133/200 main_lr=0.010000
+2020-09-28 02:35:47,831 - bootstrap - INFO - tgt_test_acc: 68.48 ; src_test_acc: 99.30src_cls_loss : 0.04336, tgt_cls_loss : 0.00076, transfer_loss : 0.00798, env_loss : 0.72763, 
+2020-09-28 02:35:48,532 - bootstrap - INFO - Source epoch 106/200 main_lr=0.010000
+2020-09-28 02:38:40,113 - bootstrap - INFO - tgt_test_acc: 68.79 ; src_test_acc: 99.34src_cls_loss : 0.02837, tgt_cls_loss : 0.00054, transfer_loss : 0.00775, env_loss : 0.32770, 
+2020-09-28 02:38:40,740 - bootstrap - INFO - Source epoch 142/200 main_lr=0.010000
+2020-09-28 02:38:44,662 - bootstrap - INFO - tgt_test_acc: 70.42 ; src_test_acc: 99.46src_cls_loss : 0.02794, tgt_cls_loss : 0.00078, transfer_loss : 0.00779, env_loss : 0.26095, 
+2020-09-28 02:38:45,198 - bootstrap - INFO - Source epoch 134/200 main_lr=0.010000
+2020-09-28 02:42:28,612 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 99.34src_cls_loss : 0.03171, tgt_cls_loss : 0.00117, transfer_loss : 0.00781, env_loss : 0.71673, 
+2020-09-28 02:42:29,239 - bootstrap - INFO - Source epoch 107/200 main_lr=0.010000
+2020-09-28 02:45:23,379 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 99.34src_cls_loss : 0.02290, tgt_cls_loss : 0.00084, transfer_loss : 0.00786, env_loss : 0.33259, 
+2020-09-28 02:45:24,054 - bootstrap - INFO - Source epoch 143/200 main_lr=0.010000
+2020-09-28 02:45:27,757 - bootstrap - INFO - tgt_test_acc: 70.96 ; src_test_acc: 99.46src_cls_loss : 0.02579, tgt_cls_loss : 0.00065, transfer_loss : 0.00779, env_loss : 0.26236, 
+2020-09-28 02:45:28,298 - bootstrap - INFO - Source epoch 135/200 main_lr=0.010000
+2020-09-28 02:49:09,935 - bootstrap - INFO - tgt_test_acc: 68.40 ; src_test_acc: 99.26src_cls_loss : 0.03699, tgt_cls_loss : 0.00082, transfer_loss : 0.00778, env_loss : 0.72237, 
+2020-09-28 02:49:10,693 - bootstrap - INFO - Source epoch 108/200 main_lr=0.010000
+2020-09-28 02:52:09,064 - bootstrap - INFO - tgt_test_acc: 70.19 ; src_test_acc: 99.42src_cls_loss : 0.03236, tgt_cls_loss : 0.00095, transfer_loss : 0.00776, env_loss : 0.25178, 
+2020-09-28 02:52:09,661 - bootstrap - INFO - Source epoch 136/200 main_lr=0.010000
+2020-09-28 02:52:12,287 - bootstrap - INFO - tgt_test_acc: 70.34 ; src_test_acc: 99.26src_cls_loss : 0.02220, tgt_cls_loss : 0.00105, transfer_loss : 0.00776, env_loss : 0.31381, 
+2020-09-28 02:52:12,859 - bootstrap - INFO - Source epoch 144/200 main_lr=0.010000
+2020-09-28 02:55:50,018 - bootstrap - INFO - tgt_test_acc: 68.71 ; src_test_acc: 99.18src_cls_loss : 0.04486, tgt_cls_loss : 0.00070, transfer_loss : 0.00780, env_loss : 0.71284, 
+2020-09-28 02:55:50,661 - bootstrap - INFO - Source epoch 109/200 main_lr=0.010000
+2020-09-28 02:58:54,458 - bootstrap - INFO - tgt_test_acc: 69.25 ; src_test_acc: 99.42src_cls_loss : 0.02960, tgt_cls_loss : 0.00057, transfer_loss : 0.00772, env_loss : 0.26549, 
+2020-09-28 02:58:55,026 - bootstrap - INFO - Source epoch 137/200 main_lr=0.010000
+2020-09-28 02:58:57,691 - bootstrap - INFO - tgt_test_acc: 70.42 ; src_test_acc: 99.38src_cls_loss : 0.02338, tgt_cls_loss : 0.00101, transfer_loss : 0.00778, env_loss : 0.33818, 
+2020-09-28 02:58:58,382 - bootstrap - INFO - Source epoch 145/200 main_lr=0.010000
+2020-09-28 03:02:29,512 - bootstrap - INFO - tgt_test_acc: 68.40 ; src_test_acc: 99.22src_cls_loss : 0.04570, tgt_cls_loss : 0.00115, transfer_loss : 0.00800, env_loss : 0.70794, 
+2020-09-28 03:02:30,134 - bootstrap - INFO - Source epoch 110/200 main_lr=0.010000
+2020-09-28 03:05:36,170 - bootstrap - INFO - tgt_test_acc: 70.19 ; src_test_acc: 99.38src_cls_loss : 0.02884, tgt_cls_loss : 0.00081, transfer_loss : 0.00776, env_loss : 0.25877, 
+2020-09-28 03:05:36,758 - bootstrap - INFO - Source epoch 138/200 main_lr=0.010000
+2020-09-28 03:05:45,292 - bootstrap - INFO - tgt_test_acc: 70.96 ; src_test_acc: 99.26src_cls_loss : 0.02776, tgt_cls_loss : 0.00064, transfer_loss : 0.00780, env_loss : 0.32534, 
+2020-09-28 03:05:45,971 - bootstrap - INFO - Source epoch 146/200 main_lr=0.010000
+2020-09-28 03:09:08,130 - bootstrap - INFO - tgt_test_acc: 67.93 ; src_test_acc: 99.26src_cls_loss : 0.03615, tgt_cls_loss : 0.00080, transfer_loss : 0.00781, env_loss : 0.68201, 
+2020-09-28 03:09:08,806 - bootstrap - INFO - Source epoch 111/200 main_lr=0.010000
+2020-09-28 03:12:20,466 - bootstrap - INFO - tgt_test_acc: 69.41 ; src_test_acc: 99.42src_cls_loss : 0.02366, tgt_cls_loss : 0.00093, transfer_loss : 0.00784, env_loss : 0.24394, 
+2020-09-28 03:12:21,026 - bootstrap - INFO - Source epoch 139/200 main_lr=0.010000
+2020-09-28 03:12:29,814 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.26src_cls_loss : 0.02666, tgt_cls_loss : 0.00089, transfer_loss : 0.00773, env_loss : 0.31228, 
+2020-09-28 03:12:30,296 - bootstrap - INFO - Source epoch 147/200 main_lr=0.010000
+2020-09-28 03:15:52,119 - bootstrap - INFO - tgt_test_acc: 68.71 ; src_test_acc: 99.22src_cls_loss : 0.04136, tgt_cls_loss : 0.00110, transfer_loss : 0.00780, env_loss : 0.70728, 
+2020-09-28 03:15:52,888 - bootstrap - INFO - Source epoch 112/200 main_lr=0.010000
+2020-09-28 03:19:07,995 - bootstrap - INFO - tgt_test_acc: 69.88 ; src_test_acc: 99.55src_cls_loss : 0.02477, tgt_cls_loss : 0.00067, transfer_loss : 0.00773, env_loss : 0.24866, 
+2020-09-28 03:19:08,511 - bootstrap - INFO - Source epoch 140/200 main_lr=0.010000
+2020-09-28 03:19:19,121 - bootstrap - INFO - tgt_test_acc: 69.57 ; src_test_acc: 99.26src_cls_loss : 0.03192, tgt_cls_loss : 0.00102, transfer_loss : 0.00779, env_loss : 0.32084, 
+2020-09-28 03:19:19,803 - bootstrap - INFO - Source epoch 148/200 main_lr=0.010000
+2020-09-28 03:22:44,525 - bootstrap - INFO - tgt_test_acc: 67.78 ; src_test_acc: 99.30src_cls_loss : 0.03841, tgt_cls_loss : 0.00084, transfer_loss : 0.00785, env_loss : 0.69921, 
+2020-09-28 03:22:45,222 - bootstrap - INFO - Source epoch 113/200 main_lr=0.010000
+2020-09-28 03:25:53,056 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 99.46src_cls_loss : 0.02910, tgt_cls_loss : 0.00107, transfer_loss : 0.00777, env_loss : 0.24848, 
+2020-09-28 03:25:53,573 - bootstrap - INFO - Source epoch 141/200 main_lr=0.010000
+2020-09-28 03:26:04,711 - bootstrap - INFO - tgt_test_acc: 69.49 ; src_test_acc: 99.30src_cls_loss : 0.02880, tgt_cls_loss : 0.00096, transfer_loss : 0.00769, env_loss : 0.32477, 
+2020-09-28 03:26:05,375 - bootstrap - INFO - Source epoch 149/200 main_lr=0.010000
+2020-09-28 03:29:27,535 - bootstrap - INFO - tgt_test_acc: 68.56 ; src_test_acc: 99.38src_cls_loss : 0.04705, tgt_cls_loss : 0.00070, transfer_loss : 0.00772, env_loss : 0.69044, 
+2020-09-28 03:29:28,255 - bootstrap - INFO - Source epoch 114/200 main_lr=0.010000
+2020-09-28 03:32:45,267 - bootstrap - INFO - tgt_test_acc: 70.81 ; src_test_acc: 99.46src_cls_loss : 0.02776, tgt_cls_loss : 0.00084, transfer_loss : 0.00766, env_loss : 0.25067, 
+2020-09-28 03:32:45,982 - bootstrap - INFO - Source epoch 142/200 main_lr=0.010000
+2020-09-28 03:32:57,314 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 99.30src_cls_loss : 0.02733, tgt_cls_loss : 0.00072, transfer_loss : 0.00779, env_loss : 0.31490, 
+2020-09-28 03:32:57,949 - bootstrap - INFO - Source epoch 150/200 main_lr=0.010000
+2020-09-28 03:36:12,827 - bootstrap - INFO - tgt_test_acc: 68.94 ; src_test_acc: 99.26src_cls_loss : 0.03791, tgt_cls_loss : 0.00095, transfer_loss : 0.00799, env_loss : 0.68915, 
+2020-09-28 03:36:13,514 - bootstrap - INFO - Source epoch 115/200 main_lr=0.010000
+2020-09-28 03:39:31,461 - bootstrap - INFO - tgt_test_acc: 70.57 ; src_test_acc: 99.30src_cls_loss : 0.02444, tgt_cls_loss : 0.00089, transfer_loss : 0.00769, env_loss : 0.24036, 
+2020-09-28 03:39:32,062 - bootstrap - INFO - Source epoch 143/200 main_lr=0.010000
+2020-09-28 03:39:46,514 - bootstrap - INFO - tgt_test_acc: 69.33 ; src_test_acc: 99.34src_cls_loss : 0.02989, tgt_cls_loss : 0.00073, transfer_loss : 0.00786, env_loss : 0.30693, 
+2020-09-28 03:39:47,178 - bootstrap - INFO - Source epoch 151/200 main_lr=0.010000
+2020-09-28 03:42:59,723 - bootstrap - INFO - tgt_test_acc: 67.93 ; src_test_acc: 99.34src_cls_loss : 0.03916, tgt_cls_loss : 0.00119, transfer_loss : 0.00792, env_loss : 0.69758, 
+2020-09-28 03:43:00,457 - bootstrap - INFO - Source epoch 116/200 main_lr=0.010000
+2020-09-28 03:46:19,161 - bootstrap - INFO - tgt_test_acc: 69.57 ; src_test_acc: 99.34src_cls_loss : 0.02906, tgt_cls_loss : 0.00086, transfer_loss : 0.00779, env_loss : 0.24275, 
+2020-09-28 03:46:19,759 - bootstrap - INFO - Source epoch 144/200 main_lr=0.010000
+2020-09-28 03:46:34,686 - bootstrap - INFO - tgt_test_acc: 69.49 ; src_test_acc: 99.34src_cls_loss : 0.02841, tgt_cls_loss : 0.00086, transfer_loss : 0.00772, env_loss : 0.31564, 
+2020-09-28 03:46:35,298 - bootstrap - INFO - Source epoch 152/200 main_lr=0.010000
+2020-09-28 03:49:50,512 - bootstrap - INFO - tgt_test_acc: 67.47 ; src_test_acc: 99.38src_cls_loss : 0.03655, tgt_cls_loss : 0.00069, transfer_loss : 0.00775, env_loss : 0.69578, 
+2020-09-28 03:49:51,200 - bootstrap - INFO - Source epoch 117/200 main_lr=0.010000
+2020-09-28 03:53:03,585 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 99.42src_cls_loss : 0.02074, tgt_cls_loss : 0.00075, transfer_loss : 0.00767, env_loss : 0.23794, 
+2020-09-28 03:53:04,245 - bootstrap - INFO - Source epoch 145/200 main_lr=0.010000
+2020-09-28 03:53:26,319 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.34src_cls_loss : 0.02405, tgt_cls_loss : 0.00134, transfer_loss : 0.00782, env_loss : 0.30729, 
+2020-09-28 03:53:26,934 - bootstrap - INFO - Source epoch 153/200 main_lr=0.010000
+2020-09-28 03:56:35,125 - bootstrap - INFO - tgt_test_acc: 67.78 ; src_test_acc: 99.22src_cls_loss : 0.03337, tgt_cls_loss : 0.00102, transfer_loss : 0.00790, env_loss : 0.69472, 
+2020-09-28 03:56:35,704 - bootstrap - INFO - Source epoch 118/200 main_lr=0.010000
+2020-09-28 03:59:51,556 - bootstrap - INFO - tgt_test_acc: 70.26 ; src_test_acc: 99.42src_cls_loss : 0.02243, tgt_cls_loss : 0.00099, transfer_loss : 0.00773, env_loss : 0.23688, 
+2020-09-28 03:59:52,138 - bootstrap - INFO - Source epoch 146/200 main_lr=0.010000
+2020-09-28 04:00:17,415 - bootstrap - INFO - tgt_test_acc: 69.25 ; src_test_acc: 99.34src_cls_loss : 0.02119, tgt_cls_loss : 0.00060, transfer_loss : 0.00776, env_loss : 0.30565, 
+2020-09-28 04:00:18,095 - bootstrap - INFO - Source epoch 154/200 main_lr=0.010000
+2020-09-28 04:03:23,028 - bootstrap - INFO - tgt_test_acc: 68.79 ; src_test_acc: 99.30src_cls_loss : 0.03386, tgt_cls_loss : 0.00105, transfer_loss : 0.00782, env_loss : 0.65253, 
+2020-09-28 04:03:23,801 - bootstrap - INFO - Source epoch 119/200 main_lr=0.010000
+2020-09-28 04:06:31,462 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 99.46src_cls_loss : 0.02917, tgt_cls_loss : 0.00068, transfer_loss : 0.00778, env_loss : 0.23102, 
+2020-09-28 04:06:32,015 - bootstrap - INFO - Source epoch 147/200 main_lr=0.010000
+2020-09-28 04:07:07,708 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 99.38src_cls_loss : 0.02179, tgt_cls_loss : 0.00069, transfer_loss : 0.00780, env_loss : 0.31992, 
+2020-09-28 04:07:08,382 - bootstrap - INFO - Source epoch 155/200 main_lr=0.010000
+2020-09-28 04:10:10,129 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.22src_cls_loss : 0.03439, tgt_cls_loss : 0.00089, transfer_loss : 0.00782, env_loss : 0.69884, 
+2020-09-28 04:10:10,831 - bootstrap - INFO - Source epoch 120/200 main_lr=0.010000
+2020-09-28 04:13:13,195 - bootstrap - INFO - tgt_test_acc: 70.65 ; src_test_acc: 99.38src_cls_loss : 0.02460, tgt_cls_loss : 0.00069, transfer_loss : 0.00765, env_loss : 0.23780, 
+2020-09-28 04:13:13,856 - bootstrap - INFO - Source epoch 148/200 main_lr=0.010000
+2020-09-28 04:13:59,187 - bootstrap - INFO - tgt_test_acc: 69.88 ; src_test_acc: 99.34src_cls_loss : 0.02296, tgt_cls_loss : 0.00088, transfer_loss : 0.00782, env_loss : 0.30285, 
+2020-09-28 04:13:59,715 - bootstrap - INFO - Source epoch 156/200 main_lr=0.010000
+2020-09-28 04:16:52,094 - bootstrap - INFO - tgt_test_acc: 69.80 ; src_test_acc: 99.42src_cls_loss : 0.03891, tgt_cls_loss : 0.00081, transfer_loss : 0.00786, env_loss : 0.65717, 
+2020-09-28 04:16:52,805 - bootstrap - INFO - Source epoch 121/200 main_lr=0.010000
+2020-09-28 04:20:00,859 - bootstrap - INFO - tgt_test_acc: 70.19 ; src_test_acc: 99.51src_cls_loss : 0.02835, tgt_cls_loss : 0.00062, transfer_loss : 0.00758, env_loss : 0.23967, 
+2020-09-28 04:20:01,485 - bootstrap - INFO - Source epoch 149/200 main_lr=0.010000
+2020-09-28 04:20:43,399 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.30src_cls_loss : 0.02548, tgt_cls_loss : 0.00097, transfer_loss : 0.00772, env_loss : 0.31760, 
+2020-09-28 04:20:43,975 - bootstrap - INFO - Source epoch 157/200 main_lr=0.010000
+2020-09-28 04:23:37,311 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 99.26src_cls_loss : 0.03556, tgt_cls_loss : 0.00096, transfer_loss : 0.00781, env_loss : 0.68580, 
+2020-09-28 04:23:37,914 - bootstrap - INFO - Source epoch 122/200 main_lr=0.010000
+2020-09-28 04:26:45,248 - bootstrap - INFO - tgt_test_acc: 69.88 ; src_test_acc: 99.38src_cls_loss : 0.02942, tgt_cls_loss : 0.00054, transfer_loss : 0.00772, env_loss : 0.22752, 
+2020-09-28 04:26:45,887 - bootstrap - INFO - Source epoch 150/200 main_lr=0.010000
+2020-09-28 04:27:29,996 - bootstrap - INFO - tgt_test_acc: 69.33 ; src_test_acc: 99.30src_cls_loss : 0.02404, tgt_cls_loss : 0.00081, transfer_loss : 0.00774, env_loss : 0.29032, 
+2020-09-28 04:27:30,558 - bootstrap - INFO - Source epoch 158/200 main_lr=0.010000
+2020-09-28 04:30:19,635 - bootstrap - INFO - tgt_test_acc: 68.48 ; src_test_acc: 99.30src_cls_loss : 0.03445, tgt_cls_loss : 0.00101, transfer_loss : 0.00784, env_loss : 0.66660, 
+2020-09-28 04:30:20,318 - bootstrap - INFO - Source epoch 123/200 main_lr=0.010000
+2020-09-28 04:33:29,270 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 99.42src_cls_loss : 0.02422, tgt_cls_loss : 0.00187, transfer_loss : 0.00763, env_loss : 0.22227, 
+2020-09-28 04:33:29,878 - bootstrap - INFO - Source epoch 151/200 main_lr=0.010000
+2020-09-28 04:34:20,422 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 99.34src_cls_loss : 0.02225, tgt_cls_loss : 0.00070, transfer_loss : 0.00784, env_loss : 0.28796, 
+2020-09-28 04:34:21,008 - bootstrap - INFO - Source epoch 159/200 main_lr=0.010000
+2020-09-28 04:36:58,898 - bootstrap - INFO - tgt_test_acc: 68.40 ; src_test_acc: 99.38src_cls_loss : 0.03927, tgt_cls_loss : 0.00077, transfer_loss : 0.00784, env_loss : 0.66405, 
+2020-09-28 04:36:59,546 - bootstrap - INFO - Source epoch 124/200 main_lr=0.010000
+2020-09-28 04:40:10,670 - bootstrap - INFO - tgt_test_acc: 69.41 ; src_test_acc: 99.42src_cls_loss : 0.02492, tgt_cls_loss : 0.00094, transfer_loss : 0.00764, env_loss : 0.21387, 
+2020-09-28 04:40:11,265 - bootstrap - INFO - Source epoch 152/200 main_lr=0.010000
+2020-09-28 04:41:11,510 - bootstrap - INFO - tgt_test_acc: 69.49 ; src_test_acc: 99.30src_cls_loss : 0.02407, tgt_cls_loss : 0.00082, transfer_loss : 0.00770, env_loss : 0.29227, 
+2020-09-28 04:41:12,061 - bootstrap - INFO - Source epoch 160/200 main_lr=0.010000
+2020-09-28 04:43:43,232 - bootstrap - INFO - tgt_test_acc: 69.02 ; src_test_acc: 99.26src_cls_loss : 0.03496, tgt_cls_loss : 0.00065, transfer_loss : 0.00779, env_loss : 0.66581, 
+2020-09-28 04:43:43,923 - bootstrap - INFO - Source epoch 125/200 main_lr=0.010000
+2020-09-28 04:46:57,381 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 99.42src_cls_loss : 0.02300, tgt_cls_loss : 0.00107, transfer_loss : 0.00771, env_loss : 0.22607, 
+2020-09-28 04:46:57,909 - bootstrap - INFO - Source epoch 153/200 main_lr=0.010000
+2020-09-28 04:48:06,184 - bootstrap - INFO - tgt_test_acc: 69.57 ; src_test_acc: 99.26src_cls_loss : 0.02401, tgt_cls_loss : 0.00105, transfer_loss : 0.00772, env_loss : 0.29451, 
+2020-09-28 04:48:06,751 - bootstrap - INFO - Source epoch 161/200 main_lr=0.010000
+2020-09-28 04:50:25,307 - bootstrap - INFO - tgt_test_acc: 68.79 ; src_test_acc: 99.30src_cls_loss : 0.03384, tgt_cls_loss : 0.00105, transfer_loss : 0.00778, env_loss : 0.64422, 
+2020-09-28 04:50:25,905 - bootstrap - INFO - Source epoch 126/200 main_lr=0.010000
+2020-09-28 04:53:41,373 - bootstrap - INFO - tgt_test_acc: 70.34 ; src_test_acc: 99.42src_cls_loss : 0.02286, tgt_cls_loss : 0.00061, transfer_loss : 0.00770, env_loss : 0.22506, 
+2020-09-28 04:53:42,144 - bootstrap - INFO - Source epoch 154/200 main_lr=0.010000
+2020-09-28 04:54:55,425 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 99.30src_cls_loss : 0.02378, tgt_cls_loss : 0.00117, transfer_loss : 0.00771, env_loss : 0.30425, 
+2020-09-28 04:54:55,984 - bootstrap - INFO - Source epoch 162/200 main_lr=0.010000
+2020-09-28 04:57:05,917 - bootstrap - INFO - tgt_test_acc: 69.41 ; src_test_acc: 99.34src_cls_loss : 0.03326, tgt_cls_loss : 0.00089, transfer_loss : 0.00788, env_loss : 0.62786, 
+2020-09-28 04:57:06,612 - bootstrap - INFO - Source epoch 127/200 main_lr=0.010000
+2020-09-28 05:00:28,477 - bootstrap - INFO - tgt_test_acc: 70.50 ; src_test_acc: 99.34src_cls_loss : 0.02716, tgt_cls_loss : 0.00073, transfer_loss : 0.00770, env_loss : 0.22851, 
+2020-09-28 05:00:29,142 - bootstrap - INFO - Source epoch 155/200 main_lr=0.010000
+2020-09-28 05:01:41,790 - bootstrap - INFO - tgt_test_acc: 69.49 ; src_test_acc: 99.38src_cls_loss : 0.02538, tgt_cls_loss : 0.00071, transfer_loss : 0.00775, env_loss : 0.28369, 
+2020-09-28 05:01:42,396 - bootstrap - INFO - Source epoch 163/200 main_lr=0.010000
+2020-09-28 05:03:51,504 - bootstrap - INFO - tgt_test_acc: 68.87 ; src_test_acc: 99.30src_cls_loss : 0.03425, tgt_cls_loss : 0.00058, transfer_loss : 0.00776, env_loss : 0.65599, 
+2020-09-28 05:03:52,118 - bootstrap - INFO - Source epoch 128/200 main_lr=0.010000
+2020-09-28 05:07:16,088 - bootstrap - INFO - tgt_test_acc: 70.57 ; src_test_acc: 99.34src_cls_loss : 0.02340, tgt_cls_loss : 0.00060, transfer_loss : 0.00774, env_loss : 0.21288, 
+2020-09-28 05:07:16,680 - bootstrap - INFO - Source epoch 156/200 main_lr=0.010000
+2020-09-28 05:08:34,419 - bootstrap - INFO - tgt_test_acc: 69.33 ; src_test_acc: 99.38src_cls_loss : 0.02531, tgt_cls_loss : 0.00066, transfer_loss : 0.00772, env_loss : 0.30009, 
+2020-09-28 05:08:35,053 - bootstrap - INFO - Source epoch 164/200 main_lr=0.010000
+2020-09-28 05:10:31,818 - bootstrap - INFO - tgt_test_acc: 68.56 ; src_test_acc: 99.30src_cls_loss : 0.03350, tgt_cls_loss : 0.00104, transfer_loss : 0.00773, env_loss : 0.62935, 
+2020-09-28 05:10:32,362 - bootstrap - INFO - Source epoch 129/200 main_lr=0.010000
+2020-09-28 05:14:00,072 - bootstrap - INFO - tgt_test_acc: 70.89 ; src_test_acc: 99.42src_cls_loss : 0.02595, tgt_cls_loss : 0.00118, transfer_loss : 0.00777, env_loss : 0.19542, 
+2020-09-28 05:14:00,776 - bootstrap - INFO - Source epoch 157/200 main_lr=0.010000
+2020-09-28 05:15:25,406 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 99.38src_cls_loss : 0.02372, tgt_cls_loss : 0.00058, transfer_loss : 0.00772, env_loss : 0.29125, 
+2020-09-28 05:15:26,100 - bootstrap - INFO - Source epoch 165/200 main_lr=0.010000
+2020-09-28 05:17:13,418 - bootstrap - INFO - tgt_test_acc: 69.10 ; src_test_acc: 99.26src_cls_loss : 0.03468, tgt_cls_loss : 0.00075, transfer_loss : 0.00771, env_loss : 0.64218, 
+2020-09-28 05:17:14,005 - bootstrap - INFO - Source epoch 130/200 main_lr=0.010000
+2020-09-28 05:20:45,758 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 99.42src_cls_loss : 0.02374, tgt_cls_loss : 0.00112, transfer_loss : 0.00774, env_loss : 0.21294, 
+2020-09-28 05:20:46,437 - bootstrap - INFO - Source epoch 158/200 main_lr=0.010000
+2020-09-28 05:22:14,916 - bootstrap - INFO - tgt_test_acc: 69.33 ; src_test_acc: 99.34src_cls_loss : 0.02494, tgt_cls_loss : 0.00108, transfer_loss : 0.00777, env_loss : 0.29145, 
+2020-09-28 05:22:15,478 - bootstrap - INFO - Source epoch 166/200 main_lr=0.010000
+2020-09-28 05:23:50,532 - bootstrap - INFO - tgt_test_acc: 68.56 ; src_test_acc: 99.30src_cls_loss : 0.03034, tgt_cls_loss : 0.00078, transfer_loss : 0.00777, env_loss : 0.63358, 
+2020-09-28 05:23:51,208 - bootstrap - INFO - Source epoch 131/200 main_lr=0.010000
+2020-09-28 05:27:26,864 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 99.30src_cls_loss : 0.02723, tgt_cls_loss : 0.00101, transfer_loss : 0.00764, env_loss : 0.19846, 
+2020-09-28 05:27:27,429 - bootstrap - INFO - Source epoch 159/200 main_lr=0.010000
+2020-09-28 05:29:09,789 - bootstrap - INFO - tgt_test_acc: 70.50 ; src_test_acc: 99.34src_cls_loss : 0.02382, tgt_cls_loss : 0.00060, transfer_loss : 0.00764, env_loss : 0.28226, 
+2020-09-28 05:29:10,311 - bootstrap - INFO - Source epoch 167/200 main_lr=0.010000
+2020-09-28 05:30:33,433 - bootstrap - INFO - tgt_test_acc: 68.32 ; src_test_acc: 99.26src_cls_loss : 0.03489, tgt_cls_loss : 0.00082, transfer_loss : 0.00784, env_loss : 0.62253, 
+2020-09-28 05:30:34,107 - bootstrap - INFO - Source epoch 132/200 main_lr=0.010000
+2020-09-28 05:34:12,661 - bootstrap - INFO - tgt_test_acc: 69.57 ; src_test_acc: 99.42src_cls_loss : 0.02269, tgt_cls_loss : 0.00075, transfer_loss : 0.00771, env_loss : 0.20853, 
+2020-09-28 05:34:13,239 - bootstrap - INFO - Source epoch 160/200 main_lr=0.010000
+2020-09-28 05:35:58,429 - bootstrap - INFO - tgt_test_acc: 69.49 ; src_test_acc: 99.26src_cls_loss : 0.02518, tgt_cls_loss : 0.00078, transfer_loss : 0.00776, env_loss : 0.28857, 
+2020-09-28 05:35:59,097 - bootstrap - INFO - Source epoch 168/200 main_lr=0.010000
+2020-09-28 05:37:13,110 - bootstrap - INFO - tgt_test_acc: 68.01 ; src_test_acc: 99.26src_cls_loss : 0.02782, tgt_cls_loss : 0.00062, transfer_loss : 0.00778, env_loss : 0.62168, 
+2020-09-28 05:37:13,822 - bootstrap - INFO - Source epoch 133/200 main_lr=0.010000
+2020-09-28 05:40:55,963 - bootstrap - INFO - tgt_test_acc: 69.88 ; src_test_acc: 99.42src_cls_loss : 0.02226, tgt_cls_loss : 0.00082, transfer_loss : 0.00765, env_loss : 0.20175, 
+2020-09-28 05:40:56,655 - bootstrap - INFO - Source epoch 161/200 main_lr=0.010000
+2020-09-28 05:42:47,986 - bootstrap - INFO - tgt_test_acc: 69.41 ; src_test_acc: 99.30src_cls_loss : 0.02530, tgt_cls_loss : 0.00078, transfer_loss : 0.00773, env_loss : 0.27213, 
+2020-09-28 05:42:48,509 - bootstrap - INFO - Source epoch 169/200 main_lr=0.010000
+2020-09-28 05:43:53,595 - bootstrap - INFO - tgt_test_acc: 68.56 ; src_test_acc: 99.22src_cls_loss : 0.03641, tgt_cls_loss : 0.00079, transfer_loss : 0.00770, env_loss : 0.60774, 
+2020-09-28 05:43:54,146 - bootstrap - INFO - Source epoch 134/200 main_lr=0.010000
+2020-09-28 05:47:39,862 - bootstrap - INFO - tgt_test_acc: 70.26 ; src_test_acc: 99.51src_cls_loss : 0.01866, tgt_cls_loss : 0.00108, transfer_loss : 0.00766, env_loss : 0.19342, 
+2020-09-28 05:47:40,374 - bootstrap - INFO - Source epoch 162/200 main_lr=0.010000
+2020-09-28 05:49:38,095 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 99.30src_cls_loss : 0.02373, tgt_cls_loss : 0.00090, transfer_loss : 0.00776, env_loss : 0.28735, 
+2020-09-28 05:49:38,631 - bootstrap - INFO - Source epoch 170/200 main_lr=0.010000
+2020-09-28 05:50:32,129 - bootstrap - INFO - tgt_test_acc: 69.10 ; src_test_acc: 99.22src_cls_loss : 0.03195, tgt_cls_loss : 0.00099, transfer_loss : 0.00777, env_loss : 0.59516, 
+2020-09-28 05:50:32,730 - bootstrap - INFO - Source epoch 135/200 main_lr=0.010000
+2020-09-28 05:54:25,387 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 99.46src_cls_loss : 0.02420, tgt_cls_loss : 0.00048, transfer_loss : 0.00770, env_loss : 0.20082, 
+2020-09-28 05:54:26,087 - bootstrap - INFO - Source epoch 163/200 main_lr=0.010000
+2020-09-28 05:56:30,032 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 99.34src_cls_loss : 0.03128, tgt_cls_loss : 0.00052, transfer_loss : 0.00774, env_loss : 0.29372, 
+2020-09-28 05:56:30,626 - bootstrap - INFO - Source epoch 171/200 main_lr=0.010000
+2020-09-28 05:57:14,614 - bootstrap - INFO - tgt_test_acc: 68.71 ; src_test_acc: 99.34src_cls_loss : 0.03081, tgt_cls_loss : 0.00139, transfer_loss : 0.00762, env_loss : 0.60763, 
+2020-09-28 05:57:15,233 - bootstrap - INFO - Source epoch 136/200 main_lr=0.010000
+2020-09-28 06:01:11,963 - bootstrap - INFO - tgt_test_acc: 70.89 ; src_test_acc: 99.42src_cls_loss : 0.01848, tgt_cls_loss : 0.00068, transfer_loss : 0.00765, env_loss : 0.21180, 
+2020-09-28 06:01:12,650 - bootstrap - INFO - Source epoch 164/200 main_lr=0.010000
+2020-09-28 06:03:20,308 - bootstrap - INFO - tgt_test_acc: 68.56 ; src_test_acc: 99.38src_cls_loss : 0.02245, tgt_cls_loss : 0.00070, transfer_loss : 0.00767, env_loss : 0.27180, 
+2020-09-28 06:03:20,812 - bootstrap - INFO - Source epoch 172/200 main_lr=0.010000
+2020-09-28 06:03:53,215 - bootstrap - INFO - tgt_test_acc: 69.88 ; src_test_acc: 99.38src_cls_loss : 0.02929, tgt_cls_loss : 0.00070, transfer_loss : 0.00774, env_loss : 0.62232, 
+2020-09-28 06:03:53,877 - bootstrap - INFO - Source epoch 137/200 main_lr=0.010000
+2020-09-28 06:07:56,267 - bootstrap - INFO - tgt_test_acc: 70.96 ; src_test_acc: 99.42src_cls_loss : 0.02418, tgt_cls_loss : 0.00079, transfer_loss : 0.00758, env_loss : 0.20378, 
+2020-09-28 06:07:56,877 - bootstrap - INFO - Source epoch 165/200 main_lr=0.010000
+2020-09-28 06:10:08,415 - bootstrap - INFO - tgt_test_acc: 69.80 ; src_test_acc: 99.30src_cls_loss : 0.01979, tgt_cls_loss : 0.00069, transfer_loss : 0.00761, env_loss : 0.26509, 
+2020-09-28 06:10:09,100 - bootstrap - INFO - Source epoch 173/200 main_lr=0.010000
+2020-09-28 06:10:30,422 - bootstrap - INFO - tgt_test_acc: 69.02 ; src_test_acc: 99.22src_cls_loss : 0.02526, tgt_cls_loss : 0.00098, transfer_loss : 0.00760, env_loss : 0.60856, 
+2020-09-28 06:10:31,028 - bootstrap - INFO - Source epoch 138/200 main_lr=0.010000
+2020-09-28 06:14:45,758 - bootstrap - INFO - tgt_test_acc: 69.80 ; src_test_acc: 99.34src_cls_loss : 0.02457, tgt_cls_loss : 0.00076, transfer_loss : 0.00761, env_loss : 0.18773, 
+2020-09-28 06:14:46,352 - bootstrap - INFO - Source epoch 166/200 main_lr=0.010000
+2020-09-28 06:17:01,719 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 99.34src_cls_loss : 0.02451, tgt_cls_loss : 0.00083, transfer_loss : 0.00771, env_loss : 0.26293, 
+2020-09-28 06:17:02,282 - bootstrap - INFO - Source epoch 174/200 main_lr=0.010000
+2020-09-28 06:17:10,190 - bootstrap - INFO - tgt_test_acc: 69.88 ; src_test_acc: 99.30src_cls_loss : 0.03195, tgt_cls_loss : 0.00084, transfer_loss : 0.00763, env_loss : 0.60068, 
+2020-09-28 06:17:10,732 - bootstrap - INFO - Source epoch 139/200 main_lr=0.010000
+2020-09-28 06:21:26,870 - bootstrap - INFO - tgt_test_acc: 70.57 ; src_test_acc: 99.42src_cls_loss : 0.02408, tgt_cls_loss : 0.00101, transfer_loss : 0.00768, env_loss : 0.19397, 
+2020-09-28 06:21:27,539 - bootstrap - INFO - Source epoch 167/200 main_lr=0.010000
+2020-09-28 06:23:50,506 - bootstrap - INFO - tgt_test_acc: 69.33 ; src_test_acc: 99.26src_cls_loss : 0.02886, tgt_cls_loss : 0.00062, transfer_loss : 0.00762, env_loss : 0.61969, 
+2020-09-28 06:23:51,194 - bootstrap - INFO - Source epoch 140/200 main_lr=0.010000
+2020-09-28 06:23:54,195 - bootstrap - INFO - tgt_test_acc: 69.10 ; src_test_acc: 99.26src_cls_loss : 0.01917, tgt_cls_loss : 0.00086, transfer_loss : 0.00780, env_loss : 0.27286, 
+2020-09-28 06:23:54,798 - bootstrap - INFO - Source epoch 175/200 main_lr=0.010000
+2020-09-28 06:28:09,272 - bootstrap - INFO - tgt_test_acc: 70.65 ; src_test_acc: 99.38src_cls_loss : 0.02575, tgt_cls_loss : 0.00070, transfer_loss : 0.00765, env_loss : 0.19635, 
+2020-09-28 06:28:09,836 - bootstrap - INFO - Source epoch 168/200 main_lr=0.010000
+2020-09-28 06:30:25,938 - bootstrap - INFO - tgt_test_acc: 69.10 ; src_test_acc: 99.22src_cls_loss : 0.02497, tgt_cls_loss : 0.00117, transfer_loss : 0.00768, env_loss : 0.58878, 
+2020-09-28 06:30:26,597 - bootstrap - INFO - Source epoch 141/200 main_lr=0.010000
+2020-09-28 06:30:43,302 - bootstrap - INFO - tgt_test_acc: 69.57 ; src_test_acc: 99.26src_cls_loss : 0.02495, tgt_cls_loss : 0.00098, transfer_loss : 0.00772, env_loss : 0.25888, 
+2020-09-28 06:30:43,863 - bootstrap - INFO - Source epoch 176/200 main_lr=0.010000
+2020-09-28 06:34:53,582 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 99.55src_cls_loss : 0.02273, tgt_cls_loss : 0.00064, transfer_loss : 0.00770, env_loss : 0.19597, 
+2020-09-28 06:34:54,208 - bootstrap - INFO - Source epoch 169/200 main_lr=0.010000
+2020-09-28 06:37:04,322 - bootstrap - INFO - tgt_test_acc: 69.18 ; src_test_acc: 99.26src_cls_loss : 0.02742, tgt_cls_loss : 0.00071, transfer_loss : 0.00773, env_loss : 0.59191, 
+2020-09-28 06:37:05,098 - bootstrap - INFO - Source epoch 142/200 main_lr=0.010000
+2020-09-28 06:37:31,788 - bootstrap - INFO - tgt_test_acc: 70.19 ; src_test_acc: 99.26src_cls_loss : 0.02292, tgt_cls_loss : 0.00078, transfer_loss : 0.00774, env_loss : 0.26686, 
+2020-09-28 06:37:32,373 - bootstrap - INFO - Source epoch 177/200 main_lr=0.010000
+2020-09-28 06:41:42,770 - bootstrap - INFO - tgt_test_acc: 70.57 ; src_test_acc: 99.42src_cls_loss : 0.02483, tgt_cls_loss : 0.00078, transfer_loss : 0.00760, env_loss : 0.20015, 
+2020-09-28 06:41:43,289 - bootstrap - INFO - Source epoch 170/200 main_lr=0.010000
+2020-09-28 06:43:45,626 - bootstrap - INFO - tgt_test_acc: 69.33 ; src_test_acc: 99.26src_cls_loss : 0.02530, tgt_cls_loss : 0.00088, transfer_loss : 0.00770, env_loss : 0.57410, 
+2020-09-28 06:43:46,203 - bootstrap - INFO - Source epoch 143/200 main_lr=0.010000
+2020-09-28 06:44:23,922 - bootstrap - INFO - tgt_test_acc: 70.89 ; src_test_acc: 99.34src_cls_loss : 0.02336, tgt_cls_loss : 0.00065, transfer_loss : 0.00765, env_loss : 0.27447, 
+2020-09-28 06:44:24,417 - bootstrap - INFO - Source epoch 178/200 main_lr=0.010000
+2020-09-28 06:48:26,987 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 99.42src_cls_loss : 0.02317, tgt_cls_loss : 0.00059, transfer_loss : 0.00772, env_loss : 0.20669, 
+2020-09-28 06:48:27,725 - bootstrap - INFO - Source epoch 171/200 main_lr=0.010000
+2020-09-28 06:50:25,021 - bootstrap - INFO - tgt_test_acc: 68.48 ; src_test_acc: 99.38src_cls_loss : 0.02591, tgt_cls_loss : 0.00097, transfer_loss : 0.00773, env_loss : 0.58693, 
+2020-09-28 06:50:25,534 - bootstrap - INFO - Source epoch 144/200 main_lr=0.010000
+2020-09-28 06:51:13,613 - bootstrap - INFO - tgt_test_acc: 70.26 ; src_test_acc: 99.26src_cls_loss : 0.02755, tgt_cls_loss : 0.00072, transfer_loss : 0.00765, env_loss : 0.26044, 
+2020-09-28 06:51:14,293 - bootstrap - INFO - Source epoch 179/200 main_lr=0.010000
+2020-09-28 06:55:14,682 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.42src_cls_loss : 0.01958, tgt_cls_loss : 0.00065, transfer_loss : 0.00764, env_loss : 0.18714, 
+2020-09-28 06:55:15,342 - bootstrap - INFO - Source epoch 172/200 main_lr=0.010000
+2020-09-28 06:57:09,724 - bootstrap - INFO - tgt_test_acc: 68.94 ; src_test_acc: 99.38src_cls_loss : 0.01907, tgt_cls_loss : 0.00070, transfer_loss : 0.00767, env_loss : 0.57581, 
+2020-09-28 06:57:10,298 - bootstrap - INFO - Source epoch 145/200 main_lr=0.010000
+2020-09-28 06:58:00,608 - bootstrap - INFO - tgt_test_acc: 69.49 ; src_test_acc: 99.18src_cls_loss : 0.02374, tgt_cls_loss : 0.00080, transfer_loss : 0.00763, env_loss : 0.25882, 
+2020-09-28 06:58:01,206 - bootstrap - INFO - Source epoch 180/200 main_lr=0.010000
+2020-09-28 07:01:57,959 - bootstrap - INFO - tgt_test_acc: 70.81 ; src_test_acc: 99.46src_cls_loss : 0.02109, tgt_cls_loss : 0.00082, transfer_loss : 0.00771, env_loss : 0.19429, 
+2020-09-28 07:01:58,554 - bootstrap - INFO - Source epoch 173/200 main_lr=0.010000
+2020-09-28 07:03:55,018 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 99.38src_cls_loss : 0.02123, tgt_cls_loss : 0.00095, transfer_loss : 0.00771, env_loss : 0.59460, 
+2020-09-28 07:03:55,558 - bootstrap - INFO - Source epoch 146/200 main_lr=0.010000
+2020-09-28 07:04:45,509 - bootstrap - INFO - tgt_test_acc: 69.25 ; src_test_acc: 99.22src_cls_loss : 0.02415, tgt_cls_loss : 0.00098, transfer_loss : 0.00759, env_loss : 0.26610, 
+2020-09-28 07:04:46,142 - bootstrap - INFO - Source epoch 181/200 main_lr=0.010000
+2020-09-28 07:08:39,373 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 99.51src_cls_loss : 0.02296, tgt_cls_loss : 0.00072, transfer_loss : 0.00752, env_loss : 0.18551, 
+2020-09-28 07:08:39,894 - bootstrap - INFO - Source epoch 174/200 main_lr=0.010000
+2020-09-28 07:10:39,039 - bootstrap - INFO - tgt_test_acc: 68.87 ; src_test_acc: 99.46src_cls_loss : 0.02464, tgt_cls_loss : 0.00075, transfer_loss : 0.00762, env_loss : 0.56936, 
+2020-09-28 07:10:39,653 - bootstrap - INFO - Source epoch 147/200 main_lr=0.010000
+2020-09-28 07:11:31,793 - bootstrap - INFO - tgt_test_acc: 69.41 ; src_test_acc: 99.18src_cls_loss : 0.01938, tgt_cls_loss : 0.00105, transfer_loss : 0.00762, env_loss : 0.24319, 
+2020-09-28 07:11:32,381 - bootstrap - INFO - Source epoch 182/200 main_lr=0.010000
+2020-09-28 07:15:24,456 - bootstrap - INFO - tgt_test_acc: 70.42 ; src_test_acc: 99.34src_cls_loss : 0.02056, tgt_cls_loss : 0.00057, transfer_loss : 0.00762, env_loss : 0.19343, 
+2020-09-28 07:15:25,085 - bootstrap - INFO - Source epoch 175/200 main_lr=0.010000
+2020-09-28 07:17:27,210 - bootstrap - INFO - tgt_test_acc: 68.32 ; src_test_acc: 99.51src_cls_loss : 0.02635, tgt_cls_loss : 0.00084, transfer_loss : 0.00777, env_loss : 0.58834, 
+2020-09-28 07:17:27,812 - bootstrap - INFO - Source epoch 148/200 main_lr=0.010000
+2020-09-28 07:18:21,205 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.26src_cls_loss : 0.02272, tgt_cls_loss : 0.00096, transfer_loss : 0.00758, env_loss : 0.26536, 
+2020-09-28 07:18:21,821 - bootstrap - INFO - Source epoch 183/200 main_lr=0.010000
+2020-09-28 07:22:08,348 - bootstrap - INFO - tgt_test_acc: 70.81 ; src_test_acc: 99.34src_cls_loss : 0.02137, tgt_cls_loss : 0.00068, transfer_loss : 0.00766, env_loss : 0.18583, 
+2020-09-28 07:22:08,940 - bootstrap - INFO - Source epoch 176/200 main_lr=0.010000
+2020-09-28 07:24:10,035 - bootstrap - INFO - tgt_test_acc: 68.17 ; src_test_acc: 99.38src_cls_loss : 0.02090, tgt_cls_loss : 0.00085, transfer_loss : 0.00757, env_loss : 0.57213, 
+2020-09-28 07:24:10,721 - bootstrap - INFO - Source epoch 149/200 main_lr=0.010000
+2020-09-28 07:25:07,417 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.30src_cls_loss : 0.02078, tgt_cls_loss : 0.00060, transfer_loss : 0.00766, env_loss : 0.25501, 
+2020-09-28 07:25:08,101 - bootstrap - INFO - Source epoch 184/200 main_lr=0.010000
+2020-09-28 07:28:50,858 - bootstrap - INFO - tgt_test_acc: 70.89 ; src_test_acc: 99.42src_cls_loss : 0.02232, tgt_cls_loss : 0.00063, transfer_loss : 0.00767, env_loss : 0.18793, 
+2020-09-28 07:28:51,469 - bootstrap - INFO - Source epoch 177/200 main_lr=0.010000
+2020-09-28 07:30:51,604 - bootstrap - INFO - tgt_test_acc: 68.79 ; src_test_acc: 99.42src_cls_loss : 0.02752, tgt_cls_loss : 0.00072, transfer_loss : 0.00770, env_loss : 0.58856, 
+2020-09-28 07:30:52,168 - bootstrap - INFO - Source epoch 150/200 main_lr=0.010000
+2020-09-28 07:31:55,588 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.22src_cls_loss : 0.02385, tgt_cls_loss : 0.00113, transfer_loss : 0.00764, env_loss : 0.25820, 
+2020-09-28 07:31:56,073 - bootstrap - INFO - Source epoch 185/200 main_lr=0.010000
+2020-09-28 07:35:36,957 - bootstrap - INFO - tgt_test_acc: 70.81 ; src_test_acc: 99.34src_cls_loss : 0.02009, tgt_cls_loss : 0.00073, transfer_loss : 0.00762, env_loss : 0.17085, 
+2020-09-28 07:35:37,577 - bootstrap - INFO - Source epoch 178/200 main_lr=0.010000
+2020-09-28 07:37:36,128 - bootstrap - INFO - tgt_test_acc: 68.48 ; src_test_acc: 99.42src_cls_loss : 0.02688, tgt_cls_loss : 0.00051, transfer_loss : 0.00763, env_loss : 0.57635, 
+2020-09-28 07:37:36,726 - bootstrap - INFO - Source epoch 151/200 main_lr=0.010000
+2020-09-28 07:38:45,697 - bootstrap - INFO - tgt_test_acc: 70.50 ; src_test_acc: 99.26src_cls_loss : 0.02046, tgt_cls_loss : 0.00117, transfer_loss : 0.00769, env_loss : 0.24696, 
+2020-09-28 07:38:46,370 - bootstrap - INFO - Source epoch 186/200 main_lr=0.010000
+2020-09-28 07:42:21,201 - bootstrap - INFO - tgt_test_acc: 70.81 ; src_test_acc: 99.38src_cls_loss : 0.01910, tgt_cls_loss : 0.00077, transfer_loss : 0.00765, env_loss : 0.18021, 
+2020-09-28 07:42:21,857 - bootstrap - INFO - Source epoch 179/200 main_lr=0.010000
+2020-09-28 07:44:26,522 - bootstrap - INFO - tgt_test_acc: 68.32 ; src_test_acc: 99.42src_cls_loss : 0.02477, tgt_cls_loss : 0.00132, transfer_loss : 0.00774, env_loss : 0.55927, 
+2020-09-28 07:44:27,172 - bootstrap - INFO - Source epoch 152/200 main_lr=0.010000
+2020-09-28 07:45:34,885 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 99.22src_cls_loss : 0.02202, tgt_cls_loss : 0.00078, transfer_loss : 0.00772, env_loss : 0.26429, 
+2020-09-28 07:45:35,559 - bootstrap - INFO - Source epoch 187/200 main_lr=0.010000
+2020-09-28 07:49:10,190 - bootstrap - INFO - tgt_test_acc: 72.20 ; src_test_acc: 99.38src_cls_loss : 0.02203, tgt_cls_loss : 0.00077, transfer_loss : 0.00764, env_loss : 0.17552, 
+2020-09-28 07:49:10,783 - bootstrap - INFO - Source epoch 180/200 main_lr=0.010000
+2020-09-28 07:51:07,902 - bootstrap - INFO - tgt_test_acc: 68.87 ; src_test_acc: 99.30src_cls_loss : 0.02190, tgt_cls_loss : 0.00064, transfer_loss : 0.00768, env_loss : 0.56468, 
+2020-09-28 07:51:08,548 - bootstrap - INFO - Source epoch 153/200 main_lr=0.010000
+2020-09-28 07:52:20,791 - bootstrap - INFO - tgt_test_acc: 69.88 ; src_test_acc: 99.22src_cls_loss : 0.02045, tgt_cls_loss : 0.00076, transfer_loss : 0.00768, env_loss : 0.25538, 
+2020-09-28 07:52:21,438 - bootstrap - INFO - Source epoch 188/200 main_lr=0.010000
+2020-09-28 07:55:57,681 - bootstrap - INFO - tgt_test_acc: 71.04 ; src_test_acc: 99.34src_cls_loss : 0.02095, tgt_cls_loss : 0.00094, transfer_loss : 0.00755, env_loss : 0.18160, 
+2020-09-28 07:55:58,385 - bootstrap - INFO - Source epoch 181/200 main_lr=0.010000
+2020-09-28 07:57:50,716 - bootstrap - INFO - tgt_test_acc: 69.33 ; src_test_acc: 99.30src_cls_loss : 0.02344, tgt_cls_loss : 0.00091, transfer_loss : 0.00765, env_loss : 0.55411, 
+2020-09-28 07:57:51,297 - bootstrap - INFO - Source epoch 154/200 main_lr=0.010000
+2020-09-28 07:59:09,195 - bootstrap - INFO - tgt_test_acc: 70.19 ; src_test_acc: 99.22src_cls_loss : 0.02153, tgt_cls_loss : 0.00068, transfer_loss : 0.00758, env_loss : 0.24412, 
+2020-09-28 07:59:09,702 - bootstrap - INFO - Source epoch 189/200 main_lr=0.010000
+2020-09-28 08:02:44,551 - bootstrap - INFO - tgt_test_acc: 70.96 ; src_test_acc: 99.38src_cls_loss : 0.01845, tgt_cls_loss : 0.00053, transfer_loss : 0.00762, env_loss : 0.17459, 
+2020-09-28 08:02:45,108 - bootstrap - INFO - Source epoch 182/200 main_lr=0.010000
+2020-09-28 08:04:29,911 - bootstrap - INFO - tgt_test_acc: 68.63 ; src_test_acc: 99.18src_cls_loss : 0.03073, tgt_cls_loss : 0.00067, transfer_loss : 0.00762, env_loss : 0.58125, 
+2020-09-28 08:04:30,603 - bootstrap - INFO - Source epoch 155/200 main_lr=0.010000
+2020-09-28 08:05:58,893 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 99.18src_cls_loss : 0.01785, tgt_cls_loss : 0.00103, transfer_loss : 0.00765, env_loss : 0.24168, 
+2020-09-28 08:05:59,440 - bootstrap - INFO - Source epoch 190/200 main_lr=0.010000
+2020-09-28 08:09:30,989 - bootstrap - INFO - tgt_test_acc: 71.35 ; src_test_acc: 99.38src_cls_loss : 0.01740, tgt_cls_loss : 0.00052, transfer_loss : 0.00761, env_loss : 0.18726, 
+2020-09-28 08:09:31,506 - bootstrap - INFO - Source epoch 183/200 main_lr=0.010000
+2020-09-28 08:11:15,512 - bootstrap - INFO - tgt_test_acc: 68.87 ; src_test_acc: 99.34src_cls_loss : 0.02447, tgt_cls_loss : 0.00079, transfer_loss : 0.00767, env_loss : 0.54884, 
+2020-09-28 08:11:16,144 - bootstrap - INFO - Source epoch 156/200 main_lr=0.010000
+2020-09-28 08:12:49,400 - bootstrap - INFO - tgt_test_acc: 70.65 ; src_test_acc: 99.30src_cls_loss : 0.02358, tgt_cls_loss : 0.00059, transfer_loss : 0.00771, env_loss : 0.26312, 
+2020-09-28 08:12:49,992 - bootstrap - INFO - Source epoch 191/200 main_lr=0.010000
+2020-09-28 08:16:18,596 - bootstrap - INFO - tgt_test_acc: 70.26 ; src_test_acc: 99.38src_cls_loss : 0.02338, tgt_cls_loss : 0.00057, transfer_loss : 0.00759, env_loss : 0.17884, 
+2020-09-28 08:16:19,254 - bootstrap - INFO - Source epoch 184/200 main_lr=0.010000
+2020-09-28 08:18:00,017 - bootstrap - INFO - tgt_test_acc: 68.63 ; src_test_acc: 99.34src_cls_loss : 0.02539, tgt_cls_loss : 0.00090, transfer_loss : 0.00776, env_loss : 0.57714, 
+2020-09-28 08:18:00,587 - bootstrap - INFO - Source epoch 157/200 main_lr=0.010000
+2020-09-28 08:19:39,390 - bootstrap - INFO - tgt_test_acc: 69.80 ; src_test_acc: 99.30src_cls_loss : 0.01981, tgt_cls_loss : 0.00091, transfer_loss : 0.00758, env_loss : 0.24159, 
+2020-09-28 08:19:40,056 - bootstrap - INFO - Source epoch 192/200 main_lr=0.010000
+2020-09-28 08:23:07,666 - bootstrap - INFO - tgt_test_acc: 70.65 ; src_test_acc: 99.34src_cls_loss : 0.02203, tgt_cls_loss : 0.00051, transfer_loss : 0.00763, env_loss : 0.19040, 
+2020-09-28 08:23:08,240 - bootstrap - INFO - Source epoch 185/200 main_lr=0.010000
+2020-09-28 08:24:45,040 - bootstrap - INFO - tgt_test_acc: 68.32 ; src_test_acc: 99.42src_cls_loss : 0.02735, tgt_cls_loss : 0.00058, transfer_loss : 0.00769, env_loss : 0.56145, 
+2020-09-28 08:24:45,646 - bootstrap - INFO - Source epoch 158/200 main_lr=0.010000
+2020-09-28 08:26:24,724 - bootstrap - INFO - tgt_test_acc: 70.42 ; src_test_acc: 99.30src_cls_loss : 0.01990, tgt_cls_loss : 0.00107, transfer_loss : 0.00757, env_loss : 0.25147, 
+2020-09-28 08:26:25,494 - bootstrap - INFO - Source epoch 193/200 main_lr=0.010000
+2020-09-28 08:29:54,079 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 99.38src_cls_loss : 0.01727, tgt_cls_loss : 0.00067, transfer_loss : 0.00761, env_loss : 0.17757, 
+2020-09-28 08:29:54,672 - bootstrap - INFO - Source epoch 186/200 main_lr=0.010000
+2020-09-28 08:31:26,915 - bootstrap - INFO - tgt_test_acc: 67.86 ; src_test_acc: 99.42src_cls_loss : 0.02148, tgt_cls_loss : 0.00070, transfer_loss : 0.00767, env_loss : 0.55135, 
+2020-09-28 08:31:27,509 - bootstrap - INFO - Source epoch 159/200 main_lr=0.010000
+2020-09-28 08:33:12,490 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 99.26src_cls_loss : 0.02172, tgt_cls_loss : 0.00077, transfer_loss : 0.00758, env_loss : 0.24644, 
+2020-09-28 08:33:13,091 - bootstrap - INFO - Source epoch 194/200 main_lr=0.010000
+2020-09-28 08:36:38,897 - bootstrap - INFO - tgt_test_acc: 70.50 ; src_test_acc: 99.34src_cls_loss : 0.02446, tgt_cls_loss : 0.00098, transfer_loss : 0.00759, env_loss : 0.18928, 
+2020-09-28 08:36:39,466 - bootstrap - INFO - Source epoch 187/200 main_lr=0.010000
+2020-09-28 08:38:12,416 - bootstrap - INFO - tgt_test_acc: 68.40 ; src_test_acc: 99.34src_cls_loss : 0.02272, tgt_cls_loss : 0.00110, transfer_loss : 0.00773, env_loss : 0.54767, 
+2020-09-28 08:38:13,134 - bootstrap - INFO - Source epoch 160/200 main_lr=0.010000
+2020-09-28 08:40:01,688 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 99.34src_cls_loss : 0.02699, tgt_cls_loss : 0.00073, transfer_loss : 0.00768, env_loss : 0.25907, 
+2020-09-28 08:40:02,332 - bootstrap - INFO - Source epoch 195/200 main_lr=0.010000
+2020-09-28 08:43:21,991 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 99.38src_cls_loss : 0.02296, tgt_cls_loss : 0.00085, transfer_loss : 0.00761, env_loss : 0.17455, 
+2020-09-28 08:43:22,676 - bootstrap - INFO - Source epoch 188/200 main_lr=0.010000
+2020-09-28 08:44:56,398 - bootstrap - INFO - tgt_test_acc: 68.71 ; src_test_acc: 99.34src_cls_loss : 0.02553, tgt_cls_loss : 0.00076, transfer_loss : 0.00770, env_loss : 0.55567, 
+2020-09-28 08:44:56,919 - bootstrap - INFO - Source epoch 161/200 main_lr=0.010000
+2020-09-28 08:46:49,599 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 99.30src_cls_loss : 0.02035, tgt_cls_loss : 0.00074, transfer_loss : 0.00763, env_loss : 0.24837, 
+2020-09-28 08:46:50,114 - bootstrap - INFO - Source epoch 196/200 main_lr=0.010000
+2020-09-28 08:50:04,070 - bootstrap - INFO - tgt_test_acc: 70.11 ; src_test_acc: 99.34src_cls_loss : 0.01761, tgt_cls_loss : 0.00050, transfer_loss : 0.00758, env_loss : 0.17403, 
+2020-09-28 08:50:04,601 - bootstrap - INFO - Source epoch 189/200 main_lr=0.010000
+2020-09-28 08:51:38,212 - bootstrap - INFO - tgt_test_acc: 67.78 ; src_test_acc: 99.30src_cls_loss : 0.02319, tgt_cls_loss : 0.00067, transfer_loss : 0.00771, env_loss : 0.56645, 
+2020-09-28 08:51:38,917 - bootstrap - INFO - Source epoch 162/200 main_lr=0.010000
+2020-09-28 08:53:33,312 - bootstrap - INFO - tgt_test_acc: 69.49 ; src_test_acc: 99.34src_cls_loss : 0.02228, tgt_cls_loss : 0.00066, transfer_loss : 0.00762, env_loss : 0.24388, 
+2020-09-28 08:53:33,870 - bootstrap - INFO - Source epoch 197/200 main_lr=0.010000
+2020-09-28 08:56:45,090 - bootstrap - INFO - tgt_test_acc: 70.19 ; src_test_acc: 99.51src_cls_loss : 0.01698, tgt_cls_loss : 0.00055, transfer_loss : 0.00765, env_loss : 0.16996, 
+2020-09-28 08:56:45,783 - bootstrap - INFO - Source epoch 190/200 main_lr=0.010000
+2020-09-28 08:58:20,612 - bootstrap - INFO - tgt_test_acc: 68.79 ; src_test_acc: 99.26src_cls_loss : 0.01951, tgt_cls_loss : 0.00080, transfer_loss : 0.00769, env_loss : 0.54712, 
+2020-09-28 08:58:21,278 - bootstrap - INFO - Source epoch 163/200 main_lr=0.010000
+2020-09-28 09:00:21,988 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 99.34src_cls_loss : 0.02402, tgt_cls_loss : 0.00106, transfer_loss : 0.00766, env_loss : 0.25359, 
+2020-09-28 09:00:22,478 - bootstrap - INFO - Source epoch 198/200 main_lr=0.010000
+2020-09-28 09:03:31,365 - bootstrap - INFO - tgt_test_acc: 71.12 ; src_test_acc: 99.46src_cls_loss : 0.02213, tgt_cls_loss : 0.00042, transfer_loss : 0.00752, env_loss : 0.16958, 
+2020-09-28 09:03:32,084 - bootstrap - INFO - Source epoch 191/200 main_lr=0.010000
+2020-09-28 09:05:02,817 - bootstrap - INFO - tgt_test_acc: 68.71 ; src_test_acc: 99.30src_cls_loss : 0.02201, tgt_cls_loss : 0.00077, transfer_loss : 0.00766, env_loss : 0.54244, 
+2020-09-28 09:05:03,470 - bootstrap - INFO - Source epoch 164/200 main_lr=0.010000
+2020-09-28 09:07:08,613 - bootstrap - INFO - tgt_test_acc: 69.88 ; src_test_acc: 99.26src_cls_loss : 0.01829, tgt_cls_loss : 0.00106, transfer_loss : 0.00756, env_loss : 0.23249, 
+2020-09-28 09:07:09,203 - bootstrap - INFO - Source epoch 199/200 main_lr=0.010000
+2020-09-28 09:10:17,673 - bootstrap - INFO - tgt_test_acc: 70.81 ; src_test_acc: 99.46src_cls_loss : 0.01970, tgt_cls_loss : 0.00076, transfer_loss : 0.00766, env_loss : 0.17298, 
+2020-09-28 09:10:18,235 - bootstrap - INFO - Source epoch 192/200 main_lr=0.010000
+2020-09-28 09:11:49,431 - bootstrap - INFO - tgt_test_acc: 68.87 ; src_test_acc: 99.38src_cls_loss : 0.02947, tgt_cls_loss : 0.00076, transfer_loss : 0.00776, env_loss : 0.55932, 
+2020-09-28 09:11:50,024 - bootstrap - INFO - Source epoch 165/200 main_lr=0.010000
+2020-09-28 09:13:56,914 - bootstrap - INFO - tgt_test_acc: 70.03 ; src_test_acc: 99.30src_cls_loss : 0.02214, tgt_cls_loss : 0.00060, transfer_loss : 0.00766, env_loss : 0.23388, 
+2020-09-28 09:13:57,495 - bootstrap - INFO - Source epoch 200/200 main_lr=0.010000
+2020-09-28 09:17:00,359 - bootstrap - INFO - tgt_test_acc: 71.74 ; src_test_acc: 99.51src_cls_loss : 0.02167, tgt_cls_loss : 0.00063, transfer_loss : 0.00751, env_loss : 0.17179, 
+2020-09-28 09:17:00,906 - bootstrap - INFO - Source epoch 193/200 main_lr=0.010000
+2020-09-28 09:18:31,107 - bootstrap - INFO - tgt_test_acc: 68.48 ; src_test_acc: 99.34src_cls_loss : 0.02431, tgt_cls_loss : 0.00055, transfer_loss : 0.00757, env_loss : 0.53412, 
+2020-09-28 09:18:31,696 - bootstrap - INFO - Source epoch 166/200 main_lr=0.010000
+2020-09-28 09:20:45,595 - bootstrap - INFO - tgt_test_acc: 69.80 ; src_test_acc: 99.30src_cls_loss : 0.01755, tgt_cls_loss : 0.00058, transfer_loss : 0.00750, env_loss : 0.23712, 
+2020-09-28 09:23:44,362 - bootstrap - INFO - tgt_test_acc: 70.81 ; src_test_acc: 99.42src_cls_loss : 0.02027, tgt_cls_loss : 0.00059, transfer_loss : 0.00756, env_loss : 0.17085, 
+2020-09-28 09:23:44,985 - bootstrap - INFO - Source epoch 194/200 main_lr=0.010000
+2020-09-28 09:25:14,325 - bootstrap - INFO - tgt_test_acc: 68.71 ; src_test_acc: 99.34src_cls_loss : 0.02778, tgt_cls_loss : 0.00064, transfer_loss : 0.00760, env_loss : 0.55731, 
+2020-09-28 09:25:14,915 - bootstrap - INFO - Source epoch 167/200 main_lr=0.010000
+2020-09-28 09:30:26,360 - bootstrap - INFO - tgt_test_acc: 70.19 ; src_test_acc: 99.42src_cls_loss : 0.01944, tgt_cls_loss : 0.00090, transfer_loss : 0.00765, env_loss : 0.16528, 
+2020-09-28 09:30:26,944 - bootstrap - INFO - Source epoch 195/200 main_lr=0.010000
+2020-09-28 09:32:01,932 - bootstrap - INFO - tgt_test_acc: 68.56 ; src_test_acc: 99.46src_cls_loss : 0.02402, tgt_cls_loss : 0.00053, transfer_loss : 0.00757, env_loss : 0.54682, 
+2020-09-28 09:32:02,471 - bootstrap - INFO - Source epoch 168/200 main_lr=0.010000
+2020-09-28 09:37:14,465 - bootstrap - INFO - tgt_test_acc: 70.19 ; src_test_acc: 99.38src_cls_loss : 0.01948, tgt_cls_loss : 0.00058, transfer_loss : 0.00764, env_loss : 0.15978, 
+2020-09-28 09:37:15,075 - bootstrap - INFO - Source epoch 196/200 main_lr=0.010000
+2020-09-28 09:38:50,731 - bootstrap - INFO - tgt_test_acc: 68.63 ; src_test_acc: 99.38src_cls_loss : 0.02065, tgt_cls_loss : 0.00054, transfer_loss : 0.00769, env_loss : 0.54717, 
+2020-09-28 09:38:51,390 - bootstrap - INFO - Source epoch 169/200 main_lr=0.010000
+2020-09-28 09:44:01,664 - bootstrap - INFO - tgt_test_acc: 69.95 ; src_test_acc: 99.46src_cls_loss : 0.01956, tgt_cls_loss : 0.00065, transfer_loss : 0.00758, env_loss : 0.15681, 
+2020-09-28 09:44:02,188 - bootstrap - INFO - Source epoch 197/200 main_lr=0.010000
+2020-09-28 09:45:31,634 - bootstrap - INFO - tgt_test_acc: 68.40 ; src_test_acc: 99.30src_cls_loss : 0.02126, tgt_cls_loss : 0.00072, transfer_loss : 0.00752, env_loss : 0.53294, 
+2020-09-28 09:45:32,346 - bootstrap - INFO - Source epoch 170/200 main_lr=0.010000
+2020-09-28 09:50:44,799 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.42src_cls_loss : 0.02236, tgt_cls_loss : 0.00076, transfer_loss : 0.00749, env_loss : 0.16016, 
+2020-09-28 09:50:45,527 - bootstrap - INFO - Source epoch 198/200 main_lr=0.010000
+2020-09-28 09:52:16,632 - bootstrap - INFO - tgt_test_acc: 69.57 ; src_test_acc: 99.38src_cls_loss : 0.01937, tgt_cls_loss : 0.00071, transfer_loss : 0.00769, env_loss : 0.52395, 
+2020-09-28 09:52:17,382 - bootstrap - INFO - Source epoch 171/200 main_lr=0.010000
+2020-09-28 09:57:31,352 - bootstrap - INFO - tgt_test_acc: 69.80 ; src_test_acc: 99.38src_cls_loss : 0.01863, tgt_cls_loss : 0.00073, transfer_loss : 0.00755, env_loss : 0.16091, 
+2020-09-28 09:57:31,906 - bootstrap - INFO - Source epoch 199/200 main_lr=0.010000
+2020-09-28 09:58:59,707 - bootstrap - INFO - tgt_test_acc: 68.79 ; src_test_acc: 99.26src_cls_loss : 0.02483, tgt_cls_loss : 0.00076, transfer_loss : 0.00760, env_loss : 0.53506, 
+2020-09-28 09:59:00,304 - bootstrap - INFO - Source epoch 172/200 main_lr=0.010000
+2020-09-28 10:04:20,464 - bootstrap - INFO - tgt_test_acc: 69.64 ; src_test_acc: 99.38src_cls_loss : 0.02004, tgt_cls_loss : 0.00065, transfer_loss : 0.00752, env_loss : 0.16014, 
+2020-09-28 10:04:21,119 - bootstrap - INFO - Source epoch 200/200 main_lr=0.010000
+2020-09-28 10:05:43,709 - bootstrap - INFO - tgt_test_acc: 68.94 ; src_test_acc: 99.42src_cls_loss : 0.02126, tgt_cls_loss : 0.00061, transfer_loss : 0.00750, env_loss : 0.53922, 
+2020-09-28 10:05:44,234 - bootstrap - INFO - Source epoch 173/200 main_lr=0.010000
+2020-09-28 10:11:06,688 - bootstrap - INFO - tgt_test_acc: 69.72 ; src_test_acc: 99.42src_cls_loss : 0.02165, tgt_cls_loss : 0.00069, transfer_loss : 0.00759, env_loss : 0.16344, 
+2020-09-28 10:12:30,400 - bootstrap - INFO - tgt_test_acc: 69.80 ; src_test_acc: 99.34src_cls_loss : 0.01741, tgt_cls_loss : 0.00066, transfer_loss : 0.00763, env_loss : 0.53683, 
+2020-09-28 10:12:31,020 - bootstrap - INFO - Source epoch 174/200 main_lr=0.010000
+2020-09-28 10:19:17,618 - bootstrap - INFO - tgt_test_acc: 68.25 ; src_test_acc: 99.22src_cls_loss : 0.02168, tgt_cls_loss : 0.00061, transfer_loss : 0.00771, env_loss : 0.53340, 
+2020-09-28 10:19:18,133 - bootstrap - INFO - Source epoch 175/200 main_lr=0.010000
+2020-09-28 10:26:05,028 - bootstrap - INFO - tgt_test_acc: 68.09 ; src_test_acc: 99.26src_cls_loss : 0.01822, tgt_cls_loss : 0.00053, transfer_loss : 0.00766, env_loss : 0.51271, 
+2020-09-28 10:26:05,611 - bootstrap - INFO - Source epoch 176/200 main_lr=0.010000
+2020-09-28 10:32:51,518 - bootstrap - INFO - tgt_test_acc: 67.47 ; src_test_acc: 99.30src_cls_loss : 0.02200, tgt_cls_loss : 0.00067, transfer_loss : 0.00754, env_loss : 0.53042, 
+2020-09-28 10:32:52,041 - bootstrap - INFO - Source epoch 177/200 main_lr=0.010000
+2020-09-28 10:39:37,317 - bootstrap - INFO - tgt_test_acc: 68.25 ; src_test_acc: 99.38src_cls_loss : 0.02183, tgt_cls_loss : 0.00076, transfer_loss : 0.00757, env_loss : 0.52661, 
+2020-09-28 10:39:37,949 - bootstrap - INFO - Source epoch 178/200 main_lr=0.010000
+2020-09-28 10:46:18,333 - bootstrap - INFO - tgt_test_acc: 68.32 ; src_test_acc: 99.34src_cls_loss : 0.02000, tgt_cls_loss : 0.00059, transfer_loss : 0.00754, env_loss : 0.54166, 
+2020-09-28 10:46:18,973 - bootstrap - INFO - Source epoch 179/200 main_lr=0.010000
+2020-09-28 10:53:03,127 - bootstrap - INFO - tgt_test_acc: 67.78 ; src_test_acc: 99.22src_cls_loss : 0.01808, tgt_cls_loss : 0.00074, transfer_loss : 0.00771, env_loss : 0.50770, 
+2020-09-28 10:53:03,669 - bootstrap - INFO - Source epoch 180/200 main_lr=0.010000
+2020-09-28 10:59:48,988 - bootstrap - INFO - tgt_test_acc: 68.25 ; src_test_acc: 99.51src_cls_loss : 0.02410, tgt_cls_loss : 0.00060, transfer_loss : 0.00756, env_loss : 0.51121, 
+2020-09-28 10:59:49,607 - bootstrap - INFO - Source epoch 181/200 main_lr=0.010000
+2020-09-28 11:06:35,121 - bootstrap - INFO - tgt_test_acc: 68.01 ; src_test_acc: 99.22src_cls_loss : 0.01867, tgt_cls_loss : 0.00078, transfer_loss : 0.00754, env_loss : 0.50059, 
+2020-09-28 11:06:35,745 - bootstrap - INFO - Source epoch 182/200 main_lr=0.010000
+2020-09-28 11:13:18,335 - bootstrap - INFO - tgt_test_acc: 67.62 ; src_test_acc: 99.34src_cls_loss : 0.02157, tgt_cls_loss : 0.00094, transfer_loss : 0.00754, env_loss : 0.50003, 
+2020-09-28 11:13:19,106 - bootstrap - INFO - Source epoch 183/200 main_lr=0.010000
+2020-09-28 11:20:04,037 - bootstrap - INFO - tgt_test_acc: 68.17 ; src_test_acc: 99.34src_cls_loss : 0.01903, tgt_cls_loss : 0.00071, transfer_loss : 0.00756, env_loss : 0.50399, 
+2020-09-28 11:20:04,731 - bootstrap - INFO - Source epoch 184/200 main_lr=0.010000
+2020-09-28 11:26:50,721 - bootstrap - INFO - tgt_test_acc: 67.24 ; src_test_acc: 99.38src_cls_loss : 0.02128, tgt_cls_loss : 0.00062, transfer_loss : 0.00756, env_loss : 0.50232, 
+2020-09-28 11:26:51,283 - bootstrap - INFO - Source epoch 185/200 main_lr=0.010000
+2020-09-28 11:33:34,725 - bootstrap - INFO - tgt_test_acc: 68.40 ; src_test_acc: 99.30src_cls_loss : 0.02182, tgt_cls_loss : 0.00080, transfer_loss : 0.00758, env_loss : 0.48785, 
+2020-09-28 11:33:35,419 - bootstrap - INFO - Source epoch 186/200 main_lr=0.010000
+2020-09-28 11:40:14,709 - bootstrap - INFO - tgt_test_acc: 68.40 ; src_test_acc: 99.26src_cls_loss : 0.01760, tgt_cls_loss : 0.00086, transfer_loss : 0.00759, env_loss : 0.51018, 
+2020-09-28 11:40:15,312 - bootstrap - INFO - Source epoch 187/200 main_lr=0.010000
+2020-09-28 11:47:01,314 - bootstrap - INFO - tgt_test_acc: 68.25 ; src_test_acc: 99.30src_cls_loss : 0.02309, tgt_cls_loss : 0.00069, transfer_loss : 0.00759, env_loss : 0.49587, 
+2020-09-28 11:47:01,917 - bootstrap - INFO - Source epoch 188/200 main_lr=0.010000
+2020-09-28 11:53:44,514 - bootstrap - INFO - tgt_test_acc: 68.01 ; src_test_acc: 99.30src_cls_loss : 0.02151, tgt_cls_loss : 0.00057, transfer_loss : 0.00762, env_loss : 0.49952, 
+2020-09-28 11:53:45,225 - bootstrap - INFO - Source epoch 189/200 main_lr=0.010000
+2020-09-28 12:00:23,930 - bootstrap - INFO - tgt_test_acc: 68.09 ; src_test_acc: 99.34src_cls_loss : 0.01863, tgt_cls_loss : 0.00050, transfer_loss : 0.00757, env_loss : 0.48569, 
+2020-09-28 12:00:24,528 - bootstrap - INFO - Source epoch 190/200 main_lr=0.010000
+2020-09-28 12:07:05,017 - bootstrap - INFO - tgt_test_acc: 68.09 ; src_test_acc: 99.26src_cls_loss : 0.02181, tgt_cls_loss : 0.00062, transfer_loss : 0.00758, env_loss : 0.49841, 
+2020-09-28 12:07:05,704 - bootstrap - INFO - Source epoch 191/200 main_lr=0.010000
+2020-09-28 12:13:47,332 - bootstrap - INFO - tgt_test_acc: 68.71 ; src_test_acc: 99.22src_cls_loss : 0.02095, tgt_cls_loss : 0.00066, transfer_loss : 0.00748, env_loss : 0.49550, 
+2020-09-28 12:13:47,997 - bootstrap - INFO - Source epoch 192/200 main_lr=0.010000
+2020-09-28 12:20:27,704 - bootstrap - INFO - tgt_test_acc: 68.01 ; src_test_acc: 99.26src_cls_loss : 0.01871, tgt_cls_loss : 0.00070, transfer_loss : 0.00755, env_loss : 0.49979, 
+2020-09-28 12:20:28,410 - bootstrap - INFO - Source epoch 193/200 main_lr=0.010000
+2020-09-28 12:27:13,101 - bootstrap - INFO - tgt_test_acc: 67.16 ; src_test_acc: 99.22src_cls_loss : 0.01843, tgt_cls_loss : 0.00062, transfer_loss : 0.00755, env_loss : 0.50248, 
+2020-09-28 12:27:13,809 - bootstrap - INFO - Source epoch 194/200 main_lr=0.010000
+2020-09-28 12:34:00,122 - bootstrap - INFO - tgt_test_acc: 68.01 ; src_test_acc: 99.22src_cls_loss : 0.01753, tgt_cls_loss : 0.00105, transfer_loss : 0.00760, env_loss : 0.49404, 
+2020-09-28 12:34:00,812 - bootstrap - INFO - Source epoch 195/200 main_lr=0.010000
+2020-09-28 12:40:40,211 - bootstrap - INFO - tgt_test_acc: 67.93 ; src_test_acc: 99.38src_cls_loss : 0.01463, tgt_cls_loss : 0.00097, transfer_loss : 0.00750, env_loss : 0.47568, 
+2020-09-28 12:40:40,913 - bootstrap - INFO - Source epoch 196/200 main_lr=0.010000
+2020-09-28 12:47:25,734 - bootstrap - INFO - tgt_test_acc: 67.31 ; src_test_acc: 99.38src_cls_loss : 0.02024, tgt_cls_loss : 0.00083, transfer_loss : 0.00759, env_loss : 0.50185, 
+2020-09-28 12:47:26,494 - bootstrap - INFO - Source epoch 197/200 main_lr=0.010000
+2020-09-28 12:54:13,125 - bootstrap - INFO - tgt_test_acc: 68.09 ; src_test_acc: 99.38src_cls_loss : 0.01827, tgt_cls_loss : 0.00070, transfer_loss : 0.00757, env_loss : 0.48560, 
+2020-09-28 12:54:13,799 - bootstrap - INFO - Source epoch 198/200 main_lr=0.010000
+2020-09-28 13:00:57,410 - bootstrap - INFO - tgt_test_acc: 67.16 ; src_test_acc: 99.34src_cls_loss : 0.01595, tgt_cls_loss : 0.00075, transfer_loss : 0.00750, env_loss : 0.48959, 
+2020-09-28 13:00:58,068 - bootstrap - INFO - Source epoch 199/200 main_lr=0.010000
+2020-09-28 13:07:41,900 - bootstrap - INFO - tgt_test_acc: 68.48 ; src_test_acc: 99.34src_cls_loss : 0.02136, tgt_cls_loss : 0.00068, transfer_loss : 0.00751, env_loss : 0.46292, 
+2020-09-28 13:07:42,501 - bootstrap - INFO - Source epoch 200/200 main_lr=0.010000
+2020-09-28 13:14:27,201 - bootstrap - INFO - tgt_test_acc: 67.39 ; src_test_acc: 99.34src_cls_loss : 0.01837, tgt_cls_loss : 0.00069, transfer_loss : 0.00758, env_loss : 0.47738, 

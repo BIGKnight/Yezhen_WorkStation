@@ -8,6 +8,7 @@ from .cdan import run_iter_cdan
 from .cdane import run_iter_cdane
 from .dann import run_iter_dann
 from .lirr import run_iter_lirr
+from .lirrv1 import run_iter_lirrv1
 from .irm import run_iter_irm
 from .mme import run_iter_mme
 
@@ -21,6 +22,7 @@ train_method = {
     'dann': run_iter_dann,
     'adr': run_iter_adr,
     'lirr': run_iter_lirr,
+    'lirrv1': run_iter_lirrv1,
     'irm': run_iter_irm,
     'mme': run_iter_mme,
     'fullt': run_iter_fullt

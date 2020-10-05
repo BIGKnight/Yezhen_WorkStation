@@ -59,3 +59,35 @@
 2020-09-20 15:17:40,280 - bootstrap - INFO - ==> Have built extra modules: ad_net, predictor_env under LiRR method.
 2020-09-20 15:17:40,282 - bootstrap - INFO - ==> Running..
 2020-09-20 15:17:40,283 - bootstrap - INFO - Source epoch 1/40 main_lr=0.001000
+2020-09-20 19:11:58,212 - bootstrap - INFO - tgt_test_acc: 56.63 ; src_test_acc: 65.48src_cls_loss : 1.62856, tgt_cls_loss : 1.40875, transfer_loss : 0.07762, env_loss : 6.42194, 
+2020-09-20 19:12:00,160 - bootstrap - INFO - Source epoch 2/40 main_lr=0.010000
+2020-09-20 22:32:41,420 - bootstrap - INFO - tgt_test_acc: 58.74 ; src_test_acc: 70.78src_cls_loss : 0.99986, tgt_cls_loss : 0.39854, transfer_loss : 0.07408, env_loss : 5.52468, 
+2020-09-20 22:32:43,259 - bootstrap - INFO - Source epoch 3/40 main_lr=0.010000
+2020-09-21 01:51:54,430 - bootstrap - INFO - tgt_test_acc: 59.69 ; src_test_acc: 72.44src_cls_loss : 0.87184, tgt_cls_loss : 0.20582, transfer_loss : 0.07177, env_loss : 4.94702, 
+2020-09-21 01:51:56,182 - bootstrap - INFO - Source epoch 4/40 main_lr=0.010000
+2020-09-21 05:16:59,734 - bootstrap - INFO - tgt_test_acc: 60.08 ; src_test_acc: 74.34src_cls_loss : 0.78957, tgt_cls_loss : 0.13489, transfer_loss : 0.07062, env_loss : 4.35606, 
+2020-09-21 05:17:01,507 - bootstrap - INFO - Source epoch 5/40 main_lr=0.010000
+2020-09-21 08:44:51,944 - bootstrap - INFO - tgt_test_acc: 60.47 ; src_test_acc: 75.00src_cls_loss : 0.73111, tgt_cls_loss : 0.10018, transfer_loss : 0.07001, env_loss : 3.74749, 
+2020-09-21 08:44:53,948 - bootstrap - INFO - Source epoch 6/40 main_lr=0.010000
+2020-09-21 12:11:39,838 - bootstrap - INFO - tgt_test_acc: 60.49 ; src_test_acc: 76.02src_cls_loss : 0.68905, tgt_cls_loss : 0.08050, transfer_loss : 0.06968, env_loss : 3.20118, 
+2020-09-21 12:11:41,486 - bootstrap - INFO - Source epoch 7/40 main_lr=0.010000
+2020-09-21 15:30:05,324 - bootstrap - INFO - tgt_test_acc: 60.46 ; src_test_acc: 76.96src_cls_loss : 0.65090, tgt_cls_loss : 0.06662, transfer_loss : 0.06940, env_loss : 2.72928, 
+2020-09-21 15:30:07,321 - bootstrap - INFO - Source epoch 8/40 main_lr=0.010000
+2020-09-21 18:59:19,414 - bootstrap - INFO - tgt_test_acc: 60.68 ; src_test_acc: 77.16src_cls_loss : 0.61957, tgt_cls_loss : 0.05847, transfer_loss : 0.06923, env_loss : 2.35354, 
+2020-09-21 18:59:21,524 - bootstrap - INFO - Source epoch 9/40 main_lr=0.010000
+2020-09-21 23:02:06,804 - bootstrap - INFO - tgt_test_acc: 60.32 ; src_test_acc: 78.20src_cls_loss : 0.59885, tgt_cls_loss : 0.05193, transfer_loss : 0.06911, env_loss : 2.05449, 
+2020-09-21 23:02:08,540 - bootstrap - INFO - Source epoch 10/40 main_lr=0.010000
+2020-09-22 02:32:28,411 - bootstrap - INFO - tgt_test_acc: 60.84 ; src_test_acc: 78.80src_cls_loss : 0.57145, tgt_cls_loss : 0.04725, transfer_loss : 0.06909, env_loss : 1.81022, 
+2020-09-22 02:32:30,123 - bootstrap - INFO - Source epoch 11/40 main_lr=0.010000
+2020-09-22 05:47:32,807 - bootstrap - INFO - tgt_test_acc: 61.13 ; src_test_acc: 78.94src_cls_loss : 0.55859, tgt_cls_loss : 0.04263, transfer_loss : 0.06897, env_loss : 1.62520, 
+2020-09-22 05:47:34,858 - bootstrap - INFO - Source epoch 12/40 main_lr=0.010000
+2020-09-22 09:13:36,212 - bootstrap - INFO - tgt_test_acc: 61.44 ; src_test_acc: 79.46src_cls_loss : 0.54041, tgt_cls_loss : 0.03868, transfer_loss : 0.06899, env_loss : 1.47352, 
+2020-09-22 09:13:38,111 - bootstrap - INFO - Source epoch 13/40 main_lr=0.010000
+2020-09-22 12:25:23,812 - bootstrap - INFO - tgt_test_acc: 60.57 ; src_test_acc: 79.42src_cls_loss : 0.52370, tgt_cls_loss : 0.03652, transfer_loss : 0.06893, env_loss : 1.34974, 
+2020-09-22 12:25:25,551 - bootstrap - INFO - Source epoch 14/40 main_lr=0.010000
+2020-09-22 15:42:55,135 - bootstrap - INFO - tgt_test_acc: 61.36 ; src_test_acc: 80.06src_cls_loss : 0.51209, tgt_cls_loss : 0.03473, transfer_loss : 0.06888, env_loss : 1.25131, 
+2020-09-22 15:42:56,730 - bootstrap - INFO - Source epoch 15/40 main_lr=0.010000
+2020-09-22 18:36:02,639 - bootstrap - INFO - tgt_test_acc: 61.48 ; src_test_acc: 80.80src_cls_loss : 0.49540, tgt_cls_loss : 0.03213, transfer_loss : 0.06884, env_loss : 1.16358, 
+2020-09-22 18:36:04,599 - bootstrap - INFO - Source epoch 16/40 main_lr=0.010000
+2020-09-22 21:26:42,249 - bootstrap - INFO - tgt_test_acc: 61.77 ; src_test_acc: 81.42src_cls_loss : 0.48619, tgt_cls_loss : 0.03110, transfer_loss : 0.06881, env_loss : 1.09567, 
+2020-09-22 21:26:44,069 - bootstrap - INFO - Source epoch 17/40 main_lr=0.010000

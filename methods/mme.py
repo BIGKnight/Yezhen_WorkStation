@@ -22,7 +22,7 @@ def run_iter_mme(
     
     src_outputs = net(src_inputs, temp=args.temp, cosine=args.cosine)
     l_tgt_outputs = net(l_tgt_inputs, temp=args.temp, cosine=args.cosine)
-    ul_tgt_outputs = net(ul_tgt_inputs, temp=args.temp, cosine=args.cosine)
+    ul_tgt_outputs = net(ul_tgt_inputs, temp=args.temp, cosine=args.cosine, reverse=True)
     src_logits = src_outputs['output_logits']
     l_tgt_logits = l_tgt_outputs['output_logits']
     ul_tgt_features, ul_tgt_logits = ul_tgt_outputs['adapted_layer'], ul_tgt_outputs['output_logits']
@@ -48,20 +48,11 @@ def run_iter_mme(
     ul_tgt_scores = torch.nn.functional.softmax(ul_tgt_logits, dim=1)
     loss_adent = -args.trade_off * torch.mean(torch.sum(ul_tgt_scores *(torch.log(ul_tgt_scores + 1e-5)), 1))
     
-    total_loss = loss_cls
+    total_loss = loss_cls - loss_adent
     main_optimizer.zero_grad()
-    total_loss.backward(retain_graph=True)
+    total_loss.backward()
     main_optimizer.step()
     
-    total_loss = - loss_adent
-    classifier_optimizer.zero_grad()
-    total_loss.backward(retain_graph=True)
-    classifier_optimizer.step()
-    
-    total_loss = loss_adent
-    encoder_optimizer.zero_grad()
-    total_loss.backward()
-    encoder_optimizer.step()  
     # update meters
     meters['src_cls_loss'].update(loss_cls_src.item())
     meters['tgt_cls_loss'].update(loss_cls_tgt.item())

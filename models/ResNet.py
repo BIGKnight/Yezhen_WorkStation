@@ -115,14 +115,15 @@ class ResNet_34Fc(nn.Module):
         ]
             
 
-    def forward(self, x, temp=1, dropout=True, cosine=False):
+    def forward(self, x, temp=1, dropout=True, cosine=False, reverse=False):
         for name in self.ordered_module_names:
             module = self._modules[name]
             x = module(x)
             x = x.detach() if name in self.frozen else x
-        
+            
         embedding_coding = self.flattening(x)
-        drop_x = F.dropout(embedding_coding, training=self.training, p=0.5) if dropout else embedding_coding
+        rev_rep = grad_reverse(embedding_coding, 1.0) if reverse else embedding_coding
+        drop_x = F.dropout(rev_rep, training=self.training, p=0.5) if dropout else rev_rep
         encodes = torch.nn.functional.relu(self.bottleneck(drop_x), inplace=False)
         drop_x = F.dropout(encodes, training=self.training, p=0.5) if dropout else encodes
         if cosine:
@@ -156,15 +157,11 @@ class ResNet_34Fc(nn.Module):
     def get_parameters(self):
         parameter_list = [
             {"params": self.bottleneck.parameters(), 'lr_mult': 10},
-#             {"params": self.fc.parameters(), 'lr_mult': 10}
         ]
         for name in self.ordered_module_names:
             if name not in self.frozen and len(list(self._modules[name].parameters())) > 0:
                 parameter_list += [{"params": self._modules[name].parameters(), 'lr_mult': 1}]
-        return parameter_list, [
-#             {"params": self.bottleneck.parameters(), 'lr_mult': 10}, 
-            {"params": self.fc.parameters(), 'lr_mult': 10}
-        ]
+        return parameter_list, [{"params": self.fc.parameters(), 'lr_mult': 10}]
     
 @register_model('resnet50')
 class ResNet_50Fc(nn.Module):

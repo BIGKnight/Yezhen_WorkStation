@@ -5,10 +5,10 @@ cd /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/
 datasets=(${1} ${2})
 logf_root='/nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/domainnet/sourceonly/'
 
-for((j = 1; j < 3; j++))
+for((j = 0; j < 1; j++))
 do
-    source_domain=${datasets[${i}]}
-    target_domain=${datasets[${j}]}
+    source_domain=${datasets[0]}
+    target_domain=${datasets[1]}
     echo "source: ${source_domain}; target: ${target_domain}."
     python3 main.py \
     --dataset domainnet \
@@ -30,6 +30,6 @@ do
     --method source_only \
     --temp 1 \
     --adj_lr_func none \
-    --target_labeled_portion $(expr $j \* 5) \
+    --target_labeled_portion 70 \
     --logger_file_name domainnet_source_only
 done

@@ -15,14 +15,14 @@ do
     --domain_shift_type convention \
     --source ${source_domain} \
     --target ${target_domain} \
-    --nepoch 60 \
+    --nepoch 80 \
     --model_name CountingNet \
     --image_size 256 \
     --channels 3 \
     --num_cls 1 \
     --lr 1e-6 \
     --task_type reg \
-    --milestone 60 \
+    --milestone 80 \
     --optimizer_type adam \
     --data_root /nfs/volume-92-5/wangyezhen_i/Datasets/CityCam \
     --outf /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/${source_domain}_${target_domain}_citycam_irm \

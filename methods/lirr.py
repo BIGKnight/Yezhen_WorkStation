@@ -76,8 +76,11 @@ def run_iter_lirr(
     ) / 2.
     
     features = torch.cat((src_ada_features, ul_tgt_ada_features), dim=0)
-    loss_transfer = DANN(features, ad_net, entire_steps) * args.trade_off
-    total_loss = loss_transfer + loss_inv + torch.sqrt((loss_inv - loss_env) ** 2) * 0.1
+    loss_transfer = DANN(features, ad_net, entire_steps) * args.lambda_adv
+    if args.distance_type == 'sqr':
+        total_loss = loss_transfer + loss_inv * args.lambda_inv + loss_env * args.lambda_env + ((loss_inv - loss_env) ** 2) * args.lambda_lirr
+    elif args.distance_type == 'l1':
+        total_loss = loss_transfer + loss_inv * args.lambda_inv + loss_env * args.lambda_env + (torch.abs(loss_inv - loss_env)) * args.lambda_lirr
     main_optimizer.zero_grad()
     dis_optimizer.zero_grad()
     total_loss.backward()

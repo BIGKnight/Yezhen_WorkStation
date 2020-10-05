@@ -2,7 +2,16 @@ import os
 import numpy as np
 import random
 from .label_parser_dict import *
-portion = {1: "labeled", 5:"labeled_5", 10:"labeled_10", 15:"labeled_15", 20:"labeled_20", 25:"labeled_25", 30:"labeled_30"}
+portion = {
+    1: "labeled", 
+    5: "labeled_5", 
+    10:"labeled_10", 
+    15:"labeled_15", 
+    20:"labeled_20", 
+    25:"labeled_25", 
+    30:"labeled_30",
+    70:"labeled_70"
+}
 
 # /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/
 shift_path_root_dict = {
@@ -46,6 +55,7 @@ def collect_ids_cls(args):
             id, cls = line.replace('\n', '').split(' ')
             data_collection['source']['train']['ids'].append(os.path.join(args.data_root, dm.split('_')[0] + '/' + id))
             data_collection['source']['train']['labels'].append(label2index_parser[general_domain][cls])
+        domain_reader.close()
             
     target_partitions = [portion.get(args.target_labeled_portion, "labeled"), 'unlabeled', 'validation']
     for item in target_partitions:
@@ -62,7 +72,7 @@ def collect_ids_cls(args):
             id, cls = line.replace('\n', '').split(' ')
             data_collection['target'][t_p]['ids'].append(os.path.join(args.data_root, args.target + '/' + id))
             data_collection['target'][t_p]['labels'].append(label2index_parser[general_domain][cls])
-    
+        domain_reader.close()
     # shuffling
     
     shuffled_src_data = shuffling(
@@ -115,6 +125,7 @@ def collect_ids_reg(args):
             data_collection['source']['train']['ids'].append(os.path.join(args.data_root, dm.split('_')[0] + '/' + id))
             data_collection['source']['train']['labels'].append(os.path.join(args.data_root, dm.split('_')[0] + '/' + reg))
             data_collection['source']['train']['masks'].append(os.path.join(args.data_root, dm.split('_')[0] + '/' + mask))
+        domain_reader.close()
     
     target_partitions = [portion.get(args.target_labeled_portion, "labeled"), 'unlabeled', 'validation']
     for item in target_partitions:
@@ -132,6 +143,7 @@ def collect_ids_reg(args):
             data_collection['target'][t_p]['ids'].append(os.path.join(args.data_root, args.target + '/' + id))
             data_collection['target'][t_p]['labels'].append(os.path.join(args.data_root, args.target + '/' + reg))
             data_collection['target'][t_p]['masks'].append(os.path.join(args.data_root, args.target + '/' + mask))
+        domain_reader.close()
     
     # shuffling
     shuffled_src_data = shuffling(
@@ -147,15 +159,16 @@ def collect_ids_reg(args):
     data_collection['source']['validation']['masks'] = shuffled_src_data[2][:5000]
     
     for t_p in target_partitions:
-        t_p = t_p.split("_")[0]
-        shuffled_src_data = shuffling(
-            [data_collection['target'][t_p]['ids'], 
-             data_collection['target'][t_p]['labels'],
-             data_collection['target'][t_p]['masks']]
-        )
-        data_collection['target'][t_p]['ids'] = shuffled_src_data[0]
-        data_collection['target'][t_p]['labels'] = shuffled_src_data[1]
-        data_collection['target'][t_p]['masks'] = shuffled_src_data[2]
+        if 'validation' not in t_p:
+            t_p = t_p.split("_")[0]
+            shuffled_src_data = shuffling(
+                [data_collection['target'][t_p]['ids'], 
+                 data_collection['target'][t_p]['labels'],
+                 data_collection['target'][t_p]['masks']]
+            )
+            data_collection['target'][t_p]['ids'] = shuffled_src_data[0]
+            data_collection['target'][t_p]['labels'] = shuffled_src_data[1]
+            data_collection['target'][t_p]['masks'] = shuffled_src_data[2]
     return data_collection
 
 

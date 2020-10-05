@@ -5,10 +5,10 @@ cd /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/
 datasets=('train' 'validation')
 logf_root='/nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/visda2017/sourceonly/'
 
-for((j = 1; j < 3; j++))
+for((j = 0; j < 1; j++))
 do
-    source_domain=${datasets[${i}]}
-    target_domain=${datasets[${j}]}
+    source_domain=${datasets[0]}
+    target_domain=${datasets[1]}
     echo "source: ${source_domain}; target: ${target_domain}."
     python3 main.py \
     --dataset visda2017 \
@@ -28,6 +28,6 @@ do
     --batch_size ${1} \
     --nthreads 8 \
     --method source_only \
-    --target_labeled_portion $(expr $j \* 5) \
+    --target_labeled_portion 70 \
     --logger_file_name visda2017_source_only
 done

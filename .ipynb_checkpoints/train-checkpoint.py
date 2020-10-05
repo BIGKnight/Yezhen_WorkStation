@@ -28,7 +28,7 @@ def create_meters(method_name):
         meters['infonce_loss'] = AverageMeter('infonce')
         meters['cls_loss'] = AverageMeter('cls')
     
-    elif 'lirr' == method_name.lower():
+    elif 'lirr' == method_name.lower() or 'lirrv1' == method_name.lower():
         meters['src_cls_loss'] = AverageMeter('src_cls')
         meters['tgt_cls_loss'] = AverageMeter('tgt_cls')
         meters['transfer_loss'] = AverageMeter('transfer')
@@ -107,4 +107,4 @@ def train(
     if tg_te_err_min > tg_te_err:
         tg_te_err_min = tg_te_err
 
-    return tg_te_err_min * 100
+    return tg_te_err_min
