@@ -148,8 +148,9 @@ def sim_KL_divergence(q, p, coef=1., confidence=0.):
         return kldiv * coef
         
 def _reg_loss(p, gt, num_cls, batch_size, global_step, entire_steps, annealing='none'):
-    loss = nn.MSELoss(size_average = False)(p, gt) + (p.sum() - gt.sum()).abs() * 0.01
-    return loss
+    pixel_loss = nn.MSELoss(size_average = False)(p, gt)
+    sum_loss = torch.mean((p.sum(dim=[1, 2, 3]) - gt.sum(dim=[1, 2, 3])).abs())
+    return pixel_loss + sum_loss
 
     
 def _cls_loss(p, labels, num_cls, batch_size, global_step, entire_steps, annealing='none'):

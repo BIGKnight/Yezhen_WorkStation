@@ -1,0 +1,110 @@
+2020-10-12 20:02:09,882 - bootstrap - INFO - 
+----------------- Options ---------------
+                        K: 256                           
+                   K_iter: 200                           
+              adapted_dim: 512                           
+              adj_lr_func: none                          
+                annealing: none                          
+               batch_size: 6                             
+                 channels: 3                             
+              contrastive: False                         
+                   cosine: False                         
+                data_root: /nfs/volume-92-5/wangyezhen_i/Datasets/CityCam
+                  dataset: citycam                       
+            distance_type: sqr                           
+        domain_shift_type: convention                    
+                  dropout: False                         
+                     flip: False                         
+                   frozen: []                            
+                      gpu: [0]                           
+               image_size: 256                           
+               lambda_adv: 0.0                           
+               lambda_env: 0.0                           
+               lambda_inv: 1.0                           
+               lambda_irm: 0.0                           
+              lambda_lirr: 0.0                           
+                     lirr: False                         
+                load_path: None                          
+                     logf: /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/citycam/sourceonly/511_398_citycam_counting_mim.txt
+         logger_file_name: citycam_counting_mim          
+                       lr: 1e-06                         
+                  lr_flip: 0.1                           
+              lr_quadrant: 0.1                           
+              lr_rotation: 0.1                           
+                  lw_flip: 0.1                           
+              lw_quadrant: 0.1                           
+              lw_rotation: 0.1                           
+                        m: 0.998                         
+                   method: counting_mim                  
+                milestone: 80                            
+                      mim: False                         
+                    mixup: False                         
+            moco_finetune: False                         
+               model_name: CountingNet                   
+                   nepoch: 80                            
+                 nthreads: 8                             
+                  num_cls: 1                             
+           optimizer_type: adam                          
+                     outf: /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/511_398_citycam_counting_mim
+                   quad_p: 2                             
+                 quadrant: False                         
+                 rotation: False                         
+                   source: ['511']                       
+                   target: 398                           
+   target_labeled_portion: 0                             
+                task_type: reg                           
+                     temp: 1.0                           
+                trade_off: 1.0                           
+                      vib: False                         
+----------------- End -------------------
+2020-10-12 20:02:09,883 - bootstrap - INFO - ==> Building model..
+2020-10-12 20:02:16,756 - bootstrap - INFO - ==> Preparing datasets..
+2020-10-12 20:02:16,878 - bootstrap - INFO - ==> Creating pretext tasks.
+2020-10-12 20:02:16,879 - bootstrap - INFO - ==> No pretext task.
+2020-10-12 20:02:16,879 - bootstrap - INFO - ==> Creating Optimizer & Building modules...
+2020-10-12 20:02:16,898 - bootstrap - INFO - ==> Have built extra modules: mi_estimator, mi_optimizer under REG_MIM method.
+2020-10-12 20:02:16,899 - bootstrap - INFO - ==> Running..
+2020-10-12 20:02:16,899 - bootstrap - INFO - Source epoch 1/80 main_lr=0.000001
+2020-10-12 20:02:16,899 - bootstrap - INFO - ==> Have built extra modules: mi_data_iter under REG_MIM method.
+2020-10-12 20:21:05,857 - bootstrap - INFO - tgt_test_acc: 2.78 ; src_test_acc: 0.35src_cls_loss : 1.01705, tgt_cls_loss : 1.39179, estimated_mi : 0.00000, 
+2020-10-12 20:21:06,249 - bootstrap - INFO - Source epoch 77/80 main_lr=0.000001
+2020-10-12 20:21:06,732 - bootstrap - INFO - ==> Have built extra modules: mi_data_iter under REG_MIM method.
+2020-10-12 20:36:53,621 - bootstrap - INFO - tgt_test_acc: 2.97 ; src_test_acc: 0.40src_cls_loss : 1.02408, tgt_cls_loss : 1.38780, estimated_mi : 0.00000, 
+2020-10-12 20:36:54,071 - bootstrap - INFO - Source epoch 76/80 main_lr=0.000001
+2020-10-12 20:36:54,578 - bootstrap - INFO - ==> Have built extra modules: mi_data_iter under REG_MIM method.
+2020-10-12 20:37:11,763 - bootstrap - INFO - tgt_test_acc: 2.77 ; src_test_acc: 0.35src_cls_loss : 1.05206, tgt_cls_loss : 1.47235, estimated_mi : 0.00000, 
+2020-10-12 20:37:12,083 - bootstrap - INFO - Source epoch 77/80 main_lr=0.000001
+2020-10-12 20:37:12,505 - bootstrap - INFO - ==> Have built extra modules: mi_data_iter under REG_MIM method.
+2020-10-12 21:00:59,952 - bootstrap - INFO - tgt_test_acc: 2.78 ; src_test_acc: 0.35src_cls_loss : 1.01142, tgt_cls_loss : 1.38040, estimated_mi : 0.00000, 
+2020-10-12 21:01:00,330 - bootstrap - INFO - Source epoch 78/80 main_lr=0.000001
+2020-10-12 21:01:00,791 - bootstrap - INFO - ==> Have built extra modules: mi_data_iter under REG_MIM method.
+2020-10-12 21:16:52,400 - bootstrap - INFO - tgt_test_acc: 2.76 ; src_test_acc: 0.34src_cls_loss : 1.03394, tgt_cls_loss : 1.48528, estimated_mi : 0.00000, 
+2020-10-12 21:16:53,001 - bootstrap - INFO - Source epoch 78/80 main_lr=0.000001
+2020-10-12 21:16:53,351 - bootstrap - INFO - ==> Have built extra modules: mi_data_iter under REG_MIM method.
+2020-10-12 21:16:57,606 - bootstrap - INFO - tgt_test_acc: 2.96 ; src_test_acc: 0.40src_cls_loss : 1.00913, tgt_cls_loss : 1.38813, estimated_mi : 0.00000, 
+2020-10-12 21:16:58,330 - bootstrap - INFO - Source epoch 77/80 main_lr=0.000001
+2020-10-12 21:16:58,790 - bootstrap - INFO - ==> Have built extra modules: mi_data_iter under REG_MIM method.
+2020-10-12 21:40:39,487 - bootstrap - INFO - tgt_test_acc: 2.78 ; src_test_acc: 0.34src_cls_loss : 1.01718, tgt_cls_loss : 1.39220, estimated_mi : 0.00000, 
+2020-10-12 21:40:39,853 - bootstrap - INFO - Source epoch 79/80 main_lr=0.000001
+2020-10-12 21:40:40,347 - bootstrap - INFO - ==> Have built extra modules: mi_data_iter under REG_MIM method.
+2020-10-12 21:56:37,230 - bootstrap - INFO - tgt_test_acc: 2.76 ; src_test_acc: 0.35src_cls_loss : 1.03891, tgt_cls_loss : 1.48397, estimated_mi : 0.00000, 
+2020-10-12 21:56:37,564 - bootstrap - INFO - Source epoch 79/80 main_lr=0.000001
+2020-10-12 21:56:37,971 - bootstrap - INFO - ==> Have built extra modules: mi_data_iter under REG_MIM method.
+2020-10-12 21:57:01,183 - bootstrap - INFO - tgt_test_acc: 2.98 ; src_test_acc: 0.39src_cls_loss : 1.01470, tgt_cls_loss : 1.38562, estimated_mi : 0.00000, 
+2020-10-12 21:57:01,617 - bootstrap - INFO - Source epoch 78/80 main_lr=0.000001
+2020-10-12 21:57:02,062 - bootstrap - INFO - ==> Have built extra modules: mi_data_iter under REG_MIM method.
+2020-10-12 22:20:22,361 - bootstrap - INFO - tgt_test_acc: 2.77 ; src_test_acc: 0.34src_cls_loss : 1.00408, tgt_cls_loss : 1.38802, estimated_mi : 0.00000, 
+2020-10-12 22:20:22,948 - bootstrap - INFO - Source epoch 80/80 main_lr=0.000001
+2020-10-12 22:20:23,401 - bootstrap - INFO - ==> Have built extra modules: mi_data_iter under REG_MIM method.
+2020-10-12 22:36:38,874 - bootstrap - INFO - tgt_test_acc: 2.76 ; src_test_acc: 0.33src_cls_loss : 1.02975, tgt_cls_loss : 1.46629, estimated_mi : 0.00000, 
+2020-10-12 22:36:39,462 - bootstrap - INFO - Source epoch 80/80 main_lr=0.000001
+2020-10-12 22:36:39,858 - bootstrap - INFO - ==> Have built extra modules: mi_data_iter under REG_MIM method.
+2020-10-12 22:37:00,609 - bootstrap - INFO - tgt_test_acc: 2.96 ; src_test_acc: 0.40src_cls_loss : 1.00948, tgt_cls_loss : 1.39207, estimated_mi : 0.00000, 
+2020-10-12 22:37:01,057 - bootstrap - INFO - Source epoch 79/80 main_lr=0.000001
+2020-10-12 22:37:01,520 - bootstrap - INFO - ==> Have built extra modules: mi_data_iter under REG_MIM method.
+2020-10-12 23:00:02,283 - bootstrap - INFO - tgt_test_acc: 2.77 ; src_test_acc: 0.33src_cls_loss : 0.98765, tgt_cls_loss : 1.38195, estimated_mi : 0.00000, 
+2020-10-12 23:16:34,578 - bootstrap - INFO - tgt_test_acc: 2.76 ; src_test_acc: 0.33src_cls_loss : 1.02298, tgt_cls_loss : 1.47250, estimated_mi : 0.00000, 
+2020-10-12 23:17:00,521 - bootstrap - INFO - tgt_test_acc: 2.98 ; src_test_acc: 0.37src_cls_loss : 1.00800, tgt_cls_loss : 1.37667, estimated_mi : 0.00000, 
+2020-10-12 23:17:00,968 - bootstrap - INFO - Source epoch 80/80 main_lr=0.000001
+2020-10-12 23:17:01,465 - bootstrap - INFO - ==> Have built extra modules: mi_data_iter under REG_MIM method.
+2020-10-12 23:56:57,300 - bootstrap - INFO - tgt_test_acc: 2.96 ; src_test_acc: 0.36src_cls_loss : 1.00867, tgt_cls_loss : 1.39152, estimated_mi : 0.00000, 

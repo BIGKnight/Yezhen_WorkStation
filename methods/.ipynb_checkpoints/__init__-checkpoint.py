@@ -11,6 +11,7 @@ from .lirr import run_iter_lirr
 from .lirrv1 import run_iter_lirrv1
 from .irm import run_iter_irm
 from .mme import run_iter_mme
+from .counting_mim import run_iter_counting_mim
 
 train_method = {
     'source_only':run_iter_source_only,
@@ -25,5 +26,6 @@ train_method = {
     'lirrv1': run_iter_lirrv1,
     'irm': run_iter_irm,
     'mme': run_iter_mme,
-    'fullt': run_iter_fullt
+    'fullt': run_iter_fullt,
+    'counting_mim': run_iter_counting_mim
 }

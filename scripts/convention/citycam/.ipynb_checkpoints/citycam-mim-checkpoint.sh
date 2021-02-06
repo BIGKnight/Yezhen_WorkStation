@@ -25,14 +25,16 @@ do
     --milestone 80 \
     --optimizer_type adam \
     --data_root /nfs/volume-92-5/wangyezhen_i/Datasets/CityCam \
-    --outf /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/${source_domain}_${target_domain}_citycam_source_only \
-    --logf ${logf_root}${source_domain}_${target_domain}_citycam_source_only.txt \
+    --outf /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/${source_domain}_${target_domain}_citycam_counting_mim \
+    --logf ${logf_root}${source_domain}_${target_domain}_citycam_counting_mim.txt \
     --batch_size ${3} \
     --nthreads 8 \
-    --method source_only \
+    --method counting_mim \
     --temp 1 \
+    --adapted_dim 512 \
     --trade_off ${4} \
+    --K_iter 200 \
     --adj_lr_func none \
     --target_labeled_portion $(expr $j \* 5) \
-    --logger_file_name citycam_source_only
+    --logger_file_name citycam_counting_mim
 done

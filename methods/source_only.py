@@ -45,6 +45,7 @@ def run_iter_source_only(
         args.annealing,
         args.task_type
     ) / 2.
+    
     loss_cls = loss_cls_src + loss_cls_tgt
     optimizer.zero_grad()
     loss_cls.backward()

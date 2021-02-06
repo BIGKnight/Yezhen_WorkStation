@@ -28,6 +28,5 @@ do
     --batch_size ${1} \
     --nthreads 8 \
     --method source_only \
-    --target_labeled_portion 70 \
     --logger_file_name visda2017_source_only
 done

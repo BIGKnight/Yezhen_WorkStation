@@ -98,26 +98,3 @@ def run_iter_mimcontra(
     main_optimizer.zero_grad()
     total_loss.backward()
     main_optimizer.step()
-        
-#     if args.lirr:
-#         src_embedding = torch.zeros(args.batch_size, args.adapted_dim).cuda()
-#         tgt_embedding = torch.ones(args.batch_size, args.adapted_dim).cuda()
-#         e_predictor = models['e_predictor']
-#         src_ez_features = F.normalize(src_features + src_embedding, p=2, dim=1)
-#         tgt_ez_features = F.normalize(tgt_features + tgt_embedding, p=2, dim=1)
-        
-#         # normalize the prototypes
-#         with torch.no_grad():
-#             w = e_predictor.weight.data.clone()
-#             w = nn.functional.normalize(w, dim=1, p=2)
-#             e_predictor.weight.copy_(w)
-            
-#         py_ez_src = F.softmax(e_predictor(src_ez_features), dim=1)
-#         py_ez_tgt = F.softmax(e_predictor(tgt_ez_features), dim=1)
-#         py_z_src  = F.softmax(src_logits)
-#         py_z_tgt  = F.softmax(ul_tgt_logits)
-    
-
-
-    
-    

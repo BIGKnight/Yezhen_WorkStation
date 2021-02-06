@@ -90,30 +90,30 @@ def prepare_datasets(args):
     test_transform = transforms[args.task_type]['test']
     datasets = {'source': {}, 'target': {}}
     datasets['source']['train'] = Dataset(
-        root=args.data_root, data=data_collection['source']['train'], transform=train_transform
+        num_cls=args.num_cls, root=args.data_root, data=data_collection['source']['train'], transform=train_transform
     )
     print(args.dataset + ' source train set size: %d' % (len(datasets['source']['train'])))
 
     datasets['target']['labeled'] = Dataset(
-        root=args.data_root,
+        num_cls=args.num_cls, root=args.data_root,
         data=data_collection['target']['labeled'], transform=train_transform
     )
     print(args.dataset + ' labeled target train set size: %d' % (len(datasets['target']['labeled'])))
 
     datasets['target']['unlabeled'] = Dataset(
-        root=args.data_root,
+        num_cls=args.num_cls, root=args.data_root,
         data=data_collection['target']['unlabeled'], transform=train_transform
     )
     print(args.dataset + ' unlabeled target train set size: %d' % (len(datasets['target']['unlabeled'])))
 
     datasets['source']['validation'] = Dataset(
-        root=args.data_root,
+        num_cls=args.num_cls, root=args.data_root,
         data=data_collection['source']['validation'], transform=test_transform
     )
     print(args.dataset + ' source test set size: %d' % (len(datasets['source']['validation'])))
 
     datasets['target']['validation'] = Dataset(
-        root=args.data_root,
+        num_cls=args.num_cls, root=args.data_root,
         data=data_collection['target']['validation'], transform=test_transform
     )
     print(args.dataset + ' target test set size: %d' % (len(datasets['target']['validation'])))

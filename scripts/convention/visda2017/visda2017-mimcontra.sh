@@ -4,7 +4,7 @@ source /nfs/project/wangyezhen/.Pytorch_Env
 cd /nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/
 #CUDA_VISIBLE_DEVICES=0
 datasets=('train' 'validation')
-logf_root='/nfs/volume-92-5/wangyezhen_i/Projects/Theoretical_Projects/InstaPBM-V1/output/convention/visda2017/instapbm/'
+logf_root='/rscratch/luodian_libo/yezhen/codebase/InstaPBM-V1/output/convention/visda2017/instapbm/'
 
 for((i = 0; i < 1; i++))
 do
@@ -29,8 +29,8 @@ do
             --num_cls 12 \
             --lr 0.001 \
             --milestone 20 \
-            --data_root /nfs/volume-92-5/wangyezhen_i/Datasets/visda2017 \
-            --outf /nfs/volume-92-5/wangyezhen_i/CheckPoints/CLMS/${source_domain}_${target_domain}_visda17_mimcontra \
+            --data_root /rscratch/luodian_libo/datasets/visda \
+            --outf /rscratch/luodian_libo/yezhen/CheckPoints/CLMS/${source_domain}_${target_domain}_visda17_mimcontra \
             --logf ${logf_root}${source_domain}_${target_domain}_mimcontra.txt \
             --batch_size ${2} \
             --nthreads 8 \

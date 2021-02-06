@@ -31,6 +31,7 @@ do
     --nthreads 8 \
     --method source_only \
     --temp 1 \
+    --trade_off ${4} \
     --adj_lr_func none \
     --target_labeled_portion $(expr $j \* 5) \
     --logger_file_name citycam_source_only

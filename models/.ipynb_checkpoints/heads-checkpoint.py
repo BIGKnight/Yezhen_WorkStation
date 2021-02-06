@@ -7,12 +7,51 @@ from torch.autograd import Variable
 from .utils import *
 import math
 
-__all__ = ['RandomLayer', 'DANNDiscriminator', 'EnvPredictor']
+__all__ = ['RandomLayer', 'DANNDiscriminator', 'EnvPredictor', 'MI_Estimator']
 
 def grl_hook(coeff):
     def fun1(grad):
         return -coeff*grad.clone()
     return fun1
+
+class MI_Estimator(nn.Module):
+    def __init__(self, dim, H=64, task_type='cls'):
+        super(MI_Estimator, self).__init__()
+        self.conv1 = nn.Conv2d(3, 64, kernel_size=3, stride=1, padding=1)
+        self.relu1 = nn.ReLU()
+        self.maxpool1 = nn.MaxPool2d(kernel_size=2, stride=2)
+        self.conv2 = nn.Conv2d(64, 256, kernel_size=3, stride=1, padding=1)
+        self.relu2 = nn.ReLU()
+        self.maxpool2 = nn.MaxPool2d(kernel_size=2, stride=2)
+        self.conv3 = nn.Conv2d(256, dim, kernel_size=3, stride=1, padding=1)
+        self.relu3 = nn.ReLU()
+        self.avg_pool = nn.AdaptiveAvgPool2d((1, 1))
+        
+        self.fc1 = nn.Linear(dim, H)
+        self.fc2 = nn.Linear(1, H)
+        self.fc3 = nn.Linear(H, H)
+        self.fc4 = nn.Linear(H, 1)
+        self.task_type = task_type
+
+    def forward(self, x, y):
+        x = self.conv1(x)
+        x = self.relu1(x)
+        x = self.maxpool1(x)
+        x = self.conv2(x)
+        x = self.relu2(x)
+        x = self.maxpool2(x)
+        x = self.conv3(x)
+        x = self.relu3(x)
+        x = self.avg_pool(x).reshape(x.size(0), -1)
+#         if self.task_type == 'reg':
+#             x = torch.nn.functional.adaptive_avg_pool2d(x, [1, 1]).reshape(x.size(0), -1)
+        h1 = F.relu(self.fc1(x)+self.fc2(y))
+        h2 = F.relu(self.fc3(h1))
+        h3 = self.fc4(h2)
+        return h3
+    
+    def get_parameters(self):
+        return [{"params": self.parameters(), "lr_mult": 1, 'decay_mult': 1}]
 
 class RandomLayer(nn.Module):
     def __init__(self, input_dim_list=[], output_dim=1024):

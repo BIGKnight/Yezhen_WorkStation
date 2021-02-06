@@ -72,6 +72,7 @@ def parsing():
     parser.add_argument('--adj_lr_func', type=str, default='none')
     parser.add_argument('--dropout', action='store_true')
     parser.add_argument('--K', default=256, type=int)
+    parser.add_argument('--K_iter', default=20, type=int)
     parser.add_argument('--target_labeled_portion', default=1, type=int)
     parser.add_argument('--task_type', default='cls', type=str)
     args = parser.parse_args()
@@ -158,6 +159,12 @@ def building_modules(args, net, optimizers, all_parameters, params_lr, logger):
         for param_group in optimizers['dis'].param_groups:
             params_lr['dis'].append(param_group["lr"])
         logger.info('==> Have built extra modules: random_layer, ad_net under CADA method.')
+        
+    elif 'counting_mim' == args.method.lower():
+        mi_estimator = MI_Estimator(args.adapted_dim, 64, args.task_type).cuda()
+        optimizers['mi'] = optim.SGD(mi_estimator.get_parameters(), lr=1e-2)
+        modules['mi_estimator'] = mi_estimator
+        logger.info('==> Have built extra modules: mi_estimator, mi_optimizer under REG_MIM method.')
 
     elif 'moco' == args.method.lower():
         ema_net = copy.deepcopy(net)

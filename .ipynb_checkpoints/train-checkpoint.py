@@ -39,6 +39,11 @@ def create_meters(method_name):
         meters['tgt_cls_loss'] = AverageMeter('tgt_cls')
         meters['irm_loss'] = AverageMeter('env')
         
+    elif 'counting_mim' == method_name.lower():
+        meters['src_cls_loss'] = AverageMeter('src_cls')
+        meters['tgt_cls_loss'] = AverageMeter('tgt_cls')
+        meters['estimated_mi'] = AverageMeter('estimated_mi')
+        
     else:
         meters['src_cls_loss'] = AverageMeter('src_cls')
         meters['tgt_cls_loss'] = AverageMeter('tgt_cls')
@@ -68,6 +73,9 @@ def train(
     src_iter = get_iterator(loaders['source']['train'])
     ul_tgt_iter = get_iterator(loaders['target']['unlabeled'])
     l_tgt_iter = get_iterator(loaders['target']['labeled'])
+    if 'counting_mim' == args.method.lower():
+        modules['mi_data_iter'] = ul_tgt_iter
+        logger.info('==> Have built extra modules: mi_data_iter under REG_MIM method.')
     
     for batch_idx in range(len_train_source):
         global_step = (min(epoch-1, args.nepoch) * len_train_source + batch_idx)
@@ -92,7 +100,7 @@ def train(
                 cur_iter=global_step, all_iter=entire_steps, 
                 args=args, 
                 alpha=0.0005, beta=2.25, 
-                param_lr=params_lr[name]
+#                 param_lr=params_lr[name]
             )
 
     sr_te_err = eval_funcs[args.task_type](loaders['source']['validation'], net, args, logger, True)

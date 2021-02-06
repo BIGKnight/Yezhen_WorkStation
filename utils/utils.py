@@ -5,7 +5,7 @@ import random
 import math
 import torchvision.transforms as transforms
 
-def adjust_learning_rate(optimizer, cur_iter, all_iter, args, alpha=0.001, beta=0.75, param_lr=None):
+def adjust_learning_rate(optimizer, cur_iter, all_iter, args, alpha=0.001, beta=0.75):
     """Decay the learning rate based on schedule"""
     lr = args.lr
     if args.adj_lr_func.lower() == 'cos':
@@ -18,12 +18,12 @@ def adjust_learning_rate(optimizer, cur_iter, all_iter, args, alpha=0.001, beta=
         for param_group in optimizer.param_groups:
             param_group['lr'] = lr * param_group['lr_mult']
     
-    elif args.adj_lr_func.lower() == 'mme':
-        lr = args.lr * (1 + 0.0001 * cur_iter) ** (- 0.75)
-        i=0
-        for param_group in optimizer.param_groups:
-            param_group['lr'] = lr * param_lr[i]
-            i+=1
+#     elif args.adj_lr_func.lower() == 'mme':
+#         lr = args.lr * (1 + 0.0001 * cur_iter) ** (- 0.75)
+#         i=0
+#         for param_group in optimizer.param_groups:
+#             param_group['lr'] = lr * param_lr[i]
+#             i+=1
             
     else:
         for param_group in optimizer.param_groups:
